@@ -6,8 +6,17 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background: #fbfbfb;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
 }
