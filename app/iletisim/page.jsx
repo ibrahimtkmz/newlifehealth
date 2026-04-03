@@ -3,27 +3,35 @@
 import { useState } from "react";
 import SiteLayout from "../components/SiteLayout";
 
-const WHATSAPP_NUMBER = "905551112233";
+const WHATSAPP_NUMBER = "905551110001";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
     fullname: "",
     phone: "",
     serviceType: "",
+    documentName: "",
     message: ""
   });
 
   const handleChange = (event) => {
+    const { name, value, files } = event.target;
+
+    if (name === "document") {
+      setForm((prev) => ({ ...prev, documentName: files?.[0]?.name || "" }));
+      return;
+    }
+
     setForm((prev) => ({
       ...prev,
-      [event.target.name]: event.target.value
+      [name]: value
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const whatsappMessage = `Yeni Form Mesajı:\nAd: ${form.fullname}\nTel: ${form.phone}\nHizmet: ${form.serviceType}\nMesaj: ${form.message}`;
+    const whatsappMessage = `Yeni Partner Formu:\nAd: ${form.fullname}\nTel: ${form.phone}\nHizmet: ${form.serviceType}\nBelge: ${form.documentName || "Yüklenmedi"}\nMesaj: ${form.message}`;
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
@@ -34,59 +42,38 @@ export default function ContactPage() {
       <section className="page-section">
         <div className="container contact-layout">
           <div>
-            <p className="eyebrow">İletişim</p>
-            <h1>WhatsApp Üzerinden Hızlı Teklif Alın</h1>
+            <p className="eyebrow">İletişim & Başvuru</p>
+            <h1>Acente Onboarding Formu</h1>
             <p>
-              Formu doldurup gönderdiğinizde bilgileriniz otomatik olarak WhatsApp mesajına dönüştürülür ve doğrudan
-              danışman ekibimize iletilir.
+              Başvuru, teknik destek veya genel bilgi taleplerinizi merkezi iletişim panelinden iletebilir; belgelerinizi
+              güvenli şekilde paylaşabilirsiniz.
             </p>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <label htmlFor="fullname">Ad-Soyad</label>
-            <input
-              id="fullname"
-              name="fullname"
-              type="text"
-              required
-              value={form.fullname}
-              onChange={handleChange}
-              placeholder="Örn: Ahmet Yılmaz"
-            />
+            <input id="fullname" name="fullname" type="text" required value={form.fullname} onChange={handleChange} />
 
             <label htmlFor="phone">Telefon</label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              value={form.phone}
-              onChange={handleChange}
-              placeholder="Örn: +90 5XX XXX XX XX"
-            />
+            <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} />
 
-            <label htmlFor="serviceType">Hizmet Türü</label>
+            <label htmlFor="serviceType">Talep Türü</label>
             <select id="serviceType" name="serviceType" required value={form.serviceType} onChange={handleChange}>
               <option value="">Seçiniz</option>
-              <option value="Saç Ekimi">Saç Ekimi</option>
-              <option value="Diş Estetiği">Diş Estetiği</option>
-              <option value="Estetik Cerrahi">Estetik Cerrahi</option>
-              <option value="Diğer">Diğer</option>
+              <option value="Acente Başvurusu">Acente Başvurusu</option>
+              <option value="Teknik Destek">Teknik Destek</option>
+              <option value="Genel Bilgi">Genel Bilgi</option>
             </select>
 
+            <label htmlFor="document">Vergi Levhası / Yetki Belgesi (Simülasyon)</label>
+            <input id="document" name="document" type="file" onChange={handleChange} />
+            {form.documentName ? <small className="doc-note">Yüklenen dosya: {form.documentName}</small> : null}
+
             <label htmlFor="message">Mesaj</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              value={form.message}
-              onChange={handleChange}
-              rows={5}
-              placeholder="Talebinizi kısaca yazabilirsiniz..."
-            />
+            <textarea id="message" name="message" required value={form.message} onChange={handleChange} rows={5} />
 
             <button type="submit" className="btn btn-primary">
-              Gönder
+              WhatsApp ile Gönder
             </button>
           </form>
         </div>
