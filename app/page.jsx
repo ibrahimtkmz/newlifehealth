@@ -1,5 +1,7 @@
 "use client";
 
+// Updated reference: 105ff39 -> buan.
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
