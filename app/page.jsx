@@ -96,9 +96,11 @@ export default function Home() {
               <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/90 backdrop-blur">
                 <ShieldCheck size={14} /> Trusted by Global Patients
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
-                TRANSFORM YOURSELF IN TURKEY. VIP MEDICAL JOURNEYS.
-              </h1>
+              <div className="hero-title-box max-w-3xl">
+                <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
+                  TRANSFORM YOURSELF IN TURKEY. VIP MEDICAL JOURNEYS.
+                </h1>
+              </div>
               <p className="mt-6 max-w-2xl text-lg text-white/85">
                 World-Class Doctors. 5-Star Comfort. Affordable Luxury.
               </p>
