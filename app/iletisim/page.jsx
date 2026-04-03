@@ -9,6 +9,7 @@ export default function ContactPage() {
   const [form, setForm] = useState({
     fullname: "",
     phone: "",
+    applicationType: "",
     serviceType: "",
     documentName: "",
     message: ""
@@ -31,7 +32,10 @@ export default function ContactPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const whatsappMessage = `Yeni Partner Formu:\nAd: ${form.fullname}\nTel: ${form.phone}\nHizmet: ${form.serviceType}\nBelge: ${form.documentName || "Yüklenmedi"}\nMesaj: ${form.message}`;
+    const attentionPrefix =
+      form.applicationType === "Acente" ? "DİKKAT: Yeni Acente Başvuru Formu\n\n" : "Yeni Partner Formu\n\n";
+
+    const whatsappMessage = `${attentionPrefix}Ad: ${form.fullname}\nTel: ${form.phone}\nBaşvuru Türü: ${form.applicationType}\nTalep: ${form.serviceType}\nBelge: ${form.documentName || "Yüklenmedi"}\nMesaj: ${form.message}`;
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
@@ -41,7 +45,7 @@ export default function ContactPage() {
     <SiteLayout>
       <section className="page-section">
         <div className="container contact-layout">
-          <div>
+          <div data-reveal>
             <p className="eyebrow">İletişim & Başvuru</p>
             <h1>Acente Onboarding Formu</h1>
             <p>
@@ -50,12 +54,20 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit} data-reveal>
             <label htmlFor="fullname">Ad-Soyad</label>
             <input id="fullname" name="fullname" type="text" required value={form.fullname} onChange={handleChange} />
 
             <label htmlFor="phone">Telefon</label>
             <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} />
+
+            <label htmlFor="applicationType">Başvuru Türü</label>
+            <select id="applicationType" name="applicationType" required value={form.applicationType} onChange={handleChange}>
+              <option value="">Seçiniz</option>
+              <option value="Bireysel">Bireysel</option>
+              <option value="Acente">Acente</option>
+              <option value="Kurumsal İş Birliği">Kurumsal İş Birliği</option>
+            </select>
 
             <label htmlFor="serviceType">Talep Türü</label>
             <select id="serviceType" name="serviceType" required value={form.serviceType} onChange={handleChange}>

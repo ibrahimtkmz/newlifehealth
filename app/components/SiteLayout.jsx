@@ -6,6 +6,7 @@ import WhatsappMultiButton from "./WhatsappMultiButton";
 
 const navItems = [
   { label: "Ana Sayfa", href: "/" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
   { label: "Acente İş Ortaklığı", href: "/acente" },
   { label: "Hizmetler", href: "/hizmetlerimiz" },
   { label: "İletişim", href: "/iletisim" }

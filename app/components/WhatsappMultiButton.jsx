@@ -46,9 +46,10 @@ export default function WhatsappMultiButton() {
         className="wa-toggle"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
-        aria-label="WhatsApp menüsünü aç"
+        aria-label="Hızlı destek WhatsApp menüsünü aç"
       >
         {open ? <ChevronUp size={20} /> : <MessageCircle size={20} />}
+        <span>Hızlı Destek</span>
       </button>
     </div>
   );
