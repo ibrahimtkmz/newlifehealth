@@ -1,9 +1,28 @@
+import { ShieldCheck, Clock3, Rocket } from "lucide-react";
 import SiteLayout from "./components/SiteLayout";
 
 const stats = [
-  { value: "100+", label: "Partner" },
-  { value: "5000+", label: "Başarılı Süreç" },
-  { value: "7/24", label: "Operasyon Desteği" }
+  { value: "500+", label: "Mutlu Partner" },
+  { value: "10+", label: "Yıllık Tecrübe" },
+  { value: "%100", label: "Operasyonel Başarı" }
+];
+
+const partnerAdvantages = [
+  {
+    icon: ShieldCheck,
+    title: "Yüksek Operasyonel Kalite",
+    text: "SLA odaklı süreç yönetimi, şeffaf raporlama ve standartlaştırılmış vaka takibi ile istikrarlı operasyon deneyimi."
+  },
+  {
+    icon: Clock3,
+    title: "7/24 Destek",
+    text: "Türkçe ve İngilizce görev yapan uzman ekip, her zaman erişilebilir bir iletişim hattı sunar."
+  },
+  {
+    icon: Rocket,
+    title: "Hızlı Sonuç",
+    text: "Ön değerlendirmeden planlamaya kadar hızlı karar mekanizmalarıyla iş ortaklarınız için çevik süreçler oluşturur."
+  }
 ];
 
 const trustLogos = ["MediCore", "GlobalCare", "Helix Group", "Nova Clinics", "Swiss Med", "Axis Health"];
@@ -52,10 +71,31 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="page-section section-soft">
+        <div className="container">
+          <p className="eyebrow">Global Partnerlik Ağı</p>
+          <h2>İş Ortaklarımız İçin Değer Üreten Avantajlar</h2>
+          <div className="adv-grid" data-reveal>
+            {partnerAdvantages.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title} className="adv-card">
+                  <div className="adv-icon">
+                    <Icon size={20} />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="logo-strip" data-reveal>
         <div className="container">
-          <p className="strip-title">Anlaşmalı Kurumlar & Sertifikalarımız</p>
-          <div className="logo-slider">
+          <p className="strip-title">Partnerlerimiz</p>
+          <div className="logo-slider" aria-label="Partner logoları kayan liste">
             <div className="logo-track">
               {[...trustLogos, ...trustLogos].map((logo, index) => (
                 <span key={`${logo}-${index}`}>{logo}</span>

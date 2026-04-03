@@ -8,7 +8,9 @@ const caseStudies = [
       "Ön değerlendirme süresi: 18 saat içinde hekim uygunluğu raporu",
       "Klinik kapasite planlama: haftalık 32 slot, otomatik rezervasyon dağılımı",
       "Ameliyat sonrası takip: 6 aylık dijital kontrol protokolü"
-    ]
+    ],
+    notes: "Acenteler İçin Notlar",
+    flow: "Süreç Akışı: Ön değerlendirme > Klinik eşleştirme > Operasyon > Dijital takip"
   },
   {
     title: "Komple Diş Rehabilitasyonu",
@@ -17,7 +19,9 @@ const caseStudies = [
       "Teknik planlama: 3D görüntüleme ve laboratuvar entegrasyonu",
       "Süreç yönetimi: vaka başına ortalama 2 ziyaret modelinin optimize edilmesi",
       "Kalite güvencesi: vaka kapama sonrası NPS ve komplikasyon raporlaması"
-    ]
+    ],
+    notes: "Acenteler İçin Notlar",
+    flow: "Süreç Akışı: İlk planlama > Dijital ölçüm > Uygulama > Kontrol randevuları"
   },
   {
     title: "Estetik Cerrahi Koordinasyonu",
@@ -26,7 +30,9 @@ const caseStudies = [
       "Operasyon öncesi risk sınıflandırma protokolü ve çoklu hekim konsültasyonu",
       "Konaklama + transfer + klinik zamanlaması için merkezi görev paneli",
       "Post-op dönem için 7/24 video görüşme destek hattı"
-    ]
+    ],
+    notes: "Acenteler İçin Notlar",
+    flow: "Süreç Akışı: Medikal uygunluk > VIP planlama > Operasyon > 7/24 post-op destek"
   }
 ];
 
@@ -51,6 +57,10 @@ export default function ServicesPage() {
                     <li key={detail}>{detail}</li>
                   ))}
                 </ul>
+                <div className="service-note">
+                  <h3>{item.notes}</h3>
+                  <p>{item.flow}</p>
+                </div>
               </article>
             ))}
           </div>
