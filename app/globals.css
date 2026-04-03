@@ -2,136 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-soft: #eef2ff;
-}
-
 html,
 body {
   margin: 0;
   padding: 0;
+  background: #fbfbfb;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.app-bg {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(134, 179, 255, 0.3), transparent 40%),
-    radial-gradient(circle at 85% 0%, rgba(181, 155, 255, 0.25), transparent 35%),
-    linear-gradient(135deg, #f4f7ff 0%, #f8f3ff 45%, #f6fbff 100%);
-}
-
-.font-display {
-  font-family: "Playfair Display", "Times New Roman", Georgia, serif;
-}
-
-.font-sans {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
-}
-
-.hero-card {
-  background: linear-gradient(125deg, rgba(12, 46, 99, 0.84), rgba(67, 56, 202, 0.73));
-  box-shadow: 0 28px 65px rgba(23, 30, 80, 0.35);
-}
-
-.glass-panel {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.38));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 18px 40px rgba(64, 67, 122, 0.12);
-}
-
-.btn-gradient {
-  background: linear-gradient(120deg, #0c2e63 5%, #4338ca 55%, #7c3aed 100%);
-  box-shadow: 0 12px 26px rgba(76, 29, 149, 0.33);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-}
-
-.btn-gradient:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.03);
-  box-shadow: 0 16px 34px rgba(76, 29, 149, 0.38);
-}
-
-.nav-link {
-  position: relative;
-  transition: color 0.25s ease;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.25s ease;
-  background: linear-gradient(90deg, #0c2e63, #7c3aed);
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-.form-input {
-  width: 100%;
-  border: 1px solid rgba(12, 46, 99, 0.18);
-  border-radius: 0.8rem;
-  padding: 0.78rem 0.95rem;
-  background: rgba(255, 255, 255, 0.75);
-  outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.form-input:focus {
-  border-color: rgba(67, 56, 202, 0.65);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-}
-
-.page-fade {
-  animation: fadeInPage 0.55s ease both;
-}
-
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.logo-track {
-  display: flex;
-  gap: 0.85rem;
-  width: max-content;
-  animation: logoSlide 20s linear infinite;
-}
-
-.logo-pill {
-  border: 1px solid rgba(12, 46, 99, 0.15);
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.65rem 1rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #334155;
-}
-
-@keyframes logoSlide {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
 }
