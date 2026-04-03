@@ -56,16 +56,16 @@ export default function Home() {
     <div className="bg-[#FBFBFB] text-[#1A1A1A] selection:bg-[#D4AF37] selection:text-white">
       <header className="sticky top-0 z-50 border-b border-white/30 bg-white/70 backdrop-blur-xl">
         <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-6">
-          <div className="flex items-center gap-3">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/60 bg-gradient-to-br from-[#0C2E63] to-[#1E9B78] text-base font-bold tracking-[0.1em] text-white shadow-[0_8px_20px_rgba(12,46,99,0.25)]">
-              NL
-              <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[0.65rem] font-black leading-none text-[#0C2E63]">
-                +
-              </span>
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white shadow-[0_8px_20px_rgba(12,46,99,0.12)]">
+              <img src="/logo.png" alt="NL Sağlık Turizmi logosu" className="h-full w-full object-contain p-1" />
             </div>
             <div>
               <p className="text-lg font-bold tracking-wide text-[#0C2E63]">NL SAĞLIK TURİZMİ</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#1A1A1A]/60">International Health Tourism Agency</p>
+              <p className="text-[0.64rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65">
+                INTERNATIONAL HEALTH
+              </p>
+              <p className="text-[0.64rem] uppercase leading-tight tracking-[0.24em] text-[#1A1A1A]/65">TOURISM AGENCY</p>
             </div>
           </div>
 
