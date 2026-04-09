@@ -58,13 +58,13 @@ export default function Home() {
       return;
     }
 
-    const message = `Merhaba, iletişim için telefon numaram: ${leadPhone.trim()}`;
+    const message = `Hello, my phone number for contact is: ${leadPhone.trim()}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleBeforeAfterClick = () => {
-    const message = "Merhaba, sonuçları WhatsApp üzerinden incelemek istiyorum.";
+    const message = "Hello, I would like to review the results via WhatsApp.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
@@ -75,10 +75,10 @@ export default function Home() {
         <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-6">
           <a href="#" className="relative z-10 flex items-center gap-4">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white">
-              <Image src="/logo.png" alt="NL Sağlık Turizmi logosu" width={56} height={56} className="block h-full w-full object-contain p-1" priority />
+              <Image src="/logo.png" alt="NL Health Tourism logo" width={56} height={56} className="block h-full w-full object-contain p-1" priority />
             </div>
             <div>
-              <p className="text-lg font-bold tracking-wide text-[#0C2E63]">NL SAĞLIK TURİZMİ</p>
+              <p className="text-lg font-bold tracking-wide text-[#0C2E63]">NL HEALTH TOURISM</p>
               <p className="text-[0.64rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65">
                 INTERNATIONAL HEALTH
               </p>
@@ -161,10 +161,10 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Signature Treatments</p>
               <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Precision Procedures, Elevated Care</h2>
               <p className="mt-4 max-w-4xl text-sm leading-relaxed text-[#1A1A1A]/75">
-                Kliniğimizde her tedavi planı, ileri görüntüleme sistemleri, dijital planlama araçları ve minimal invaziv cerrahi yaklaşımlar
-                ile kişiye özel olarak yapılandırılır. Cerrahi hassasiyet kadar operasyon öncesi hazırlık, ağrı yönetimi, sterilite standartları
-                ve konfor odaklı bakım protokolleri de eşit önceliktedir. Amacımız yalnızca estetik veya fonksiyonel bir sonuç üretmek değil;
-                aynı zamanda danışanlarımızın tüm yolculuğunu güven, şeffaflık ve sürdürülebilir iyileşme ilkeleriyle desteklemektir.
+                At our clinic, every treatment plan is personalized using advanced imaging systems, digital planning tools, and minimally invasive
+                surgical approaches. Along with surgical precision, pre-operative preparation, pain management, sterilization standards, and
+                comfort-focused care protocols are all treated as equal priorities. Our goal is not only to deliver an aesthetic or functional
+                outcome, but also to support each patient’s full journey with trust, transparency, and sustainable recovery principles.
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
         <section className="grid gap-8 lg:grid-cols-2">
           <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-7 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
             <h3 className="text-2xl font-semibold">BEFORE & AFTER GALLERY</h3>
-            <p className="mt-2 text-sm text-[#1A1A1A]/70">Hasta mahremiyetini koruyarak sonuçların niteliğini gizlilik esaslarıyla paylaşıyoruz.</p>
+            <p className="mt-2 text-sm text-[#1A1A1A]/70">We share treatment quality insights while fully protecting patient privacy.</p>
             <div className="relative mt-6">
               <div className="grid grid-cols-3 gap-3 blur-[4px]">
                 {["before", "after", "result"].map((item) => (
@@ -213,13 +213,13 @@ export default function Home() {
               </div>
               <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-[#1A1A1A]/45 p-4 text-center">
                 <p className="max-w-xs text-sm font-medium text-white">
-                  Tıbbi etik kuralları gereği sonuçlarımızı sadece danışanlarımıza gösteriyoruz.
+                  In line with medical ethics, we show full results only to our active patients.
                 </p>
                 <button
                   onClick={handleBeforeAfterClick}
                   className="mt-3 rounded-full bg-[#D4AF37] px-4 py-2 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_10px_25px_rgba(212,175,55,0.35)] hover:brightness-95"
                 >
-                  Sonuçları WhatsApp üzerinden incele
+                  Review Results on WhatsApp
                 </button>
               </div>
             </div>
@@ -235,45 +235,45 @@ export default function Home() {
         </section>
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
-          <h3 className="text-2xl font-semibold">Hakkımızda</h3>
+          <h3 className="text-2xl font-semibold">About Us</h3>
           <p className="mt-4 text-sm leading-relaxed text-[#1A1A1A]/75">
-            NL Sağlık Turizmi olarak vizyonumuz, uluslararası hastaların Türkiye&apos;de güvenli, planlı ve insan odaklı bir tedavi deneyimi
-            yaşamasını sağlamaktır. Tıbbi danışmanlıktan konaklamaya, transferden operasyon sonrası takibe kadar tüm süreci tek bir kalite
-            standardında yönetiyor; her hastaya kendi beklenti ve sağlık geçmişine uygun bir yol haritası sunuyoruz.
+            At NL Health Tourism, our vision is to ensure international patients receive a safe, well-planned, and human-centered treatment
+            experience in Turkey. From medical consultation to accommodation, from transfers to post-op follow-up, we manage the entire process
+            under one quality standard and provide each patient with a roadmap tailored to their expectations and medical history.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/75">
-            Uzman doktor ağımız, tecrübeli hasta ilişkileri ekibimiz ve operasyonel disiplinimiz sayesinde estetik cerrahi, saç ekimi ve dental
-            estetik gibi farklı alanlarda sürdürülebilir memnuniyet üretmeyi hedefliyoruz. Yaklaşımımız samimi iletişim, net bilgilendirme ve
-            etik değerlere bağlı profesyonel hizmet anlayışı üzerine kuruludur.
+            With our specialist doctor network, experienced patient relations team, and operational discipline, we aim to deliver lasting
+            satisfaction in aesthetic surgery, hair transplantation, and dental aesthetics. Our approach is built on sincere communication,
+            clear information, and a professional service mindset grounded in ethical values.
           </p>
         </section>
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Hizmet Paketleri</p>
-            <h3 className="mt-2 text-3xl font-semibold">Size En Uygun Tedavi Deneyimini Seçin</h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Service Packages</p>
+            <h3 className="mt-2 text-3xl font-semibold">Choose the Treatment Experience That Fits You Best</h3>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {[
               {
                 name: "Standard",
-                details: ["Operasyon planlaması ve temel medikal süreç", "4 gece konaklama", "Havalimanı-klinik-hotel transferleri", "Uzaktan takip desteği"],
-                note: "Size özel fiyat teklifi için iletişime geçin."
+                details: ["Operation planning and core medical process", "4 nights of accommodation", "Airport-clinic-hotel transfers", "Remote follow-up support"],
+                note: "Contact us for your personalized price offer."
               },
               {
                 name: "Gold",
-                details: ["Operasyon + gelişmiş medikal bakım paketi", "5 yıldızlı otelde 5 gece konaklama", "VIP transfer ve hızlı koordinasyon", "Tercümanlık ve günlük refakat desteği"],
-                note: "Size özel fiyat teklifi için iletişime geçin."
+                details: ["Operation + advanced medical care package", "5 nights in a 5-star hotel", "VIP transfer and fast coordination", "Interpreter and daily companion support"],
+                note: "Contact us for your personalized price offer."
               },
               {
                 name: "Premium",
                 details: [
-                  "Kıdemli cerrah ekibiyle kapsamlı operasyon planı",
-                  "Lüks suit konaklama ve kişisel danışman",
-                  "Özel araçla tam zamanlı transfer hizmeti",
-                  "Çok dilli tercümanlık + uzatılmış aftercare takibi"
+                  "Comprehensive operation plan with a senior surgeon team",
+                  "Luxury suite accommodation and personal advisor",
+                  "Full-time transfer service with a private vehicle",
+                  "Multilingual interpretation + extended aftercare follow-up"
                 ],
-                note: "Size özel fiyat teklifi için iletişime geçin."
+                note: "Contact us for your personalized price offer."
               }
             ].map((pkg) => (
               <article key={pkg.name} className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-6">
@@ -320,27 +320,27 @@ export default function Home() {
           <aside className="rounded-3xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-8 text-white shadow-[0_25px_50px_rgba(26,26,26,0.35)]">
             <h3 className="text-2xl font-semibold">Why Turkey?</h3>
             <p className="mt-4 text-sm leading-relaxed text-white/85">
-              Türkiye, sağlık turizminde Avrupa, Orta Doğu ve Körfez bölgesi için stratejik bir merkez haline gelmiştir. Uluslararası standartlara
-              uygun akredite hastaneler, ileri teknolojiye sahip operasyon altyapısı ve yüksek vaka deneyimi bulunan uzman cerrah kadrolarıyla
-              global ölçekte güçlü bir güven oluşturur.
+              Turkey has become a strategic hub in health tourism for Europe, the Middle East, and the Gulf region. Accredited hospitals that
+              meet international standards, advanced operation infrastructure, and expert surgeons with extensive case experience build strong
+              global trust.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/85">
-              İstanbul başta olmak üzere büyük şehirlerde sağlık hizmeti; lüks konaklama, hızlı ulaşım ve kültürel zenginlik ile birleşerek
-              tedavi sürecini daha konforlu ve sürdürülebilir bir deneyime dönüştürür. Bu sayede danışanlarımız, medikal kalite ile seyahat
-              konforunu tek bir plan içinde yönetebilir.
+              In major cities, especially Istanbul, healthcare services combine with luxury accommodation, fast transportation, and cultural
+              richness to turn treatment into a more comfortable and sustainable experience. This allows our patients to manage medical quality
+              and travel comfort within one integrated plan.
             </p>
             <ul className="mt-5 space-y-4 text-sm text-white/85">
               <li className="flex gap-3">
                 <UserRound size={18} className="text-[#D4AF37]" />
-                Uluslararası hasta portföyü güçlü, branşında uzman cerrah ekipleri.
+                Specialist surgeon teams with strong international patient portfolios.
               </li>
               <li className="flex gap-3">
                 <Building2 size={18} className="text-[#D4AF37]" />
-                Akredite hastaneler, gelişmiş cihaz altyapısı ve çok dilli hasta koordinasyonu.
+                Accredited hospitals, advanced medical equipment, and multilingual patient coordination.
               </li>
               <li className="flex gap-3">
                 <ShieldCheck size={18} className="text-[#D4AF37]" />
-                Şeffaf süreç yönetimi, güvenli operasyon standartları ve uçtan uca seyahat desteği.
+                Transparent process management, safe operation standards, and end-to-end travel support.
               </li>
             </ul>
           </aside>
@@ -351,17 +351,17 @@ export default function Home() {
         <div className="mx-auto grid w-full max-w-[1280px] gap-10 px-6 py-14 lg:grid-cols-[1fr_1fr_auto]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Lead Generation</p>
-            <h4 className="mt-2 text-2xl font-semibold">Hemen Geri Dönüş Alın</h4>
-            <p className="mt-2 text-sm text-[#1A1A1A]/70">Telefon numaranızı bırakın, sizi WhatsApp hattımıza direkt yönlendirelim.</p>
+            <h4 className="mt-2 text-2xl font-semibold">Get a Fast Callback</h4>
+            <p className="mt-2 text-sm text-[#1A1A1A]/70">Leave your phone number and we will direct you to our WhatsApp line immediately.</p>
             <div className="mt-4 flex max-w-md gap-2">
               <input
                 value={leadPhone}
                 onChange={(e) => setLeadPhone(e.target.value)}
-                placeholder="Telefon numaranız"
+                placeholder="Your phone number"
                 className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3"
               />
               <button onClick={handleLeadSubmit} className="rounded-xl bg-[#D4AF37] px-5 text-sm font-semibold text-white">
-                WhatsApp&apos;a Geç
+                Continue on WhatsApp
               </button>
             </div>
           </div>
