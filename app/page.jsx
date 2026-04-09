@@ -302,15 +302,15 @@ export default function Home() {
   return (
     <div className="bg-[#FBFBFB] text-[#1A1A1A] selection:bg-[#D4AF37] selection:text-white">
       <header className="sticky top-0 z-50 border-b border-white/30 bg-white/70 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-6">
-          <a href="#" className="relative z-10 flex items-center gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white">
+        <div className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-3 px-4 py-3 sm:h-20 sm:flex-nowrap sm:px-6 sm:py-0">
+          <a href="#" className="relative z-10 flex min-w-0 items-center gap-3 sm:gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white sm:h-14 sm:w-14">
               <Image src="/logo.png" alt="NL Health Tourism logo" width={56} height={56} className="block h-full w-full object-contain p-1" priority />
             </div>
-            <div>
-              <p className="text-lg font-bold tracking-wide text-[#0C2E63]">NL HEALTH TOURISM</p>
-              <p className="text-[0.64rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65">INTERNATIONAL HEALTH</p>
-              <p className="text-[0.64rem] uppercase leading-tight tracking-[0.24em] text-[#1A1A1A]/65">TOURISM AGENCY</p>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-bold tracking-wide text-[#0C2E63] sm:text-lg">NL HEALTH TOURISM</p>
+              <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.14em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.18em]">INTERNATIONAL HEALTH</p>
+              <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.24em]">TOURISM AGENCY</p>
             </div>
           </a>
 
@@ -322,17 +322,17 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex w-full items-center justify-end gap-2 sm:w-auto sm:gap-4">
             <button
               onClick={() => openPopup("freeQuote")}
-              className="rich-gradient-button rounded-full px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-white shadow-[0_14px_30px_rgba(58,12,163,0.35)]"
+              className="rich-gradient-button rounded-full px-4 py-2 text-[0.65rem] font-semibold tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(58,12,163,0.35)] sm:px-5 sm:py-2.5 sm:text-xs sm:tracking-[0.12em]"
             >
               {t.freeQuote}
             </button>
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value)}
-              className="hidden rounded-full border border-[#1A1A1A]/15 bg-white/75 px-4 py-2 text-xs font-semibold md:block"
+              className="rounded-full border border-[#1A1A1A]/15 bg-white/75 px-3 py-2 text-[0.65rem] font-semibold sm:px-4 sm:text-xs"
             >
               <option value="en">EN</option>
               <option value="tr">TR</option>
@@ -342,29 +342,29 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-[1280px] flex-col gap-24 px-6 pb-24 pt-12">
-        <section className="hero-rgb-gradient relative overflow-hidden rounded-[36px] border border-white/40 p-10 shadow-[0_30px_70px_rgba(26,26,26,0.22)] lg:p-14">
+      <main className="mx-auto flex w-full max-w-[1280px] flex-col gap-16 px-4 pb-16 pt-8 sm:gap-24 sm:px-6 sm:pb-24 sm:pt-12">
+        <section className="hero-rgb-gradient relative overflow-hidden rounded-[28px] border border-white/40 p-5 shadow-[0_30px_70px_rgba(26,26,26,0.22)] sm:rounded-[36px] sm:p-8 lg:p-14">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-              <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white/90 backdrop-blur sm:mb-6 sm:px-4 sm:text-xs sm:tracking-[0.2em]">
                 <ShieldCheck size={14} /> {t.trusted}
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">{t.heroTitle}</h1>
-              <p className="mt-6 max-w-2xl text-lg text-white/85">{t.heroSubtitle}</p>
+              <h1 className="max-w-3xl text-2xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">{t.heroTitle}</h1>
+              <p className="mt-4 max-w-2xl text-base text-white/85 sm:mt-6 sm:text-lg">{t.heroSubtitle}</p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="card-stack-shell ml-auto w-full max-w-md">
+            <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="card-stack-shell mx-auto w-full max-w-md lg:ml-auto lg:mr-0">
               <motion.div aria-hidden className="glass-card-stack-layer stack-layer-back-1" animate={{ y: [0, -8, 0], rotate: [-3.5, -2.2, -3.5], scale: [0.95, 0.97, 0.95] }} transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }} />
               <motion.div aria-hidden className="glass-card-stack-layer stack-layer-back-2" animate={{ y: [0, -6, 0], rotate: [2.8, 1.2, 2.8], scale: [0.97, 0.985, 0.97] }} transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }} />
-              <motion.form onSubmit={handleHeroFormSubmit} className="glass-card relative rounded-3xl p-7">
-                <h2 className="text-xl font-semibold text-white">{t.heroFormTitle}</h2>
+              <motion.form onSubmit={handleHeroFormSubmit} className="glass-card relative rounded-3xl p-5 sm:p-7">
+                <h2 className="text-lg font-semibold text-white sm:text-xl">{t.heroFormTitle}</h2>
                 <p className="mt-1 text-sm text-white/75">{t.heroFormSub}</p>
                 <div className="mt-5 space-y-3">
                   <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={t.name} className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring" />
                   <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder={t.phone} className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring" />
                   <input value={form.treatment} onChange={(e) => setForm({ ...form, treatment: e.target.value })} placeholder={t.treatmentType} className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring" />
                 </div>
-                <button type="submit" className="rich-gradient-button mt-6 w-full rounded-xl py-3 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_34px_rgba(58,12,163,0.35)]">
+                <button type="submit" className="rich-gradient-button mt-6 w-full rounded-xl py-3 text-xs font-semibold tracking-[0.06em] text-white shadow-[0_16px_34px_rgba(58,12,163,0.35)] sm:text-sm sm:tracking-[0.08em]">
                   {t.requestConsultation}
                 </button>
               </motion.form>
@@ -376,7 +376,7 @@ export default function Home() {
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">{t.signatureTreatments}</p>
-              <h2 className="mt-2 text-3xl font-semibold md:text-4xl">{t.treatmentsTitle}</h2>
+              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl md:text-4xl">{t.treatmentsTitle}</h2>
               <p className="mt-4 max-w-4xl text-sm leading-relaxed text-[#1A1A1A]/75">{t.treatmentsIntro}</p>
             </div>
           </div>
@@ -391,7 +391,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-7 rounded-[34px] border border-[#1A1A1A]/8 bg-white p-8 shadow-[0_20px_50px_rgba(26,26,26,0.06)] lg:grid-cols-5 lg:p-10">
+        <section className="grid gap-4 rounded-[30px] border border-[#1A1A1A]/8 bg-white p-5 shadow-[0_20px_50px_rgba(26,26,26,0.06)] sm:gap-7 sm:p-8 lg:grid-cols-5 lg:p-10">
           {journey.map((step, index) => (
             <div key={step.title} className="relative rounded-2xl bg-[#FBFBFB] p-5">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">{t.stepLabel} {index + 1}</p>
@@ -401,9 +401,9 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-2">
-          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-7 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
-            <h3 className="text-2xl font-semibold">{t.beforeAfter}</h3>
+        <section className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
+            <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
             <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
             <div className="relative mt-6">
               <div className="grid grid-cols-3 gap-3 blur-[4px]">
@@ -420,8 +420,8 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-7 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
-            <h3 className="text-2xl font-semibold">{t.videos}</h3>
+          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
+            <h3 className="text-xl font-semibold sm:text-2xl">{t.videos}</h3>
             <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.videosSub}</p>
             <div className="mt-6 flex h-44 items-center justify-center rounded-2xl border border-dashed border-[#1A1A1A]/20 bg-gradient-to-br from-[#1A1A1A]/5 to-[#000080]/10 text-[#1A1A1A]/75">
               <Video className="mr-2" /> {t.videoPlaceholder}
@@ -429,16 +429,16 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
-          <h3 className="text-2xl font-semibold">{t.about}</h3>
+        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
+          <h3 className="text-xl font-semibold sm:text-2xl">{t.about}</h3>
           <p className="mt-4 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutP1}</p>
           <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutP2}</p>
         </section>
 
-        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
+        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
           <div className="mb-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">{t.packages}</p>
-            <h3 className="mt-2 text-3xl font-semibold">{t.packagesTitle}</h3>
+            <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{t.packagesTitle}</h3>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {t.packagesData.map((pkg) => (
@@ -459,10 +459,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-8 shadow-[0_18px_40px_rgba(26,26,26,0.06)]">
+        <section className="grid gap-6 sm:gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">{t.clinicsLabel}</p>
-            <h3 className="mt-2 text-3xl font-semibold">{t.clinicsTitle}</h3>
+            <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{t.clinicsTitle}</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/70">{t.clinicsSub}</p>
             <div className="mt-6 grid grid-cols-2 gap-4">
               {["before", "after", "result"].map((item) => (
@@ -471,8 +471,8 @@ export default function Home() {
             </div>
           </article>
 
-          <aside className="rounded-3xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-8 text-white shadow-[0_25px_50px_rgba(26,26,26,0.35)]">
-            <h3 className="text-2xl font-semibold">{t.whyTurkey}</h3>
+          <aside className="rounded-3xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-5 text-white shadow-[0_25px_50px_rgba(26,26,26,0.35)] sm:p-8">
+            <h3 className="text-xl font-semibold sm:text-2xl">{t.whyTurkey}</h3>
             <p className="mt-4 text-sm leading-relaxed text-white/85">{t.whyTurkeyP1}</p>
             <p className="mt-3 text-sm leading-relaxed text-white/85">{t.whyTurkeyP2}</p>
             <ul className="mt-5 space-y-4 text-sm text-white/85">
@@ -485,14 +485,14 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-[#1A1A1A]/10 bg-white">
-        <div className="mx-auto grid w-full max-w-[1280px] gap-10 px-6 py-14 lg:grid-cols-[1fr_1fr_auto]">
+        <div className="mx-auto grid w-full max-w-[1280px] gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-14 lg:grid-cols-[1fr_1fr_auto]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">{t.leadLabel}</p>
-            <h4 className="mt-2 text-2xl font-semibold">{t.leadTitle}</h4>
+            <h4 className="mt-2 text-xl font-semibold sm:text-2xl">{t.leadTitle}</h4>
             <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.leadSub}</p>
-            <div className="mt-4 flex max-w-md gap-2">
+            <div className="mt-4 flex max-w-md flex-col gap-2 sm:flex-row">
               <input value={leadPhone} onChange={(e) => setLeadPhone(e.target.value)} placeholder={t.yourPhone} className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3" />
-              <button onClick={handleLeadSubmit} className="rich-gradient-button rounded-xl px-5 text-sm font-semibold text-white">{t.continueWa}</button>
+              <button onClick={handleLeadSubmit} className="rich-gradient-button rounded-xl px-5 py-3 text-sm font-semibold text-white">{t.continueWa}</button>
             </div>
           </div>
 
@@ -508,8 +508,8 @@ export default function Home() {
 
       {popupOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/55 p-4">
-          <form onSubmit={handlePopupSubmit} className="w-full max-w-lg rounded-3xl bg-white p-7 shadow-2xl">
-            <h3 className="text-2xl font-semibold">{t.popupTitle}</h3>
+          <form onSubmit={handlePopupSubmit} className="w-full max-w-lg rounded-3xl bg-white p-5 shadow-2xl sm:p-7">
+            <h3 className="text-xl font-semibold sm:text-2xl">{t.popupTitle}</h3>
             <p className="mt-1 text-sm text-[#1A1A1A]/70">{t.popupSub}</p>
             <div className="mt-5 space-y-3">
               <input value={popupForm.name} onChange={(e) => setPopupForm({ ...popupForm, name: e.target.value })} placeholder={t.name} className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3" />
@@ -517,7 +517,7 @@ export default function Home() {
               <input value={popupForm.treatment} onChange={(e) => setPopupForm({ ...popupForm, treatment: e.target.value })} placeholder={t.treatmentType} className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3" />
               <textarea value={popupForm.note} onChange={(e) => setPopupForm({ ...popupForm, note: e.target.value })} placeholder={t.notes} className="h-24 w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3" />
             </div>
-            <div className="mt-6 flex justify-end gap-3">
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               <button type="button" onClick={() => setPopupOpen(false)} className="rounded-xl border border-[#1A1A1A]/20 px-4 py-2 text-sm font-semibold">{t.close}</button>
               <button type="submit" className="rich-gradient-button rounded-xl px-4 py-2 text-sm font-semibold text-white">{t.sendWa}</button>
             </div>
