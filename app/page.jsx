@@ -120,38 +120,47 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.form
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="glass-card ml-auto w-full max-w-md rounded-3xl p-7"
-            >
-              <h2 className="text-xl font-semibold text-white">Get Your Free VIP Plan</h2>
-              <p className="mt-1 text-sm text-white/75">Dedicated advisor replies within minutes.</p>
-              <div className="mt-5 space-y-3">
-                <input
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Name"
-                  className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
-                />
-                <input
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="Phone"
-                  className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
-                />
-                <input
-                  value={form.treatment}
-                  onChange={(e) => setForm({ ...form, treatment: e.target.value })}
-                  placeholder="Treatment Type"
-                  className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
-                />
-              </div>
-              <button className="rich-gradient-button mt-6 w-full rounded-xl py-3 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_34px_rgba(58,12,163,0.35)]">
-                REQUEST CONSULTATION
-              </button>
-            </motion.form>
+            <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="card-stack-shell ml-auto w-full max-w-md">
+              <motion.div
+                aria-hidden
+                className="glass-card-stack-layer stack-layer-back-1"
+                animate={{ y: [0, -8, 0], rotate: [-3.5, -2.2, -3.5], scale: [0.95, 0.97, 0.95] }}
+                transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                aria-hidden
+                className="glass-card-stack-layer stack-layer-back-2"
+                animate={{ y: [0, -6, 0], rotate: [2.8, 1.2, 2.8], scale: [0.97, 0.985, 0.97] }}
+                transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+              />
+              <motion.form className="glass-card relative rounded-3xl p-7">
+                <h2 className="text-xl font-semibold text-white">Get Your Free VIP Plan</h2>
+                <p className="mt-1 text-sm text-white/75">Dedicated advisor replies within minutes.</p>
+                <div className="mt-5 space-y-3">
+                  <input
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Name"
+                    className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
+                  />
+                  <input
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="Phone"
+                    className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
+                  />
+                  <input
+                    value={form.treatment}
+                    onChange={(e) => setForm({ ...form, treatment: e.target.value })}
+                    placeholder="Treatment Type"
+                    className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
+                  />
+                </div>
+                <button className="rich-gradient-button mt-6 w-full rounded-xl py-3 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_34px_rgba(58,12,163,0.35)]">
+                  REQUEST CONSULTATION
+                </button>
+              </motion.form>
+            </motion.div>
           </div>
         </section>
 

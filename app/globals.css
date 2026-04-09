@@ -14,20 +14,52 @@ body {
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08) 55%, rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 30px 60px rgba(20, 14, 60, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.card-stack-shell {
+  position: relative;
+  perspective: 1200px;
+}
+
+.glass-card-stack-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(130deg, rgba(94, 80, 255, 0.3), rgba(246, 95, 155, 0.25), rgba(84, 230, 255, 0.22));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.stack-layer-back-1 {
+  transform: translate(26px, -20px) scale(0.95) rotate(-3.5deg);
+  transform-origin: center;
+  box-shadow: 0 24px 50px rgba(21, 12, 73, 0.3);
+  opacity: 0.85;
+}
+
+.stack-layer-back-2 {
+  transform: translate(14px, -10px) scale(0.97) rotate(2.8deg);
+  transform-origin: center;
+  box-shadow: 0 20px 44px rgba(13, 11, 58, 0.25);
+  opacity: 0.9;
 }
 
 .hero-rgb-gradient {
   background: linear-gradient(
-    130deg,
-    #3a0ca3 0%,
-    #560bad 18%,
-    #f72585 42%,
-    #f8961e 68%,
+    125deg,
+    #26086d 0%,
+    #5d22d4 18%,
+    #9626d6 36%,
+    #f72585 54%,
+    #ff7f51 73%,
+    #f9c74f 86%,
     #4cc9f0 100%
   );
   background-size: 240% 240%;
@@ -47,7 +79,7 @@ body {
 }
 
 .rich-gradient-button {
-  background-image: linear-gradient(135deg, #3a0ca3 0%, #f72585 45%, #f8961e 75%, #4cc9f0 100%);
+  background-image: linear-gradient(135deg, #4f12c9 0%, #e91e92 35%, #ff7f51 68%, #58d6ff 100%);
   background-size: 220% 220%;
   animation: aurora-shift 8s ease infinite;
   transition: transform 220ms ease, filter 220ms ease, box-shadow 220ms ease;
