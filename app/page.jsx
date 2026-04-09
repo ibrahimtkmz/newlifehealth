@@ -106,7 +106,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex w-full max-w-[1280px] flex-col gap-24 px-6 pb-24 pt-12">
-        <section className="relative overflow-hidden rounded-[36px] border border-white/70 bg-[linear-gradient(120deg,rgba(26,26,26,0.72),rgba(0,0,80,0.62)),url('https://images.unsplash.com/photo-1666214277657-e1ec34b9f739?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center p-10 shadow-[0_30px_70px_rgba(26,26,26,0.22)] lg:p-14">
+        <section className="hero-rgb-gradient relative overflow-hidden rounded-[36px] border border-white/40 p-10 shadow-[0_30px_70px_rgba(26,26,26,0.22)] lg:p-14">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/90 backdrop-blur">
