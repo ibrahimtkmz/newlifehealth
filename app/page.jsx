@@ -59,7 +59,7 @@ export default function Home() {
         <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-6">
           <div className="flex items-center gap-4">
             <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white">
-              <Image src="/logo.png" alt="NL Sağlık Turizmi logosu" width={56} height={56} className="h-full w-full object-contain p-1" priority />
+              <Image src="/public/logo.png" alt="NL Sağlık Turizmi logosu" width={56} height={56} className="h-full w-full object-contain p-1" priority />
             </div>
             <div>
               <p className="text-lg font-bold tracking-wide text-[#0C2E63]">NL SAĞLIK TURİZMİ</p>
