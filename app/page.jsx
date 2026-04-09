@@ -95,7 +95,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <button className="rounded-full bg-[#D4AF37] px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-white shadow-[0_10px_25px_rgba(212,175,55,0.35)] transition hover:brightness-95">
+            <button className="rich-gradient-button rounded-full px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-white shadow-[0_14px_30px_rgba(58,12,163,0.35)]">
               GET FREE QUOTE
             </button>
             <button className="hidden items-center gap-2 rounded-full border border-[#1A1A1A]/15 bg-white/75 px-4 py-2 text-xs font-semibold md:flex">
@@ -148,7 +148,7 @@ export default function Home() {
                   className="w-full rounded-xl border border-white/25 bg-white/15 px-4 py-3 text-white placeholder:text-white/65 outline-none ring-[#D4AF37]/60 transition focus:ring"
                 />
               </div>
-              <button className="mt-6 w-full rounded-xl bg-[#D4AF37] py-3 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_15px_30px_rgba(212,175,55,0.35)] hover:brightness-95">
+              <button className="rich-gradient-button mt-6 w-full rounded-xl py-3 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_34px_rgba(58,12,163,0.35)]">
                 REQUEST CONSULTATION
               </button>
             </motion.form>
@@ -172,9 +172,9 @@ export default function Home() {
             {treatments.map((item) => (
               <article
                 key={item.title}
-                className="group rounded-3xl border border-[#1A1A1A]/10 bg-white p-7 shadow-[0_20px_40px_rgba(26,26,26,0.06)] transition hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(26,26,26,0.12)]"
+                className="rich-gradient-surface group rounded-3xl border border-[#1A1A1A]/10 p-7 shadow-[0_20px_40px_rgba(26,26,26,0.06)] transition hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(26,26,26,0.12)]"
               >
-                <div className="mb-5 inline-flex rounded-2xl border border-[#D4AF37]/40 bg-[#D4AF37]/10 p-3 text-[#1A1A1A] transition group-hover:bg-[#D4AF37] group-hover:text-white">
+                <div className="rich-gradient-icon mb-5 inline-flex rounded-2xl border p-3 transition">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold tracking-wide">{item.title}</h3>
@@ -188,7 +188,7 @@ export default function Home() {
           {journey.map((step, index) => (
             <div key={step.title} className="relative rounded-2xl bg-[#FBFBFB] p-5">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">Step {index + 1}</p>
-              <div className="mb-4 inline-flex rounded-xl border border-[#1A1A1A]/10 bg-white p-2">{step.icon}</div>
+              <div className="rich-gradient-icon mb-4 inline-flex rounded-xl border p-2">{step.icon}</div>
               <h3 className="font-semibold">{step.title}</h3>
             </div>
           ))}
@@ -215,10 +215,7 @@ export default function Home() {
                 <p className="max-w-xs text-sm font-medium text-white">
                   In line with medical ethics, we show full results only to our active patients.
                 </p>
-                <button
-                  onClick={handleBeforeAfterClick}
-                  className="mt-3 rounded-full bg-[#D4AF37] px-4 py-2 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_10px_25px_rgba(212,175,55,0.35)] hover:brightness-95"
-                >
+                <button onClick={handleBeforeAfterClick} className="rich-gradient-button mt-3 rounded-full px-4 py-2 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)]">
                   Review Results on WhatsApp
                 </button>
               </div>
@@ -360,7 +357,7 @@ export default function Home() {
                 placeholder="Your phone number"
                 className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3"
               />
-              <button onClick={handleLeadSubmit} className="rounded-xl bg-[#D4AF37] px-5 text-sm font-semibold text-white">
+              <button onClick={handleLeadSubmit} className="rich-gradient-button rounded-xl px-5 text-sm font-semibold text-white">
                 Continue on WhatsApp
               </button>
             </div>
