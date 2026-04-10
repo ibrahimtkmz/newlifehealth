@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import SiteHeader from "./components/SiteHeader";
+import { useLanguage } from "./components/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -265,7 +267,7 @@ const content = {
 };
 
 export default function Home() {
-  const [lang, setLang] = useState("en");
+  const { lang } = useLanguage();
   const [form, setForm] = useState({ name: "", phone: "", treatment: "" });
   const [leadPhone, setLeadPhone] = useState("");
   const [popupOpen, setPopupOpen] = useState(false);
@@ -323,46 +325,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#FBFBFB] text-[#1A1A1A] selection:bg-[#D4AF37] selection:text-white">
-      <header className="sticky top-0 z-50 border-b border-white/30 bg-white/70 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-3 px-4 py-3 sm:h-20 sm:flex-nowrap sm:px-6 sm:py-0">
-          <a href="#" className="relative z-10 flex min-w-0 items-center gap-3 sm:gap-4">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#0C2E63]/15 bg-white sm:h-14 sm:w-14">
-              <Image src="/logo.png" alt="NL Health Tourism logo" width={56} height={56} className="block h-full w-full object-contain p-1" priority />
-            </div>
-            <div className="min-w-0">
-              <p className="truncate text-sm font-bold tracking-wide text-[#0C2E63] sm:text-lg">NL HEALTH TOURISM</p>
-              <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.14em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.18em]">INTERNATIONAL HEALTH</p>
-              <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.24em]">TOURISM AGENCY</p>
-            </div>
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
-            {t.navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="transition hover:text-[#D4AF37]">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex w-full items-center justify-end gap-2 sm:w-auto sm:gap-4">
-            <button
-              onClick={() => openPopup("freeQuote")}
-              className="rich-gradient-button rounded-full px-4 py-2 text-[0.65rem] font-semibold tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(58,12,163,0.35)] sm:px-5 sm:py-2.5 sm:text-xs sm:tracking-[0.12em]"
-            >
-              {t.freeQuote}
-            </button>
-            <select
-              value={lang}
-              onChange={(e) => setLang(e.target.value)}
-              className="rounded-full border border-[#1A1A1A]/15 bg-white/75 px-3 py-2 text-[0.65rem] font-semibold sm:px-4 sm:text-xs"
-            >
-              <option value="en">EN</option>
-              <option value="tr">TR</option>
-              <option value="ru">RU</option>
-            </select>
-          </div>
-        </div>
-      </header>
+      <SiteHeader onCtaClick={() => openPopup("freeQuote")} />
 
       <main className="mx-auto flex w-full max-w-[1280px] flex-col gap-16 px-4 pb-16 pt-8 sm:gap-24 sm:px-6 sm:pb-24 sm:pt-12">
         <section className="hero-rgb-gradient relative overflow-hidden rounded-[28px] border border-white/40 p-5 shadow-[0_30px_70px_rgba(26,26,26,0.22)] sm:rounded-[36px] sm:p-8 lg:p-14">

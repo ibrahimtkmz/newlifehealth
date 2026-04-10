@@ -1,15 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useLanguage } from "../components/LanguageProvider";
 import Link from "next/link";
-import { BarChart3, Globe2, ShieldCheck, Stethoscope, TimerReset, WalletCards } from "lucide-react";
+import { BarChart3, ShieldCheck, Stethoscope, TimerReset, WalletCards } from "lucide-react";
 import InnerPageLayout from "../components/InnerPageLayout";
-
-const LANGUAGE_OPTIONS = [
-  { code: "tr", label: "Türkçe" },
-  { code: "en", label: "English" },
-  { code: "ru", label: "Русский" }
-];
 
 const CONTENT = {
   tr: {
@@ -130,35 +125,13 @@ const CONTENT = {
 };
 
 export default function WhyTurkeyPage() {
-  const [lang, setLang] = useState("tr");
-  const data = useMemo(() => CONTENT[lang], [lang]);
+  const { lang } = useLanguage();
+  const data = useMemo(() => CONTENT[lang] || CONTENT.tr, [lang]);
 
   return (
     <InnerPageLayout title={data.title} subtitle={data.subtitle}>
       <div className="space-y-10 text-[#1A1A1A]/85">
-        <section className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-4 sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-2 text-sm font-semibold text-[#1A1A1A]">
-              <Globe2 className="h-4 w-4" />
-              Language
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {LANGUAGE_OPTIONS.map((item) => (
-                <button
-                  key={item.code}
-                  onClick={() => setLang(item.code)}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                    lang === item.code
-                      ? "bg-[#1A1A1A] text-white"
-                      : "border border-[#1A1A1A]/15 bg-[#FAFAFA] text-[#1A1A1A]/80 hover:bg-[#F2F2F2]"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         <section className="space-y-4">
           <div className="flex items-center gap-2 text-[#1A1A1A]">
