@@ -1,48 +1,70 @@
 import InnerPageLayout from "../components/InnerPageLayout";
+import Link from "next/link";
 
-const advantages = [
+const highlights = [
   {
-    title: "Klinik kalite + hekim deneyimi",
+    title: "Akreditasyon ve uzman hekimler",
     description:
-      "Türkiye; JCI akreditasyonlu hastaneleri, ileri teknoloji altyapısı ve uluslararası hasta deneyimi yüksek uzman kadroları ile öne çıkar. Tedavi planı her hastanın tıbbi geçmişi ve beklentisine göre kişiselleştirilir."
+      "Türkiye, JCI akreditasyonuna sahip çok sayıda hastanesi ve uluslararası deneyimi güçlü uzman kadrolarıyla güven veren bir tedavi ekosistemi sunar."
   },
   {
-    title: "Maliyet avantajı ve şeffaf paketleme",
+    title: "Erişilebilir ve rekabetçi maliyet",
     description:
-      "Birçok ülkede yüksek maliyetli olan işlemler, Türkiye'de kaliteyi koruyarak daha erişilebilir bütçelerle sunulur. Ön değerlendirme sonrasında süreç, kapsam ve ücretler net şekilde paylaşılır."
+      "Avrupa ve ABD ile kıyaslandığında, kaliteyi koruyan tedavilerde genellikle %50-%70 bandında maliyet avantajı sağlanır."
   },
   {
-    title: "Kısa bekleme süreleri",
+    title: "Hızlı randevu, kısa bekleme",
     description:
-      "Uzun randevu kuyrukları yerine hızlı planlama yapılır. Muayene, operasyon ve kontrol adımları doğru zamanlanarak hastanın ülkede geçireceği süre optimize edilir."
+      "Uzun aylar beklemeden muayene, operasyon ve kontrol adımlarını planlayabilir; tedavinize daha hızlı başlayabilirsiniz."
   },
   {
-    title: "VIP hasta deneyimi",
+    title: "Konforlu hasta yolculuğu",
     description:
-      "Havalimanı transferi, konaklama, tercüman desteği ve hastane koordinasyonu tek elden yürütülür. Böylece hasta sadece tedavisine odaklanır; operasyonel detaylarla vakit kaybetmez."
+      "THY ile kolay ulaşım, 5 yıldızlı konaklama, VIP transfer ve ana dilde tercüman desteğiyle süreç baştan sona konforlu ilerler."
   }
 ];
 
-const processSteps = [
+const treatmentComparison = [
   {
-    title: "1) Ön Değerlendirme ve Uygunluk Analizi",
-    text: "Online konsültasyon ile medikal geçmişiniz, beklentileriniz ve mevcut tetkikleriniz doktor ekibi tarafından incelenir. Gerekli görülürse ek testler istenir ve size en güvenli tedavi yaklaşımı belirlenir."
+    treatment: "Diş İmplantı",
+    ukUsPrice: "£1,500",
+    turkeyPrice: "£450",
+    savings: "%70"
   },
   {
-    title: "2) Tedavi Planı ve Seyahat Programı",
-    text: "Tedavi günü, operasyon süresi, kontrol randevuları, konaklama ve şehir içi transfer detayları net bir takvime bağlanır. Böylece Türkiye'ye gelişinizden dönüşünüze kadar sürecin tamamı öngörülebilir hale gelir."
+    treatment: "Saç Ekimi",
+    ukUsPrice: "$10,000",
+    turkeyPrice: "$2,000",
+    savings: "%80"
   },
   {
-    title: "3) Operasyon ve Hastane Süreci",
-    text: "İşlem günü doktor ve hasta koordinatörü eşliğinde tüm adımlar güvenlik protokollerine uygun şekilde yürütülür. Gerekli durumlarda çok disiplinli ekiplerle birlikte çalışılarak klinik başarı oranı artırılır."
+    treatment: "Mide Botoksu",
+    ukUsPrice: "€4,000",
+    turkeyPrice: "€1,200",
+    savings: "%70"
+  }
+];
+
+const stats = [
+  "Dünyada JCI akreditasyonuna sahip hastane sayısında öne çıkan ülkeler arasında.",
+  "Yıllık 1.5 milyondan fazla sağlık turisti Türkiye'yi tercih ediyor.",
+  "Dünyanın en iyi havayolları arasında gösterilen THY ile 120+ ülkeden direkt uçuş imkânı."
+];
+
+const expertiseAreas = ["Diş Tedavileri", "Estetik Cerrahi", "Saç Ekimi", "Obezite Cerrahisi", "Ortopedi ve Rehabilitasyon"];
+
+const cityExperiences = [
+  {
+    city: "İstanbul",
+    description: "Ayasofya, Boğaz turları ve dünya mutfağı ile iyileşme dönemini kültürel bir deneyime dönüştürür."
   },
   {
-    title: "4) Kontrol, Eğitim ve Taburculuk",
-    text: "İşlem sonrası bakım eğitimi detaylı olarak verilir; ilaç kullanımı, beslenme, hareket planı ve iyileşme takvimi hasta ile paylaşılır. Taburculuk kararı medikal kriterlere göre alınır."
+    city: "Antalya",
+    description: "Deniz, güneş ve premium oteller eşliğinde tedavi sonrası dinlenme için ideal bir atmosfer sunar."
   },
   {
-    title: "5) Ülkeye Dönüş Sonrası Dijital Takip",
-    text: "Hastalar ülkelerine döndükten sonra online kontrol randevuları ile takip edilir. İyileşme fotoğrafları, raporlar ve doktor değerlendirmeleri düzenli şekilde paylaşılır; böylece tedavi devamlılığı korunur."
+    city: "İzmir",
+    description: "Ege'nin sakin yaşam ritmi, sahil hattı ve kaliteli sağlık merkezleriyle dengeli bir süreç sağlar."
   }
 ];
 
@@ -50,27 +72,80 @@ export default function WhyTurkeyPage() {
   return (
     <InnerPageLayout
       title="Neden Türkiye?"
-      subtitle="Türkiye'yi neden tercih etmeliler? Sağlık turizminde kalite, hız, güven ve erişilebilir maliyeti bir araya getiren kapsamlı bir model sunuyoruz."
+      subtitle="Yurt dışında yaşayan hastalar için Türkiye; tıbbi kalite, ileri teknoloji, hızlı erişim ve yüksek konforu tek bir sağlık yolculuğunda birleştirir."
     >
       <div className="space-y-10 text-[#1A1A1A]/85">
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#1A1A1A]">Sağlık Turizminde Türkiye'nin Güçlü Konumu</h2>
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Sağlıkta Yükselen Küresel Merkez</h2>
           <p>
-            Türkiye; Avrupa, Orta Doğu ve Balkanlar arasında stratejik konumu, güçlü ulaşım ağı ve gelişmiş sağlık altyapısı sayesinde
-            uluslararası hastalar için en çok tercih edilen destinasyonlardan biridir. Estetik cerrahi, diş tedavileri, saç ekimi,
-            obezite cerrahisi ve rekonstrüktif işlemler gibi birçok alanda yüksek hasta memnuniyeti sunar.
+            Türkiye son yıllarda, uluslararası hasta kabulündeki tecrübesi, modern hastane yatırımları ve uzman hekim kadrolarıyla dünya çapında güçlü bir sağlık üssü haline geldi.
+            Özellikle Avrupa, Orta Doğu ve Kuzey Amerika'dan gelen hastalar; hem klinik başarıyı hem de planlama kolaylığını aynı anda bulabiliyor.
           </p>
-          <p>
-            Özellikle İstanbul, Ankara, İzmir ve Antalya gibi şehirlerde bulunan modern hastaneler; yüksek teknoloji ameliyathaneler,
-            gelişmiş tanı merkezleri ve deneyimli sağlık profesyonelleri ile dünya standartlarında hizmet verir. Bu kombinasyon,
-            Türkiye'yi yalnızca "uygun fiyat" seçeneği değil, aynı zamanda "yüksek değer" seçeneği haline getirir.
-          </p>
+          <div className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+            <h3 className="text-base font-semibold text-[#1A1A1A]">Rakamlarla Türkiye</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[#1A1A1A]/80">
+              {stats.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#1A1A1A]">Türkiye'yi Tercih Etmenin 4 Temel Avantajı</h2>
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Akreditasyon, Uzmanlık ve Klinik Güven</h2>
+          <p>
+            Türkiye'deki birçok hastane JCI standartlarına uygun süreç yönetimiyle hizmet verir. Hekimlerimiz uluslararası kongrelerde aktif rol alan,
+            global hasta profiliyle çalışan ve multidisipliner yaklaşımı benimseyen ekiplerden oluşur.
+          </p>
+          <div className="rounded-2xl bg-[#FBFBFB] p-5">
+            <h3 className="text-base font-semibold text-[#1A1A1A]">Öne Çıkan Uzmanlık Alanları</h3>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {expertiseAreas.map((area) => (
+                <span key={area} className="rounded-full border border-[#1A1A1A]/15 bg-white px-3 py-1 text-sm text-[#1A1A1A]/80">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Erişilebilir ve Rekabetçi Maliyet</h2>
+          <p>
+            Türkiye'nin en güçlü avantajlarından biri, yüksek kalite standardını korurken daha erişilebilir fiyatlar sunabilmesidir.
+            Buradaki yaklaşım "ucuz hizmet" değil; aynı tıbbi değeri daha rekabetçi koşullarla sunan sürdürülebilir bir modeldir.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-[#1A1A1A]/10">
+            <table className="min-w-full divide-y divide-[#1A1A1A]/10 text-left text-sm">
+              <thead className="bg-[#F5F5F5] text-[#1A1A1A]">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Tedavi Türü</th>
+                  <th className="px-4 py-3 font-semibold">İngiltere / ABD Fiyatı</th>
+                  <th className="px-4 py-3 font-semibold">Türkiye Fiyatı (Ort.)</th>
+                  <th className="px-4 py-3 font-semibold">Tasarruf Oranı</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#1A1A1A]/10 bg-white">
+                {treatmentComparison.map((item) => (
+                  <tr key={item.treatment}>
+                    <td className="px-4 py-3 font-medium text-[#1A1A1A]">{item.treatment}</td>
+                    <td className="px-4 py-3">{item.ukUsPrice}</td>
+                    <td className="px-4 py-3">{item.turkeyPrice}</td>
+                    <td className="px-4 py-3 text-[#0E7A36] font-semibold">{item.savings}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Teknoloji, Hız ve Konfor Bir Arada</h2>
+          <p>
+            Gelişmiş görüntüleme sistemleri, robotik/kapalı cerrahi altyapılar, modern operasyon odaları ve dijital hasta takip süreçleri sayesinde tedavi deneyimi hem güvenli hem de verimli hale gelir.
+          </p>
           <div className="grid gap-4 sm:grid-cols-2">
-            {advantages.map((item) => (
+            {highlights.map((item) => (
               <article key={item.title} className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
                 <h3 className="text-base font-semibold text-[#1A1A1A]">{item.title}</h3>
                 <p className="mt-2 text-sm text-[#1A1A1A]/75">{item.description}</p>
@@ -80,27 +155,42 @@ export default function WhyTurkeyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#1A1A1A]">Uçtan Uca Sağlık Turizmi Süreci Nasıl İşler?</h2>
-          <div className="space-y-3">
-            {processSteps.map((step) => (
-              <article key={step.title} className="rounded-2xl bg-[#FBFBFB] p-4">
-                <h3 className="text-sm font-semibold text-[#1A1A1A]">{step.title}</h3>
-                <p className="mt-1 text-sm text-[#1A1A1A]/75">{step.text}</p>
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Sadece Bir Tedavi Değil, Bir Deneyim</h2>
+          <p>
+            Türkiye'de sağlık yolculuğu, tatil konforuyla birleşir. Tedavi sürecinizi; kültürel keşif, doğa ve dinlenme fırsatlarıyla destekleyerek psikolojik olarak da daha iyi hissetmenizi hedefleriz.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {cityExperiences.map((item) => (
+              <article key={item.city} className="rounded-2xl bg-[#FBFBFB] p-5">
+                <h3 className="text-base font-semibold text-[#1A1A1A]">{item.city}</h3>
+                <p className="mt-2 text-sm text-[#1A1A1A]/75">{item.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#1A1A1A]">Hangi Hastalar İçin Uygun?</h2>
+        <section className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-[#1A1A1A]">Güvenlik ve Uçtan Uca Destek</h2>
           <p>
-            Yurt dışında yaşayıp güvenilir klinik arayan, tedavisini daha kısa sürede planlamak isteyen veya kalite/maliyet dengesini
-            optimize etmek isteyen hastalar için Türkiye güçlü bir seçenektir. Ancak her işlem öncesinde tıbbi uygunluk değerlendirmesi
-            zorunludur; nihai karar doktor muayenesi ve klinik bulgulara göre verilir.
+            İlk danışmanlıktan Türkiye'ye varışınıza, tedavi gününden ülkenize döndükten sonraki kontrol süreçlerine kadar her adımda yanınızdayız.
+            Amacımız yalnızca başarılı bir operasyon değil, size kendinizi güvende hissettiren bütünsel bir iyileşme deneyimi sunmak.
           </p>
-          <p>
-            Bizim yaklaşımımız; hasta güvenliği, şeffaf bilgilendirme ve gerçekçi beklenti yönetimi üzerine kuruludur. Bu sayede yalnızca
-            operasyon anına değil, operasyon sonrası iyileşme kalitesine de odaklanan sürdürülebilir bir sağlık turizmi deneyimi sunarız.
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="rounded-full bg-[#1A1A1A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#333333]"
+            >
+              Ücretsiz Konsültasyon Alın
+            </Link>
+            <Link
+              href="/before-after"
+              className="rounded-full border border-[#1A1A1A]/20 bg-white px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] transition hover:bg-[#F5F5F5]"
+            >
+              Öncesi / Sonrası Galerisi
+            </Link>
+          </div>
+          <p className="text-sm text-[#1A1A1A]/70">
+            Gerçek hasta deneyimlerini görmek için galeri ve yorumlar bölümümüzü inceleyebilir, size özel yol haritasını hemen oluşturabilirsiniz.
           </p>
         </section>
       </div>
