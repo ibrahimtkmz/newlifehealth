@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Building2,
   CalendarCheck2,
@@ -23,7 +24,14 @@ const whatsappNumber = "905000000000";
 const content = {
   en: {
     langLabel: "EN",
-    navLinks: ["Why Turkey?", "Treatments", "VIP Services", "Before & After", "Blog", "Contact"],
+    navLinks: [
+      { label: "Why Turkey?", href: "/why-turkey" },
+      { label: "Treatments", href: "/treatments" },
+      { label: "VIP Services", href: "/vip-services" },
+      { label: "Before & After", href: "/before-after" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" }
+    ],
     freeQuote: "GET FREE QUOTE",
     trusted: "Trusted by Global Patients",
     heroTitle: "TRANSFORM YOURSELF IN TURKEY. VIP MEDICAL JOURNEYS.",
@@ -114,7 +122,14 @@ const content = {
   },
   tr: {
     langLabel: "TR",
-    navLinks: ["Neden Türkiye?", "Tedaviler", "VIP Hizmetler", "Öncesi & Sonrası", "Blog", "İletişim"],
+    navLinks: [
+      { label: "Neden Türkiye?", href: "/why-turkey" },
+      { label: "Tedaviler", href: "/treatments" },
+      { label: "VIP Hizmetler", href: "/vip-services" },
+      { label: "Öncesi & Sonrası", href: "/before-after" },
+      { label: "Blog", href: "/blog" },
+      { label: "İletişim", href: "/contact" }
+    ],
     freeQuote: "ÜCRETSİZ TEKLİF AL",
     trusted: "Dünya Çapında Hastalar Tarafından Tercih Ediliyor",
     heroTitle: "TÜRKİYE'DE DÖNÜŞÜMÜNÜZÜ BAŞLATIN. VIP MEDİKAL YOLCULUKLAR.",
@@ -178,7 +193,14 @@ const content = {
   },
   ru: {
     langLabel: "RU",
-    navLinks: ["Почему Турция?", "Лечение", "VIP Услуги", "До/После", "Блог", "Контакты"],
+    navLinks: [
+      { label: "Почему Турция?", href: "/why-turkey" },
+      { label: "Лечение", href: "/treatments" },
+      { label: "VIP Услуги", href: "/vip-services" },
+      { label: "До/После", href: "/before-after" },
+      { label: "Блог", href: "/blog" },
+      { label: "Контакты", href: "/contact" }
+    ],
     freeQuote: "ПОЛУЧИТЬ БЕСПЛАТНЫЙ РАСЧЁТ",
     trusted: "Нам доверяют пациенты со всего мира",
     heroTitle: "ПРЕОБРАЖЕНИЕ В ТУРЦИИ. VIP МЕДИЦИНСКИЕ ТУРЫ.",
@@ -316,9 +338,9 @@ export default function Home() {
 
           <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
             {t.navLinks.map((link) => (
-              <a key={link} href="#" className="transition hover:text-[#D4AF37]">
-                {link}
-              </a>
+              <Link key={link.href} href={link.href} className="transition hover:text-[#D4AF37]">
+                {link.label}
+              </Link>
             ))}
           </nav>
 
