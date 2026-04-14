@@ -18,7 +18,11 @@ import {
   Stethoscope,
   Smile,
   UserRound,
-  Video
+  Video,
+  Users,
+  Award,
+  Globe,
+  ThumbsUp
 } from "lucide-react";
 
 const whatsappNumber = "905000000000";
@@ -120,6 +124,13 @@ const content = {
     popupSources: {
       freeQuote: "Free Quote",
       beforeAfter: "Before & After Review"
+    },
+    stats: {
+      title: "Our Results Speak",
+      patients: "Happy Patients",
+      satisfaction: "Satisfaction Rate",
+      countries: "Countries Served",
+      experience: "Years Experience"
     }
   },
   tr: {
@@ -191,6 +202,13 @@ const content = {
     popupSources: {
       freeQuote: "Ücretsiz Teklif",
       beforeAfter: "Öncesi/Sonrası İnceleme"
+    },
+    stats: {
+      title: "Sonuçlarımız Konuşuyor",
+      patients: "Mutlu Hasta",
+      satisfaction: "Memnuniyet Oranı",
+      countries: "Hizmet Verilen Ülke",
+      experience: "Yıllık Deneyim"
     }
   },
   ru: {
@@ -262,6 +280,13 @@ const content = {
     popupSources: {
       freeQuote: "Бесплатный расчёт",
       beforeAfter: "Запрос До/После"
+    },
+    stats: {
+      title: "Наши результаты говорят сами за себя",
+      patients: "Довольных пациентов",
+      satisfaction: "Уровень удовлетворенности",
+      countries: "Стран обслужено",
+      experience: "Лет опыта"
     }
   }
 };
@@ -353,6 +378,68 @@ export default function Home() {
                   {t.requestConsultation}
                 </button>
               </motion.form>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
+        <section className="rounded-[28px] border border-[#1A1A1A]/10 bg-white p-6 shadow-[0_20px_50px_rgba(26,26,26,0.06)] sm:rounded-[36px] sm:p-10">
+          <h2 className="mb-8 text-center text-xl font-semibold text-[#1A1A1A] sm:text-2xl">{t.stats.title}</h2>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="flex flex-col items-center rounded-2xl bg-gradient-to-br from-[#3a0ca3]/10 to-[#f72585]/10 p-5 text-center sm:p-6"
+            >
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#3a0ca3]/15 sm:h-14 sm:w-14">
+                <Users className="h-6 w-6 text-[#3a0ca3] sm:h-7 sm:w-7" />
+              </div>
+              <p className="text-2xl font-bold text-[#1A1A1A] sm:text-3xl">15,000+</p>
+              <p className="mt-1 text-xs font-medium text-[#1A1A1A]/70 sm:text-sm">{t.stats.patients}</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-col items-center rounded-2xl bg-gradient-to-br from-[#f72585]/10 to-[#ff7f51]/10 p-5 text-center sm:p-6"
+            >
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#f72585]/15 sm:h-14 sm:w-14">
+                <ThumbsUp className="h-6 w-6 text-[#f72585] sm:h-7 sm:w-7" />
+              </div>
+              <p className="text-2xl font-bold text-[#1A1A1A] sm:text-3xl">98%</p>
+              <p className="mt-1 text-xs font-medium text-[#1A1A1A]/70 sm:text-sm">{t.stats.satisfaction}</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col items-center rounded-2xl bg-gradient-to-br from-[#4cc9f0]/10 to-[#3a0ca3]/10 p-5 text-center sm:p-6"
+            >
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#4cc9f0]/15 sm:h-14 sm:w-14">
+                <Globe className="h-6 w-6 text-[#0891b2] sm:h-7 sm:w-7" />
+              </div>
+              <p className="text-2xl font-bold text-[#1A1A1A] sm:text-3xl">85+</p>
+              <p className="mt-1 text-xs font-medium text-[#1A1A1A]/70 sm:text-sm">{t.stats.countries}</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-col items-center rounded-2xl bg-gradient-to-br from-[#D4AF37]/10 to-[#f8961e]/10 p-5 text-center sm:p-6"
+            >
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/15 sm:h-14 sm:w-14">
+                <Award className="h-6 w-6 text-[#D4AF37] sm:h-7 sm:w-7" />
+              </div>
+              <p className="text-2xl font-bold text-[#1A1A1A] sm:text-3xl">12+</p>
+              <p className="mt-1 text-xs font-medium text-[#1A1A1A]/70 sm:text-sm">{t.stats.experience}</p>
             </motion.div>
           </div>
         </section>
