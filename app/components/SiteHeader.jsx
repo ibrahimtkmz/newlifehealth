@@ -52,7 +52,7 @@ export default function SiteHeader({ onCtaClick }) {
             <Image src="/logo.png" alt="NL Health Tourism logo" width={56} height={56} className="block h-full w-full object-contain p-1" priority />
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-bold tracking-wide text-[#0C2E63] sm:text-lg">NL HEALTH TOURISM</p>
+            <p className="truncate text-sm font-bold tracking-wide text-[#0C2E63] sm:text-lg">NEWLIFE HEALTH TOURISM</p>
             <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.14em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.18em]">INTERNATIONAL HEALTH</p>
             <p className="truncate text-[0.55rem] uppercase leading-tight tracking-[0.18em] text-[#1A1A1A]/65 sm:text-[0.64rem] sm:tracking-[0.24em]">TOURISM AGENCY</p>
           </div>
