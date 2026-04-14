@@ -18,7 +18,6 @@ import {
   Stethoscope,
   Smile,
   UserRound,
-  Video,
   Users,
   Award,
   Globe,
@@ -77,7 +76,7 @@ const content = {
     videoPlaceholder: "Video Wall Placeholder",
     about: "About Us",
     aboutP1:
-      "At NL Health Tourism, our vision is to ensure international patients receive a safe, well-planned, and human-centered treatment experience in Turkey.",
+      "At NewLife Health Tourism, our vision is to ensure international patients receive a safe, well-planned, and human-centered treatment experience in Turkey.",
     aboutP2:
       "With our specialist doctor network and experienced patient relations team, we deliver lasting satisfaction in hair transplantation, dental aesthetics, and plastic surgery.",
     packages: "Service Packages",
@@ -171,7 +170,7 @@ const content = {
     videosSub: "Özgüven, iyileşme ve 5 yıldızlı hizmeti anlatan gerçek hikayeler.",
     videoPlaceholder: "Video Alanı",
     about: "Hakkımızda",
-    aboutP1: "NL Health Tourism olarak vizyonumuz, uluslararası hastalara Türkiye'de güvenli ve planlı bir tedavi deneyimi sunmaktır.",
+    aboutP1: "NewLife Health Tourism olarak vizyonumuz, uluslararası hastalara Türkiye'de güvenli ve planlı bir tedavi deneyimi sunmaktır.",
     aboutP2: "Uzman doktor ağımız ve deneyimli hasta ilişkileri ekibimizle kalıcı memnuniyet hedefliyoruz.",
     packages: "Hizmet Paketleri",
     packagesTitle: "Size En Uygun Tedavi Deneyimini Seçin",
@@ -249,7 +248,7 @@ const content = {
     videosSub: "Реальные истории о восстановлении, уверенности и сервисе 5★.",
     videoPlaceholder: "Зона видео",
     about: "О нас",
-    aboutP1: "NL Health Tourism обеспечивает безопасное и тщательно спланированное лечение для иностранных пациентов в Турции.",
+    aboutP1: "NewLife Health Tourism обеспечивает безопасное и тщательно спланированное лечение для иностранных пациентов в Турции.",
     aboutP2: "Сеть профильных врачей и опытная команда сопровождения помогают достигать долгосрочной удовлетворенности.",
     packages: "Пакеты услуг",
     packagesTitle: "Выберите подходящий формат лечения",
@@ -473,32 +472,27 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
-            <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
-            <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
-            <div className="relative mt-6">
-              <div className="grid grid-cols-3 gap-3 blur-[4px]">
-                {["before", "after", "result"].map((item) => (
-                  <div key={item} className="h-32 rounded-2xl bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1612276529731-4b21494e6d71?auto=format&fit=crop&w=500&q=80')" }} />
-                ))}
+        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
+          <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
+          <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+              <div key={num} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+                <Image 
+                  src={`/before-after/${num}.jpg`} 
+                  alt={`Before & After ${num}`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
               </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-[#1A1A1A]/45 p-4 text-center">
-                <p className="max-w-xs text-sm font-medium text-white">{t.beforeAfterOverlay}</p>
-                <button onClick={() => openPopup("beforeAfter")} className="rich-gradient-button mt-3 rounded-full px-4 py-2 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)]">
-                  {t.beforeAfterButton}
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
-            <h3 className="text-xl font-semibold sm:text-2xl">{t.videos}</h3>
-            <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.videosSub}</p>
-            <div className="mt-6 flex h-44 items-center justify-center rounded-2xl border border-dashed border-[#1A1A1A]/20 bg-gradient-to-br from-[#1A1A1A]/5 to-[#000080]/10 text-[#1A1A1A]/75">
-              <Video className="mr-2" /> {t.videoPlaceholder}
-            </div>
-          </article>
+            ))}
+          </div>
+          <div className="mt-6 flex justify-center">
+            <button onClick={() => openPopup("beforeAfter")} className="rich-gradient-button rounded-full px-6 py-3 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)] sm:text-sm">
+              {t.beforeAfterButton}
+            </button>
+          </div>
         </section>
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
@@ -570,10 +564,10 @@ export default function Home() {
 
           <div className="space-y-2 text-sm text-[#1A1A1A]/75">
             <p className="font-semibold text-[#1A1A1A]">Istanbul Office</p>
-            <p>Nispetiye Cad. No: 22, Besiktas, Istanbul, Turkey</p>
+            <p>Fulya Mh. Buyukdere Cd, Fulya, Akinci Bayiri Sk. No: 74, 34394 Sisli/Istanbul</p>
             <p>WhatsApp: +90 500 000 00 00</p>
             <p>Phone: +90 212 000 00 00</p>
-            <p>Email: info@nlsaglikturizmi.com</p>
+            <p>Email: newlifehealth.tr@gmail.com</p>
           </div>
         </div>
       </footer>
