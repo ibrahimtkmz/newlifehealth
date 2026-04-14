@@ -264,7 +264,7 @@ const content = {
     whyTurkey: "Почему Турция?",
     whyTurkeyP1: "Турция стала ключевым центром медицинского туризма благодаря аккредитованным клиникам и экспертным хирургам.",
     whyTurkeyP2: "В Стамбуле медицинское качество сочетается с комфортным проживанием и удобной логистикой.",
-    whyPoints: ["Опытные команды хирургов с международным портфолио.", "Аккредитованные клиники и современное оборудование.", "Прозрачный процесс и полная поддержка поездки."],
+    whyPoints: ["Опытные команды хирургов с международным портфолио.", "Аккредитованные клиники и современное оборудование.", "Прозрачный процесс и полная п��ддержка поездки."],
     leadLabel: "Быстрая заявка",
     leadTitle: "Получите быстрый обратный звонок",
     leadSub: "Оставьте номер телефона, и мы сразу перенаправим вас в WhatsApp.",
@@ -476,15 +476,26 @@ export default function Home() {
           <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
           <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
           <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-              <div key={num} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+            {[
+              { src: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop", label: "Hair Transplant" },
+              { src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=400&fit=crop", label: "Dental" },
+              { src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop", label: "Rhinoplasty" },
+              { src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=400&fit=crop", label: "Aesthetic" },
+              { src: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=400&fit=crop", label: "Smile Design" },
+              { src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop", label: "Hair Result" },
+              { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop", label: "Body" },
+              { src: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop", label: "Face" }
+            ].map((item, index) => (
+              <div key={index} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
                 <Image 
-                  src={`/before-after/${num}.jpg`} 
-                  alt={`Before & After ${num}`}
+                  src={item.src} 
+                  alt={item.label}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <p className="absolute bottom-2 left-2 right-2 text-center text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">{item.label}</p>
               </div>
             ))}
           </div>
