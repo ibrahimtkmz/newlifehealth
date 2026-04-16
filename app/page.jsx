@@ -68,13 +68,14 @@ const content = {
     stepLabel: "Step",
     journeyTitle: "VIP Journey",
     journey: ["Free Consultation", "VIP Flight & Transfer", "Premium Clinic Procedure", "Luxury Recovery", "Aftercare"],
-    beforeAfter: "BEFORE & AFTER GALLERY",
-    beforeAfterSub: "We share treatment quality insights while fully protecting patient privacy.",
-    beforeAfterOverlay: "In line with medical ethics, we show full results only to our active patients.",
-    beforeAfterButton: "Review Results on WhatsApp",
-    beforeLabel: "Before",
-    afterLabel: "After",
-    galleryContactText: "Contact us to see the results.",
+    carePromiseTitle: "Your Comfort-Focused Care Experience",
+    carePromiseSub: "From airport welcome to post-op check-ins, every step is designed for safety, speed, and peace of mind.",
+    carePromiseItems: [
+      "Dedicated patient coordinator available in your language.",
+      "Internationally aligned treatment planning and transparent process.",
+      "24/7 WhatsApp assistance during your full treatment journey."
+    ],
+    carePromiseButton: "Explore VIP Services",
     videos: "PATIENT TESTIMONIAL VIDEOS",
     videosSub: "Authentic stories capturing confidence, recovery, and five-star service.",
     videoPlaceholder: "Video Wall Placeholder",
@@ -203,13 +204,14 @@ const content = {
     stepLabel: "Adım",
     journeyTitle: "VIP Yolculuk Adımları",
     journey: ["Ücretsiz Danışmanlık", "VIP Uçuş & Transfer", "Premium Klinik İşlemi", "Lüks İyileşme", "Takip Süreci"],
-    beforeAfter: "ÖNCESİ & SONRASI GALERİSİ",
-    beforeAfterSub: "Hasta gizliliğini koruyarak tedavi kalitesi hakkında bilgi paylaşıyoruz.",
-    beforeAfterOverlay: "Tıbbi etik gereği detaylı sonuçları yalnızca aktif hastalarımızla paylaşıyoruz.",
-    beforeAfterButton: "WhatsApp'ta Sonuçları Gör",
-    beforeLabel: "Öncesi",
-    afterLabel: "Sonrası",
-    galleryContactText: "Sonuçları görmek için bizimle iletişime geçin.",
+    carePromiseTitle: "Konfor Odaklı Tedavi Deneyimi",
+    carePromiseSub: "Havalimanı karşılama anından tedavi sonrası kontrole kadar tüm süreç güven, hız ve konfor için tasarlanır.",
+    carePromiseItems: [
+      "Kendi dilinizde destek veren özel hasta danışmanı.",
+      "Uluslararası standartlara uygun planlama ve şeffaf operasyon akışı.",
+      "Tedavi yolculuğunuz boyunca 7/24 WhatsApp desteği."
+    ],
+    carePromiseButton: "VIP Hizmetleri İncele",
     videos: "HASTA DENEYİM VİDEOLARI",
     videosSub: "Özgüven, iyileşme ve 5 yıldızlı hizmeti anlatan gerçek hikayeler.",
     videoPlaceholder: "Video Alanı",
@@ -321,13 +323,14 @@ const content = {
     stepLabel: "Шаг",
     journeyTitle: "Этапы VIP-путешествия",
     journey: ["Бесплатная консультация", "VIP перелет и трансфер", "Процедура в премиум клинике", "Комфортное восстановление", "Послеоперационное сопровождение"],
-    beforeAfter: "ГАЛЕРЕЯ ДО/ПОСЛЕ",
-    beforeAfterSub: "Мы делимся качеством лечения, полностью соблюдая конфиденциальность пациентов.",
-    beforeAfterOverlay: "По медицинской этике полные результаты доступны только нашим активным пациентам.",
-    beforeAfterButton: "Посмотреть результаты в WhatsApp",
-    beforeLabel: "До",
-    afterLabel: "После",
-    galleryContactText: "Свяжитесь с нами, чтобы увидеть результаты.",
+    carePromiseTitle: "Комфортный формат лечения под ключ",
+    carePromiseSub: "От встречи в аэропорту до послеоперационных проверок — каждый этап продуман для безопасности и спокойствия.",
+    carePromiseItems: [
+      "Персональный координатор пациента на вашем языке.",
+      "Прозрачный план лечения в соответствии с международными стандартами.",
+      "Поддержка в WhatsApp 24/7 на всем пути лечения."
+    ],
+    carePromiseButton: "Посмотреть VIP-услуги",
     videos: "ВИДЕО-ОТЗЫВЫ ПАЦИЕНТОВ",
     videosSub: "Реальные истории о восстановлении, уверенности и сервисе 5★.",
     videoPlaceholder: "Зона видео",
@@ -434,24 +437,11 @@ export default function Home() {
     { title: t.journey[4], icon: <Clock3 size={20} /> }
   ];
 
-  const beforeAfterCases = [
-    { before: "/1.jpeg", after: "/1.jpeg" },
-    { before: "/2.jpeg", after: "/2.jpeg" },
-    { before: "/3.jpeg", after: "/3.jpeg" },
-    { before: "/4.jpeg", after: "/4.jpeg" },
-    { before: "/5.jpeg", after: "/5.jpeg" },
-    { before: "/6.jpeg", after: "/6.jpeg" },
-    { before: "/7.jpeg", after: "/7.jpeg" },
-    { before: "/8.jpeg", after: "/8.jpeg" },
-    { before: "/9.jpeg", after: "/9.jpeg" },
-    { before: "/10.jpeg", after: "/10-1.jpeg" }
-  ];
-
   const clinicPhotos = [
-    "https://cms.cuhadaroglu.com/uploads/Torun%20Center%20%20%20%20%20%20%20%20%20%20%20%20.jpeg",
-    "https://www.kone.com.tr/Images/Torun-Center-1440x670_tcm115-110346.jpg",
-    "https://scontent.fist4-1.fna.fbcdn.net/v/t39.30808-6/470690195_584839547463556_8367877931230610121_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2a1932&_nc_ohc=FxGNZ2nsilwQ7kNvwEQ0jT3&_nc_oc=Adrg01vNCwWcQQg8o6SKIojPwS1-8BXI2zQIdmRkQu34UaKOQ7edJr5uULFvo9FkY4c&_nc_zt=23&_nc_ht=scontent.fist4-1.fna&_nc_gid=XGalXLHLaClKKzVDF9vR1A&_nc_ss=7a3a8&oh=00_Af1j_GUDBXR0NsNGkZyE_GDqogKs_n1JRtmQ7nJydIXEEA&oe=69E689BB",
-    "https://avatars.mds.yandex.net/get-altay/7740052/2a0000018489cbb17fe5500e88c478451e4c/L_height"
+    "/6.jpeg",
+    "/7.jpeg",
+    "/8.jpeg",
+    "/9.jpeg"
   ];
 
   const openPopup = (source) => {
@@ -630,50 +620,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
-          <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
-          <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {beforeAfterCases.map((item, index) => (
-              <div key={`before-after-${index}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-3 sm:p-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
-                    <p className="border-b border-[#1A1A1A]/10 bg-white px-2 py-1 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1A1A1A]/70 sm:text-xs">
-                      {t.beforeLabel}
-                    </p>
-                    <div className="relative aspect-square">
-                      <Image
-                        src={item.before}
-                        alt={`${t.beforeLabel} ${index + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-300 hover:scale-105"
-                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 24vw"
-                      />
-                    </div>
+        <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div>
+              <h3 className="text-xl font-semibold sm:text-2xl">{t.carePromiseTitle}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/70">{t.carePromiseSub}</p>
+              <div className="mt-5 space-y-3">
+                {t.carePromiseItems?.map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-3">
+                    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37]/20 text-[#7a5b00]">
+                      <ShieldCheck size={13} />
+                    </span>
+                    <p className="text-sm text-[#1A1A1A]/80">{item}</p>
                   </div>
-                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
-                    <p className="border-b border-[#1A1A1A]/10 bg-white px-2 py-1 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1A1A1A]/70 sm:text-xs">
-                      {t.afterLabel}
-                    </p>
-                    <div className="relative aspect-square">
-                      <Image
-                        src={item.after}
-                        alt={`${t.afterLabel} ${index + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-300 hover:scale-105"
-                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 24vw"
-                      />
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <p className="mt-4 text-center text-sm font-medium text-[#1A1A1A]/75">{t.galleryContactText}</p>
-          <div className="mt-6 flex justify-center">
-            <button onClick={() => openPopup("beforeAfter")} className="rich-gradient-button rounded-full px-6 py-3 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)] sm:text-sm">
-              {t.beforeAfterButton}
-            </button>
+              <div className="mt-6">
+                <Link href="/vip-services" className="rich-gradient-button inline-flex rounded-full px-6 py-3 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)] sm:text-sm">
+                  {t.carePromiseButton}
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {clinicPhotos.slice(0, 4).map((photo, index) => (
+                <div key={`clinic-photo-${index}`} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#1A1A1A]/10">
+                  <Image
+                    src={photo}
+                    alt={`Clinic view ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 18vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
