@@ -71,6 +71,11 @@ const content = {
     beforeAfterSub: "We share treatment quality insights while fully protecting patient privacy.",
     beforeAfterOverlay: "In line with medical ethics, we show full results only to our active patients.",
     beforeAfterButton: "Review Results on WhatsApp",
+    galleryFilters: {
+      operation: "Operations",
+      aesthetic: "Aesthetic Treatments"
+    },
+    galleryContactText: "Contact us to see the results.",
     videos: "PATIENT TESTIMONIAL VIDEOS",
     videosSub: "Authentic stories capturing confidence, recovery, and five-star service.",
     videoPlaceholder: "Video Wall Placeholder",
@@ -166,6 +171,11 @@ const content = {
     beforeAfterSub: "Hasta gizliliğini koruyarak tedavi kalitesi hakkında bilgi paylaşıyoruz.",
     beforeAfterOverlay: "Tıbbi etik gereği detaylı sonuçları yalnızca aktif hastalarımızla paylaşıyoruz.",
     beforeAfterButton: "WhatsApp'ta Sonuçları Gör",
+    galleryFilters: {
+      operation: "Operasyonlar",
+      aesthetic: "Estetik Tedaviler"
+    },
+    galleryContactText: "Sonuçları görmek için bizimle iletişime geçin.",
     videos: "HASTA DENEYİM VİDEOLARI",
     videosSub: "Özgüven, iyileşme ve 5 yıldızlı hizmeti anlatan gerçek hikayeler.",
     videoPlaceholder: "Video Alanı",
@@ -244,6 +254,11 @@ const content = {
     beforeAfterSub: "Мы делимся качеством лечения, полностью соблюдая конфиденциальность пациентов.",
     beforeAfterOverlay: "По медицинской этике полные результаты доступны только нашим активным пациентам.",
     beforeAfterButton: "Посмотреть результаты в WhatsApp",
+    galleryFilters: {
+      operation: "Операции",
+      aesthetic: "Эстетические процедуры"
+    },
+    galleryContactText: "Свяжитесь с нами, чтобы увидеть результаты.",
     videos: "ВИДЕО-ОТЗЫВЫ ПАЦИЕНТОВ",
     videosSub: "Реальные истории о восстановлении, уверенности и сервисе 5★.",
     videoPlaceholder: "Зона видео",
@@ -297,6 +312,7 @@ export default function Home() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupSource, setPopupSource] = useState("freeQuote");
   const [popupForm, setPopupForm] = useState({ name: "", phone: "", treatment: "", note: "" });
+  const [selectedGallery, setSelectedGallery] = useState("operation");
 
   const t = useMemo(() => content[lang], [lang]);
 
@@ -312,6 +328,18 @@ export default function Home() {
     { title: t.journey[2], icon: <Stethoscope size={20} /> },
     { title: t.journey[3], icon: <Hotel size={20} /> },
     { title: t.journey[4], icon: <Clock3 size={20} /> }
+  ];
+
+  const beforeAfterImages = {
+    operation: [1, 2, 3, 4].map((num) => `/before-after/${num}.jpg`),
+    aesthetic: [5, 6, 7, 8].map((num) => `/before-after/${num}.jpg`)
+  };
+
+  const clinicPhotos = [
+    "https://cms.cuhadaroglu.com/uploads/Torun%20Center%20%20%20%20%20%20%20%20%20%20%20%20.jpeg",
+    "https://www.kone.com.tr/Images/Torun-Center-1440x670_tcm115-110346.jpg",
+    "https://scontent.fist4-1.fna.fbcdn.net/v/t39.30808-6/470690195_584839547463556_8367877931230610121_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2a1932&_nc_ohc=FxGNZ2nsilwQ7kNvwEQ0jT3&_nc_oc=Adrg01vNCwWcQQg8o6SKIojPwS1-8BXI2zQIdmRkQu34UaKOQ7edJr5uULFvo9FkY4c&_nc_zt=23&_nc_ht=scontent.fist4-1.fna&_nc_gid=XGalXLHLaClKKzVDF9vR1A&_nc_ss=7a3a8&oh=00_Af1j_GUDBXR0NsNGkZyE_GDqogKs_n1JRtmQ7nJydIXEEA&oe=69E689BB",
+    "https://avatars.mds.yandex.net/get-altay/7740052/2a0000018489cbb17fe5500e88c478451e4c/L_height"
   ];
 
   const openPopup = (source) => {
@@ -475,19 +503,37 @@ export default function Home() {
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
           <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
           <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {Object.entries(t.galleryFilters).map(([key, label]) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setSelectedGallery(key)}
+                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.05em] transition sm:text-sm ${
+                  selectedGallery === key
+                    ? "bg-[#1A1A1A] text-white"
+                    : "border border-[#1A1A1A]/15 bg-[#FBFBFB] text-[#1A1A1A]/70 hover:bg-[#1A1A1A]/5"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
           <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-              <div key={num} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
-                <Image 
-                  src={`/before-after/${num}.jpg`} 
-                  alt={`Before & After ${num}`}
+            {beforeAfterImages[selectedGallery].map((src, index) => (
+              <div key={`${selectedGallery}-${index}`} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+                <Image
+                  src={src}
+                  alt={`Before & After ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover blur-sm transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-black/20" />
               </div>
             ))}
           </div>
+          <p className="mt-4 text-center text-sm font-medium text-[#1A1A1A]/75">{t.galleryContactText}</p>
           <div className="mt-6 flex justify-center">
             <button onClick={() => openPopup("beforeAfter")} className="rich-gradient-button rounded-full px-6 py-3 text-xs font-semibold tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(58,12,163,0.35)] sm:text-sm">
               {t.beforeAfterButton}
@@ -531,8 +577,8 @@ export default function Home() {
             <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">{t.clinicsTitle}</h3>
             <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/70">{t.clinicsSub}</p>
             <div className="mt-6 grid grid-cols-2 gap-4">
-              {["before", "after", "result"].map((item) => (
-                <div key={item} className="h-32 rounded-2xl bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80')" }} />
+              {clinicPhotos.map((photo, index) => (
+                <div key={photo} className="h-32 rounded-2xl bg-cover bg-center sm:h-36" style={{ backgroundImage: `url('${photo}')` }} aria-label={`Clinic photo ${index + 1}`} />
               ))}
             </div>
           </article>
