@@ -6,11 +6,16 @@ import { useLanguage } from "../components/LanguageProvider";
 import { Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
 
 const BEFORE_AFTER_CASES = [
-  {
-    treatment: "dental",
-    before: "/10.jpeg",
-    after: "/10-1.jpeg"
-  }
+  { treatment: "dental", before: "/1.jpeg", after: "/1.jpeg" },
+  { treatment: "dental", before: "/2.jpeg", after: "/2.jpeg" },
+  { treatment: "dental", before: "/3.jpeg", after: "/3.jpeg" },
+  { treatment: "dental", before: "/4.jpeg", after: "/4.jpeg" },
+  { treatment: "dental", before: "/5.jpeg", after: "/5.jpeg" },
+  { treatment: "dental", before: "/6.jpeg", after: "/6.jpeg" },
+  { treatment: "dental", before: "/7.jpeg", after: "/7.jpeg" },
+  { treatment: "dental", before: "/8.jpeg", after: "/8.jpeg" },
+  { treatment: "dental", before: "/9.jpeg", after: "/9.jpeg" },
+  { treatment: "dental", before: "/10.jpeg", after: "/10-1.jpeg" }
 ];
 
 const CONTENT = {
