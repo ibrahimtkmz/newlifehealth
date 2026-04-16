@@ -438,10 +438,10 @@ export default function Home() {
   ];
 
   const clinicPhotos = [
-    "/6.jpeg",
-    "/7.jpeg",
-    "/8.jpeg",
-    "/9.jpeg"
+    "https://cms.cuhadaroglu.com/uploads/Torun%20Center%20%20%20%20%20%20%20%20%20%20%20%20.jpeg",
+    "https://www.kone.com.tr/Images/Torun-Center-1440x670_tcm115-110346.jpg",
+    "https://scontent.fist4-1.fna.fbcdn.net/v/t39.30808-6/470690195_584839547463556_8367877931230610121_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2a1932&_nc_ohc=FxGNZ2nsilwQ7kNvwEQ0jT3&_nc_oc=Adrg01vNCwWcQQg8o6SKIojPwS1-8BXI2zQIdmRkQu34UaKOQ7edJr5uULFvo9FkY4c&_nc_zt=23&_nc_ht=scontent.fist4-1.fna&_nc_gid=XGalXLHLaClKKzVDF9vR1A&_nc_ss=7a3a8&oh=00_Af1j_GUDBXR0NsNGkZyE_GDqogKs_n1JRtmQ7nJydIXEEA&oe=69E689BB",
+    "https://avatars.mds.yandex.net/get-altay/7740052/2a0000018489cbb17fe5500e88c478451e4c/L_height"
   ];
 
   const openPopup = (source) => {
