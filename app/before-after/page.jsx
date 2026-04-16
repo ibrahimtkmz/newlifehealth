@@ -8,6 +8,42 @@ import { Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity }
 const BEFORE_AFTER_CASES = [
   {
     treatment: "dental",
+    before: "/1.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/2.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/3.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/4.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/5.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/6.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/7.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/8.jpeg"
+  },
+  {
+    treatment: "dental",
+    before: "/9.jpeg"
+  },
+  {
+    treatment: "dental",
     before: "/10.jpeg",
     after: "/10-1.jpeg"
   }
@@ -256,9 +292,9 @@ export default function BeforeAfterPage() {
           <h2 className="mb-5 text-xl font-semibold text-[#1A1A1A]">{t.galleryTitle}</h2>
           <div className="space-y-4">
             {filteredCases.map((item, index) => (
-              <div key={`${item.before}-${item.after}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-3 shadow-sm sm:p-4">
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+              <div key={`${item.before}-${item.after || "single"}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-3 shadow-sm sm:p-4">
+                <div className={`grid grid-cols-1 gap-3 ${item.after ? "sm:grid-cols-2" : ""}`}>
+                  <div className={`overflow-hidden rounded-xl border border-[#1A1A1A]/10 ${!item.after ? "sm:col-span-2" : ""}`}>
                     <img
                       src={encodeURI(item.before)}
                       alt={`Before result ${index + 1}`}
@@ -266,21 +302,23 @@ export default function BeforeAfterPage() {
                       loading="lazy"
                     />
                     <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
-                      Before
+                      {item.after ? "Before" : "Before / After"}
                     </p>
                   </div>
 
-                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
-                    <img
-                      src={encodeURI(item.after)}
-                      alt={`After result ${index + 1}`}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                    <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
-                      After
-                    </p>
-                  </div>
+                  {item.after && (
+                    <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+                      <img
+                        src={encodeURI(item.after)}
+                        alt={`After result ${index + 1}`}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
+                        After
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
