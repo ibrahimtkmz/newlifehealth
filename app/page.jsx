@@ -84,6 +84,42 @@ const content = {
       "At NewLife Health Tourism, our vision is to ensure international patients receive a safe, well-planned, and human-centered treatment experience in Turkey.",
     aboutP2:
       "With our specialist doctor network and experienced patient relations team, we deliver lasting satisfaction in hair transplantation, dental aesthetics, and plastic surgery.",
+    aboutHeroTitle: "Visionary Introduction",
+    aboutHeroText:
+      "At our Istanbul clinic, we combine trust, health, and aesthetics into one promise: safe treatment plans, natural-looking outcomes, and premium comfort from first consultation to full recovery.",
+    aboutTimelineTitle: "Corporate Story & Milestones",
+    aboutTimelineText:
+      "Founded in 2016 with a mission to make qualified treatment globally accessible, NewLife Health Tourism has served 20,000+ patients through structured health tourism workflows aligned with international standards.",
+    aboutTeamTitle: "Expert Team & Academic Competence",
+    aboutTeamText:
+      "Our medical team is led by specialists in hair transplantation, aesthetic dentistry, and facial-body surgery. With 40+ years of combined experience, regular international trainings, and certified processes, we maintain consistently high clinical quality.",
+    aboutUSPTitle: "Why Us?",
+    aboutUSPItems: [
+      "Technology: 3D imaging, digital smile design, and minimally invasive methods.",
+      "Comfort: central Istanbul location, VIP transfer, and premium accommodation options.",
+      "Guarantee: structured aftercare and transparent post-treatment follow-up."
+    ],
+    aboutUnitsTitle: "Medical Units & Focus Areas",
+    aboutUnitsItems: [
+      "Natural Hair Transplantation with Sapphire FUE and DHI techniques.",
+      "Aesthetic Dentistry with digital planning, laminate veneers, and zirconium crowns.",
+      "Personalized Plastic Surgery for face and body with detailed safety protocols."
+    ],
+    aboutQualityTitle: "Quality, Hygiene & Technology Standards",
+    aboutQualityText:
+      "All treatment areas follow strict sterilization protocols. We prioritize high-quality medical consumables, FDA/CE-cleared devices where applicable, and a modern clinical architecture designed for patient comfort and calm recovery.",
+    aboutMissionTitle: "Values & Mission",
+    aboutMissionItems: [
+      "Respect for patient rights and medical ethics at every step.",
+      "Transparent pricing with honest eligibility assessments.",
+      "Sustainable health outcomes through realistic, long-term planning."
+    ],
+    aboutProofTitle: "Social Proof & Success Metrics",
+    aboutProofItems: ["99% patient satisfaction", "50+ countries served", "20,000+ successful operations"],
+    aboutFinalCtaTitle: "Start Your Personalized Treatment Plan",
+    aboutFinalCtaText:
+      "Get a free consultation, request an online appointment, or reach us on WhatsApp for a quick medical pre-assessment from our team.",
+    aboutFinalCtaButton: "Get Free Consultation",
     packages: "Service Packages",
     packagesTitle: "Choose the Treatment Experience That Fits You Best",
     packageNote: "Contact us for your personalized price offer.",
@@ -182,6 +218,42 @@ const content = {
     about: "Hakkımızda",
     aboutP1: "NewLife Health Tourism olarak vizyonumuz, uluslararası hastalara Türkiye'de güvenli ve planlı bir tedavi deneyimi sunmaktır.",
     aboutP2: "Uzman doktor ağımız ve deneyimli hasta ilişkileri ekibimizle kalıcı memnuniyet hedefliyoruz.",
+    aboutHeroTitle: "Vizyoner Giriş",
+    aboutHeroText:
+      "NewLife Health Tourism olarak güven, sağlık ve estetiği tek bir tedavi anlayışında buluşturuyor; İstanbul saç ekimi kliniği ve estetik diş hekimliği süreçlerinde hastalarımıza güvenli, doğal ve uzun ömürlü sonuçlar vadediyoruz.",
+    aboutTimelineTitle: "Kurumsal Hikaye ve Kilometre Taşları",
+    aboutTimelineText:
+      "2016 yılında uluslararası hastalara etik ve erişilebilir sağlık çözümleri sunma motivasyonuyla yola çıktık. Bugüne kadar 20.000+ hastaya hizmet verdik ve sağlık turizmi operasyonlarımızı uluslararası standartlara uygun şekilde yapılandırdık.",
+    aboutTeamTitle: "Uzman Kadro ve Akademik Yetkinlik",
+    aboutTeamText:
+      "Başhekim liderliğindeki ekibimiz saç ekimi, estetik diş hekimliği ve plastik cerrahi alanlarında uzmanlaşmıştır. Toplam 40+ yıl klinik deneyim, düzenli uluslararası eğitim katılımı ve sertifikalı süreç yönetimi ile hizmet veriyoruz.",
+    aboutUSPTitle: "Neden Biz?",
+    aboutUSPItems: [
+      "Teknoloji: 3D görüntüleme, dijital gülüş tasarımı ve minimal invaziv teknikler.",
+      "Konfor: merkezi lokasyon, VIP transfer, 5 yıldızlı konaklama seçenekleri.",
+      "Garanti: tedavi sonrası planlı takip, hızlı iletişim ve destek süreçleri."
+    ],
+    aboutUnitsTitle: "Tıbbi Birimler ve Odak Alanları",
+    aboutUnitsItems: [
+      "Safir FUE ve DHI tekniği ile doğal görünümlü saç ekimi.",
+      "Dijital planlama destekli estetik diş hekimliği, laminate veneer ve zirkonyum çözümleri.",
+      "Yüz ve vücut odaklı, kişiye özel planlanan plastik cerrahi uygulamaları."
+    ],
+    aboutQualityTitle: "Kalite, Hijyen ve Teknoloji Standartları",
+    aboutQualityText:
+      "Sterilizasyon protokollerimiz düzenli denetlenir; kullanılan cihaz ve sarf malzemelerde yüksek kalite standardı aranır. Modern klinik mimarimiz, ferah alanlar ve güvenli hasta akışı ile konforlu bir deneyim sunar.",
+    aboutMissionTitle: "Değerlerimiz ve Misyon",
+    aboutMissionItems: [
+      "Hasta haklarına saygı ve etik tıp anlayışı.",
+      "Şeffaf fiyatlandırma ve dürüst bilgilendirme politikası.",
+      "Sürdürülebilir sağlık çözümleri için gerçekçi tedavi planlaması."
+    ],
+    aboutProofTitle: "Sosyal Kanıt ve Başarı İstatistikleri",
+    aboutProofItems: ["%99 hasta memnuniyeti", "50+ ülkeden hasta", "20.000+ başarılı operasyon"],
+    aboutFinalCtaTitle: "Tedavi Yolculuğunuza Hemen Başlayın",
+    aboutFinalCtaText:
+      "Ücretsiz konsültasyon alın, online randevu oluşturun veya WhatsApp hattımız üzerinden dakikalar içinde hızlı bilgi talep edin.",
+    aboutFinalCtaButton: "Ücretsiz Konsültasyon Al",
     packages: "Hizmet Paketleri",
     packagesTitle: "Size En Uygun Tedavi Deneyimini Seçin",
     packageNote: "Size özel fiyat teklifi için bizimle iletişime geçin.",
@@ -265,6 +337,42 @@ const content = {
     about: "О нас",
     aboutP1: "NewLife Health Tourism обеспечивает безопасное и тщательно спланированное лечение для иностранных пациентов в Турции.",
     aboutP2: "Сеть профильных врачей и опытная команда сопровождения помогают достигать долгосрочной удовлетворенности.",
+    aboutHeroTitle: "Визионерское вступление",
+    aboutHeroText:
+      "Мы объединяем доверие, здоровье и эстетику в едином подходе: безопасное лечение, естественные результаты и премиальный комфорт для международных пациентов в Стамбуле.",
+    aboutTimelineTitle: "История клиники и ключевые этапы",
+    aboutTimelineText:
+      "Основанная в 2016 году с целью сделать качественную медицину доступной для пациентов из-за рубежа, клиника обслужила более 20 000 пациентов в рамках международных стандартов медицинского туризма.",
+    aboutTeamTitle: "Экспертная команда и академическая база",
+    aboutTeamText:
+      "Команда специалистов по пересадке волос, эстетической стоматологии и пластической хирургии имеет 40+ лет совокупного опыта, регулярно проходит международное обучение и работает по сертифицированным протоколам.",
+    aboutUSPTitle: "Почему мы?",
+    aboutUSPItems: [
+      "Технологии: 3D-визуализация, цифровое планирование улыбки и щадящие методики.",
+      "Комфорт: центральная локация, VIP-трансфер и премиальное размещение.",
+      "Гарантия: структурированное послеоперационное сопровождение и поддержка."
+    ],
+    aboutUnitsTitle: "Медицинские направления",
+    aboutUnitsItems: [
+      "Естественная пересадка волос методами Sapphire FUE и DHI.",
+      "Эстетическая стоматология с цифровым дизайном, винирами и цирконием.",
+      "Индивидуальная пластическая хирургия лица и тела с приоритетом безопасности."
+    ],
+    aboutQualityTitle: "Стандарты качества, гигиены и технологий",
+    aboutQualityText:
+      "Мы соблюдаем строгие протоколы стерилизации, используем качественные медицинские материалы и сертифицированное оборудование, а современная архитектура клиники обеспечивает спокойное восстановление.",
+    aboutMissionTitle: "Наши ценности и миссия",
+    aboutMissionItems: [
+      "Уважение прав пациента и медицинской этики.",
+      "Прозрачная стоимость и честная коммуникация.",
+      "Долгосрочные, устойчивые результаты лечения."
+    ],
+    aboutProofTitle: "Социальное доказательство и результаты",
+    aboutProofItems: ["99% удовлетворенности пациентов", "Пациенты из 50+ стран", "20 000+ успешных операций"],
+    aboutFinalCtaTitle: "Начните персональный план лечения",
+    aboutFinalCtaText:
+      "Получите бесплатную консультацию, запишитесь онлайн или напишите нам в WhatsApp для быстрого предварительного медицинского ответа.",
+    aboutFinalCtaButton: "Бесплатная консультация",
     packages: "Пакеты услуг",
     packagesTitle: "Выберите подходящий формат лечения",
     packageNote: "Свяжитесь с нами для персонального расчёта стоимости.",
@@ -543,8 +651,86 @@ export default function Home() {
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
           <h3 className="text-xl font-semibold sm:text-2xl">{t.about}</h3>
-          <p className="mt-4 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutP1}</p>
-          <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutP2}</p>
+
+          <article className="mt-5 rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D4AF37]">{t.aboutHeroTitle}</p>
+            <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutHeroText}</p>
+          </article>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutTimelineTitle}</h4>
+              <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutTimelineText}</p>
+            </article>
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutTeamTitle}</h4>
+              <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutTeamText}</p>
+            </article>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-3">
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutUSPTitle}</h4>
+              <ul className="mt-3 space-y-2 text-sm text-[#1A1A1A]/75">
+                {t.aboutUSPItems?.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutUnitsTitle}</h4>
+              <ul className="mt-3 space-y-2 text-sm text-[#1A1A1A]/75">
+                {t.aboutUnitsItems?.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutProofTitle}</h4>
+              <ul className="mt-3 space-y-2 text-sm text-[#1A1A1A]/75">
+                {t.aboutProofItems?.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutQualityTitle}</h4>
+              <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/75">{t.aboutQualityText}</p>
+            </article>
+            <article className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-5">
+              <h4 className="text-base font-semibold sm:text-lg">{t.aboutMissionTitle}</h4>
+              <ul className="mt-3 space-y-2 text-sm text-[#1A1A1A]/75">
+                {t.aboutMissionItems?.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <article className="mt-5 rounded-2xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-5 text-white">
+            <h4 className="text-base font-semibold sm:text-lg">{t.aboutFinalCtaTitle}</h4>
+            <p className="mt-2 text-sm leading-relaxed text-white/80">{t.aboutFinalCtaText}</p>
+            <div className="mt-4">
+              <button onClick={() => openPopup("freeQuote")} className="rich-gradient-button rounded-full px-5 py-2 text-xs font-semibold tracking-[0.06em] text-white sm:text-sm">
+                {t.aboutFinalCtaButton}
+              </button>
+            </div>
+          </article>
         </section>
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-8">
