@@ -1,53 +1,15 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import InnerPageLayout from "../components/InnerPageLayout";
 import { useLanguage } from "../components/LanguageProvider";
 import { Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
 
 const BEFORE_AFTER_CASES = [
   {
-    before: "/WhatsApp Image 2026-04-10 at 13.16.11.jpeg",
-    after: "/WhatsApp Image 2026-04-10 at 13.16.11 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-10 at 13.16.12.jpeg",
-    after: "/WhatsApp Image 2026-04-10 at 13.16.12 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-10 at 13.16.13.jpeg",
-    after: "/WhatsApp Image 2026-04-10 at 13.16.13 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-10 at 13.16.14.jpeg",
-    after: "/WhatsApp Image 2026-04-10 at 13.16.14 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.19.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.19 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.20.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.20 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.22.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.22 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.23.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.23 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.25.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.25 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.27.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.27 (1).jpeg"
-  },
-  {
-    before: "/WhatsApp Image 2026-04-14 at 12.35.28.jpeg",
-    after: "/WhatsApp Image 2026-04-14 at 12.35.28 (1).jpeg"
+    treatment: "dental",
+    before: "/10.jpeg",
+    after: "/10-1.jpeg"
   }
 ];
 
@@ -60,24 +22,28 @@ const CONTENT = {
     privacyText: "Tibbi etik geregi, detayli oncesi-sonrasi fotograflarini yalnizca WhatsApp uzerinden aktif danismanlık surecindeki hastalarımızla paylasiyoruz. Bu sayede hasta gizliligini korurken, gercek sonuclari seffaf bicimde sunuyoruz.",
     categories: [
       {
+        key: "hair",
         icon: Scissors,
         title: "Sac Ekimi",
         description: "Dogal sac cizgisi tasarimi, yogunluk artisi ve greft dagilimi sonucları",
         cases: "2,500+ vaka"
       },
       {
+        key: "dental",
         icon: Smile,
         title: "Dis Estetigi",
         description: "Hollywood gulusu, zirkonyum kaplama ve implant sonuclari",
         cases: "1,800+ vaka"
       },
       {
+        key: "plastic",
         icon: Sparkles,
         title: "Plastik Cerrahi",
         description: "Burun estetigi, yuz germe ve vucut sekillendirme sonuclari",
         cases: "1,200+ vaka"
       },
       {
+        key: "bariatric",
         icon: Activity,
         title: "Obezite Cerrahisi",
         description: "Kilo kaybi sureci, vucut donusumu ve saglik iyilesmesi sonuclari",
@@ -112,24 +78,28 @@ const CONTENT = {
     privacyText: "In accordance with medical ethics, we share detailed before-and-after photos only with patients in active consultation via WhatsApp. This way, we protect patient privacy while transparently presenting real results.",
     categories: [
       {
+        key: "hair",
         icon: Scissors,
         title: "Hair Transplant",
         description: "Natural hairline design, density increase and graft distribution results",
         cases: "2,500+ cases"
       },
       {
+        key: "dental",
         icon: Smile,
         title: "Dental Aesthetics",
         description: "Hollywood smile, zirconium veneer and implant results",
         cases: "1,800+ cases"
       },
       {
+        key: "plastic",
         icon: Sparkles,
         title: "Plastic Surgery",
         description: "Rhinoplasty, facelift and body contouring results",
         cases: "1,200+ cases"
       },
       {
+        key: "bariatric",
         icon: Activity,
         title: "Bariatric Surgery",
         description: "Weight loss journey, body transformation and health improvement results",
@@ -164,24 +134,28 @@ const CONTENT = {
     privacyText: "В соответствии с медицинской этикой мы делимся подробными фотографиями до/после только с пациентами на активной консультации через WhatsApp. Так мы защищаем конфиденциальность пациентов, при этом прозрачно представляя реальные результаты.",
     categories: [
       {
+        key: "hair",
         icon: Scissors,
         title: "Пересадка волос",
         description: "Дизайн естественной линии роста волос, увеличение плотности и результаты распределения графтов",
         cases: "2,500+ случаев"
       },
       {
+        key: "dental",
         icon: Smile,
         title: "Эстетика зубов",
         description: "Голливудская улыбка, циркониевые виниры и результаты имплантации",
         cases: "1,800+ случаев"
       },
       {
+        key: "plastic",
         icon: Sparkles,
         title: "Пластическая хирургия",
         description: "Ринопластика, подтяжка лица и контурирование тела",
         cases: "1,200+ случаев"
       },
       {
+        key: "bariatric",
         icon: Activity,
         title: "Бариатрическая хирургия",
         description: "Путь к снижению веса, трансформация тела и улучшение здоровья",
@@ -215,6 +189,11 @@ const whatsappNumber = "905000000000";
 export default function BeforeAfterPage() {
   const { lang } = useLanguage();
   const t = CONTENT[lang] || CONTENT.tr;
+  const [selectedTreatment, setSelectedTreatment] = useState("dental");
+  const filteredCases = useMemo(
+    () => BEFORE_AFTER_CASES.filter((item) => item.treatment === selectedTreatment),
+    [selectedTreatment]
+  );
 
   const openWhatsApp = () => {
     const message = lang === 'tr' 
@@ -248,8 +227,17 @@ export default function BeforeAfterPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {t.categories.map((category) => {
               const Icon = category.icon;
+              const isActive = selectedTreatment === category.key;
               return (
-                <div key={category.title} className="group relative overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-white p-6 shadow-sm transition hover:shadow-md">
+                <button
+                  key={category.title}
+                  onClick={() => setSelectedTreatment(category.key)}
+                  className={`group relative overflow-hidden rounded-2xl border p-6 text-left shadow-sm transition hover:shadow-md ${
+                    isActive
+                      ? "border-[#3a0ca3]/40 bg-[#3a0ca3]/5"
+                      : "border-[#1A1A1A]/10 bg-white"
+                  }`}
+                >
                   <div className="absolute right-4 top-4 rounded-full bg-[#D4AF37]/10 px-3 py-1 text-xs font-semibold text-[#D4AF37]">
                     {category.cases}
                   </div>
@@ -258,7 +246,7 @@ export default function BeforeAfterPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-[#1A1A1A]">{category.title}</h3>
                   <p className="mt-2 text-sm text-[#1A1A1A]/70">{category.description}</p>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -267,7 +255,7 @@ export default function BeforeAfterPage() {
         <section>
           <h2 className="mb-5 text-xl font-semibold text-[#1A1A1A]">{t.galleryTitle}</h2>
           <div className="space-y-4">
-            {BEFORE_AFTER_CASES.map((item, index) => (
+            {filteredCases.map((item, index) => (
               <div key={`${item.before}-${item.after}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-3 shadow-sm sm:p-4">
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
@@ -296,6 +284,15 @@ export default function BeforeAfterPage() {
                 </div>
               </div>
             ))}
+            {!filteredCases.length && (
+              <div className="rounded-2xl border border-dashed border-[#1A1A1A]/20 bg-[#FBFBFB] px-4 py-8 text-center text-sm text-[#1A1A1A]/70">
+                {lang === "tr"
+                  ? "Bu tedavi kategorisi icin su an yayinlanmis bir before/after gorseli bulunmuyor."
+                  : lang === "ru"
+                  ? "Для этой категории лечения сейчас нет опубликованных фото до/после."
+                  : "There are currently no published before/after images for this treatment category."}
+              </div>
+            )}
           </div>
         </section>
 
