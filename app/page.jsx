@@ -71,10 +71,8 @@ const content = {
     beforeAfterSub: "We share treatment quality insights while fully protecting patient privacy.",
     beforeAfterOverlay: "In line with medical ethics, we show full results only to our active patients.",
     beforeAfterButton: "Review Results on WhatsApp",
-    galleryFilters: {
-      operation: "Operations",
-      aesthetic: "Aesthetic Treatments"
-    },
+    beforeLabel: "Before",
+    afterLabel: "After",
     galleryContactText: "Contact us to see the results.",
     videos: "PATIENT TESTIMONIAL VIDEOS",
     videosSub: "Authentic stories capturing confidence, recovery, and five-star service.",
@@ -207,10 +205,8 @@ const content = {
     beforeAfterSub: "Hasta gizliliğini koruyarak tedavi kalitesi hakkında bilgi paylaşıyoruz.",
     beforeAfterOverlay: "Tıbbi etik gereği detaylı sonuçları yalnızca aktif hastalarımızla paylaşıyoruz.",
     beforeAfterButton: "WhatsApp'ta Sonuçları Gör",
-    galleryFilters: {
-      operation: "Operasyonlar",
-      aesthetic: "Estetik Tedaviler"
-    },
+    beforeLabel: "Öncesi",
+    afterLabel: "Sonrası",
     galleryContactText: "Sonuçları görmek için bizimle iletişime geçin.",
     videos: "HASTA DENEYİM VİDEOLARI",
     videosSub: "Özgüven, iyileşme ve 5 yıldızlı hizmeti anlatan gerçek hikayeler.",
@@ -326,10 +322,8 @@ const content = {
     beforeAfterSub: "Мы делимся качеством лечения, полностью соблюдая конфиденциальность пациентов.",
     beforeAfterOverlay: "По медицинской этике полные результаты доступны только нашим активным пациентам.",
     beforeAfterButton: "Посмотреть результаты в WhatsApp",
-    galleryFilters: {
-      operation: "Операции",
-      aesthetic: "Эстетические процедуры"
-    },
+    beforeLabel: "До",
+    afterLabel: "После",
     galleryContactText: "Свяжитесь с нами, чтобы увидеть результаты.",
     videos: "ВИДЕО-ОТЗЫВЫ ПАЦИЕНТОВ",
     videosSub: "Реальные истории о восстановлении, уверенности и сервисе 5★.",
@@ -420,7 +414,6 @@ export default function Home() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupSource, setPopupSource] = useState("freeQuote");
   const [popupForm, setPopupForm] = useState({ name: "", phone: "", treatment: "", note: "" });
-  const [selectedGallery, setSelectedGallery] = useState("operation");
 
   const t = useMemo(() => content[lang], [lang]);
 
@@ -438,10 +431,19 @@ export default function Home() {
     { title: t.journey[4], icon: <Clock3 size={20} /> }
   ];
 
-  const beforeAfterImages = {
-    operation: [1, 2, 3, 4].map((num) => `/before-after/${num}.jpg`),
-    aesthetic: [5, 6, 7, 8].map((num) => `/before-after/${num}.jpg`)
-  };
+  const beforeAfterCases = [
+    { before: "/WhatsApp Image 2026-04-10 at 13.16.11.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.11 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-10 at 13.16.12.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.12 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-10 at 13.16.13.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.13 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-10 at 13.16.14.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.14 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.19.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.19 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.20.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.20 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.22.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.22 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.23.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.23 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.25.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.25 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.27.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.27 (1).jpeg" },
+    { before: "/WhatsApp Image 2026-04-14 at 12.35.28.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.28 (1).jpeg" }
+  ];
 
   const clinicPhotos = [
     "https://cms.cuhadaroglu.com/uploads/Torun%20Center%20%20%20%20%20%20%20%20%20%20%20%20.jpeg",
@@ -611,33 +613,39 @@ export default function Home() {
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
           <h3 className="text-xl font-semibold sm:text-2xl">{t.beforeAfter}</h3>
           <p className="mt-2 text-sm text-[#1A1A1A]/70">{t.beforeAfterSub}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {Object.entries(t.galleryFilters).map(([key, label]) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => setSelectedGallery(key)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.05em] transition sm:text-sm ${
-                  selectedGallery === key
-                    ? "bg-[#1A1A1A] text-white"
-                    : "border border-[#1A1A1A]/15 bg-[#FBFBFB] text-[#1A1A1A]/70 hover:bg-[#1A1A1A]/5"
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {beforeAfterImages[selectedGallery].map((src, index) => (
-              <div key={`${selectedGallery}-${index}`} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
-                <Image
-                  src={src}
-                  alt={`Before & After ${index + 1}`}
-                  fill
-                  className="object-cover blur-sm transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-black/20" />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {beforeAfterCases.map((item, index) => (
+              <div key={`before-after-${index}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FBFBFB] p-3 sm:p-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+                    <p className="border-b border-[#1A1A1A]/10 bg-white px-2 py-1 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1A1A1A]/70 sm:text-xs">
+                      {t.beforeLabel}
+                    </p>
+                    <div className="relative aspect-square">
+                      <Image
+                        src={item.before}
+                        alt={`${t.beforeLabel} ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 24vw"
+                      />
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+                    <p className="border-b border-[#1A1A1A]/10 bg-white px-2 py-1 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1A1A1A]/70 sm:text-xs">
+                      {t.afterLabel}
+                    </p>
+                    <div className="relative aspect-square">
+                      <Image
+                        src={item.after}
+                        alt={`${t.afterLabel} ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 24vw"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
