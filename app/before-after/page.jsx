@@ -5,10 +5,22 @@ import { useLanguage } from "../components/LanguageProvider";
 import { Eye, Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
 
 const BLURRED_PREVIEW_IMAGES = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9J5qokhcfN_DJLiJ1vNG9GQpvU8BLeIoTew&s",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe6nRBHnXM5IHXSPnYTux3cVrG6n8Y772gFw&s",
-  "https://estefavor.com/wp-content/uploads/hair-transplant-before-and-after-2-min.jpeg",
-  "https://elithair.com.tr/wp-content/uploads/2021/08/Vorher-nachher-saphir-haartransplantation-4100-grafts-Marcus-Medwed-1.jpg"
+  {
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9J5qokhcfN_DJLiJ1vNG9GQpvU8BLeIoTew&s",
+    type: "Before"
+  },
+  {
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe6nRBHnXM5IHXSPnYTux3cVrG6n8Y772gFw&s",
+    type: "After"
+  },
+  {
+    url: "https://estefavor.com/wp-content/uploads/hair-transplant-before-and-after-2-min.jpeg",
+    type: "Before"
+  },
+  {
+    url: "https://elithair.com.tr/wp-content/uploads/2021/08/Vorher-nachher-saphir-haartransplantation-4100-grafts-Marcus-Medwed-1.jpg",
+    type: "After"
+  }
 ];
 
 const CONTENT = {
@@ -218,12 +230,16 @@ export default function BeforeAfterPage() {
                   
                   {/* Blurred Preview */}
                   <div className="mt-4 grid grid-cols-2 gap-2">
-                    {BLURRED_PREVIEW_IMAGES.map((imageUrl, index) => (
-                      <div
-                        key={imageUrl}
+                    {BLURRED_PREVIEW_IMAGES.map((imageItem, index) => (
+                      <a
+                        key={imageItem.url}
+                        href={imageItem.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${imageItem.type} preview ${index + 1}`}
                         className="relative aspect-[4/3] overflow-hidden rounded-lg"
                         style={{
-                          backgroundImage: `url(${imageUrl})`,
+                          backgroundImage: `url(${imageItem.url})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center"
                         }}
@@ -233,10 +249,10 @@ export default function BeforeAfterPage() {
                           <Eye className="h-4 w-4 text-white/90" />
                           <p className="text-xs font-medium text-white/95">{t.previewHint}</p>
                           <span className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/90">
-                            {index % 2 === 0 ? "Before" : "After"}
+                            {imageItem.type}
                           </span>
                         </div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
