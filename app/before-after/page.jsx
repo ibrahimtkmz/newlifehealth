@@ -3,7 +3,13 @@
 import InnerPageLayout from "../components/InnerPageLayout";
 import { useLanguage } from "../components/LanguageProvider";
 import { Eye, Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
-import Link from "next/link";
+
+const BLURRED_PREVIEW_IMAGES = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9J5qokhcfN_DJLiJ1vNG9GQpvU8BLeIoTew&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe6nRBHnXM5IHXSPnYTux3cVrG6n8Y772gFw&s",
+  "https://estefavor.com/wp-content/uploads/hair-transplant-before-and-after-2-min.jpeg",
+  "https://elithair.com.tr/wp-content/uploads/2021/08/Vorher-nachher-saphir-haartransplantation-4100-grafts-Marcus-Medwed-1.jpg"
+];
 
 const CONTENT = {
   tr: {
@@ -47,6 +53,7 @@ const CONTENT = {
     ],
     ctaTitle: "Sonuclari Gormek Ister Misiniz?",
     ctaText: "WhatsApp uzerinden bizimle iletisime gecin ve ilgilendiginiz tedavi alanina ait gercek oncesi-sonrasi fotograflarini inceleyin.",
+    previewHint: "Net sonuclar icin bizimle iletisime gecin",
     ctaButton: "WhatsApp ile Iletisime Gec",
     trustTitle: "Neden Bize Guvenebilirsiniz?",
     trustItems: [
@@ -97,6 +104,7 @@ const CONTENT = {
     ],
     ctaTitle: "Want to See the Results?",
     ctaText: "Contact us via WhatsApp and review real before-and-after photos for your treatment area of interest.",
+    previewHint: "Contact us to view full results",
     ctaButton: "Contact via WhatsApp",
     trustTitle: "Why Trust Us?",
     trustItems: [
@@ -147,6 +155,7 @@ const CONTENT = {
     ],
     ctaTitle: "Хотите увидеть результаты?",
     ctaText: "Свяжитесь с нами через WhatsApp и посмотрите реальные фотографии до/после по интересующему вас направлению лечения.",
+    previewHint: "Свяжитесь с нами, чтобы увидеть полные результаты",
     ctaButton: "Связаться через WhatsApp",
     trustTitle: "Почему нам доверяют?",
     trustItems: [
@@ -208,11 +217,24 @@ export default function BeforeAfterPage() {
                   <p className="mt-2 text-sm text-[#1A1A1A]/70">{category.description}</p>
                   
                   {/* Blurred Preview */}
-                  <div className="mt-4 grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="relative aspect-square overflow-hidden rounded-lg bg-gradient-to-br from-gray-200 to-gray-300">
-                        <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm">
-                          <Eye className="h-4 w-4 text-gray-500" />
+                  <div className="mt-4 grid grid-cols-2 gap-2">
+                    {BLURRED_PREVIEW_IMAGES.map((imageUrl, index) => (
+                      <div
+                        key={imageUrl}
+                        className="relative aspect-[4/3] overflow-hidden rounded-lg"
+                        style={{
+                          backgroundImage: `url(${imageUrl})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center"
+                        }}
+                      >
+                        <div className="absolute inset-0 scale-105 bg-black/30 backdrop-blur-lg" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3 text-center">
+                          <Eye className="h-4 w-4 text-white/90" />
+                          <p className="text-xs font-medium text-white/95">{t.previewHint}</p>
+                          <span className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/90">
+                            {index % 2 === 0 ? "Before" : "After"}
+                          </span>
                         </div>
                       </div>
                     ))}
