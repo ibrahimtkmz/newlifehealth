@@ -7,43 +7,10 @@ body {
   margin: 0;
   padding: 0;
   background: #fbfbfb;
-  font-family: "Avenir Next", "Avenir", "Montserrat", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  text-rendering: geometricPrecision;
 }
 
 * {
   box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.display-title,
-.section-title {
-  font-family: "Didot", "Bodoni MT", "Playfair Display", "Times New Roman", serif;
-  letter-spacing: 0.015em;
-  font-weight: 600;
-}
-
-p,
-span,
-a,
-button,
-input,
-textarea,
-select,
-label,
-li {
-  font-family: "Avenir Next", "Avenir", "Montserrat", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-.eyebrow-text {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 700;
 }
 
 .glass-card {
