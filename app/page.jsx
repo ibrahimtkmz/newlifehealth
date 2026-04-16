@@ -66,6 +66,7 @@ const content = {
       }
     ],
     stepLabel: "Step",
+    journeyTitle: "VIP Journey",
     journey: ["Free Consultation", "VIP Flight & Transfer", "Premium Clinic Procedure", "Luxury Recovery", "Aftercare"],
     beforeAfter: "BEFORE & AFTER GALLERY",
     beforeAfterSub: "We share treatment quality insights while fully protecting patient privacy.",
@@ -200,6 +201,7 @@ const content = {
       { title: "PLASTİK CERRAHİ", description: "Uzman hekimler tarafından kişiye özel yüz ve vücut işlemleri." }
     ],
     stepLabel: "Adım",
+    journeyTitle: "VIP Yolculuk Adımları",
     journey: ["Ücretsiz Danışmanlık", "VIP Uçuş & Transfer", "Premium Klinik İşlemi", "Lüks İyileşme", "Takip Süreci"],
     beforeAfter: "ÖNCESİ & SONRASI GALERİSİ",
     beforeAfterSub: "Hasta gizliliğini koruyarak tedavi kalitesi hakkında bilgi paylaşıyoruz.",
@@ -317,6 +319,7 @@ const content = {
       { title: "ПЛАСТИЧЕСКАЯ ХИРУРГИЯ", description: "Индивидуальные решения для лица и тела от сертифицированных специалистов." }
     ],
     stepLabel: "Шаг",
+    journeyTitle: "Этапы VIP-путешествия",
     journey: ["Бесплатная консультация", "VIP перелет и трансфер", "Процедура в премиум клинике", "Комфортное восстановление", "Послеоперационное сопровождение"],
     beforeAfter: "ГАЛЕРЕЯ ДО/ПОСЛЕ",
     beforeAfterSub: "Мы делимся качеством лечения, полностью соблюдая конфиденциальность пациентов.",
@@ -599,14 +602,32 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-4 rounded-[30px] border border-[#1A1A1A]/8 bg-white p-5 shadow-[0_20px_50px_rgba(26,26,26,0.06)] sm:gap-7 sm:p-8 lg:grid-cols-5 lg:p-10">
+        <section className="rounded-[30px] border border-[#1A1A1A]/8 bg-white p-5 shadow-[0_20px_50px_rgba(26,26,26,0.06)] sm:p-8 lg:p-10">
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <h3 className="text-xl font-semibold text-[#1A1A1A] sm:text-2xl">{t.journeyTitle}</h3>
+            <div className="hidden h-px flex-1 bg-gradient-to-r from-[#D4AF37]/20 via-[#f72585]/25 to-transparent sm:block" />
+          </div>
+          <div className="grid gap-4 lg:grid-cols-5">
           {journey.map((step, index) => (
-            <div key={step.title} className="relative rounded-2xl bg-[#FBFBFB] p-5">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">{t.stepLabel} {index + 1}</p>
-              <div className="rich-gradient-icon mb-4 inline-flex rounded-xl border p-2">{step.icon}</div>
-              <h3 className="font-semibold">{step.title}</h3>
+            <div
+              key={step.title}
+              className="group relative overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-gradient-to-br from-white via-[#FBFBFB] to-[#f7f7ff] p-5 transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(26,26,26,0.12)]"
+            >
+              <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#f72585]/10 blur-2xl transition group-hover:bg-[#3a0ca3]/10" />
+              {index < journey.length - 1 && (
+                <span className="absolute right-[-14px] top-1/2 hidden h-[2px] w-7 -translate-y-1/2 bg-gradient-to-r from-[#D4AF37]/60 to-[#f72585]/50 lg:block" />
+              )}
+              <div className="relative z-10 flex items-center justify-between">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">{t.stepLabel}</p>
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#1A1A1A]/10 bg-white text-sm font-semibold text-[#3a0ca3]">
+                  {index + 1}
+                </span>
+              </div>
+              <div className="rich-gradient-icon relative z-10 mb-4 mt-4 inline-flex rounded-xl border p-2">{step.icon}</div>
+              <h3 className="relative z-10 font-semibold text-[#1A1A1A]">{step.title}</h3>
             </div>
           ))}
+          </div>
         </section>
 
         <section className="rounded-3xl border border-[#1A1A1A]/10 bg-white p-5 shadow-[0_18px_40px_rgba(26,26,26,0.06)] sm:p-7">
