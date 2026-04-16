@@ -648,7 +648,7 @@ export default function Home() {
                     src={photo}
                     alt={`Clinic view ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    className="object-contain p-2 transition-transform duration-300 hover:scale-105"
                     sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 18vw"
                   />
                 </div>
@@ -772,7 +772,19 @@ export default function Home() {
             <p className="mt-3 text-sm leading-relaxed text-[#1A1A1A]/70">{t.clinicsSub}</p>
             <div className="mt-6 grid grid-cols-2 gap-4">
               {clinicPhotos.map((photo, index) => (
-                <div key={photo} className="h-32 rounded-2xl bg-cover bg-center sm:h-36" style={{ backgroundImage: `url('${photo}')` }} aria-label={`Clinic photo ${index + 1}`} />
+                <div
+                  key={photo}
+                  className="relative h-32 overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-white sm:h-36"
+                  aria-label={`Clinic photo ${index + 1}`}
+                >
+                  <Image
+                    src={photo}
+                    alt={`Clinic photo ${index + 1}`}
+                    fill
+                    className="object-contain p-2"
+                    sizes="(max-width: 640px) 42vw, (max-width: 1024px) 24vw, 18vw"
+                  />
+                </div>
               ))}
             </div>
           </article>
