@@ -432,17 +432,16 @@ export default function Home() {
   ];
 
   const beforeAfterCases = [
-    { before: "/WhatsApp Image 2026-04-10 at 13.16.11.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.11 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-10 at 13.16.12.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.12 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-10 at 13.16.13.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.13 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-10 at 13.16.14.jpeg", after: "/WhatsApp Image 2026-04-10 at 13.16.14 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.19.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.19 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.20.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.20 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.22.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.22 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.23.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.23 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.25.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.25 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.27.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.27 (1).jpeg" },
-    { before: "/WhatsApp Image 2026-04-14 at 12.35.28.jpeg", after: "/WhatsApp Image 2026-04-14 at 12.35.28 (1).jpeg" }
+    { before: "/1.jpeg", after: "/1.jpeg" },
+    { before: "/2.jpeg", after: "/2.jpeg" },
+    { before: "/3.jpeg", after: "/3.jpeg" },
+    { before: "/4.jpeg", after: "/4.jpeg" },
+    { before: "/5.jpeg", after: "/5.jpeg" },
+    { before: "/6.jpeg", after: "/6.jpeg" },
+    { before: "/7.jpeg", after: "/7.jpeg" },
+    { before: "/8.jpeg", after: "/8.jpeg" },
+    { before: "/9.jpeg", after: "/9.jpeg" },
+    { before: "/10.jpeg", after: "/10-1.jpeg" }
   ];
 
   const clinicPhotos = [
