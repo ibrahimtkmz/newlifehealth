@@ -2,24 +2,52 @@
 
 import InnerPageLayout from "../components/InnerPageLayout";
 import { useLanguage } from "../components/LanguageProvider";
-import { Eye, Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
+import { Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
 
-const BLURRED_PREVIEW_IMAGES = [
+const BEFORE_AFTER_CASES = [
   {
-    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9J5qokhcfN_DJLiJ1vNG9GQpvU8BLeIoTew&s",
-    type: "Before"
+    before: "/WhatsApp Image 2026-04-10 at 13.16.11.jpeg",
+    after: "/WhatsApp Image 2026-04-10 at 13.16.11 (1).jpeg"
   },
   {
-    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe6nRBHnXM5IHXSPnYTux3cVrG6n8Y772gFw&s",
-    type: "After"
+    before: "/WhatsApp Image 2026-04-10 at 13.16.12.jpeg",
+    after: "/WhatsApp Image 2026-04-10 at 13.16.12 (1).jpeg"
   },
   {
-    url: "https://estefavor.com/wp-content/uploads/hair-transplant-before-and-after-2-min.jpeg",
-    type: "Before"
+    before: "/WhatsApp Image 2026-04-10 at 13.16.13.jpeg",
+    after: "/WhatsApp Image 2026-04-10 at 13.16.13 (1).jpeg"
   },
   {
-    url: "https://elithair.com.tr/wp-content/uploads/2021/08/Vorher-nachher-saphir-haartransplantation-4100-grafts-Marcus-Medwed-1.jpg",
-    type: "After"
+    before: "/WhatsApp Image 2026-04-10 at 13.16.14.jpeg",
+    after: "/WhatsApp Image 2026-04-10 at 13.16.14 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.19.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.19 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.20.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.20 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.22.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.22 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.23.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.23 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.25.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.25 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.27.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.27 (1).jpeg"
+  },
+  {
+    before: "/WhatsApp Image 2026-04-14 at 12.35.28.jpeg",
+    after: "/WhatsApp Image 2026-04-14 at 12.35.28 (1).jpeg"
   }
 ];
 
@@ -56,6 +84,7 @@ const CONTENT = {
         cases: "800+ vaka"
       }
     ],
+    galleryTitle: "Gercek Oncesi / Sonrasi Sonuclari",
     evaluationTitle: "Degerlendirme Kriterlerimiz",
     criteria: [
       { title: "Estetik Uyum", description: "Yuz orantilari ve dogal gorunum" },
@@ -107,6 +136,7 @@ const CONTENT = {
         cases: "800+ cases"
       }
     ],
+    galleryTitle: "Real Before / After Results",
     evaluationTitle: "Our Evaluation Criteria",
     criteria: [
       { title: "Aesthetic Harmony", description: "Facial proportions and natural appearance" },
@@ -158,6 +188,7 @@ const CONTENT = {
         cases: "800+ случаев"
       }
     ],
+    galleryTitle: "Реальные результаты До / После",
     evaluationTitle: "Наши критерии оценки",
     criteria: [
       { title: "Эстетическая гармония", description: "Пропорции лица и естественный вид" },
@@ -227,37 +258,44 @@ export default function BeforeAfterPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-[#1A1A1A]">{category.title}</h3>
                   <p className="mt-2 text-sm text-[#1A1A1A]/70">{category.description}</p>
-                  
-                  {/* Blurred Preview */}
-                  <div className="mt-4 grid grid-cols-2 gap-2">
-                    {BLURRED_PREVIEW_IMAGES.map((imageItem, index) => (
-                      <a
-                        key={imageItem.url}
-                        href={imageItem.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${imageItem.type} preview ${index + 1}`}
-                        className="relative aspect-[4/3] overflow-hidden rounded-lg"
-                        style={{
-                          backgroundImage: `url(${imageItem.url})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center"
-                        }}
-                      >
-                        <div className="absolute inset-0 scale-105 bg-black/30 backdrop-blur-lg" />
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3 text-center">
-                          <Eye className="h-4 w-4 text-white/90" />
-                          <p className="text-xs font-medium text-white/95">{t.previewHint}</p>
-                          <span className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/90">
-                            {imageItem.type}
-                          </span>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mb-5 text-xl font-semibold text-[#1A1A1A]">{t.galleryTitle}</h2>
+          <div className="space-y-4">
+            {BEFORE_AFTER_CASES.map((item, index) => (
+              <div key={`${item.before}-${item.after}`} className="rounded-2xl border border-[#1A1A1A]/10 bg-white p-3 shadow-sm sm:p-4">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+                    <img
+                      src={encodeURI(item.before)}
+                      alt={`Before result ${index + 1}`}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
+                      Before
+                    </p>
+                  </div>
+
+                  <div className="overflow-hidden rounded-xl border border-[#1A1A1A]/10">
+                    <img
+                      src={encodeURI(item.after)}
+                      alt={`After result ${index + 1}`}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
+                      After
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
