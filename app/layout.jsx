@@ -2,8 +2,8 @@ import "./globals.css";
 import { LanguageProvider } from "./components/LanguageProvider";
 
 export const metadata = {
-  title: "NL Sağlık Turizmi",
-  description: "NL Sağlık Turizmi international health tourism agency website"
+  title: "NEWLIFE HEALTH TOURISM",
+  description: "NEWLIFE HEALTH TOURISM | International patient coordination for medical travel in Turkey."
 };
 
 export default function RootLayout({ children }) {
