@@ -9,9 +9,9 @@ import { useLanguage } from "./components/LanguageProvider";
 const content = {
   tr: {
     badge: "Uluslararası Sağlık Turizmi Danışmanlığı",
-    heroTitle: "Türkiye'de premium tedavi, güvenli ve planlı sağlık yolculuğu.",
+    heroTitle: "Türkiye'de güvenli, şeffaf ve kişiye özel sağlık yolculuğu.",
     heroDesc:
-      "Akredite partner hastaneler, uzman doktorlar ve uçuş-konaklama dahil uçtan uca VIP organizasyon ile tedavinizi zahmetsizce planlıyoruz.",
+      "NEWLIFE HEALTH TOURISM olarak akredite partner klinikler, uzman doktor eşleştirmesi ve seyahat planlamasını tek noktadan yönetiyoruz.",
     heroPrimary: "Ücretsiz Konsültasyon Al",
     heroSecondary: "Tedavi Paketlerini İncele",
     quickAccessTitle: "2 tıklamada ulaşın",
@@ -20,10 +20,10 @@ const content = {
       { title: "Doktor Özgeçmişleri", desc: "Uzman hekim kadromuzun deneyim alanlarını inceleyin.", href: "#doctors" },
       { title: "Öncesi / Sonrası", desc: "Gerçek hasta dönüşümlerini karşılaştırın.", href: "/before-after" }
     ],
-    trustTitle: "Neden NewLife Health Tourism?",
+    trustTitle: "Neden NEWLIFE HEALTH TOURISM?",
     trustItems: [
       "Akreditasyon odaklı partner klinik ağı",
-      "50+ ülkeden hasta deneyimi",
+      "Uluslararası hasta koordinasyon deneyimi",
       "7/24 çok dilli hasta koordinasyonu"
     ],
     servicesTitle: "Öne çıkan tedavi alanları",
@@ -49,15 +49,15 @@ const content = {
       "“Doktor ekibi ve koordinasyon süreci beklentimizin üzerindeydi.” — Thomas R.",
       "“Tedavi + konaklama paketi gerçekten premium hissettirdi.” — Nadia K."
     ],
-    finalTitle: "Kişiye özel tedavi planınızı bugün başlatın",
-    finalDesc: "Fotoğraflarınızı ve beklentinizi iletin, aynı gün içinde doktor ön değerlendirmesi ve fiyatlandırma alın.",
+    finalTitle: "Kişiye özel tedavi planını bugün başlatın",
+    finalDesc: "Beklentilerinizi paylaşın; uygun tedavi seçenekleri, süreç planı ve tahmini maliyetleri hızlıca iletelim.",
     finalButton: "Hemen WhatsApp'tan Yaz"
   },
   en: {
     badge: "International Health Tourism Concierge",
-    heroTitle: "Premium treatment journeys in Turkey, designed around trust.",
+    heroTitle: "Safe and personalized treatment journeys in Turkey.",
     heroDesc:
-      "We coordinate accredited partner hospitals, expert doctors, and end-to-end VIP logistics including flights and accommodation.",
+      "At NEWLIFE HEALTH TOURISM, we coordinate accredited clinics, specialist matching, and travel planning from one trusted team.",
     heroPrimary: "Get Free Consultation",
     heroSecondary: "View Treatment Packages",
     quickAccessTitle: "Reach in 2 clicks",
@@ -66,8 +66,8 @@ const content = {
       { title: "Doctor Profiles", desc: "Review our specialist team and fields of expertise.", href: "#doctors" },
       { title: "Before / After", desc: "Compare real patient transformation cases.", href: "/before-after" }
     ],
-    trustTitle: "Why NewLife Health Tourism?",
-    trustItems: ["Accreditation-focused partner clinic network", "Patients from 50+ countries", "24/7 multilingual patient coordination"],
+    trustTitle: "Why NEWLIFE HEALTH TOURISM?",
+    trustItems: ["Accreditation-focused partner clinic network", "Global patient coordination experience", "24/7 multilingual patient coordination"],
     servicesTitle: "Featured treatment areas",
     services: [
       { icon: Smile, title: "Dental Aesthetics", desc: "Laminate veneers, zirconium, smile design and implant planning." },
@@ -91,8 +91,8 @@ const content = {
       "“Medical quality and coordination exceeded our expectations.” — Thomas R.",
       "“Treatment + accommodation package was seamless and secure.” — Nadia K."
     ],
-    finalTitle: "Start your personalized treatment plan today",
-    finalDesc: "Share your photos and expectations to receive same-day doctor pre-assessment and pricing.",
+    finalTitle: "Start your personalized treatment journey today",
+    finalDesc: "Share your goals to receive suitable treatment options, process guidance, and estimated pricing quickly.",
     finalButton: "Chat on WhatsApp"
   }
 };

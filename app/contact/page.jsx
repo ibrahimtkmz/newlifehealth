@@ -5,14 +5,14 @@ import InnerPageLayout from "../components/InnerPageLayout";
 import { useLanguage } from "../components/LanguageProvider";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, Building2, Globe } from "lucide-react";
 
-const whatsappNumber = "905000000000";
+const whatsappNumber = "905301112233";
 
 const CONTENT = {
   tr: {
     title: "Iletisim",
-    subtitle: "Tedavi planiniz, tarih uygunlugu ve kisiye ozel fiyatlandirma icin hasta danismanlarimizla hemen iletisime gecin.",
+    subtitle: "NEWLIFE HEALTH TOURISM hasta danismanlariyla iletisime gecerek tedavi planinizi, tarih uygunlugunu ve surec detaylarini netlestirin.",
     formTitle: "Hizli Iletisim Formu",
-    formSubtitle: "Bilgilerinizi birakin, size 24 saat icinde donelim.",
+    formSubtitle: "Bilgilerinizi birakin, ekibimiz size 24 saat icinde donus yapsin.",
     name: "Ad Soyad",
     phone: "Telefon",
     email: "E-posta",
@@ -23,10 +23,10 @@ const CONTENT = {
     whatsappButton: "WhatsApp ile Iletisime Gec",
     office: "Istanbul Ofisi",
     schedule: "Calisma Saatleri",
-    address: "Fulya Mh. Buyukdere Cd, Fulya, Akinci Bayiri Sk. No: 74, 34394 Sisli/Istanbul",
-    phoneNumber: "+90 212 000 00 00",
-    whatsappNumber: "+90 500 000 00 00",
-    emailAddress: "newlifehealth.tr@gmail.com",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    phoneNumber: "+90 212 706 42 42",
+    whatsappNumber: "+90 530 111 22 33",
+    emailAddress: "info@newlifehealthtourism.com",
     hours: [
       "Pazartesi - Cuma: 09:00 - 19:00",
       "Cumartesi: 10:00 - 16:00",
@@ -62,9 +62,9 @@ const CONTENT = {
   },
   en: {
     title: "Contact",
-    subtitle: "Reach our patient advisors for treatment planning, available dates, and personalized pricing options.",
+    subtitle: "Contact NEWLIFE HEALTH TOURISM advisors for treatment planning, date availability, and clear next-step guidance.",
     formTitle: "Quick Contact Form",
-    formSubtitle: "Leave your details and we will get back to you within 24 hours.",
+    formSubtitle: "Leave your details and our team will get back to you within 24 hours.",
     name: "Full Name",
     phone: "Phone",
     email: "Email",
@@ -75,10 +75,10 @@ const CONTENT = {
     whatsappButton: "Contact via WhatsApp",
     office: "Istanbul Office",
     schedule: "Working Hours",
-    address: "Fulya Mh. Buyukdere Cd, Fulya, Akinci Bayiri Sk. No: 74, 34394 Sisli/Istanbul",
-    phoneNumber: "+90 212 000 00 00",
-    whatsappNumber: "+90 500 000 00 00",
-    emailAddress: "newlifehealth.tr@gmail.com",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    phoneNumber: "+90 212 706 42 42",
+    whatsappNumber: "+90 530 111 22 33",
+    emailAddress: "info@newlifehealthtourism.com",
     hours: [
       "Monday - Friday: 09:00 - 19:00",
       "Saturday: 10:00 - 16:00",
@@ -114,9 +114,9 @@ const CONTENT = {
   },
   ru: {
     title: "Контакты",
-    subtitle: "Свяжитесь с нашими координаторами для подбора лечения, согласования дат и персонального расчета стоимости.",
+    subtitle: "Свяжитесь с координаторами NEWLIFE HEALTH TOURISM для подбора лечения, согласования дат и этапов поездки.",
     formTitle: "Форма быстрой связи",
-    formSubtitle: "Оставьте свои данные, и мы свяжемся с вами в течение 24 часов.",
+    formSubtitle: "Оставьте данные, и наша команда свяжется с вами в течение 24 часов.",
     name: "Полное имя",
     phone: "Телефон",
     email: "Email",
@@ -127,10 +127,10 @@ const CONTENT = {
     whatsappButton: "Связаться через WhatsApp",
     office: "Офис в Стамбуле",
     schedule: "Часы работы",
-    address: "Fulya Mh. Buyukdere Cd, Fulya, Akinci Bayiri Sk. No: 74, 34394 Sisli/Istanbul",
-    phoneNumber: "+90 212 000 00 00",
-    whatsappNumber: "+90 500 000 00 00",
-    emailAddress: "newlifehealth.tr@gmail.com",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    phoneNumber: "+90 212 706 42 42",
+    whatsappNumber: "+90 530 111 22 33",
+    emailAddress: "info@newlifehealthtourism.com",
     hours: [
       "Понедельник - Пятница: 09:00 - 19:00",
       "Суббота: 10:00 - 16:00",
