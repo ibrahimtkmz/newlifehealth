@@ -21,6 +21,38 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com"
+      },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com"
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.scope.digital"
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com"
+      },
+      {
+        protocol: "https",
+        hostname: "clinicego.com"
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org"
+      },
+      {
+        protocol: "https",
+        hostname: "venividigoz.com"
+      },
+      {
+        protocol: "https",
+        hostname: "i0.wp.com"
+      },
+      {
+        protocol: "https",
+        hostname: "oclinic.com.tr"
       }
     ]
   }
