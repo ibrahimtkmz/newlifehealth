@@ -608,7 +608,10 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
-        <div className="rounded-[2rem] bg-[#eef5fd] p-6 shadow-md md:p-10">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#eef5fd] p-6 shadow-md md:p-10">
+          <Image src="/bald-man.jpeg" alt="" fill className="object-cover object-center" aria-hidden="true" />
+          <div className="absolute inset-0 bg-white/85" />
+          <div className="relative z-10">
           <h2 className="text-center text-4xl font-bold text-[#101f35] md:text-6xl">{t.graftTitle}</h2>
           <p className="mx-auto mt-4 max-w-[700px] text-center text-lg text-[#4f6277]">{t.graftSubtitle}</p>
           <div className="mt-8 grid items-center gap-6 xl:grid-cols-[1fr_1.2fr_1fr]">
@@ -698,6 +701,7 @@ export default function HomePage() {
                 {leadSent && <p className="mt-3 text-sm font-medium text-[#1c6eb3]">{t.leadSuccess}</p>}
               </form>
             </aside>
+          </div>
           </div>
         </div>
       </section>
