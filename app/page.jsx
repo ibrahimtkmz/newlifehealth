@@ -26,7 +26,12 @@ import {
   Coffee,
   HandHeart,
   Droplets,
-  MessageCircleHeart
+  MessageCircleHeart,
+  Leaf,
+  Sparkles,
+  Scissors,
+  TrendingUp,
+  Flag
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
@@ -150,6 +155,18 @@ const content = {
       ["Şeffaf ve Planlı Süreç", "İlk danışmadan Türkiye'deki tedavi planınıza kadar tüm aşamaları net şekilde yönetiyoruz."],
       ["Tek Noktadan Koordinasyon", "Tedavi, transfer, konaklama ve sonrası takip tek bir koordinasyon ekibiyle ilerler."]
     ],
+    timelineTitle: "Saç Ekimi Zaman Çizelgesi: 1. Günden Sonuca",
+    timelineSubtitle: "Saç ekimi sonrası hedeflediğiniz yoğunluğa ulaşmak yaklaşık bir yıl sürebilir.",
+    timelineItems: [
+      ["Saç ekimi sonrası", "1. Gün", "leaf"],
+      ["Bandaj çıkarma ve yıkama", "2. Gün", "sparkles"],
+      ["İlk iyileşme", "3 - 10 Gün", "bandage"],
+      ["Şok dökülme", "2 - 4 Hafta", "scissors"],
+      ["Uyku (dormansi) dönemi", "1 - 3 Ay", "moon"],
+      ["Erken uzama", "3 - 6 Ay", "sprout"],
+      ["Belirgin iyileşme", "6 - 10 Ay", "trend"],
+      ["Nihai sonuç", "10 - 16 Ay", "flag"]
+    ],
     ctaTitle: "Her Tedavide Mükemmellik.",
     ctaPhone: "+90 546 524 8334",
     consultant: "Lina ile Sohbet",
@@ -268,6 +285,18 @@ const content = {
       ["Authorized Provider Network", "We connect you only with contracted institutions that hold official medical tourism authorization."],
       ["Clear & Structured Journey", "From first consultation to your treatment plan in Turkey, every step is communicated clearly."],
       ["Single-Point Coordination", "Treatment, transfers, accommodation, and aftercare are coordinated by one dedicated team."]
+    ],
+    timelineTitle: "Hair Transplant Timeline: Day 1 To Final Results",
+    timelineSubtitle: "With hair transplants it can take approximately a year to get a nice new head of hair of the density you want.",
+    timelineItems: [
+      ["After your hair transplant", "Day 1", "leaf"],
+      ["Bandage removal and washing", "Day 2", "sparkles"],
+      ["Initial Healing", "3 - 10 Days", "bandage"],
+      ["Hair Shedding", "2 - 4 Weeks", "scissors"],
+      ["Dormancy (sleeping) Period", "1 - 3 Months", "moon"],
+      ["Early Growth", "3 - 6 Months", "sprout"],
+      ["Noticeable Improvement", "6 - 10 Months", "trend"],
+      ["Final Results", "10 - 16 Months", "flag"]
     ],
     ctaTitle: "Excellence in Every Treatment.",
     ctaPhone: "+90 546 524 8334",
@@ -388,6 +417,18 @@ const content = {
       ["Понятный и структурный процесс", "От первой консультации до плана лечения в Турции — каждый шаг прозрачно согласован."],
       ["Координация через одну команду", "Лечение, трансфер, проживание и послеоперационное сопровождение ведет единая команда."]
     ],
+    timelineTitle: "Этапы пересадки волос: с 1-го дня до результата",
+    timelineSubtitle: "После пересадки может потребоваться около года, чтобы получить желаемую густоту волос.",
+    timelineItems: [
+      ["Сразу после пересадки", "День 1", "leaf"],
+      ["Снятие повязки и мытье", "День 2", "sparkles"],
+      ["Начальное заживление", "3 - 10 дней", "bandage"],
+      ["Выпадение пересаженных волос", "2 - 4 недели", "scissors"],
+      ["Фаза покоя", "1 - 3 месяца", "moon"],
+      ["Ранний рост", "3 - 6 месяцев", "sprout"],
+      ["Заметное улучшение", "6 - 10 месяцев", "trend"],
+      ["Финальный результат", "10 - 16 месяцев", "flag"]
+    ],
     ctaTitle: "Совершенство в каждом лечении.",
     ctaPhone: "+90 546 524 8334",
     consultant: "Чат с Линой",
@@ -412,6 +453,16 @@ export default function HomePage() {
     procedure: Stethoscope,
     wash: Droplets,
     aftercare: MessageCircleHeart
+  };
+  const timelineIcons = {
+    leaf: Leaf,
+    sparkles: Sparkles,
+    bandage: HandHeart,
+    scissors: Scissors,
+    moon: Coffee,
+    sprout: Droplets,
+    trend: TrendingUp,
+    flag: Flag
   };
   const [menuOpen, setMenuOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
@@ -858,6 +909,29 @@ export default function HomePage() {
               <p className="text-sm leading-relaxed text-[#4d6789]">{description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14">
+        <div className="rounded-[2.4rem] bg-gradient-to-r from-[#bcefdc] to-[#86ccff] px-6 py-12 text-[#15202f] md:px-12">
+          <h2 className="text-center text-3xl font-bold leading-tight md:text-6xl">{t.timelineTitle}</h2>
+          <p className="mx-auto mt-4 max-w-[920px] text-center text-lg text-[#203040] md:text-3xl">{t.timelineSubtitle}</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {t.timelineItems.map(([title, duration, icon]) => {
+              const IconComponent = timelineIcons[icon] ?? CircleHelp;
+              return (
+                <article key={`${title}-${duration}`} className="rounded-3xl border border-[#0f172a1f] bg-[#ffffff8c] p-5 backdrop-blur-sm">
+                  <div className="flex items-start gap-3">
+                    <IconComponent className="mt-0.5 h-6 w-6 shrink-0 text-[#111827]" />
+                    <div>
+                      <h3 className="text-2xl font-semibold leading-tight">{title}</h3>
+                      <p className="mt-2 text-lg text-[#324255]">{duration}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
