@@ -100,7 +100,11 @@ const content = {
     ctaTitle: "Her Tedavide Mükemmellik.",
     ctaPhone: "+90 546 524 8334",
     consultant: "Lina ile Sohbet",
-    consultantSub: "Dijital Sağlık Danışmanı"
+    consultantSub: "Dijital Sağlık Danışmanı",
+    chatTitle: "Lina ile Sohbet",
+    chatPlaceholder: "Mesajınızı yazın...",
+    chatSend: "WhatsApp'a Gönder",
+    chatClose: "Kapat"
   },
   en: {
     languageLabel: "English",
@@ -170,7 +174,11 @@ const content = {
     ctaTitle: "Excellence in Every Treatment.",
     ctaPhone: "+90 546 524 8334",
     consultant: "Chat with Lina",
-    consultantSub: "Digital Health Consultant"
+    consultantSub: "Digital Health Consultant",
+    chatTitle: "Chat with Lina",
+    chatPlaceholder: "Type your message...",
+    chatSend: "Send to WhatsApp",
+    chatClose: "Close"
   },
   ru: {
     languageLabel: "Русский",
@@ -240,7 +248,11 @@ const content = {
     ctaTitle: "Совершенство в каждом лечении.",
     ctaPhone: "+90 546 524 8334",
     consultant: "Чат с Линой",
-    consultantSub: "Цифровой консультант"
+    consultantSub: "Цифровой консультант",
+    chatTitle: "Чат с Линой",
+    chatPlaceholder: "Введите сообщение...",
+    chatSend: "Отправить в WhatsApp",
+    chatClose: "Закрыть"
   }
 };
 
@@ -248,6 +260,8 @@ export default function HomePage() {
   const { lang, setLang } = useLanguage();
   const t = content[lang] || content.en;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatMessage, setChatMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const treatmentRef = useRef(null);
@@ -272,6 +286,15 @@ export default function HomePage() {
     treatmentRef.current.scrollBy({ left: direction * 240, behavior: "smooth" });
   };
 
+  const handleWhatsAppSend = () => {
+    if (!chatMessage.trim()) return;
+    const whatsappNumber = "905467372284";
+    const encodedMessage = encodeURIComponent(chatMessage.trim());
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
+    setChatOpen(false);
+    setChatMessage("");
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f5f8fd] text-[#1d3257]">
       <header className="border-b border-slate-200 bg-white">
@@ -290,12 +313,18 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-5">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Newlife Health logo" width={200} height={60} className="h-auto w-[180px] object-contain" priority />
+        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-3 px-4 py-3 md:py-4">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white md:h-14 md:w-14">
+              <Image src="/logo.png" alt="Newlife Health logo" width={56} height={56} className="h-full w-full object-contain p-1" priority />
+            </div>
+            <div className="leading-tight">
+              <p className="text-sm font-bold tracking-wide text-[#173b69] md:text-base">NEWLIFE HEALTH</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#4d6789] md:text-[11px]">Tourism Agency</p>
+            </div>
           </div>
 
-          <nav className="hidden items-center gap-8 text-[17px] font-semibold text-[#203a64] lg:flex">
+          <nav className="hidden items-center gap-6 text-[15px] font-semibold text-[#203a64] xl:flex">
             {t.nav.map((item, idx) => (
               <a key={item} href="#" className="inline-flex items-center gap-1 hover:text-[#1f77d2]">
                 {item}
@@ -305,7 +334,7 @@ export default function HomePage() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button className="hidden rounded-full bg-[#2ca3e3] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1a8dd0] md:block">{t.partnership}</button>
+            <button className="hidden rounded-full bg-[#2ca3e3] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1a8dd0] lg:block">{t.partnership}</button>
             <button className="rounded-lg border border-slate-200 p-2 lg:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle mobile menu">
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -514,13 +543,47 @@ export default function HomePage() {
         <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 IME Hayat Sağlık Turizmi A.Ş</div>
       </footer>
 
-      <div className="fixed bottom-6 right-6 z-40 hidden items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 shadow-xl md:flex">
+      <button
+        onClick={() => setChatOpen(true)}
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl"
+      >
         <Image src="/10.jpeg" alt="Consultant" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
-        <div>
+        <div className="hidden md:block">
           <p className="text-xl font-semibold text-[#1b3e6b]">{t.consultant}</p>
           <p className="text-sm text-[#4f6588]">{t.consultantSub}</p>
         </div>
-      </div>
+      </button>
+
+      {chatOpen && (
+        <div className="fixed bottom-24 right-6 z-50 w-[320px] rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl">
+          <div className="mb-3 flex items-center justify-between">
+            <div>
+              <p className="text-base font-bold text-[#173b69]">{t.chatTitle}</p>
+              <p className="text-xs text-[#4f6588]">{t.consultantSub}</p>
+            </div>
+            <button
+              onClick={() => setChatOpen(false)}
+              className="rounded-md px-2 py-1 text-xs font-semibold text-[#4f6588] hover:bg-slate-100"
+            >
+              {t.chatClose}
+            </button>
+          </div>
+          <textarea
+            value={chatMessage}
+            onChange={(e) => setChatMessage(e.target.value)}
+            placeholder={t.chatPlaceholder}
+            className="h-28 w-full resize-none rounded-xl border border-slate-200 p-3 text-sm outline-none ring-[#1cbf5d] focus:ring-2"
+          />
+          <button
+            onClick={handleWhatsAppSend}
+            disabled={!chatMessage.trim()}
+            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1cbf5d] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17a34e] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <MessageCircle className="h-4 w-4" />
+            {t.chatSend}
+          </button>
+        </div>
+      )}
 
       <div className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex">
         <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#2f7ae5] text-white shadow-lg" aria-label="Telegram">
