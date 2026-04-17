@@ -269,14 +269,14 @@ export default function HomePage() {
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
   const treatmentImages = [
-    "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1609902726285-00668009f004?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1588776814546-bc2c2f4f27fd?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=640&q=80",
-    "https://images.unsplash.com/photo-1580281657527-47cbe7ce6c67?auto=format&fit=crop&w=640&q=80"
+    "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
+    "https://cdn.scope.digital/Images/Articles/liposuction-nedir-kimler-yaptirabilir-2898767.jpg?tr=w-630,h-420",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7QOmvxVaigT_pWvOA_S29Hg7WBjPuD830A&s",
+    "https://clinicego.com/wp-content/uploads/elementor/thumbs/hollywood-smile-qzer0j15xw9a8howopyj0urfyk7ewmsbstos45gfgg.webp",
+    "https://upload.wikimedia.org/wikipedia/commons/1/1d/Dental-implant-illustration.jpg",
+    "https://venividigoz.com/uploads/v1/akilli-lensler-kopya.jpg",
+    "https://i0.wp.com/www.bursagoz.com/wp-content/uploads/2020/02/goz-kapak-kaldirma.jpg?fit=800%2C445&ssl=1",
+    "https://oclinic.com.tr/wp-content/uploads/2022/02/FUE-teknii-1024x768.jpg.webp"
   ];
   const visibleTestimonials = useMemo(() => {
     const full = [...t.testimonials, ...t.testimonials];
