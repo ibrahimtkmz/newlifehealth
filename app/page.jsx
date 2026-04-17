@@ -18,8 +18,7 @@ import {
   Building2,
   Stethoscope,
   ArrowLeft,
-  ArrowRight,
-  CheckCircle2
+  ArrowRight
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
@@ -100,6 +99,11 @@ const content = {
     approxGraftsLabel: "Yaklaşık greft sayısı",
     approxHairsLabel: "Yaklaşık saç teli sayısı",
     consultationButton: "Ücretsiz Konsültasyon Al",
+    estimateDisclaimer: "Bu hesaplama yalnızca yaklaşık bir tahmindir. Kesin planlama için uzman muayenesi gereklidir.",
+    leadTitle: "Sonucunuzu e-posta ile alın",
+    leadPlaceholder: "E-posta adresiniz",
+    leadButton: "Sonucu Gönder",
+    leadSuccess: "Sonuç özeti e-posta için hazırlandı. Ekibimiz sizinle kısa süre içinde iletişime geçecek.",
     whyItems: [
       ["Yetkili Sağlık Kurumu Ağı", "Sizi sadece sağlık turizmi yetki belgesine sahip anlaşmalı kurumlarla buluşturuyoruz."],
       ["Şeffaf ve Planlı Süreç", "İlk danışmadan Türkiye'deki tedavi planınıza kadar tüm aşamaları net şekilde yönetiyoruz."],
@@ -181,6 +185,11 @@ const content = {
     approxGraftsLabel: "Approximate number of grafts",
     approxHairsLabel: "Approximate number of hairs",
     consultationButton: "Book a free consultation",
+    estimateDisclaimer: "This calculator provides an approximate estimate only. A specialist consultation is required for a precise plan.",
+    leadTitle: "Get your result by email",
+    leadPlaceholder: "Your email address",
+    leadButton: "Send My Result",
+    leadSuccess: "Your estimate summary is ready for email. Our team will contact you shortly.",
     whyItems: [
       ["Authorized Provider Network", "We connect you only with contracted institutions that hold official medical tourism authorization."],
       ["Clear & Structured Journey", "From first consultation to your treatment plan in Turkey, every step is communicated clearly."],
@@ -262,6 +271,11 @@ const content = {
     approxGraftsLabel: "Примерное количество графтов",
     approxHairsLabel: "Примерное количество волос",
     consultationButton: "Бесплатная консультация",
+    estimateDisclaimer: "Калькулятор показывает только приблизительную оценку. Для точного плана нужна консультация специалиста.",
+    leadTitle: "Получить результат по email",
+    leadPlaceholder: "Ваш email",
+    leadButton: "Отправить результат",
+    leadSuccess: "Краткий расчет подготовлен для отправки на email. Наша команда свяжется с вами в ближайшее время.",
     whyItems: [
       ["Сеть авторизованных учреждений", "Направляем только в партнерские учреждения с официальным разрешением на медтуризм."],
       ["Понятный и структурный процесс", "От первой консультации до плана лечения в Турции — каждый шаг прозрачно согласован."],
@@ -285,6 +299,8 @@ export default function HomePage() {
   const [chatOpen, setChatOpen] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadSent, setLeadSent] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const treatmentRef = useRef(null);
   const [formData, setFormData] = useState({ name: "", phone: "", treatment: "", language: lang.toUpperCase() });
@@ -292,12 +308,42 @@ export default function HomePage() {
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
   const zoneConfigs = [
-    { id: 1, graftMin: 600, graftMax: 800, clipPath: "polygon(8% 62%, 18% 57%, 26% 59%, 30% 66%, 28% 75%, 18% 78%, 10% 73%)", labelX: "18%", labelY: "67%" },
-    { id: 2, graftMin: 1900, graftMax: 2100, clipPath: "polygon(16% 46%, 84% 46%, 88% 58%, 82% 68%, 68% 75%, 32% 75%, 18% 68%, 12% 58%)", labelX: "50%", labelY: "59%" },
-    { id: 3, graftMin: 900, graftMax: 1100, clipPath: "polygon(28% 42%, 72% 42%, 79% 52%, 73% 62%, 60% 67%, 40% 67%, 27% 62%, 21% 52%)", labelX: "50%", labelY: "56%" },
-    { id: 4, graftMin: 700, graftMax: 900, clipPath: "polygon(9% 30%, 26% 24%, 40% 28%, 43% 40%, 28% 47%, 12% 44%)", labelX: "19%", labelY: "38%" },
-    { id: 5, graftMin: 1400, graftMax: 1600, clipPath: "polygon(23% 16%, 50% 12%, 77% 16%, 90% 26%, 84% 35%, 72% 40%, 50% 42%, 28% 40%, 16% 35%, 10% 26%)", labelX: "73%", labelY: "27%" },
-    { id: 6, graftMin: 800, graftMax: 800, clipPath: "polygon(29% 8%, 50% 5%, 71% 8%, 76% 16%, 69% 23%, 50% 26%, 31% 23%, 24% 16%)", labelX: "50%", labelY: "16%" }
+    {
+      id: 1,
+      graftMin: 600,
+      graftMax: 800,
+      path: "M140 404 C170 386 214 382 244 401 C236 438 206 456 164 456 C147 442 140 426 140 404 Z M556 404 C586 386 630 382 660 401 C660 426 653 442 636 456 C594 456 564 438 556 404 Z",
+      labels: [{ x: 193, y: 424 }, { x: 607, y: 424 }]
+    },
+    {
+      id: 2,
+      graftMin: 1900,
+      graftMax: 2100,
+      path: "M138 328 C188 286 291 270 402 270 C513 270 616 286 666 328 C650 365 629 389 596 407 C532 422 468 430 402 430 C336 430 272 422 208 407 C175 389 154 365 138 328 Z",
+      labels: [{ x: 250, y: 350 }, { x: 554, y: 350 }]
+    },
+    {
+      id: 3,
+      graftMin: 900,
+      graftMax: 1100,
+      path: "M255 264 C292 250 344 242 402 242 C460 242 512 250 549 264 C536 332 486 374 402 374 C318 374 268 332 255 264 Z",
+      labels: [{ x: 402, y: 320 }]
+    },
+    {
+      id: 4,
+      graftMin: 700,
+      graftMax: 900,
+      path: "M228 188 C274 162 333 149 402 149 C471 149 530 162 576 188 C566 233 548 261 521 279 C481 263 444 257 402 257 C360 257 323 263 283 279 C256 261 238 233 228 188 Z",
+      labels: [{ x: 226, y: 222 }, { x: 578, y: 222 }]
+    },
+    {
+      id: 5,
+      graftMin: 1400,
+      graftMax: 1600,
+      path: "M199 126 C252 92 323 74 402 74 C481 74 552 92 605 126 C592 162 571 184 541 194 C497 179 450 171 402 171 C354 171 307 179 263 194 C233 184 212 162 199 126 Z",
+      labels: [{ x: 280, y: 146 }, { x: 524, y: 146 }]
+    },
+    { id: 6, graftMin: 800, graftMax: 800, path: "M297 82 C328 62 364 52 402 52 C440 52 476 62 507 82 C501 110 484 129 456 137 C439 132 421 130 402 130 C383 130 365 132 348 137 C320 129 303 110 297 82 Z", labels: [{ x: 402, y: 98 }] }
   ];
   const treatmentImages = [
     "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
@@ -314,15 +360,8 @@ export default function HomePage() {
     return full.slice(testimonialIndex, testimonialIndex + 3);
   }, [testimonialIndex, t.testimonials]);
   const selectedZoneData = useMemo(() => zoneConfigs.filter((zone) => selectedZones.includes(zone.id)), [selectedZones]);
-  const totalGrafts = useMemo(
-    () =>
-      selectedZoneData.reduce(
-        (total, zone) => ({ min: total.min + zone.graftMin, max: total.max + zone.graftMax }),
-        { min: 0, max: 0 }
-      ),
-    [selectedZoneData]
-  );
-  const totalHairs = useMemo(() => ({ min: totalGrafts.min * 2.2, max: totalGrafts.max * 2.2 }), [totalGrafts]);
+  const totalGrafts = useMemo(() => selectedZoneData.reduce((total, zone) => total + zone.graftMin, 0), [selectedZoneData]);
+  const totalHairs = useMemo(() => Math.round(totalGrafts * 2.2), [totalGrafts]);
 
   const handleSend = (event) => {
     event.preventDefault();
@@ -346,6 +385,16 @@ export default function HomePage() {
   };
   const toggleZone = (zoneId) => {
     setSelectedZones((prev) => (prev.includes(zoneId) ? prev.filter((id) => id !== zoneId) : [...prev, zoneId].sort((a, b) => a - b)));
+  };
+  const handleConsultationClick = () => {
+    window.open("https://wa.me/905465248334?text=Hello%2C%20I%20would%20like%20a%20free%20consultation%20about%20my%20graft%20estimate.", "_blank", "noopener,noreferrer");
+  };
+  const handleLeadSubmit = (event) => {
+    event.preventDefault();
+    if (!leadEmail.trim()) return;
+    setLeadSent(true);
+    setLeadEmail("");
+    setTimeout(() => setLeadSent(false), 3000);
   };
 
   return (
@@ -557,13 +606,15 @@ export default function HomePage() {
                 {zoneConfigs.map((zone) => {
                   const isSelected = selectedZones.includes(zone.id);
                   return (
-                    <button key={zone.id} onClick={() => toggleZone(zone.id)} className="flex w-full items-center gap-3 text-left">
-                      {isSelected ? <CheckCircle2 className="h-5 w-5 text-[#131c28]" /> : <span className="h-5 w-5 rounded-full border border-[#9ba8b7]" />}
-                      <span className="text-lg font-semibold leading-none text-[#111827] md:text-2xl">{t.zonePrefix} {zone.id}</span>
+                    <label key={zone.id} className="flex w-full cursor-pointer items-center gap-3 text-left">
+                      <input type="checkbox" checked={isSelected} onChange={() => toggleZone(zone.id)} className="h-5 w-5 accent-[#0f172a]" />
+                      <span className="text-lg font-semibold leading-none text-[#111827] md:text-2xl">
+                        {t.zonePrefix} {zone.id}
+                      </span>
                       <span className="text-lg leading-none text-[#556476] md:text-2xl">
                         {zone.graftMin === zone.graftMax ? `${zone.graftMin}` : `${zone.graftMin} - ${zone.graftMax}`} Grafts
                       </span>
-                    </button>
+                    </label>
                   );
                 })}
               </div>
@@ -572,43 +623,64 @@ export default function HomePage() {
             <div className="relative mx-auto h-[430px] w-full max-w-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
               <Image src="/bald-man.jpeg" alt="Graft area model head" fill className="object-cover object-top" />
               <div className="absolute inset-0 bg-[#c9d3de]/15" />
-              {zoneConfigs.map((zone) => {
-                const isSelected = selectedZones.includes(zone.id);
-                return (
-                  <button
-                    key={`head-${zone.id}`}
-                    onClick={() => toggleZone(zone.id)}
-                    className={`absolute inset-0 border border-dashed border-[#4b5563]/55 text-xl font-semibold text-[#111827] transition ${isSelected ? "bg-[#f5b892]/55" : "bg-[#afc6cf]/25 hover:bg-[#afc6cf]/40"}`}
-                    style={{ clipPath: zone.clipPath }}
-                    aria-label={`${t.zonePrefix} ${zone.id}`}
-                  />
-                );
-              })}
-              {zoneConfigs.map((zone) => (
-                <span
-                  key={`head-label-${zone.id}`}
-                  className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold text-[#111827]"
-                  style={{ left: zone.labelX, top: zone.labelY }}
-                >
-                  {zone.id}
-                </span>
-              ))}
+              <svg viewBox="0 0 804 640" className="absolute inset-0 h-full w-full" aria-label="Hair loss zones">
+                {zoneConfigs.map((zone) => {
+                  const isSelected = selectedZones.includes(zone.id);
+                  return (
+                    <path
+                      key={`head-zone-${zone.id}`}
+                      d={zone.path}
+                      onClick={() => toggleZone(zone.id)}
+                      className="cursor-pointer transition-all duration-200"
+                      fill={isSelected ? "rgba(248, 177, 132, 0.58)" : "rgba(164, 191, 199, 0.36)"}
+                      stroke="rgba(31, 41, 55, 0.58)"
+                      strokeDasharray="8 6"
+                      strokeWidth="2"
+                    />
+                  );
+                })}
+                {zoneConfigs.flatMap((zone) =>
+                  zone.labels.map((label, index) => (
+                    <text
+                      key={`zone-label-${zone.id}-${index}`}
+                      x={label.x}
+                      y={label.y}
+                      textAnchor="middle"
+                      className="pointer-events-none select-none fill-[#111827] text-[46px] font-semibold"
+                    >
+                      {zone.id}
+                    </text>
+                  ))
+                )}
+              </svg>
             </div>
 
             <aside className="rounded-3xl p-4">
               <p className="text-2xl font-medium text-[#34465b] md:text-4xl">{t.approxGraftsLabel}</p>
-              <p className="mt-2 text-5xl font-semibold leading-none text-[#111827] md:text-7xl">
-                {totalGrafts.min === totalGrafts.max ? totalGrafts.min : `${totalGrafts.min} - ${totalGrafts.max}`} Grafts
-              </p>
-              <p className="mt-4 text-5xl font-medium leading-none text-[#5f6f81] md:text-7xl">
-                {Math.round(totalHairs.min) === Math.round(totalHairs.max)
-                  ? Math.round(totalHairs.min)
-                  : `${Math.round(totalHairs.min)} - ${Math.round(totalHairs.max)}`}{" "}
-                Hairs
-              </p>
-              <button className="mt-10 rounded-3xl bg-gradient-to-r from-[#77d0e8] to-[#61a8ea] px-10 py-5 text-xl font-medium text-[#0f1b2b] md:text-3xl">
+              <p className="mt-2 text-5xl font-semibold leading-none text-[#111827] md:text-7xl">{totalGrafts} Grafts</p>
+              <p className="mt-4 text-2xl font-medium text-[#34465b] md:text-4xl">{t.approxHairsLabel}</p>
+              <p className="mt-2 text-5xl font-medium leading-none text-[#5f6f81] md:text-7xl">{totalHairs} Hairs</p>
+              <p className="mt-6 max-w-[440px] text-sm leading-relaxed text-[#4f6277]">{t.estimateDisclaimer}</p>
+              <button onClick={handleConsultationClick} className="mt-8 rounded-3xl bg-gradient-to-r from-[#77d0e8] to-[#61a8ea] px-10 py-5 text-xl font-medium text-[#0f1b2b] md:text-3xl">
                 {t.consultationButton}
               </button>
+              <form onSubmit={handleLeadSubmit} className="mt-6 rounded-2xl border border-[#c8d9ec] bg-white p-4 shadow-sm">
+                <p className="mb-3 text-base font-semibold text-[#1c3353] md:text-lg">{t.leadTitle}</p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <input
+                    type="email"
+                    required
+                    value={leadEmail}
+                    onChange={(event) => setLeadEmail(event.target.value)}
+                    placeholder={t.leadPlaceholder}
+                    className="w-full rounded-xl border border-[#bfd0e5] px-4 py-3 text-sm text-[#1b2c43] outline-none transition focus:border-[#60a5fa]"
+                  />
+                  <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3]">
+                    {t.leadButton}
+                  </button>
+                </div>
+                {leadSent && <p className="mt-3 text-sm font-medium text-[#1c6eb3]">{t.leadSuccess}</p>}
+              </form>
             </aside>
           </div>
         </div>
