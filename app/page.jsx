@@ -40,7 +40,7 @@ const content = {
     send: "Gönder",
     sent: "Gönderildi",
     quickActions: ["Ücretsiz Teklif Al", "Doktorlarla Görüş", "Ağımız", "Sağlık Hizmeti", "Sonrası Destek", "Check-Up"],
-    treatmentTag: "IME Klinik",
+    treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Türk Sağlık Turizminde Popüler Tedaviler",
     treatments: [
       "Yüz & Boyun Germe",
@@ -123,7 +123,7 @@ const content = {
     send: "Send",
     sent: "Sent",
     quickActions: ["Get a Free Quote", "Talk to Doctors", "Our Network", "Healthcare", "Aftercare Help", "Health Check-Up"],
-    treatmentTag: "IME Clinic",
+    treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Popular Treatments in Turkish Health Tourism",
     treatments: ["Face & Neck Lift", "Liposuction", "Brazilian Butt Lift", "Hollywood Smile", "Dental Implants", "Eye Laser & Smart Lens", "Blepharoplasty", "Hair Transplant"],
     infoBanner:
@@ -197,7 +197,7 @@ const content = {
     send: "Отправить",
     sent: "Отправлено",
     quickActions: ["Получить расчет", "Связь с врачом", "Наша сеть", "Медуслуги", "Поддержка", "Check-Up"],
-    treatmentTag: "IME Клиника",
+    treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Популярные направления лечения в Турции",
     treatments: ["Подтяжка лица и шеи", "Липосакция", "BBL", "Голливудская улыбка", "Дентальные импланты", "Лазер и умные линзы", "Блефаропластика", "Пересадка волос"],
     infoBanner:
@@ -390,7 +390,7 @@ export default function HomePage() {
             <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">15K+ Consultations</div>
             <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">1K Reviews</div>
             <div className="mx-auto max-w-[430px] overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#b1dcff] to-[#73c6ff] p-2">
-              <Image src="/slide.jpg" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[1.5rem] object-cover object-center" />
+              <Image src="/slide.jpg" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[1.5rem] bg-white object-contain object-center" />
             </div>
           </div>
         </div>
@@ -525,7 +525,7 @@ export default function HomePage() {
               <Phone className="h-5 w-5" /> {t.ctaPhone}
             </p>
             <p className="flex items-center gap-2 text-lg font-semibold">
-              <Mail className="h-5 w-5" /> info@imeclinic.com
+              <Mail className="h-5 w-5" /> info@newlifehealth.com
             </p>
           </div>
         </div>
@@ -534,9 +534,9 @@ export default function HomePage() {
       <footer className="border-t bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-[1280px] gap-8 px-4 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <Image src="/logo.png" alt="IME Clinic Logo" width={160} height={48} className="mb-3 h-12 w-auto object-contain" />
+            <Image src="/logo.png" alt="NEWLIFE HEALTH Logo" width={160} height={48} className="mb-3 h-12 w-auto object-contain" />
             <p className="max-w-[420px] text-sm leading-relaxed text-[#3d5f89]">
-              IME Clinic is a registered medical travel and treatment coordination brand operating with authorized healthcare institutions in Turkey.
+              NEWLIFE HEALTH is a registered medical travel and treatment coordination brand operating with authorized healthcare institutions in Turkey.
             </p>
           </div>
           <div>
@@ -546,10 +546,10 @@ export default function HomePage() {
           <div>
             <h4 className="mb-2 font-bold text-[#173b69]">Connect With Us</h4>
             <p className="text-sm text-[#3d5f89]">Ataköy 7-8-9-10 Kısım Mah. Çobançeşme E5 Yan Yol Cad.</p>
-            <p className="mt-2 text-sm font-semibold text-[#173b69]">info@imeclinic.com</p>
+            <p className="mt-2 text-sm font-semibold text-[#173b69]">info@newlifehealth.com</p>
           </div>
         </div>
-        <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 IME Hayat Sağlık Turizmi A.Ş</div>
+        <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 NEWLIFE HEALTH Sağlık Turizmi A.Ş</div>
       </footer>
 
       <button
