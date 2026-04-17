@@ -953,12 +953,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[0][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[0][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[0][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[0][1]}</p>
                   </article>
                 );
               })()}
@@ -968,12 +968,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[1][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[1][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[1][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[1][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[1][1]}</p>
                   </article>
                 );
               })()}
@@ -983,12 +983,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[2][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[2][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[2][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[2][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[2][1]}</p>
                   </article>
                 );
               })()}
@@ -998,12 +998,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[4][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[4][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[4][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[4][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[4][1]}</p>
                   </article>
                 );
               })()}
@@ -1013,12 +1013,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[3][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[3][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[3][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[3][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[3][1]}</p>
                   </article>
                 );
               })()}
@@ -1028,12 +1028,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineShareTitle}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineShareTitle}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineShareDay}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineShareDay}</p>
                   </article>
                 );
               })()}
@@ -1043,12 +1043,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[5][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[5][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[5][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[5][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[5][1]}</p>
                   </article>
                 );
               })()}
@@ -1058,12 +1058,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[6][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[6][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[6][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[6][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[6][1]}</p>
                   </article>
                 );
               })()}
@@ -1073,12 +1073,12 @@ export default function HomePage() {
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[7][2]] ?? CircleHelp;
                 return (
-                  <article>
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
                     <div className="flex items-center gap-3">
                       <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-[22px] lg:text-[40px] font-semibold leading-tight">{t.timelineItems[7][0]}</h3>
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[7][0]}</h3>
                     </div>
-                    <p className="ml-8 mt-1 text-[19px] lg:text-[32px] text-[#324255]">{t.timelineItems[7][1]}</p>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[7][1]}</p>
                   </article>
                 );
               })()}
