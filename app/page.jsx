@@ -292,12 +292,12 @@ export default function HomePage() {
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
   const zoneConfigs = [
-    { id: 1, graftMin: 600, graftMax: 800, clipPath: "ellipse(13% 7% at 26% 53%)", labelX: "26%", labelY: "54%" },
-    { id: 2, graftMin: 1900, graftMax: 2100, clipPath: "ellipse(32% 16% at 50% 44%)", labelX: "50%", labelY: "44%" },
-    { id: 3, graftMin: 900, graftMax: 1100, clipPath: "ellipse(21% 10% at 50% 30%)", labelX: "50%", labelY: "30%" },
-    { id: 4, graftMin: 700, graftMax: 900, clipPath: "ellipse(20% 13% at 24% 34%)", labelX: "18%", labelY: "33%" },
-    { id: 5, graftMin: 1400, graftMax: 1600, clipPath: "ellipse(20% 13% at 76% 34%)", labelX: "82%", labelY: "33%" },
-    { id: 6, graftMin: 800, graftMax: 800, clipPath: "ellipse(18% 7% at 50% 16%)", labelX: "50%", labelY: "14%" }
+    { id: 1, graftMin: 600, graftMax: 800, clipPath: "polygon(8% 62%, 18% 57%, 26% 59%, 30% 66%, 28% 75%, 18% 78%, 10% 73%)", labelX: "18%", labelY: "67%" },
+    { id: 2, graftMin: 1900, graftMax: 2100, clipPath: "polygon(16% 46%, 84% 46%, 88% 58%, 82% 68%, 68% 75%, 32% 75%, 18% 68%, 12% 58%)", labelX: "50%", labelY: "59%" },
+    { id: 3, graftMin: 900, graftMax: 1100, clipPath: "polygon(28% 42%, 72% 42%, 79% 52%, 73% 62%, 60% 67%, 40% 67%, 27% 62%, 21% 52%)", labelX: "50%", labelY: "56%" },
+    { id: 4, graftMin: 700, graftMax: 900, clipPath: "polygon(9% 30%, 26% 24%, 40% 28%, 43% 40%, 28% 47%, 12% 44%)", labelX: "19%", labelY: "38%" },
+    { id: 5, graftMin: 1400, graftMax: 1600, clipPath: "polygon(23% 16%, 50% 12%, 77% 16%, 90% 26%, 84% 35%, 72% 40%, 50% 42%, 28% 40%, 16% 35%, 10% 26%)", labelX: "73%", labelY: "27%" },
+    { id: 6, graftMin: 800, graftMax: 800, clipPath: "polygon(29% 8%, 50% 5%, 71% 8%, 76% 16%, 69% 23%, 50% 26%, 31% 23%, 24% 16%)", labelX: "50%", labelY: "16%" }
   ];
   const treatmentImages = [
     "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
@@ -570,7 +570,7 @@ export default function HomePage() {
             </aside>
 
             <div className="relative mx-auto h-[430px] w-full max-w-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
-              <Image src="/graft-head-base.svg" alt="Graft area model head" fill className="object-cover" />
+              <Image src="/bald-man.jpeg" alt="Graft area model head" fill className="object-cover object-top" />
               <div className="absolute inset-0 bg-[#c9d3de]/15" />
               {zoneConfigs.map((zone) => {
                 const isSelected = selectedZones.includes(zone.id);
