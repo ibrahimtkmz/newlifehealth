@@ -1,258 +1,163 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ShieldCheck, Star, Plane, Hotel, Stethoscope, PlaneTakeoff, Sparkles, Smile, Activity, BadgeCheck } from "lucide-react";
-import SiteHeader from "./components/SiteHeader";
+import { Mail, ChevronDown, CalendarDays, Users, Building2, HeartPulse, BriefcaseBusiness, CircleDot, Stethoscope, MessageCircle, Send } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
 const content = {
   tr: {
-    badge: "Uluslararası Sağlık Turizmi Danışmanlığı",
-    heroTitle: "Türkiye'de güvenli, şeffaf ve kişiye özel sağlık yolculuğu.",
-    heroDesc:
-      "NEWLIFE HEALTH TOURISM olarak akredite partner klinikler, uzman doktor eşleştirmesi ve seyahat planlamasını tek noktadan yönetiyoruz.",
-    heroPrimary: "Ücretsiz Konsültasyon Al",
-    heroSecondary: "Tedavi Paketlerini İncele",
-    quickAccessTitle: "2 tıklamada ulaşın",
-    quickAccess: [
-      { title: "Tedavi Paketleri", desc: "Diş, estetik, obezite ve saç ekimi seçenekleri.", href: "/treatments" },
-      { title: "Doktor Özgeçmişleri", desc: "Uzman hekim kadromuzun deneyim alanlarını inceleyin.", href: "#doctors" },
-      { title: "Öncesi / Sonrası", desc: "Gerçek hasta dönüşümlerini karşılaştırın.", href: "/before-after" }
+    languageLabel: "Türkçe",
+    topEmail: "info@newlifehealth.com",
+    nav: ["Ana Sayfa", "Kurumsal", "Hizmetler", "Tedavi Süreci", "NEWLIFE Blog", "İletişim"],
+    partnership: "Partnerlik",
+    shortcuts: [
+      { icon: CalendarDays, title: "Ücretsiz Teklif Al", color: "bg-violet-600" },
+      { icon: Users, title: "Doktorlarla Görüş", color: "bg-blue-600" },
+      { icon: Building2, title: "Ağımız", color: "bg-fuchsia-600" },
+      { icon: HeartPulse, title: "Sağlık Hizmetleri", color: "bg-sky-600" },
+      { icon: BriefcaseBusiness, title: "Tedavi Sonrası Destek", color: "bg-indigo-600" },
+      { icon: CircleDot, title: "Sağlık Check-Up", color: "bg-orange-500" }
     ],
-    trustTitle: "Neden NEWLIFE HEALTH TOURISM?",
-    trustItems: [
-      "Akreditasyon odaklı partner klinik ağı",
-      "Uluslararası hasta koordinasyon deneyimi",
-      "7/24 çok dilli hasta koordinasyonu"
+    sectionTag: "NEWLIFE HEALTH",
+    sectionTitle: "Türk Sağlık Turizminde Popüler Tedaviler",
+    cards: [
+      { image: "/1.jpeg", title: "Yüz & Boyun Germe" },
+      { image: "/2.jpeg", title: "Liposuction" },
+      { image: "/3.jpeg", title: "BBL" },
+      { image: "/4.jpeg", title: "Hollywood Smile" },
+      { image: "/5.jpeg", title: "Dental İmplant" },
+      { image: "/6.jpeg", title: "Göz Lazer" },
+      { image: "/7.jpeg", title: "Blefaroplasti" },
+      { image: "/8.jpeg", title: "Saç Ekimi" }
     ],
-    servicesTitle: "Öne çıkan tedavi alanları",
-    services: [
-      { icon: Smile, title: "Diş Estetiği", desc: "Laminate veneer, zirkonyum, gülüş tasarımı ve implant planlaması." },
-      { icon: Sparkles, title: "Estetik Cerrahi", desc: "Yüz ve vücut estetiğinde kişiye özel operasyon planları." },
-      { icon: Activity, title: "Obezite Cerrahisi", desc: "Bariatrik süreçte multidisipliner değerlendirme ve uzun dönem takip." },
-      { icon: BadgeCheck, title: "Saç Ekimi", desc: "Safir FUE ve DHI teknikleriyle doğal çizgi ve yüksek yoğunluk hedefi." }
-    ],
-    processTitle: "Nasıl Çalışıyoruz?",
-    process: [
-      { icon: Plane, title: "1. Uçuş Planı", text: "Ön değerlendirmenize göre size uygun tarih ve seyahat planını oluşturuyoruz." },
-      { icon: Hotel, title: "2. Konaklama", text: "Tedaviye yakın, üst segment otellerde konforlu konaklama organize ediyoruz." },
-      { icon: Stethoscope, title: "3. Tedavi", text: "Uzman doktor eşliğinde operasyon ve klinik süreçlerinizi yönetiyoruz." },
-      { icon: PlaneTakeoff, title: "4. Dönüş & Takip", text: "Ülkenize dönüşünüzden sonra online kontrol ve bakım sürecini sürdürüyoruz." }
-    ],
-    doctorsTitle: "Uzman doktor kadrosu",
-    doctorsDesc: "Her branşta tecrübeli, uluslararası hasta yönetiminde deneyimli hekimlerle çalışıyoruz.",
-    doctors: ["Dr. M. Kaya · Saç Ekimi", "Op. Dr. A. Demir · Estetik Cerrahi", "Dt. E. Yalçın · Estetik Diş Hekimliği"],
-    socialProofTitle: "Güven faktörleri",
-    testimonials: [
-      "“İlk görüşmeden dönüşe kadar her adım profesyoneldi.” — Leyla A.",
-      "“Doktor ekibi ve koordinasyon süreci beklentimizin üzerindeydi.” — Thomas R.",
-      "“Tedavi + konaklama paketi gerçekten premium hissettirdi.” — Nadia K."
-    ],
-    finalTitle: "Kişiye özel tedavi planını bugün başlatın",
-    finalDesc: "Beklentilerinizi paylaşın; uygun tedavi seçenekleri, süreç planı ve tahmini maliyetleri hızlıca iletelim.",
-    finalButton: "Hemen WhatsApp'tan Yaz"
+    consultant: "Lina ile Sohbet",
+    consultantSub: "Dijital Sağlık Danışmanı"
   },
   en: {
-    badge: "International Health Tourism Concierge",
-    heroTitle: "Safe and personalized treatment journeys in Turkey.",
-    heroDesc:
-      "At NEWLIFE HEALTH TOURISM, we coordinate accredited clinics, specialist matching, and travel planning from one trusted team.",
-    heroPrimary: "Get Free Consultation",
-    heroSecondary: "View Treatment Packages",
-    quickAccessTitle: "Reach in 2 clicks",
-    quickAccess: [
-      { title: "Treatment Packages", desc: "Dental, aesthetics, obesity and hair transplant options.", href: "/treatments" },
-      { title: "Doctor Profiles", desc: "Review our specialist team and fields of expertise.", href: "#doctors" },
-      { title: "Before / After", desc: "Compare real patient transformation cases.", href: "/before-after" }
+    languageLabel: "English",
+    topEmail: "info@newlifehealth.com",
+    nav: ["Home", "Corporate", "Services", "Treatment Process", "NEWLIFE Blog", "Contact"],
+    partnership: "Partnership",
+    shortcuts: [
+      { icon: CalendarDays, title: "Get a Free Quote", color: "bg-violet-600" },
+      { icon: Users, title: "Talk to Doctors", color: "bg-blue-600" },
+      { icon: Building2, title: "Our Network", color: "bg-fuchsia-600" },
+      { icon: HeartPulse, title: "Healthcare", color: "bg-sky-600" },
+      { icon: BriefcaseBusiness, title: "Aftercare Help", color: "bg-indigo-600" },
+      { icon: CircleDot, title: "Health Check-Up", color: "bg-orange-500" }
     ],
-    trustTitle: "Why NEWLIFE HEALTH TOURISM?",
-    trustItems: ["Accreditation-focused partner clinic network", "Global patient coordination experience", "24/7 multilingual patient coordination"],
-    servicesTitle: "Featured treatment areas",
-    services: [
-      { icon: Smile, title: "Dental Aesthetics", desc: "Laminate veneers, zirconium, smile design and implant planning." },
-      { icon: Sparkles, title: "Aesthetic Surgery", desc: "Personalized facial and body operation planning." },
-      { icon: Activity, title: "Obesity Surgery", desc: "Multidisciplinary bariatric assessment and long-term follow-up." },
-      { icon: BadgeCheck, title: "Hair Transplant", desc: "Natural line and dense results with Sapphire FUE and DHI." }
+    sectionTag: "NEWLIFE HEALTH",
+    sectionTitle: "Popular Treatments in Turkish Health Tourism",
+    cards: [
+      { image: "/1.jpeg", title: "Face & Neck Lift" },
+      { image: "/2.jpeg", title: "Liposuction" },
+      { image: "/3.jpeg", title: "Brazilian Butt Lift" },
+      { image: "/4.jpeg", title: "Hollywood Smile" },
+      { image: "/5.jpeg", title: "Dental Implants" },
+      { image: "/6.jpeg", title: "Eye Laser" },
+      { image: "/7.jpeg", title: "Blepharoplasty" },
+      { image: "/8.jpeg", title: "Hair Transplant" }
     ],
-    processTitle: "How We Work",
-    process: [
-      { icon: Plane, title: "1. Flight Planning", text: "We define optimal dates and route after your pre-evaluation." },
-      { icon: Hotel, title: "2. Accommodation", text: "Comfort stays at premium hotels close to your clinic." },
-      { icon: Stethoscope, title: "3. Treatment", text: "Your full operation and medical process is managed by specialists." },
-      { icon: PlaneTakeoff, title: "4. Return & Follow-up", text: "We continue with online controls and aftercare after you return." }
-    ],
-    doctorsTitle: "Specialist doctor team",
-    doctorsDesc: "Experienced physicians with strong international patient communication.",
-    doctors: ["Dr. M. Kaya · Hair Transplant", "Op. Dr. A. Demir · Aesthetic Surgery", "Dr. E. Yalcin · Cosmetic Dentistry"],
-    socialProofTitle: "Trust signals",
-    testimonials: [
-      "“From first call to return flight, every step felt premium.” — Leyla A.",
-      "“Medical quality and coordination exceeded our expectations.” — Thomas R.",
-      "“Treatment + accommodation package was seamless and secure.” — Nadia K."
-    ],
-    finalTitle: "Start your personalized treatment journey today",
-    finalDesc: "Share your goals to receive suitable treatment options, process guidance, and estimated pricing quickly.",
-    finalButton: "Chat on WhatsApp"
+    consultant: "Chat with Lina",
+    consultantSub: "Digital Health Consultant"
   }
 };
 
 export default function HomePage() {
   const { lang } = useLanguage();
-  const t = content[lang] || content.tr;
+  const t = content[lang] || content.en;
 
   return (
-    <main className="min-h-screen bg-[#f7f9fc] text-[#0f2747]">
-      <SiteHeader />
-
-      <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 pb-14 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:pt-16">
-        <div className="space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#0f2747]/15 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#0f2747]/80">
-            <ShieldCheck className="h-4 w-4 text-[#27b4b7]" /> {t.badge}
-          </span>
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight md:text-6xl">{t.heroTitle}</h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[#0f2747]/75">{t.heroDesc}</p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="rounded-full bg-[#0f2747] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#183a68]">
-              {t.heroPrimary}
-            </Link>
-            <Link href="/treatments" className="rounded-full border border-[#0f2747]/20 bg-white px-6 py-3 text-sm font-semibold text-[#0f2747] transition hover:border-[#27b4b7] hover:text-[#27b4b7]">
-              {t.heroSecondary}
-            </Link>
+    <main className="min-h-screen bg-[#f3f5f8] text-[#1d3257]">
+      <header className="border-b border-slate-200 bg-white">
+        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-3 text-sm text-[#26446e]">
+          <p className="flex items-center gap-2 font-medium">
+            <Mail className="h-4 w-4" />
+            {t.topEmail}
+          </p>
+          <div className="flex items-center gap-2 font-semibold">
+            <span>{t.languageLabel}</span>
+            <ChevronDown className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[32px] border border-white bg-white p-3 shadow-[0_30px_90px_rgba(15,39,71,0.16)]">
-          <div className="relative flex min-h-[360px] w-full items-end justify-center overflow-hidden rounded-[24px] bg-[radial-gradient(circle_at_25%_15%,#f0f8ff_0%,#d8f0ff_35%,#c5e2ff_70%,#b3d6f6_100%)]">
-            <div className="hair-animation-root">
-              {Array.from({ length: 12 }).map((_, index) => (
-                <span
-                  key={`hair-strand-${index}`}
-                  className="hair-strand"
-                  style={{
-                    left: `${8 + index * 7.4}%`,
-                    animationDelay: `${index * 0.25}s`,
-                    animationDuration: `${3.8 + (index % 4) * 0.35}s`
-                  }}
-                />
-              ))}
-            </div>
-
-            <div className="tooth-arch-wrap">
-              <div className="tooth-arch">
-                {Array.from({ length: 32 }).map((_, index) => (
-                  <span key={`tooth-${index}`} className="tooth-unit" />
-                ))}
-              </div>
-            </div>
+        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-5">
+          <div className="flex items-center gap-3">
+            <Image src="/logo.png" alt="Newlife Health logo" width={200} height={60} className="h-auto w-[180px] object-contain" priority />
           </div>
-          <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/92 p-4 backdrop-blur">
-            <p className="text-sm font-semibold text-[#0f2747]">24 saat içinde ön değerlendirme</p>
-            <p className="text-sm text-[#0f2747]/70">Doktor görüşü + tahmini plan + paket önerisi</p>
-          </div>
-        </div>
-      </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <h2 className="mb-5 text-xl font-semibold md:text-2xl">{t.quickAccessTitle}</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {t.quickAccess.map((item) => (
-            <Link key={item.title} href={item.href} className="rounded-3xl border border-[#0f2747]/12 bg-white p-6 transition hover:-translate-y-1 hover:shadow-xl">
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-[#0f2747]/70">{item.desc}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <div className="rounded-[28px] bg-[#0f2747] p-8 text-white md:p-10">
-          <h2 className="text-2xl font-semibold md:text-3xl">{t.trustTitle}</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {t.trustItems.map((item) => (
-              <div key={item} className="rounded-2xl border border-white/20 bg-white/10 p-4 text-sm">
-                <Star className="mb-3 h-4 w-4 text-[#5bd4d7]" />
+          <nav className="hidden items-center gap-8 text-[17px] font-semibold text-[#203a64] lg:flex">
+            {t.nav.map((item, idx) => (
+              <a key={item} href="#" className="inline-flex items-center gap-1 hover:text-[#1f77d2]">
                 {item}
-              </div>
+                {(idx === 1 || idx === 2 || idx === 3) && <ChevronDown className="h-4 w-4" />}
+              </a>
             ))}
+          </nav>
+
+          <button className="rounded-full bg-[#2ca3e3] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1a8dd0]">{t.partnership}</button>
+        </div>
+      </header>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 pt-6">
+        <div className="rounded-2xl border border-[#d8e0ed] bg-white p-6 shadow-sm md:p-10">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+            {t.shortcuts.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title} className="flex flex-col items-center text-center">
+                  <span className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white ${item.color}`}>
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="text-xl font-semibold leading-tight text-[#1f325a]">{item.title}</h3>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <h2 className="mb-5 text-2xl font-semibold md:text-3xl">{t.servicesTitle}</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {t.services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <article key={service.title} className="rounded-3xl border border-[#0f2747]/12 bg-white p-6">
-                <span className="mb-4 inline-flex rounded-xl bg-[#e9f8f8] p-2 text-[#178c8f]">
-                  <Icon className="h-5 w-5" />
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14 pt-10">
+        <div className="mb-8 flex flex-col items-center">
+          <span className="rounded-full bg-[#198fd0] px-4 py-1.5 text-sm font-semibold text-white">{t.sectionTag}</span>
+          <h1 className="mt-5 text-center text-4xl font-bold leading-tight text-[#0f2f5d] md:text-5xl">{t.sectionTitle}</h1>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8">
+          {t.cards.map((card) => (
+            <article key={card.title} className="overflow-hidden rounded-[22px] bg-white shadow-sm">
+              <div className="relative h-56">
+                <Image src={card.image} alt={card.title} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102f5a33] via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-1/2 inline-flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white text-[#2b6bb4] shadow-lg">
+                  <Stethoscope className="h-6 w-6" />
                 </span>
-                <h3 className="text-lg font-semibold">{service.title}</h3>
-                <p className="mt-2 text-sm text-[#0f2747]/70">{service.desc}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <h2 className="mb-5 text-2xl font-semibold md:text-3xl">{t.processTitle}</h2>
-        <div className="grid gap-4 md:grid-cols-4">
-          {t.process.map((step) => {
-            const Icon = step.icon;
-            return (
-              <article key={step.title} className="rounded-3xl border border-[#0f2747]/12 bg-white p-5">
-                <Icon className="mb-3 h-5 w-5 text-[#27b4b7]" />
-                <h3 className="font-semibold">{step.title}</h3>
-                <p className="mt-2 text-sm text-[#0f2747]/70">{step.text}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section id="doctors" className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <div className="grid gap-5 rounded-[28px] border border-[#0f2747]/12 bg-white p-8 md:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <h2 className="text-2xl font-semibold md:text-3xl">{t.doctorsTitle}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-[#0f2747]/70">{t.doctorsDesc}</p>
-            <ul className="mt-5 space-y-2 text-sm">
-              {t.doctors.map((doctor) => (
-                <li key={doctor} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#27b4b7]" />
-                  {doctor}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative h-64 overflow-hidden rounded-2xl">
-            <Image src="/2.jpeg" alt="Uzman doktor ekibi" fill className="object-cover" />
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-6 pb-20">
-        <h2 className="mb-5 text-2xl font-semibold md:text-3xl">{t.socialProofTitle}</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {t.testimonials.map((item) => (
-            <blockquote key={item} className="rounded-3xl border border-[#0f2747]/12 bg-white p-5 text-sm text-[#0f2747]/80">
-              {item}
-            </blockquote>
+              </div>
+              <h3 className="px-2 pb-4 pt-3 text-center text-lg font-semibold leading-tight text-[#1e355f]">{card.title}</h3>
+            </article>
           ))}
         </div>
-
-        <div className="mt-10 rounded-[28px] bg-gradient-to-r from-[#0f2747] to-[#1a3f73] p-8 text-white md:flex md:items-center md:justify-between md:gap-6">
-          <div>
-            <h3 className="text-2xl font-semibold">{t.finalTitle}</h3>
-            <p className="mt-2 max-w-3xl text-sm text-white/85">{t.finalDesc}</p>
-          </div>
-          <Link href="https://wa.me/905000000000" className="mt-5 inline-flex rounded-full bg-[#27b4b7] px-6 py-3 text-sm font-semibold text-white hover:bg-[#1f9ea1] md:mt-0">
-            {t.finalButton}
-          </Link>
-        </div>
       </section>
+
+      <div className="fixed bottom-6 right-6 z-40 hidden items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 shadow-xl md:flex">
+        <Image src="/10.jpeg" alt="Consultant" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
+        <div>
+          <p className="text-xl font-semibold text-[#1b3e6b]">{t.consultant}</p>
+          <p className="text-sm text-[#4f6588]">{t.consultantSub}</p>
+        </div>
+      </div>
+
+      <div className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex">
+        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#2f7ae5] text-white shadow-lg" aria-label="Telegram">
+          <Send className="h-6 w-6" />
+        </button>
+        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#6c53df] text-white shadow-lg" aria-label="Viber">
+          <MessageCircle className="h-6 w-6" />
+        </button>
+        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#1cbf5d] text-white shadow-lg" aria-label="WhatsApp">
+          <MessageCircle className="h-6 w-6" />
+        </button>
+      </div>
     </main>
   );
 }
