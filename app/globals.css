@@ -119,3 +119,87 @@ body {
     background-position: 0% 50%;
   }
 }
+
+.hair-animation-root {
+  position: absolute;
+  inset: 10% 9% 30% 9%;
+}
+
+.hair-strand {
+  position: absolute;
+  bottom: 0;
+  width: clamp(6px, 0.6vw, 9px);
+  height: 18%;
+  border-radius: 999px 999px 30% 30%;
+  background: linear-gradient(180deg, #2d190d 0%, #5e3a1f 35%, #7a4e2d 80%, #8b5a34 100%);
+  transform-origin: bottom center;
+  box-shadow: 0 6px 12px rgba(59, 35, 20, 0.28);
+  animation: hair-grow infinite ease-in-out;
+}
+
+.tooth-arch-wrap {
+  position: absolute;
+  bottom: 8%;
+  width: min(88%, 520px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 12px 10px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 6px 18px rgba(16, 39, 70, 0.15);
+}
+
+.tooth-arch {
+  display: grid;
+  grid-template-columns: repeat(32, minmax(0, 1fr));
+  gap: 3px;
+  align-items: end;
+}
+
+.tooth-unit {
+  height: clamp(16px, 2.3vw, 26px);
+  border-radius: 0 0 7px 7px;
+  background: linear-gradient(180deg, #f4cf73 0%, #fff3ce 45%, #ffffff 100%);
+  background-size: 170% 170%;
+  animation: tooth-whiten 5.8s ease-in-out infinite;
+}
+
+.tooth-unit:nth-child(2n) {
+  animation-delay: 0.25s;
+}
+
+.tooth-unit:nth-child(3n) {
+  animation-delay: 0.45s;
+}
+
+@keyframes hair-grow {
+  0% {
+    height: 18%;
+    transform: translateY(0) scaleY(0.65) rotate(-4deg);
+  }
+  30% {
+    height: 62%;
+    transform: translateY(-1px) scaleY(1) rotate(1deg);
+  }
+  65% {
+    height: 84%;
+    transform: translateY(-2px) scaleY(1.05) rotate(-1deg);
+  }
+  100% {
+    height: 70%;
+    transform: translateY(0) scaleY(0.92) rotate(2deg);
+  }
+}
+
+@keyframes tooth-whiten {
+  0% {
+    filter: saturate(0.9) brightness(0.95);
+    background-position: 0% 0%;
+  }
+  50% {
+    filter: saturate(1) brightness(1.07);
+    background-position: 100% 100%;
+  }
+  100% {
+    filter: saturate(0.95) brightness(1);
+    background-position: 0% 0%;
+  }
+}
