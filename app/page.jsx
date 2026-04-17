@@ -90,12 +90,12 @@ const content = {
         image: "/10-1.jpeg"
       }
     ],
-    whyTag: "Neden IME Klinik",
+    whyTag: "Neden Newlife Health",
     whyTitle: "Güvenilir Bakım, Global Standartlar",
     whyItems: [
-      ["Uluslararası Sertifikalı Ağ", "Sadece uluslararası akreditasyonlu hastanelerle çalışıyoruz."],
-      ["Kişiselleştirilmiş Deneyim", "Konsültasyondan iyileşmeye kadar adım adım sizin için planlıyoruz."],
-      ["Uçtan Uca Destek", "Tedavi, konaklama, transfer ve sonrası süreç tek bir ekipte."]
+      ["Yetkili Sağlık Kurumu Ağı", "Sizi sadece sağlık turizmi yetki belgesine sahip anlaşmalı kurumlarla buluşturuyoruz."],
+      ["Şeffaf ve Planlı Süreç", "İlk danışmadan Türkiye'deki tedavi planınıza kadar tüm aşamaları net şekilde yönetiyoruz."],
+      ["Tek Noktadan Koordinasyon", "Tedavi, transfer, konaklama ve sonrası takip tek bir koordinasyon ekibiyle ilerler."]
     ],
     ctaTitle: "Her Tedavide Mükemmellik.",
     ctaPhone: "+90 546 524 8334",
@@ -164,12 +164,12 @@ const content = {
         image: "/10-1.jpeg"
       }
     ],
-    whyTag: "Why Choose IME Clinic",
+    whyTag: "Why Newlife Health",
     whyTitle: "Trusted Care, Global Standards",
     whyItems: [
-      ["Internationally Certified Network", "We only work with internationally accredited hospitals and licensed clinics."],
-      ["Personalized Patient Experience", "Every step is designed around your needs with comfort and transparency."],
-      ["Complete End-to-End Support", "Treatment, travel, transfer, and aftercare are managed by one team."]
+      ["Authorized Provider Network", "We connect you only with contracted institutions that hold official medical tourism authorization."],
+      ["Clear & Structured Journey", "From first consultation to your treatment plan in Turkey, every step is communicated clearly."],
+      ["Single-Point Coordination", "Treatment, transfers, accommodation, and aftercare are coordinated by one dedicated team."]
     ],
     ctaTitle: "Excellence in Every Treatment.",
     ctaPhone: "+90 546 524 8334",
@@ -238,12 +238,12 @@ const content = {
         image: "/10-1.jpeg"
       }
     ],
-    whyTag: "Почему IME Clinic",
+    whyTag: "Почему Newlife Health",
     whyTitle: "Надежное лечение, глобальные стандарты",
     whyItems: [
-      ["Сертифицированная сеть", "Работаем только с международно аккредитованными клиниками."],
-      ["Персональный подход", "План лечения и поездки формируется под ваши потребности."],
-      ["Полное сопровождение", "Лечение, трансфер, проживание и послеоперационный этап в одном сервисе."]
+      ["Сеть авторизованных учреждений", "Направляем только в партнерские учреждения с официальным разрешением на медтуризм."],
+      ["Понятный и структурный процесс", "От первой консультации до плана лечения в Турции — каждый шаг прозрачно согласован."],
+      ["Координация через одну команду", "Лечение, трансфер, проживание и послеоперационное сопровождение ведет единая команда."]
     ],
     ctaTitle: "Совершенство в каждом лечении.",
     ctaPhone: "+90 546 524 8334",
@@ -268,7 +268,16 @@ export default function HomePage() {
   const [formData, setFormData] = useState({ name: "", phone: "", treatment: "", language: lang.toUpperCase() });
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
-  const treatmentImages = ["/1.jpeg", "/2.jpeg", "/3.jpeg", "/4.jpeg", "/5.jpeg", "/6.jpeg", "/7.jpeg", "/8.jpeg"];
+  const treatmentImages = [
+    "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1609902726285-00668009f004?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1588776814546-bc2c2f4f27fd?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&w=640&q=80",
+    "https://images.unsplash.com/photo-1580281657527-47cbe7ce6c67?auto=format&fit=crop&w=640&q=80"
+  ];
   const visibleTestimonials = useMemo(() => {
     const full = [...t.testimonials, ...t.testimonials];
     return full.slice(testimonialIndex, testimonialIndex + 3);
@@ -381,7 +390,7 @@ export default function HomePage() {
             <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">15K+ Consultations</div>
             <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">1K Reviews</div>
             <div className="mx-auto max-w-[430px] overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#b1dcff] to-[#73c6ff] p-2">
-              <Image src="/WhatsApp Image 2026-04-10 at 13.16.14.jpeg" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[1.5rem] object-cover object-top" />
+              <Image src="/slide.jpg" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[1.5rem] object-cover object-center" />
             </div>
           </div>
         </div>
@@ -525,7 +534,7 @@ export default function HomePage() {
       <footer className="border-t bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-[1280px] gap-8 px-4 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <Image src="/logo.png" alt="IME Clinic Logo" width={220} height={60} className="mb-3 w-[200px]" />
+            <Image src="/logo.png" alt="IME Clinic Logo" width={160} height={48} className="mb-3 h-12 w-auto object-contain" />
             <p className="max-w-[420px] text-sm leading-relaxed text-[#3d5f89]">
               IME Clinic is a registered medical travel and treatment coordination brand operating with authorized healthcare institutions in Turkey.
             </p>
