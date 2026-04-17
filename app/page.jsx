@@ -964,7 +964,7 @@ export default function HomePage() {
               })()}
             </div>
 
-            <div className="absolute left-[30%] top-[74px]">
+            <div className="absolute left-[30%] top-[252px]">
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[1][2]] ?? CircleHelp;
                 return (
@@ -1009,7 +1009,7 @@ export default function HomePage() {
               })()}
             </div>
 
-            <div className="absolute left-[64%] top-[252px]">
+            <div className="absolute left-[64%] top-[432px]">
               {(() => {
                 const IconComponent = timelineIcons[t.timelineItems[3][2]] ?? CircleHelp;
                 return (
