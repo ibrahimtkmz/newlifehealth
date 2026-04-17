@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, ChevronDown, CalendarDays, Users, Building2, HeartPulse, BriefcaseBusiness, CircleDot, Stethoscope, MessageCircle, Send } from "lucide-react";
+import { Mail, ChevronDown, MessageCircle, Send, Quote } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
 const content = {
@@ -10,25 +10,36 @@ const content = {
     topEmail: "info@newlifehealth.com",
     nav: ["Ana Sayfa", "Kurumsal", "Hizmetler", "Tedavi Süreci", "NEWLIFE Blog", "İletişim"],
     partnership: "Partnerlik",
-    shortcuts: [
-      { icon: CalendarDays, title: "Ücretsiz Teklif Al", color: "bg-violet-600" },
-      { icon: Users, title: "Doktorlarla Görüş", color: "bg-blue-600" },
-      { icon: Building2, title: "Ağımız", color: "bg-fuchsia-600" },
-      { icon: HeartPulse, title: "Sağlık Hizmetleri", color: "bg-sky-600" },
-      { icon: BriefcaseBusiness, title: "Tedavi Sonrası Destek", color: "bg-indigo-600" },
-      { icon: CircleDot, title: "Sağlık Check-Up", color: "bg-orange-500" }
-    ],
-    sectionTag: "NEWLIFE HEALTH",
-    sectionTitle: "Türk Sağlık Turizminde Popüler Tedaviler",
-    cards: [
-      { image: "/1.jpeg", title: "Yüz & Boyun Germe" },
-      { image: "/2.jpeg", title: "Liposuction" },
-      { image: "/3.jpeg", title: "BBL" },
-      { image: "/4.jpeg", title: "Hollywood Smile" },
-      { image: "/5.jpeg", title: "Dental İmplant" },
-      { image: "/6.jpeg", title: "Göz Lazer" },
-      { image: "/7.jpeg", title: "Blefaroplasti" },
-      { image: "/8.jpeg", title: "Saç Ekimi" }
+    infoBanner:
+      "🇪🇺 ↔ 🇹🇷 Tedavi hizmetlerimiz, yüksek kalite standartlarına uygun şekilde sağlık turizmi yetki belgesine sahip anlaşmalı sağlık kurumlarında sunulmaktadır.",
+    serviceTabs: ["Doktorla Görüş", "Evde Bakım", "Uzman Tedaviler", "Laboratuvar Testleri", "İlaç & Malzeme", "Hastaneler & Klinikler", "Sağlık Hizmetleri", "Doktorla Görüş"],
+    testimonialTag: "Yorumlar",
+    testimonialTitle: "Uluslararası Hastalar Türkiye'deki Tıbbi Yolculukları Hakkında Ne Diyor?",
+    testimonials: [
+      {
+        rating: 5,
+        title: "Sıcak ve Güven Verici",
+        text: "Tıbbi ekip son derece ilgili ve güler yüzlüydü. Sürecim baştan sona güvenli, konforlu ve çok iyi planlandı.",
+        name: "Daria Boselli",
+        country: "İtalya",
+        image: "/10.jpeg"
+      },
+      {
+        rating: 4,
+        title: "Harika Bir Deneyim",
+        text: "Akıllı lens operasyonu sonrası görüşüm çok netleşti. Ekip tüm aşamalarda detaylı bilgilendirme yaptı.",
+        name: "Artem Kravchenko",
+        country: "Ukrayna",
+        image: "/9.jpeg"
+      },
+      {
+        rating: 5,
+        title: "Pürüzsüz Süreç",
+        text: "Başlangıçtan iyileşme dönemine kadar her şey çok düzenliydi. Destek ekibi beklentimin üstündeydi.",
+        name: "Katya Chernov",
+        country: "Rusya",
+        image: "/11.jpeg"
+      }
     ],
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı"
@@ -38,25 +49,36 @@ const content = {
     topEmail: "info@newlifehealth.com",
     nav: ["Home", "Corporate", "Services", "Treatment Process", "NEWLIFE Blog", "Contact"],
     partnership: "Partnership",
-    shortcuts: [
-      { icon: CalendarDays, title: "Get a Free Quote", color: "bg-violet-600" },
-      { icon: Users, title: "Talk to Doctors", color: "bg-blue-600" },
-      { icon: Building2, title: "Our Network", color: "bg-fuchsia-600" },
-      { icon: HeartPulse, title: "Healthcare", color: "bg-sky-600" },
-      { icon: BriefcaseBusiness, title: "Aftercare Help", color: "bg-indigo-600" },
-      { icon: CircleDot, title: "Health Check-Up", color: "bg-orange-500" }
-    ],
-    sectionTag: "NEWLIFE HEALTH",
-    sectionTitle: "Popular Treatments in Turkish Health Tourism",
-    cards: [
-      { image: "/1.jpeg", title: "Face & Neck Lift" },
-      { image: "/2.jpeg", title: "Liposuction" },
-      { image: "/3.jpeg", title: "Brazilian Butt Lift" },
-      { image: "/4.jpeg", title: "Hollywood Smile" },
-      { image: "/5.jpeg", title: "Dental Implants" },
-      { image: "/6.jpeg", title: "Eye Laser" },
-      { image: "/7.jpeg", title: "Blepharoplasty" },
-      { image: "/8.jpeg", title: "Hair Transplant" }
+    infoBanner:
+      "🇪🇺 ↔ 🇹🇷 Our treatment services are provided in contracted healthcare institutions that hold the required medical tourism authorization certificate, in line with high quality standards.",
+    serviceTabs: ["Talk to Doctor", "Home Care", "Specialist Treatments", "Lab Testing", "Medications & Supplies", "Hospitals & Clinics", "Health Services", "Talk to a Doctor"],
+    testimonialTag: "Testimonials",
+    testimonialTitle: "What International Patients Say About Their Medical Journey in Turkey",
+    testimonials: [
+      {
+        rating: 5,
+        title: "Warm and Welcoming",
+        text: "The medical team was incredibly welcoming and friendly. My journey felt safe, smooth, and very rewarding.",
+        name: "Daria Boselli",
+        country: "Italy",
+        image: "/10.jpeg"
+      },
+      {
+        rating: 4,
+        title: "Total Eye Opener",
+        text: "My smart lens surgery was the best decision I made. The team guided me clearly through each step.",
+        name: "Artem Kravchenko",
+        country: "Ukraine",
+        image: "/9.jpeg"
+      },
+      {
+        rating: 5,
+        title: "Smooth Experience",
+        text: "I had a very organized treatment process from start to finish, and the recovery support exceeded my expectations.",
+        name: "Katya Chernov",
+        country: "Russia",
+        image: "/11.jpeg"
+      }
     ],
     consultant: "Chat with Lina",
     consultantSub: "Digital Health Consultant"
@@ -100,40 +122,43 @@ export default function HomePage() {
       </header>
 
       <section className="mx-auto w-full max-w-[1280px] px-4 pt-6">
-        <div className="rounded-2xl border border-[#d8e0ed] bg-white p-6 shadow-sm md:p-10">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-            {t.shortcuts.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title} className="flex flex-col items-center text-center">
-                  <span className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white ${item.color}`}>
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="text-xl font-semibold leading-tight text-[#1f325a]">{item.title}</h3>
-                </article>
-              );
-            })}
-          </div>
+        <div className="rounded-3xl border border-[#b7d9f4] bg-[#ecf7ff] p-6 text-center shadow-sm md:p-8">
+          <p className="text-xl font-bold leading-snug text-[#1c6eb3] md:text-[42px]">{t.infoBanner}</p>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14 pt-10">
+      <section className="mt-8 border-y border-[#ef8553] bg-[#ef7b3b]">
+        <div className="mx-auto flex w-full max-w-[1280px] snap-x items-center gap-8 overflow-x-auto px-4 py-4 text-xl font-semibold text-white">
+          {t.serviceTabs.map((tab) => (
+            <span key={tab} className="relative shrink-0 whitespace-nowrap pr-8 after:absolute after:right-0 after:top-1/2 after:h-px after:w-6 after:-translate-y-1/2 after:bg-white/75 last:pr-0 last:after:hidden">
+              {tab}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14 pt-12">
         <div className="mb-8 flex flex-col items-center">
-          <span className="rounded-full bg-[#198fd0] px-4 py-1.5 text-sm font-semibold text-white">{t.sectionTag}</span>
-          <h1 className="mt-5 text-center text-4xl font-bold leading-tight text-[#0f2f5d] md:text-5xl">{t.sectionTitle}</h1>
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-2xl font-semibold text-white">{t.testimonialTag}</span>
+          <h1 className="mt-5 max-w-[1040px] text-center text-5xl font-bold leading-tight text-[#0f2f5d] md:text-6xl">{t.testimonialTitle}</h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8">
-          {t.cards.map((card) => (
-            <article key={card.title} className="overflow-hidden rounded-[22px] bg-white shadow-sm">
-              <div className="relative h-56">
-                <Image src={card.image} alt={card.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#102f5a33] via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-1/2 inline-flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white text-[#2b6bb4] shadow-lg">
-                  <Stethoscope className="h-6 w-6" />
-                </span>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {t.testimonials.map((card) => (
+            <article key={card.name} className="rounded-3xl border border-[#dbe5f2] bg-white p-6 shadow-sm">
+              <div className="mb-5 flex items-center justify-between">
+                <p className="text-2xl tracking-wide text-[#f7bf1e]">{Array.from({ length: 5 }, (_, i) => (i < card.rating ? "★" : "☆")).join("")}</p>
+                <Quote className="h-8 w-8 text-[#ef6a2f]" />
               </div>
-              <h3 className="px-2 pb-4 pt-3 text-center text-lg font-semibold leading-tight text-[#1e355f]">{card.title}</h3>
+              <h3 className="mb-3 text-4xl font-semibold leading-tight text-[#173b69]">{card.title}</h3>
+              <p className="mb-6 text-[30px] leading-relaxed text-[#496281]">{card.text}</p>
+              <div className="flex items-center gap-3">
+                <Image src={card.image} alt={card.name} width={54} height={54} className="h-[54px] w-[54px] rounded-full object-cover" />
+                <div>
+                  <p className="text-4xl font-semibold leading-tight text-[#153761]">{card.name}</p>
+                  <p className="text-[30px] text-[#4f6788]">{card.country}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
