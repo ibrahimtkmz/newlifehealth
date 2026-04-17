@@ -312,38 +312,50 @@ export default function HomePage() {
       id: 1,
       graftMin: 600,
       graftMax: 800,
-      path: "M140 404 C170 386 214 382 244 401 C236 438 206 456 164 456 C147 442 140 426 140 404 Z M556 404 C586 386 630 382 660 401 C660 426 653 442 636 456 C594 456 564 438 556 404 Z",
-      labels: [{ x: 193, y: 424 }, { x: 607, y: 424 }]
+      hairs: 1560,
+      path: "M56 189C50.5 178.833 32 158.7 2 159.5C0.720134 183.899 9.76005 210.666 14.44 221C18.0166 207.097 33.6017 186.617 56 189Z M256 189C275.581 186.916 289.955 202.306 295.651 215.5C300.434 207.484 309.6 185.059 308 159.477C279.177 159.597 261.377 179.061 256 189Z",
+      labels: [{ x: 20, y: 189 }, { x: 291, y: 189 }]
     },
     {
       id: 2,
       graftMin: 1900,
       graftMax: 2100,
-      path: "M138 328 C188 286 291 270 402 270 C513 270 616 286 666 328 C650 365 629 389 596 407 C532 422 468 430 402 430 C336 430 272 422 208 407 C175 389 154 365 138 328 Z",
-      labels: [{ x: 250, y: 350 }, { x: 554, y: 350 }]
+      hairs: 4750,
+      path: "M156 182C135.5 182 109 177.5 87.5 156C70.0323 138.532 66.5018 124.507 59.0058 107.013C37.4876 111.969 17.2072 119.649 3.59985 131.552C2.53329 138.701 0.720152 154.299 2.00002 159.5C32 158.7 50.5 178.833 56 189C85 192.085 96 222 156 222C216 222 227 192.085 256 189C261.377 179.061 279.177 159.597 308 159.477C308.833 154.133 309.6 140.666 306 129.55C292.468 118.779 273.281 111.685 252.994 107.013C251.723 109.98 250.566 112.848 249.435 115.649L249.434 115.65L249.433 115.654C243.458 130.777 236.107 144.393 224.5 156C203 177.5 176.5 182 156 182Z",
+      labels: [{ x: 50, y: 151 }, { x: 261, y: 151 }]
     },
     {
       id: 3,
       graftMin: 900,
       graftMax: 1100,
-      path: "M255 264 C292 250 344 242 402 242 C460 242 512 250 549 264 C536 332 486 374 402 374 C318 374 268 332 255 264 Z",
-      labels: [{ x: 402, y: 320 }]
+      hairs: 2250,
+      path: "M87.5 156C109 177.5 135.5 182 156 182C176.5 182 203 177.5 224.5 156C236.107 144.393 243.458 130.777 249.433 115.654L249.434 115.65C250.565 112.848 251.723 109.981 252.994 107.013C213.856 97.9998 170.624 97.9998 156 97.9998C141.376 97.9998 98.1437 97.9998 59.0057 107.013C66.5018 124.507 70.0322 138.532 87.5 156Z",
+      labels: [{ x: 156, y: 133 }]
     },
     {
       id: 4,
       graftMin: 700,
       graftMax: 900,
-      path: "M228 188 C274 162 333 149 402 149 C471 149 530 162 576 188 C566 233 548 261 521 279 C481 263 444 257 402 257 C360 257 323 263 283 279 C256 261 238 233 228 188 Z",
-      labels: [{ x: 226, y: 222 }, { x: 578, y: 222 }]
+      hairs: 1750,
+      path: "M155.498 75.9998C137.842 75.9998 66.0412 75.9998 37.1193 50.2086C17.4793 72.3744 5.07099 100.657 2.49961 132.536C16.0556 120.07 36.7872 112.104 58.8207 107.013C97.8309 97.9998 140.922 97.9998 155.498 97.9998C170.074 97.9998 213.166 97.9998 252.176 107.013C273.642 111.973 293.873 119.662 307.436 131.583C304.847 100.916 293.371 72.5345 274.064 50.0414C251.004 72.9498 192.67 75.9998 155.498 75.9998Z",
+      labels: [{ x: 40, y: 91 }, { x: 271, y: 91 }]
     },
     {
       id: 5,
       graftMin: 1400,
       graftMax: 1600,
-      path: "M199 126 C252 92 323 74 402 74 C481 74 552 92 605 126 C592 162 571 184 541 194 C497 179 450 171 402 171 C354 171 307 179 263 194 C233 184 212 162 199 126 Z",
-      labels: [{ x: 280, y: 146 }, { x: 524, y: 146 }]
+      hairs: 3500,
+      path: "M273.5 51.2955C243.708 75.9995 173.461 75.9995 156 75.9995C138.495 75.9995 67.9396 75.9995 38.2765 51.1091C52 33.9996 97.5 1.50006 161.5 1.5C224.711 1.49995 258.667 33.8635 273.5 51.2955ZM229 33.9996C229 47.2544 196.317 57.9995 156 57.9995C115.683 57.9995 83 47.2544 83 33.9996C83 20.7448 115.683 9.99964 156 9.99964C196.317 9.99964 229 20.7448 229 33.9996Z",
+      labels: [{ x: 69, y: 49 }, { x: 240, y: 49 }]
     },
-    { id: 6, graftMin: 800, graftMax: 800, path: "M297 82 C328 62 364 52 402 52 C440 52 476 62 507 82 C501 110 484 129 456 137 C439 132 421 130 402 130 C383 130 365 132 348 137 C320 129 303 110 297 82 Z", labels: [{ x: 402, y: 98 }] }
+    {
+      id: 6,
+      graftMin: 800,
+      graftMax: 800,
+      hairs: 2000,
+      path: "M229 33.9999C229 47.2547 196.317 57.9999 156 57.9999C115.683 57.9999 83 47.2547 83 33.9999C83 20.7451 115.683 10 156 10C196.317 10 229 20.7451 229 33.9999Z",
+      labels: [{ x: 156, y: 34 }]
+    }
   ];
   const treatmentImages = [
     "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
@@ -361,7 +373,7 @@ export default function HomePage() {
   }, [testimonialIndex, t.testimonials]);
   const selectedZoneData = useMemo(() => zoneConfigs.filter((zone) => selectedZones.includes(zone.id)), [selectedZones]);
   const totalGrafts = useMemo(() => selectedZoneData.reduce((total, zone) => total + zone.graftMin, 0), [selectedZoneData]);
-  const totalHairs = useMemo(() => Math.round(totalGrafts * 2.2), [totalGrafts]);
+  const totalHairs = useMemo(() => selectedZoneData.reduce((total, zone) => total + zone.hairs, 0), [selectedZoneData]);
 
   const handleSend = (event) => {
     event.preventDefault();
@@ -606,24 +618,27 @@ export default function HomePage() {
                 {zoneConfigs.map((zone) => {
                   const isSelected = selectedZones.includes(zone.id);
                   return (
-                    <label key={zone.id} className="flex w-full cursor-pointer items-center gap-3 text-left">
+                    <label key={zone.id} className="flex w-full cursor-pointer items-center gap-3 rounded-xl border border-[#e5edf7] p-3 text-left transition hover:border-[#b8d1ec]">
                       <input type="checkbox" checked={isSelected} onChange={() => toggleZone(zone.id)} className="h-5 w-5 accent-[#0f172a]" />
-                      <span className="text-lg font-semibold leading-none text-[#111827] md:text-2xl">
-                        {t.zonePrefix} {zone.id}
-                      </span>
-                      <span className="text-lg leading-none text-[#556476] md:text-2xl">
-                        {zone.graftMin === zone.graftMax ? `${zone.graftMin}` : `${zone.graftMin} - ${zone.graftMax}`} Grafts
-                      </span>
+                      <div className="flex flex-col leading-tight">
+                        <span className="text-lg font-semibold text-[#111827] md:text-xl">
+                          {t.zonePrefix} {zone.id}
+                        </span>
+                        <span className="text-base text-[#556476] md:text-lg">
+                          {zone.graftMin === zone.graftMax ? `${zone.graftMin}` : `${zone.graftMin} - ${zone.graftMax}`} Grafts
+                        </span>
+                      </div>
                     </label>
                   );
                 })}
               </div>
             </aside>
 
-            <div className="relative mx-auto h-[430px] w-full max-w-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
-              <Image src="/bald-man.jpeg" alt="Graft area model head" fill className="object-cover object-top" />
-              <div className="absolute inset-0 bg-[#c9d3de]/15" />
-              <svg viewBox="0 0 804 640" className="absolute inset-0 h-full w-full" aria-label="Hair loss zones">
+            <div className="mx-auto w-full max-w-[380px] rounded-[2rem] bg-white p-4 shadow-xl">
+              <div className="relative aspect-[310/222] overflow-hidden rounded-2xl">
+                <Image src="/bald-man.jpeg" alt="Graft area model head" fill className="object-cover object-top" />
+                <div className="absolute inset-0 bg-[#c9d3de]/15" />
+                <svg viewBox="0 0 310 222" className="absolute inset-0 h-full w-full" aria-label="Hair loss zones">
                 {zoneConfigs.map((zone) => {
                   const isSelected = selectedZones.includes(zone.id);
                   return (
@@ -632,10 +647,10 @@ export default function HomePage() {
                       d={zone.path}
                       onClick={() => toggleZone(zone.id)}
                       className="cursor-pointer transition-all duration-200"
-                      fill={isSelected ? "rgba(248, 177, 132, 0.58)" : "rgba(164, 191, 199, 0.36)"}
+                      fill={isSelected ? "rgba(239, 123, 59, 0.55)" : "rgba(179, 231, 242, 0.7)"}
                       stroke="rgba(31, 41, 55, 0.58)"
-                      strokeDasharray="8 6"
-                      strokeWidth="2"
+                      strokeDasharray="4 4"
+                      strokeWidth="1.2"
                     />
                   );
                 })}
@@ -646,13 +661,14 @@ export default function HomePage() {
                       x={label.x}
                       y={label.y}
                       textAnchor="middle"
-                      className="pointer-events-none select-none fill-[#111827] text-[46px] font-semibold"
+                      className="pointer-events-none select-none fill-[#111827] text-[16px] font-semibold"
                     >
                       {zone.id}
                     </text>
                   ))
                 )}
-              </svg>
+                </svg>
+              </div>
             </div>
 
             <aside className="rounded-3xl p-4">
