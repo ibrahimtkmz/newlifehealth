@@ -1,0 +1,21 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" fill="#E9EEF3"/>
+  <path d="M120 750C220 650 680 650 780 750V900H120V750Z" fill="#C4D3DA"/>
+  <ellipse cx="450" cy="320" rx="210" ry="250" fill="#D9B39D"/>
+  <ellipse cx="450" cy="315" rx="198" ry="238" fill="url(#skin)"/>
+  <path d="M315 530C360 565 540 565 585 530C560 600 530 640 450 640C370 640 340 600 315 530Z" fill="#C7967B" fill-opacity="0.45"/>
+  <path d="M352 486C388 505 512 505 548 486" stroke="#966E57" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="288" cy="350" rx="23" ry="48" fill="url(#ear)"/>
+  <ellipse cx="612" cy="350" rx="23" ry="48" fill="url(#ear)"/>
+  <defs>
+    <radialGradient id="skin" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(380 230) rotate(44.5) scale(371 315)">
+      <stop stop-color="#F6D8C1"/>
+      <stop offset="0.55" stop-color="#EBC1A7"/>
+      <stop offset="1" stop-color="#D0A189"/>
+    </radialGradient>
+    <linearGradient id="ear" x1="288" y1="302" x2="288" y2="398" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3B89D"/>
+      <stop offset="1" stop-color="#B68268"/>
+    </linearGradient>
+  </defs>
+</svg>
