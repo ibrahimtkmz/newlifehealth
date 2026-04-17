@@ -123,7 +123,29 @@ export default function HomePage() {
         </div>
 
         <div className="relative overflow-hidden rounded-[32px] border border-white bg-white p-3 shadow-[0_30px_90px_rgba(15,39,71,0.16)]">
-          <Image src="/1.jpeg" alt="Premium sağlık turizmi deneyimi" width={980} height={900} className="h-full min-h-[360px] w-full rounded-[24px] object-cover" priority />
+          <div className="relative flex min-h-[360px] w-full items-end justify-center overflow-hidden rounded-[24px] bg-[radial-gradient(circle_at_25%_15%,#f0f8ff_0%,#d8f0ff_35%,#c5e2ff_70%,#b3d6f6_100%)]">
+            <div className="hair-animation-root">
+              {Array.from({ length: 12 }).map((_, index) => (
+                <span
+                  key={`hair-strand-${index}`}
+                  className="hair-strand"
+                  style={{
+                    left: `${8 + index * 7.4}%`,
+                    animationDelay: `${index * 0.25}s`,
+                    animationDuration: `${3.8 + (index % 4) * 0.35}s`
+                  }}
+                />
+              ))}
+            </div>
+
+            <div className="tooth-arch-wrap">
+              <div className="tooth-arch">
+                {Array.from({ length: 32 }).map((_, index) => (
+                  <span key={`tooth-${index}`} className="tooth-unit" />
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/92 p-4 backdrop-blur">
             <p className="text-sm font-semibold text-[#0f2747]">24 saat içinde ön değerlendirme</p>
             <p className="text-sm text-[#0f2747]/70">Doktor görüşü + tahmini plan + paket önerisi</p>
