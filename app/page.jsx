@@ -18,7 +18,8 @@ import {
   Building2,
   Stethoscope,
   ArrowLeft,
-  ArrowRight
+  ArrowRight,
+  CheckCircle2
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
@@ -92,6 +93,13 @@ const content = {
     ],
     whyTag: "Neden Newlife Health",
     whyTitle: "Güvenilir Bakım, Global Standartlar",
+    graftTitle: "Greft Hesaplayıcı",
+    graftSubtitle: "Tedavi etmek istediğiniz saç dökülme bölgelerini seçin",
+    selectedZonesTitle: "Seçilen bölgeler",
+    zonePrefix: "Bölge",
+    approxGraftsLabel: "Yaklaşık greft sayısı",
+    approxHairsLabel: "Yaklaşık saç teli sayısı",
+    consultationButton: "Ücretsiz Konsültasyon Al",
     whyItems: [
       ["Yetkili Sağlık Kurumu Ağı", "Sizi sadece sağlık turizmi yetki belgesine sahip anlaşmalı kurumlarla buluşturuyoruz."],
       ["Şeffaf ve Planlı Süreç", "İlk danışmadan Türkiye'deki tedavi planınıza kadar tüm aşamaları net şekilde yönetiyoruz."],
@@ -166,6 +174,13 @@ const content = {
     ],
     whyTag: "Why Newlife Health",
     whyTitle: "Trusted Care, Global Standards",
+    graftTitle: "Graft Calculator",
+    graftSubtitle: "Select the hair loss areas you would like to treat",
+    selectedZonesTitle: "Selected zones",
+    zonePrefix: "Zone",
+    approxGraftsLabel: "Approximate number of grafts",
+    approxHairsLabel: "Approximate number of hairs",
+    consultationButton: "Book a free consultation",
     whyItems: [
       ["Authorized Provider Network", "We connect you only with contracted institutions that hold official medical tourism authorization."],
       ["Clear & Structured Journey", "From first consultation to your treatment plan in Turkey, every step is communicated clearly."],
@@ -240,6 +255,13 @@ const content = {
     ],
     whyTag: "Почему Newlife Health",
     whyTitle: "Надежное лечение, глобальные стандарты",
+    graftTitle: "Калькулятор графтов",
+    graftSubtitle: "Выберите зоны выпадения волос, которые хотите лечить",
+    selectedZonesTitle: "Выбранные зоны",
+    zonePrefix: "Зона",
+    approxGraftsLabel: "Примерное количество графтов",
+    approxHairsLabel: "Примерное количество волос",
+    consultationButton: "Бесплатная консультация",
     whyItems: [
       ["Сеть авторизованных учреждений", "Направляем только в партнерские учреждения с официальным разрешением на медтуризм."],
       ["Понятный и структурный процесс", "От первой консультации до плана лечения в Турции — каждый шаг прозрачно согласован."],
@@ -266,8 +288,17 @@ export default function HomePage() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const treatmentRef = useRef(null);
   const [formData, setFormData] = useState({ name: "", phone: "", treatment: "", language: lang.toUpperCase() });
+  const [selectedZones, setSelectedZones] = useState([]);
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
+  const zoneConfigs = [
+    { id: 1, graftMin: 600, graftMax: 800, x: "18%", y: "56%", width: "25%", height: "22%", rounded: "48% 52% 48% 52%" },
+    { id: 2, graftMin: 1900, graftMax: 2100, x: "28%", y: "40%", width: "44%", height: "28%", rounded: "48% 48% 42% 42%" },
+    { id: 3, graftMin: 900, graftMax: 1100, x: "37%", y: "22%", width: "26%", height: "18%", rounded: "58% 58% 46% 46%" },
+    { id: 4, graftMin: 700, graftMax: 900, x: "10%", y: "30%", width: "21%", height: "22%", rounded: "58% 42% 52% 52%" },
+    { id: 5, graftMin: 1400, graftMax: 1600, x: "68%", y: "30%", width: "21%", height: "22%", rounded: "42% 58% 52% 52%" },
+    { id: 6, graftMin: 800, graftMax: 800, x: "36%", y: "6%", width: "28%", height: "16%", rounded: "52% 52% 48% 48%" }
+  ];
   const treatmentImages = [
     "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
     "https://cdn.scope.digital/Images/Articles/liposuction-nedir-kimler-yaptirabilir-2898767.jpg?tr=w-630,h-420",
@@ -282,6 +313,16 @@ export default function HomePage() {
     const full = [...t.testimonials, ...t.testimonials];
     return full.slice(testimonialIndex, testimonialIndex + 3);
   }, [testimonialIndex, t.testimonials]);
+  const selectedZoneData = useMemo(() => zoneConfigs.filter((zone) => selectedZones.includes(zone.id)), [selectedZones]);
+  const totalGrafts = useMemo(
+    () =>
+      selectedZoneData.reduce(
+        (total, zone) => ({ min: total.min + zone.graftMin, max: total.max + zone.graftMax }),
+        { min: 0, max: 0 }
+      ),
+    [selectedZoneData]
+  );
+  const totalHairs = useMemo(() => ({ min: totalGrafts.min * 2.2, max: totalGrafts.max * 2.2 }), [totalGrafts]);
 
   const handleSend = (event) => {
     event.preventDefault();
@@ -302,6 +343,9 @@ export default function HomePage() {
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
     setChatOpen(false);
     setChatMessage("");
+  };
+  const toggleZone = (zoneId) => {
+    setSelectedZones((prev) => (prev.includes(zoneId) ? prev.filter((id) => id !== zoneId) : [...prev, zoneId].sort((a, b) => a - b)));
   };
 
   return (
@@ -499,6 +543,66 @@ export default function HomePage() {
               {logo}
             </span>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+        <div className="rounded-[2rem] bg-[#eef5fd] p-6 shadow-md md:p-10">
+          <h2 className="text-center text-4xl font-bold text-[#101f35] md:text-6xl">{t.graftTitle}</h2>
+          <p className="mx-auto mt-4 max-w-[700px] text-center text-lg text-[#4f6277]">{t.graftSubtitle}</p>
+          <div className="mt-8 grid items-center gap-6 xl:grid-cols-[1fr_1.2fr_1fr]">
+            <aside className="rounded-3xl bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-2xl font-semibold text-[#34465b]">{t.selectedZonesTitle}</h3>
+              <div className="space-y-3">
+                {zoneConfigs.map((zone) => {
+                  const isSelected = selectedZones.includes(zone.id);
+                  return (
+                    <button key={zone.id} onClick={() => toggleZone(zone.id)} className="flex w-full items-center gap-3 text-left">
+                      {isSelected ? <CheckCircle2 className="h-5 w-5 text-[#131c28]" /> : <span className="h-5 w-5 rounded-full border border-[#9ba8b7]" />}
+                      <span className="text-lg font-semibold leading-none text-[#111827] md:text-2xl">{t.zonePrefix} {zone.id}</span>
+                      <span className="text-lg leading-none text-[#556476] md:text-2xl">
+                        {zone.graftMin === zone.graftMax ? `${zone.graftMin}` : `${zone.graftMin} - ${zone.graftMax}`} Grafts
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </aside>
+
+            <div className="relative mx-auto h-[430px] w-full max-w-[440px] overflow-hidden rounded-[999px] bg-gradient-to-b from-[#d9e7ef] via-[#afbeca] to-[#8a9aaa] shadow-xl">
+              <div className="absolute inset-x-[14%] top-[10%] h-[44%] rounded-[48%_48%_38%_38%] border-2 border-dashed border-[#6b7280]/60" />
+              {zoneConfigs.map((zone) => {
+                const isSelected = selectedZones.includes(zone.id);
+                return (
+                  <button
+                    key={`head-${zone.id}`}
+                    onClick={() => toggleZone(zone.id)}
+                    className={`absolute border border-[#6b7280]/50 text-xl font-semibold text-[#101827] transition ${isSelected ? "bg-[#f9c6a5]/80" : "bg-[#cde5df]/75 hover:bg-[#bde0d7]/90"}`}
+                    style={{ left: zone.x, top: zone.y, width: zone.width, height: zone.height, borderRadius: zone.rounded }}
+                    aria-label={`${t.zonePrefix} ${zone.id}`}
+                  >
+                    {zone.id}
+                  </button>
+                );
+              })}
+            </div>
+
+            <aside className="rounded-3xl p-4">
+              <p className="text-2xl font-medium text-[#34465b] md:text-4xl">{t.approxGraftsLabel}</p>
+              <p className="mt-2 text-5xl font-semibold leading-none text-[#111827] md:text-7xl">
+                {totalGrafts.min === totalGrafts.max ? totalGrafts.min : `${totalGrafts.min} - ${totalGrafts.max}`} Grafts
+              </p>
+              <p className="mt-4 text-5xl font-medium leading-none text-[#5f6f81] md:text-7xl">
+                {Math.round(totalHairs.min) === Math.round(totalHairs.max)
+                  ? Math.round(totalHairs.min)
+                  : `${Math.round(totalHairs.min)} - ${Math.round(totalHairs.max)}`}{" "}
+                Hairs
+              </p>
+              <button className="mt-10 rounded-3xl bg-gradient-to-r from-[#77d0e8] to-[#61a8ea] px-10 py-5 text-xl font-medium text-[#0f1b2b] md:text-3xl">
+                {t.consultationButton}
+              </button>
+            </aside>
+          </div>
         </div>
       </section>
 
