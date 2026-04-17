@@ -634,8 +634,8 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div className="mx-auto w-full max-w-[380px] rounded-[2rem] bg-white p-4 shadow-xl">
-              <div className="relative aspect-[310/222] overflow-hidden rounded-2xl">
+            <div className="mx-auto w-full max-w-[380px]">
+              <div className="relative aspect-[310/222]">
                 <svg viewBox="0 0 310 222" className="absolute inset-0 h-full w-full" aria-label="Hair loss zones">
                 {zoneConfigs.map((zone) => {
                   const isSelected = selectedZones.includes(zone.id);
@@ -645,7 +645,7 @@ export default function HomePage() {
                       d={zone.path}
                       onClick={() => toggleZone(zone.id)}
                       className="cursor-pointer transition-all duration-200"
-                      fill="transparent"
+                      fill={isSelected ? "rgba(239, 123, 59, 0.18)" : "rgba(255, 255, 255, 0.92)"}
                       stroke={isSelected ? "rgba(239, 123, 59, 0.95)" : "rgba(31, 41, 55, 0.7)"}
                       strokeDasharray="4 4"
                       strokeWidth={isSelected ? "1.8" : "1.4"}
