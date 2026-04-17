@@ -6,46 +6,16 @@ import { useLanguage } from "../components/LanguageProvider";
 import { Lock, MessageCircle, ShieldCheck, Scissors, Smile, Sparkles, Activity } from "lucide-react";
 
 const BEFORE_AFTER_CASES = [
-  {
-    treatment: "hair",
-    before: "https://oclinic.com.tr/wp-content/uploads/2022/02/FUE-teknii-1024x768.jpg.webp",
-    after: "https://oclinic.com.tr/wp-content/uploads/2022/02/FUE-teknii-1024x768.jpg.webp"
-  },
-  {
-    treatment: "plastic",
-    before: "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
-    after: "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048"
-  },
-  {
-    treatment: "plastic",
-    before: "https://cdn.scope.digital/Images/Articles/liposuction-nedir-kimler-yaptirabilir-2898767.jpg?tr=w-630,h-420",
-    after: "https://cdn.scope.digital/Images/Articles/liposuction-nedir-kimler-yaptirabilir-2898767.jpg?tr=w-630,h-420"
-  },
-  {
-    treatment: "plastic",
-    before: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7QOmvxVaigT_pWvOA_S29Hg7WBjPuD830A&s",
-    after: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7QOmvxVaigT_pWvOA_S29Hg7WBjPuD830A&s"
-  },
-  {
-    treatment: "dental",
-    before: "https://clinicego.com/wp-content/uploads/elementor/thumbs/hollywood-smile-qzer0j15xw9a8howopyj0urfyk7ewmsbstos45gfgg.webp",
-    after: "https://clinicego.com/wp-content/uploads/elementor/thumbs/hollywood-smile-qzer0j15xw9a8howopyj0urfyk7ewmsbstos45gfgg.webp"
-  },
-  {
-    treatment: "dental",
-    before: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Dental-implant-illustration.jpg",
-    after: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Dental-implant-illustration.jpg"
-  },
-  {
-    treatment: "plastic",
-    before: "https://venividigoz.com/uploads/v1/akilli-lensler-kopya.jpg",
-    after: "https://venividigoz.com/uploads/v1/akilli-lensler-kopya.jpg"
-  },
-  {
-    treatment: "plastic",
-    before: "https://i0.wp.com/www.bursagoz.com/wp-content/uploads/2020/02/goz-kapak-kaldirma.jpg?fit=800%2C445&ssl=1",
-    after: "https://i0.wp.com/www.bursagoz.com/wp-content/uploads/2020/02/goz-kapak-kaldirma.jpg?fit=800%2C445&ssl=1"
-  }
+  { treatment: "dental", before: "/1.jpeg", after: "/1.jpeg" },
+  { treatment: "dental", before: "/2.jpeg", after: "/2.jpeg" },
+  { treatment: "dental", before: "/3.jpeg", after: "/3.jpeg" },
+  { treatment: "dental", before: "/4.jpeg", after: "/4.jpeg" },
+  { treatment: "dental", before: "/5.jpeg", after: "/5.jpeg" },
+  { treatment: "dental", before: "/6.jpeg", after: "/6.jpeg" },
+  { treatment: "dental", before: "/7.jpeg", after: "/7.jpeg" },
+  { treatment: "dental", before: "/8.jpeg", after: "/8.jpeg" },
+  { treatment: "dental", before: "/9.jpeg", after: "/9.jpeg" },
+  { treatment: "dental", before: "/10.jpeg", after: "/10-1.jpeg" }
 ];
 
 const CONTENT = {
