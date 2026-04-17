@@ -292,12 +292,12 @@ export default function HomePage() {
 
   const quickIcons = [CircleHelp, Stethoscope, Building2, HeartPulse, User, Stethoscope];
   const zoneConfigs = [
-    { id: 1, graftMin: 600, graftMax: 800, x: "18%", y: "56%", width: "25%", height: "22%", rounded: "48% 52% 48% 52%" },
-    { id: 2, graftMin: 1900, graftMax: 2100, x: "28%", y: "40%", width: "44%", height: "28%", rounded: "48% 48% 42% 42%" },
-    { id: 3, graftMin: 900, graftMax: 1100, x: "37%", y: "22%", width: "26%", height: "18%", rounded: "58% 58% 46% 46%" },
-    { id: 4, graftMin: 700, graftMax: 900, x: "10%", y: "30%", width: "21%", height: "22%", rounded: "58% 42% 52% 52%" },
-    { id: 5, graftMin: 1400, graftMax: 1600, x: "68%", y: "30%", width: "21%", height: "22%", rounded: "42% 58% 52% 52%" },
-    { id: 6, graftMin: 800, graftMax: 800, x: "36%", y: "6%", width: "28%", height: "16%", rounded: "52% 52% 48% 48%" }
+    { id: 1, graftMin: 600, graftMax: 800, clipPath: "ellipse(13% 7% at 26% 53%)", labelX: "26%", labelY: "54%" },
+    { id: 2, graftMin: 1900, graftMax: 2100, clipPath: "ellipse(32% 16% at 50% 44%)", labelX: "50%", labelY: "44%" },
+    { id: 3, graftMin: 900, graftMax: 1100, clipPath: "ellipse(21% 10% at 50% 30%)", labelX: "50%", labelY: "30%" },
+    { id: 4, graftMin: 700, graftMax: 900, clipPath: "ellipse(20% 13% at 24% 34%)", labelX: "18%", labelY: "33%" },
+    { id: 5, graftMin: 1400, graftMax: 1600, clipPath: "ellipse(20% 13% at 76% 34%)", labelX: "82%", labelY: "33%" },
+    { id: 6, graftMin: 800, graftMax: 800, clipPath: "ellipse(18% 7% at 50% 16%)", labelX: "50%", labelY: "14%" }
   ];
   const treatmentImages = [
     "https://framerusercontent.com/images/wEkOWX1ML7fes0rVZookZRz5Epg.jpg?width=2048&height=2048",
@@ -569,22 +569,30 @@ export default function HomePage() {
               </div>
             </aside>
 
-            <div className="relative mx-auto h-[430px] w-full max-w-[440px] overflow-hidden rounded-[999px] bg-gradient-to-b from-[#d9e7ef] via-[#afbeca] to-[#8a9aaa] shadow-xl">
-              <div className="absolute inset-x-[14%] top-[10%] h-[44%] rounded-[48%_48%_38%_38%] border-2 border-dashed border-[#6b7280]/60" />
+            <div className="relative mx-auto h-[430px] w-full max-w-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
+              <Image src="/graft-head-base.svg" alt="Graft area model head" fill className="object-cover" />
+              <div className="absolute inset-0 bg-[#c9d3de]/15" />
               {zoneConfigs.map((zone) => {
                 const isSelected = selectedZones.includes(zone.id);
                 return (
                   <button
                     key={`head-${zone.id}`}
                     onClick={() => toggleZone(zone.id)}
-                    className={`absolute border border-[#6b7280]/50 text-xl font-semibold text-[#101827] transition ${isSelected ? "bg-[#f9c6a5]/80" : "bg-[#cde5df]/75 hover:bg-[#bde0d7]/90"}`}
-                    style={{ left: zone.x, top: zone.y, width: zone.width, height: zone.height, borderRadius: zone.rounded }}
+                    className={`absolute inset-0 border border-dashed border-[#4b5563]/55 text-xl font-semibold text-[#111827] transition ${isSelected ? "bg-[#f5b892]/55" : "bg-[#afc6cf]/25 hover:bg-[#afc6cf]/40"}`}
+                    style={{ clipPath: zone.clipPath }}
                     aria-label={`${t.zonePrefix} ${zone.id}`}
-                  >
-                    {zone.id}
-                  </button>
+                  />
                 );
               })}
+              {zoneConfigs.map((zone) => (
+                <span
+                  key={`head-label-${zone.id}`}
+                  className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold text-[#111827]"
+                  style={{ left: zone.labelX, top: zone.labelY }}
+                >
+                  {zone.id}
+                </span>
+              ))}
             </div>
 
             <aside className="rounded-3xl p-4">
