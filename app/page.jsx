@@ -18,7 +18,15 @@ import {
   Building2,
   Stethoscope,
   ArrowLeft,
-  ArrowRight
+  ArrowRight,
+  PlaneTakeoff,
+  Car,
+  TestTube2,
+  UserRoundSearch,
+  Coffee,
+  HandHeart,
+  Droplets,
+  MessageCircleHeart
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
@@ -92,6 +100,39 @@ const content = {
     ],
     whyTag: "Neden Newlife Health",
     whyTitle: "Güvenilir Bakım, Global Standartlar",
+    journeyTitle: "4 günlük saç ekimi yolculuğunuza bir göz atın",
+    journeyDays: [
+      {
+        day: "1. Gün",
+        items: [
+          { icon: "plane", title: "Havalimanına varış", description: "Sürücümüz sizi karşılayarak kan tahlili için kliniğe, ardından otelinize götürür." },
+          { icon: "car", title: "Kliniğe transfer", badge: "maks 1 saat" },
+          { icon: "test", title: "Kan örneği", badge: "maks 45 dk" }
+        ]
+      },
+      {
+        day: "2. Gün",
+        items: [
+          { icon: "consult", title: "1. Konsültasyon", description: "Doktorunuzla görüşür, saç ekimi seçenekleri ve saç çizgisi tasarımı planlanır.", badge: "1 - 2 saat" },
+          { icon: "free", title: "İstanbul’da serbest zaman", description: "Bir sonraki gün öncesi dinlenmek ve şehri keşfetmek için geniş zamanınız olur." }
+        ]
+      },
+      {
+        day: "3. Gün",
+        items: [
+          { icon: "consult2", title: "2. Konsültasyon", description: "Doğal görünüm için son değerlendirmeler yapılır ve işlem planı netleştirilir.", badge: "1 saat" },
+          { icon: "procedure", title: "İşlem", description: "Lokal anestezi altında ortalama 5 - 7 saat sürer. İşlemden sonra dinlenmeniz için otele transfer edilirsiniz.", badge: "5 - 7 saat" }
+        ]
+      },
+      {
+        day: "4. Gün",
+        items: [
+          { icon: "wash", title: "Saç yıkama", badge: "1 saat" },
+          { icon: "aftercare", title: "Bakım sonrası danışmanlık", description: "Greftler kontrol edilir ve iyileşme süreci için öneriler paylaşılır.", badge: "1 saat" },
+          { icon: "car", title: "Havalimanına transfer", badge: "maks 1 saat" }
+        ]
+      }
+    ],
     graftTitle: "Greft Hesaplayıcı",
     graftSubtitle: "Tedavi etmek istediğiniz saç dökülme bölgelerini seçin",
     selectedZonesTitle: "Seçilen bölgeler",
@@ -178,6 +219,39 @@ const content = {
     ],
     whyTag: "Why Newlife Health",
     whyTitle: "Trusted Care, Global Standards",
+    journeyTitle: "Take a look at your 4-day hair transplant journey",
+    journeyDays: [
+      {
+        day: "Day 1",
+        items: [
+          { icon: "plane", title: "Arrival at the airport", description: "One of our drivers meets you and takes you to the clinic for blood tests, then to your hotel." },
+          { icon: "car", title: "Transfer to the clinic", badge: "max 1 hour" },
+          { icon: "test", title: "Blood sampling", badge: "max 45 mins" }
+        ]
+      },
+      {
+        day: "Day 2",
+        items: [
+          { icon: "consult", title: "1st consultation", description: "Meet your doctor and discuss your hair transplant options plus hairline design.", badge: "1 - 2 hours" },
+          { icon: "free", title: "Free time in Istanbul", description: "You will have plenty of time to relax and enjoy Istanbul before the following day." }
+        ]
+      },
+      {
+        day: "Day 3",
+        items: [
+          { icon: "consult2", title: "2nd consultation", description: "Receive final expert advice to achieve a natural result and confirm your treatment plan.", badge: "1 hour" },
+          { icon: "procedure", title: "The procedure", description: "Performed under local anaesthesia and usually takes around 5 to 7 hours depending on graft count.", badge: "5 - 7 hours" }
+        ]
+      },
+      {
+        day: "Day 4",
+        items: [
+          { icon: "wash", title: "Hair washing", badge: "1 hour" },
+          { icon: "aftercare", title: "Advice on aftercare", description: "We check your grafts and share recommendations for smooth recovery.", badge: "1 hour" },
+          { icon: "car", title: "Transfer to the airport", badge: "max 1 hour" }
+        ]
+      }
+    ],
     graftTitle: "Graft Calculator",
     graftSubtitle: "Select the hair loss areas you would like to treat",
     selectedZonesTitle: "Selected zones",
@@ -264,6 +338,39 @@ const content = {
     ],
     whyTag: "Почему Newlife Health",
     whyTitle: "Надежное лечение, глобальные стандарты",
+    journeyTitle: "Ознакомьтесь с вашим 4-дневным маршрутом пересадки волос",
+    journeyDays: [
+      {
+        day: "День 1",
+        items: [
+          { icon: "plane", title: "Прибытие в аэропорт", description: "Наш водитель встретит вас и отвезет в клинику на анализ крови, затем в отель." },
+          { icon: "car", title: "Трансфер в клинику", badge: "до 1 часа" },
+          { icon: "test", title: "Забор крови", badge: "до 45 мин" }
+        ]
+      },
+      {
+        day: "День 2",
+        items: [
+          { icon: "consult", title: "1-я консультация", description: "Встреча с врачом, обсуждение вариантов пересадки и дизайна линии роста волос.", badge: "1 - 2 часа" },
+          { icon: "free", title: "Свободное время в Стамбуле", description: "У вас будет достаточно времени отдохнуть и насладиться Стамбулом до следующего дня." }
+        ]
+      },
+      {
+        day: "День 3",
+        items: [
+          { icon: "consult2", title: "2-я консультация", description: "Финальные рекомендации для естественного результата и утверждение плана.", badge: "1 час" },
+          { icon: "procedure", title: "Процедура", description: "Проводится под местной анестезией и обычно длится 5–7 часов в зависимости от количества графтов.", badge: "5 - 7 часов" }
+        ]
+      },
+      {
+        day: "День 4",
+        items: [
+          { icon: "wash", title: "Мытье волос", badge: "1 час" },
+          { icon: "aftercare", title: "Рекомендации по уходу", description: "Проверяем графты и делимся рекомендациями для комфортного восстановления.", badge: "1 час" },
+          { icon: "car", title: "Трансфер в аэропорт", badge: "до 1 часа" }
+        ]
+      }
+    ],
     graftTitle: "Калькулятор графтов",
     graftSubtitle: "Выберите зоны выпадения волос, которые хотите лечить",
     selectedZonesTitle: "Выбранные зоны",
@@ -295,6 +402,17 @@ const content = {
 export default function HomePage() {
   const { lang, setLang } = useLanguage();
   const t = content[lang] || content.en;
+  const journeyIcons = {
+    plane: PlaneTakeoff,
+    car: Car,
+    test: TestTube2,
+    consult: UserRoundSearch,
+    consult2: HandHeart,
+    free: Coffee,
+    procedure: Stethoscope,
+    wash: Droplets,
+    aftercare: MessageCircleHeart
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
@@ -697,6 +815,34 @@ export default function HomePage() {
               </form>
             </aside>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+        <h2 className="mx-auto mb-10 max-w-[820px] text-center text-4xl font-bold leading-tight text-[#101f35] md:text-6xl">{t.journeyTitle}</h2>
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          {t.journeyDays.map((day) => (
+            <div key={day.day} className="border-l border-[#d8e5ee] pl-4 md:pl-5">
+              <p className="mb-4 text-center text-4xl font-semibold text-[#4d6274]">{day.day}</p>
+              <div className="space-y-3">
+                {day.items.map((item) => {
+                  const IconComponent = journeyIcons[item.icon] ?? CircleHelp;
+                  return (
+                    <article key={`${day.day}-${item.title}`} className="rounded-[28px] bg-[#d8edf5] p-5 text-[#152431]">
+                      <div className="mb-2 flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-3">
+                          <IconComponent className="mt-0.5 h-6 w-6 shrink-0 text-[#111827]" />
+                          <h3 className="text-2xl font-semibold leading-tight">{item.title}</h3>
+                        </div>
+                        {item.badge && <span className="shrink-0 rounded-full bg-[#62c4f1] px-3 py-1 text-sm font-semibold text-[#16415a]">{item.badge}</span>}
+                      </div>
+                      {item.description && <p className="text-lg leading-snug text-[#4f5f6c]">{item.description}</p>}
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
