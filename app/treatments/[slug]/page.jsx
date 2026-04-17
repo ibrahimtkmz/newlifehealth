@@ -3,20 +3,6 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
-import {
-  Plane,
-  CarTaxiFront,
-  Droplets,
-  Stethoscope,
-  Clock3,
-  ShowerHead,
-  MessageCircleHeart,
-  Leaf,
-  Ghost,
-  Sprout,
-  Crown,
-  Flag
-} from "lucide-react";
 import InnerPageLayout from "../../components/InnerPageLayout";
 
 const WHATSAPP_NUMBER = "905000000000";
@@ -141,110 +127,6 @@ const FAQS = [
   "Fiyat teklifi ne kadar sürede iletiliyor?"
 ];
 
-const iconMap = {
-  airport: Plane,
-  transfer: CarTaxiFront,
-  blood: Droplets,
-  consultation: Stethoscope,
-  freeTime: Clock3,
-  washing: ShowerHead,
-  aftercare: MessageCircleHeart,
-  healing: Leaf,
-  shedding: Ghost,
-  growth: Sprout,
-  improvement: Crown,
-  result: Flag
-};
-
-const HAIR_TRANSPLANT_JOURNEY = [
-  {
-    day: "Day 1",
-    steps: [
-      {
-        icon: "airport",
-        title: "Arrival at the airport",
-        description: "You are welcomed by our driver, complete your blood test at the clinic, and transfer to the hotel."
-      },
-      {
-        icon: "transfer",
-        title: "Transfer to the clinic",
-        duration: "max 1 hour"
-      },
-      {
-        icon: "blood",
-        title: "Blood sampling",
-        duration: "max 45 mins"
-      }
-    ]
-  },
-  {
-    day: "Day 2",
-    steps: [
-      {
-        icon: "consultation",
-        title: "1st consultation",
-        duration: "1 - 2 hours",
-        description: "You meet your doctor, finalize the hairline design, and review your treatment plan."
-      },
-      {
-        icon: "freeTime",
-        title: "Free time in Istanbul",
-        description: "After planning, enjoy the city and prepare for the procedure day."
-      }
-    ]
-  },
-  {
-    day: "Day 3",
-    steps: [
-      {
-        icon: "consultation",
-        title: "2nd consultation",
-        duration: "1 hour",
-        description: "A final review is done to confirm a natural and realistic result."
-      },
-      {
-        icon: "healing",
-        title: "The procedure",
-        duration: "5 - 7 hours",
-        description: "The transplant is performed under local anesthesia and followed by transfer back to your hotel."
-      }
-    ]
-  },
-  {
-    day: "Day 4",
-    steps: [
-      {
-        icon: "washing",
-        title: "Hair washing",
-        duration: "1 hour"
-      },
-      {
-        icon: "aftercare",
-        title: "Advice on aftercare",
-        duration: "1 hour",
-        description: "Your grafts are checked and a detailed aftercare routine is explained."
-      },
-      {
-        icon: "transfer",
-        title: "Transfer to the airport",
-        duration: "max 1 hour"
-      }
-    ]
-  }
-];
-
-const RECOVERY_TIMELINE = [
-  { icon: "healing", title: "After your hair transplant", period: "Day 1" },
-  { icon: "washing", title: "Bandage removal & washing", period: "Day 2" },
-  { icon: "consultation", title: "Initial healing", period: "3 - 10 Days" },
-  { icon: "aftercare", title: "Share your photos with us", period: "Day 11" },
-  { icon: "shedding", title: "Hair shedding", period: "2 - 4 Weeks" },
-  { icon: "growth", title: "Dormancy (sleeping) period", period: "1 - 3 Months" },
-  { icon: "growth", title: "Early growth", period: "3 - 6 Months" },
-  { icon: "improvement", title: "Noticeable improvement", period: "6 - 10 Months" },
-  { icon: "result", title: "Final results", period: "10 - 16 Months" }
-];
-
 export default function TreatmentDetailPage() {
   const { slug } = useParams();
   const page = useMemo(() => PAGE_DATA[slug] || PAGE_DATA["hair-transplant"], [slug]);
@@ -268,76 +150,6 @@ export default function TreatmentDetailPage() {
               </ul>
             </section>
           ))}
-
-          {slug === "hair-transplant" && (
-            <>
-              <section className="space-y-6 rounded-3xl bg-[#f4f8fb] p-5 sm:p-8">
-                <div className="space-y-3 text-center">
-                  <h3 className="text-3xl font-bold text-[#121821] sm:text-4xl">Take a look at your 4-day hair transplant journey</h3>
-                  <p className="mx-auto max-w-2xl text-sm text-[#405060] sm:text-base">
-                    Below is the exact on-site flow from arrival to aftercare briefing, designed to keep your treatment smooth and predictable.
-                  </p>
-                </div>
-                <div className="grid gap-5 xl:grid-cols-4">
-                  {HAIR_TRANSPLANT_JOURNEY.map((column) => (
-                    <article key={column.day} className="rounded-2xl border border-[#d5e4ef] bg-white p-4">
-                      <p className="mb-3 text-center text-lg font-semibold text-[#334455]">{column.day}</p>
-                      <div className="space-y-3">
-                        {column.steps.map((step) => {
-                          const StepIcon = iconMap[step.icon];
-                          return (
-                            <div key={step.title} className="rounded-2xl bg-[#d9edf8] p-4">
-                              {step.duration && (
-                                <p className="ml-auto mb-2 w-fit rounded-full bg-[#5ec7f6] px-3 py-1 text-xs font-semibold text-[#0e2433]">
-                                  {step.duration}
-                                </p>
-                              )}
-                              <div className="flex items-start gap-2">
-                                <StepIcon size={20} className="mt-1 shrink-0 text-[#102230]" />
-                                <div>
-                                  <h4 className="text-xl font-semibold text-[#121821]">{step.title}</h4>
-                                  {step.description && <p className="mt-2 text-sm text-[#4d5e6f]">{step.description}</p>}
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="rounded-[36px] bg-gradient-to-r from-[#b7e7dc] to-[#7ac0ef] p-6 sm:p-10">
-                <div className="mx-auto max-w-5xl space-y-8">
-                  <div className="space-y-3 text-center">
-                    <h3 className="text-3xl font-bold text-[#111827] sm:text-5xl">Hair Transplant Timeline: Day 1 to Final Results</h3>
-                    <p className="mx-auto max-w-3xl text-[#223447]">
-                      Hair transplant outcomes appear gradually. This timeline helps you track each phase from immediate care to long-term final growth.
-                    </p>
-                  </div>
-
-                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {RECOVERY_TIMELINE.map((phase) => {
-                      const PhaseIcon = iconMap[phase.icon];
-                      return (
-                        <article
-                          key={phase.title}
-                          className="rounded-2xl border border-[#0f172a]/15 bg-white/55 p-4 shadow-[0_8px_24px_-18px_rgba(15,23,42,0.75)] backdrop-blur-sm"
-                        >
-                          <div className="flex items-center gap-2">
-                            <PhaseIcon size={18} className="text-[#0f172a]" />
-                            <h4 className="text-2xl font-semibold text-[#0f172a]">{phase.title}</h4>
-                          </div>
-                          <p className="mt-2 text-sm font-medium text-[#334155]">{phase.period}</p>
-                        </article>
-                      );
-                    })}
-                  </div>
-                </div>
-              </section>
-            </>
-          )}
 
           <section className="space-y-4">
             <h3 className="text-xl font-semibold text-[#1A1A1A]">Hasta Yorumları</h3>
