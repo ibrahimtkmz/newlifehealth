@@ -26,12 +26,7 @@ import {
   Coffee,
   HandHeart,
   Droplets,
-  MessageCircleHeart,
-  Leaf,
-  Sparkles,
-  Scissors,
-  TrendingUp,
-  Flag
+  MessageCircleHeart
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
 
@@ -459,16 +454,6 @@ export default function HomePage() {
     procedure: Stethoscope,
     wash: Droplets,
     aftercare: MessageCircleHeart
-  };
-  const timelineIcons = {
-    leaf: Leaf,
-    sparkles: Sparkles,
-    bandage: HandHeart,
-    scissors: Scissors,
-    moon: Coffee,
-    sprout: Droplets,
-    trend: TrendingUp,
-    flag: Flag
   };
   const [menuOpen, setMenuOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
@@ -915,175 +900,6 @@ export default function HomePage() {
               <p className="text-sm leading-relaxed text-[#4d6789]">{description}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14">
-        <div className="rounded-[2.4rem] bg-gradient-to-r from-[#bcefdc] to-[#79c4f5] px-6 py-12 text-[#15202f] md:px-12 md:py-14">
-          <h2 className="text-center text-3xl font-bold leading-tight md:text-[64px]">{t.timelineTitle}</h2>
-          <p className="mx-auto mt-4 max-w-[920px] text-center text-lg text-[#203040] md:text-2xl md:leading-snug">{t.timelineSubtitle}</p>
-
-          <div className="mt-12 space-y-12 md:hidden">
-            {t.timelineItems.map(([title, duration, icon]) => {
-              const IconComponent = timelineIcons[icon] ?? CircleHelp;
-              return (
-                <article key={`${title}-${duration}`} className="rounded-2xl border border-[#0f172a24] bg-[#ffffff2e] p-4">
-                  <div className="flex items-start gap-3">
-                    <IconComponent className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
-                    <div>
-                      <h3 className="text-2xl font-semibold leading-tight">{title}</h3>
-                      <p className="mt-1 text-xl text-[#324255]">{duration}</p>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="relative mt-14 hidden min-h-[610px] md:block">
-            <div className="absolute left-[5%] top-[106px] h-[34px] w-[23%] border-l-2 border-b-2 border-dotted border-[#111827]" />
-            <div className="absolute left-[28%] top-[138px] w-[14%] border-b-2 border-dotted border-[#111827]" />
-            <div className="absolute left-[44%] top-[106px] h-[34px] w-[42%] border-l-2 border-b-2 border-dotted border-[#111827]" />
-            <div className="absolute right-[3.5%] top-[138px] h-[214px] w-[24%] rounded-r-[90px] border-r-2 border-y-2 border-dotted border-[#111827]" />
-            <div className="absolute left-[6%] top-[352px] h-[120px] w-[47%] rounded-l-[75px] border-l-2 border-y-2 border-dotted border-[#111827]" />
-            <div className="absolute left-[39%] top-[472px] w-[40%] border-b-[10px] border-[#111827]" />
-            <div className="absolute left-[80%] top-[472px] w-[14%] border-b-[10px] border-[#74afe0]" />
-
-            <div className="absolute left-[8%] top-[74px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[0][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[0][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[30%] top-[252px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[1][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[1][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[1][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[46%] top-[74px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[2][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[2][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[2][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[47%] top-[252px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[4][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[4][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[4][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[64%] top-[432px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[3][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[3][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[3][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[80%] top-[252px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineShareTitle}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineShareDay}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[18%] top-[432px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[5][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[5][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[5][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[58%] top-[432px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[6][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[6][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[6][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-
-            <div className="absolute left-[86%] top-[432px]">
-              {(() => {
-                const IconComponent = timelineIcons[t.timelineItems[7][2]] ?? CircleHelp;
-                return (
-                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
-                    <div className="flex items-center gap-3">
-                      <IconComponent className="h-5 w-5 text-[#111827]" />
-                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[7][0]}</h3>
-                    </div>
-                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[7][1]}</p>
-                  </article>
-                );
-              })()}
-            </div>
-          </div>
         </div>
       </section>
 
