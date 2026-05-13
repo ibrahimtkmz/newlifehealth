@@ -18,6 +18,12 @@ export default function NewlifeBlogPage() {
           </article>
         ))}
       </div>
+
+      <section className="mt-8 rounded-3xl border border-[#1A1A1A]/10 bg-gradient-to-r from-[#0C2E63] to-[#3a0ca3] p-6 text-white sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">Yeni İçerikler</p>
+        <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Sağlık turizmi rehberleri her hafta güncellenir</h2>
+        <p className="mt-3 max-w-2xl text-sm text-white/85">Operasyon öncesi hazırlık, İstanbul’da konforlu konaklama, beslenme önerileri ve sonrası bakım adımlarıyla ilgili pratik içerikleri düzenli olarak yayınlıyoruz.</p>
+      </section>
     </InnerPageLayout>
   );
 }
