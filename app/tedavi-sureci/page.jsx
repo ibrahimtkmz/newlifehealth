@@ -18,6 +18,23 @@ export default function TedaviSureciPage() {
           </div>
         ))}
       </div>
+
+      <section className="mt-8 rounded-3xl border border-[#1A1A1A]/10 bg-white p-6 sm:p-8">
+        <h2 className="text-xl font-bold text-[#0C2E63] sm:text-2xl">Ortalama Zaman Planı</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-4">
+          {[
+            ["Gün 1", "Varış + testler"],
+            ["Gün 2", "Doktor konsültasyonu"],
+            ["Gün 3", "Operasyon"],
+            ["Gün 4", "Kontrol + dönüş"]
+          ].map(([day, desc]) => (
+            <div key={day} className="rounded-2xl bg-gradient-to-br from-[#f7f3ff] to-[#eef5ff] p-4 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#3a0ca3]">{day}</p>
+              <p className="mt-1 text-sm font-medium text-[#1A1A1A]/80">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </InnerPageLayout>
   );
 }

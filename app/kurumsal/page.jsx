@@ -18,6 +18,18 @@ export default function KurumsalPage() {
           </article>
         ))}
       </div>
+
+      <section className="mt-8 rounded-3xl border border-[#0C2E63]/10 bg-gradient-to-r from-[#f8f4ff] via-white to-[#eef5ff] p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3a0ca3]">Kurumsal Yaklaşım</p>
+        <h2 className="mt-3 text-2xl font-bold text-[#0C2E63] sm:text-3xl">Uluslararası hastalar için tek noktadan koordinasyon</h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {["Klinik seçimi ve uzman eşleştirme", "Seyahat, transfer ve konaklama planlaması", "Tedavi sonrası kontrol ve dijital takip", "Çok dilli hasta danışmanlığı"].map((item) => (
+            <div key={item} className="rounded-2xl bg-white/90 p-4 text-sm text-[#1A1A1A]/80 shadow-sm">
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
     </InnerPageLayout>
   );
 }
