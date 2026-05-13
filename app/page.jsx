@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 import {
   Mail,
@@ -101,6 +102,14 @@ const content = {
     whyTag: "Neden Newlife Health",
     whyTitle: "Güvenilir Bakım, Global Standartlar",
     journeyTitle: "4 günlük saç ekimi yolculuğunuza bir göz atın",
+    otherTreatmentsTitle: "Diğer Tedavilerde Süreç ve Detaylar",
+    otherTreatmentsSubtitle: "Saç ekimi dışındaki popüler tedavilerde de planlama, konaklama ve uzman desteğini aynı kaliteyle sunuyoruz.",
+    otherTreatments: [
+      { title: "Diş Estetiği", detail: "Hollywood Smile, zirkonyum kaplama ve implant çözümleri", duration: "4-6 gün", href: "/treatments/dental-aesthetics" },
+      { title: "Estetik Cerrahi", detail: "Rinoplasti, yüz germe, vücut şekillendirme operasyonları", duration: "7-10 gün", href: "/treatments/plastic-surgery" },
+      { title: "Obezite Cerrahisi", detail: "Tüp mide, bypass ve metabolik takip programları", duration: "5-7 gün", href: "/treatments/bariatric-surgery" }
+    ],
+    otherTreatmentsButton: "Tedavi Detayını Gör",
     journeyDays: [
       {
         day: "1. Gün",
@@ -234,6 +243,14 @@ const content = {
     whyTag: "Why Newlife Health",
     whyTitle: "Trusted Care, Global Standards",
     journeyTitle: "Take a look at your 4-day hair transplant journey",
+    otherTreatmentsTitle: "Process & Details for Other Treatments",
+    otherTreatmentsSubtitle: "Beyond hair transplant, we deliver the same planning quality for dental, aesthetic, and bariatric treatments.",
+    otherTreatments: [
+      { title: "Dental Aesthetics", detail: "Hollywood smile, zirconium veneers, and implant solutions", duration: "4-6 days", href: "/treatments/dental-aesthetics" },
+      { title: "Plastic Surgery", detail: "Rhinoplasty, facelift, and body contouring operations", duration: "7-10 days", href: "/treatments/plastic-surgery" },
+      { title: "Bariatric Surgery", detail: "Sleeve, bypass, and metabolic follow-up programs", duration: "5-7 days", href: "/treatments/bariatric-surgery" }
+    ],
+    otherTreatmentsButton: "View Treatment Details",
     journeyDays: [
       {
         day: "Day 1",
@@ -367,6 +384,14 @@ const content = {
     whyTag: "Почему Newlife Health",
     whyTitle: "Надежное лечение, глобальные стандарты",
     journeyTitle: "Ознакомьтесь с вашим 4-дневным маршрутом пересадки волос",
+    otherTreatmentsTitle: "Процесс и детали других направлений",
+    otherTreatmentsSubtitle: "Помимо пересадки волос, мы так же качественно организуем стоматологическое, эстетическое и бариатрическое лечение.",
+    otherTreatments: [
+      { title: "Эстетика зубов", detail: "Голливудская улыбка, цирконий и имплантация", duration: "4-6 дней", href: "/treatments/dental-aesthetics" },
+      { title: "Пластическая хирургия", detail: "Ринопластика, подтяжка лица, моделирование тела", duration: "7-10 дней", href: "/treatments/plastic-surgery" },
+      { title: "Бариатрическая хирургия", detail: "Sleeve, bypass и программы метаболического контроля", duration: "5-7 дней", href: "/treatments/bariatric-surgery" }
+    ],
+    otherTreatmentsButton: "Подробнее о лечении",
     journeyDays: [
       {
         day: "День 1",
@@ -856,6 +881,25 @@ export default function HomePage() {
                 {leadSent && <p className="mt-3 text-sm font-medium text-[#1c6eb3]">{t.leadSuccess}</p>}
               </form>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-6">
+        <div className="rounded-3xl border border-[#d7e3f0] bg-[#f7fbff] p-6 md:p-8">
+          <h2 className="text-3xl font-bold text-[#10223d] md:text-4xl">{t.otherTreatmentsTitle}</h2>
+          <p className="mt-3 max-w-[900px] text-base text-[#49627f] md:text-lg">{t.otherTreatmentsSubtitle}</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {t.otherTreatments.map((item) => (
+              <article key={item.href} className="rounded-2xl border border-[#dce8f5] bg-white p-5 shadow-sm">
+                <h3 className="text-xl font-semibold text-[#153a65]">{item.title}</h3>
+                <p className="mt-2 min-h-[48px] text-sm text-[#4d6789]">{item.detail}</p>
+                <p className="mt-3 text-sm font-semibold text-[#1e4f83]">{item.duration}</p>
+                <Link href={item.href} className="mt-4 inline-flex rounded-full bg-[#0f2f5d] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123f77]">
+                  {t.otherTreatmentsButton}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
