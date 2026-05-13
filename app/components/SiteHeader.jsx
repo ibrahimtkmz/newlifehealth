@@ -7,34 +7,34 @@ import { useLanguage } from "./LanguageProvider";
 const COPY = {
   tr: {
     navItems: [
-      { label: "Neden Türkiye?", href: "/why-turkey" },
-      { label: "Tedaviler", href: "/treatments" },
-      { label: "VIP Hizmetler", href: "/vip-services" },
-      { label: "Öncesi & Sonrası", href: "/before-after" },
-      { label: "Blog", href: "/blog" },
-      { label: "İletişim", href: "/contact" }
+      { label: "Ana Sayfa", href: "/" },
+      { label: "Kurumsal", href: "/kurumsal" },
+      { label: "Hizmetler", href: "/hizmetler" },
+      { label: "Tedavi Süreci", href: "/tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "/newlife-blog" },
+      { label: "İletişim", href: "/iletisim" }
     ],
     freeQuote: "ÜCRETSİZ TEKLİF AL"
   },
   en: {
     navItems: [
-      { label: "Why Turkey?", href: "/why-turkey" },
-      { label: "Treatments", href: "/treatments" },
-      { label: "VIP Services", href: "/vip-services" },
-      { label: "Before & After", href: "/before-after" },
-      { label: "Blog", href: "/blog" },
-      { label: "Contact", href: "/contact" }
+      { label: "Home", href: "/" },
+      { label: "Corporate", href: "/kurumsal" },
+      { label: "Services", href: "/hizmetler" },
+      { label: "Treatment Process", href: "/tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "/newlife-blog" },
+      { label: "Contact", href: "/iletisim" }
     ],
     freeQuote: "GET FREE QUOTE"
   },
   ru: {
     navItems: [
-      { label: "Почему Турция?", href: "/why-turkey" },
-      { label: "Лечение", href: "/treatments" },
-      { label: "VIP Услуги", href: "/vip-services" },
-      { label: "До/После", href: "/before-after" },
-      { label: "Блог", href: "/blog" },
-      { label: "Контакты", href: "/contact" }
+      { label: "Главная", href: "/" },
+      { label: "Корпоратив", href: "/kurumsal" },
+      { label: "Услуги", href: "/hizmetler" },
+      { label: "Процесс лечения", href: "/tedavi-sureci" },
+      { label: "NEWLIFE Блог", href: "/newlife-blog" },
+      { label: "Контакты", href: "/iletisim" }
     ],
     freeQuote: "БЕСПЛАТНЫЙ РАСЧЁТ"
   }
@@ -76,7 +76,7 @@ export default function SiteHeader({ onCtaClick }) {
             </button>
           ) : (
             <Link
-              href="/contact"
+              href="/iletisim"
               className="rich-gradient-button rounded-full px-4 py-2 text-[0.65rem] font-semibold tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(58,12,163,0.35)] sm:px-5 sm:py-2.5 sm:text-xs sm:tracking-[0.12em]"
             >
               {t.freeQuote}
