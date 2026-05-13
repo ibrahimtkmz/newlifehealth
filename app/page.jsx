@@ -729,6 +729,378 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-12 pt-12">
+        <div className="mb-8 flex flex-col items-center">
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">{t.testimonialTag}</span>
+          <h2 className="mt-5 max-w-[1040px] text-center text-3xl font-bold leading-tight text-[#0f2f5d] md:text-5xl">{t.testimonialTitle}</h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {visibleTestimonials.map((card) => (
+            <article key={card.name} className="rounded-3xl border border-[#dbe5f2] bg-white p-6 shadow-sm">
+              <div className="mb-5 flex items-center justify-between">
+                <p className="text-2xl tracking-wide text-[#f7bf1e]">{Array.from({ length: 5 }, (_, j) => (j < card.rating ? "★" : "☆")).join("")}</p>
+                <Quote className="h-8 w-8 text-[#ef6a2f]" />
+              </div>
+              <h3 className="mb-3 text-2xl font-semibold leading-tight text-[#173b69]">{card.title}</h3>
+              <p className="mb-6 text-base leading-relaxed text-[#496281]">{card.text}</p>
+              <div className="flex items-center gap-3">
+                <Image src={card.image} alt={card.name} width={54} height={54} className="h-[54px] w-[54px] rounded-full object-cover" />
+                <div>
+                  <p className="text-lg font-semibold leading-tight text-[#153761]">{card.name}</p>
+                  <p className="text-sm text-[#4f6788]">{card.country}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-5 flex justify-center gap-2">
+          <button onClick={() => setTestimonialIndex((v) => (v + t.testimonials.length - 1) % t.testimonials.length)} className="rounded-full border bg-white p-2">
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <button onClick={() => setTestimonialIndex((v) => (v + 1) % t.testimonials.length)} className="rounded-full border bg-white p-2">
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-5">
+          {t.stats.map(([value, label]) => (
+            <div key={label} className="text-center">
+              <p className="text-4xl font-bold text-[#0f2f5d]">{value}</p>
+              <p className="text-sm font-semibold text-[#3f638f]">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#021945] py-8 text-white">
+        <div className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-center gap-8 px-4">
+          {["MEDIPOL", "AIZ", "Health Türkiye", "Bitrix24", "Hilton", "Medigma", "Straumann"].map((logo) => (
+            <span key={logo} className="text-lg font-semibold text-white/80">
+              {logo}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+        <div className="relative z-10">
+          <h2 className="text-center text-4xl font-bold text-[#101f35] md:text-6xl">{t.graftTitle}</h2>
+          <p className="mx-auto mt-4 max-w-[700px] text-center text-lg text-[#4f6277]">{t.graftSubtitle}</p>
+          <div className="mt-8 grid items-center gap-6 xl:grid-cols-[1fr_1.2fr_1fr]">
+            <aside className="rounded-3xl bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-2xl font-semibold text-[#34465b]">{t.selectedZonesTitle}</h3>
+              <div className="space-y-3">
+                {zoneConfigs.map((zone) => {
+                  const isSelected = selectedZones.includes(zone.id);
+                  return (
+                    <label key={zone.id} className="flex w-full cursor-pointer items-center gap-3 rounded-xl border border-[#e5edf7] p-3 text-left transition hover:border-[#b8d1ec]">
+                      <input type="checkbox" checked={isSelected} onChange={() => toggleZone(zone.id)} className="h-5 w-5 accent-[#0f172a]" />
+                      <div className="flex flex-col leading-tight">
+                        <span className="text-lg font-semibold text-[#111827] md:text-xl">
+                          {t.zonePrefix} {zone.id}
+                        </span>
+                        <span className="text-base text-[#556476] md:text-lg">
+                          {zone.graftMin === zone.graftMax ? `${zone.graftMin}` : `${zone.graftMin} - ${zone.graftMax}`} Grafts
+                        </span>
+                      </div>
+                    </label>
+                  );
+                })}
+              </div>
+            </aside>
+
+            <div className="mx-auto w-full max-w-[380px]">
+              <div className="relative aspect-[310/222]">
+                <svg viewBox="0 0 310 222" className="absolute inset-0 h-full w-full" aria-label="Hair loss zones">
+                {zoneConfigs.map((zone) => {
+                  const isSelected = selectedZones.includes(zone.id);
+                  return (
+                    <path
+                      key={`head-zone-${zone.id}`}
+                      d={zone.path}
+                      onClick={() => toggleZone(zone.id)}
+                      className="cursor-pointer transition-all duration-200"
+                      fill={isSelected ? "rgba(239, 123, 59, 0.18)" : "rgba(255, 255, 255, 0.92)"}
+                      stroke={isSelected ? "rgba(239, 123, 59, 0.95)" : "rgba(31, 41, 55, 0.7)"}
+                      strokeDasharray="4 4"
+                      strokeWidth={isSelected ? "1.8" : "1.4"}
+                    />
+                  );
+                })}
+                {zoneConfigs.flatMap((zone) =>
+                  zone.labels.map((label, index) => (
+                    <text
+                      key={`zone-label-${zone.id}-${index}`}
+                      x={label.x}
+                      y={label.y}
+                      textAnchor="middle"
+                      className="pointer-events-none select-none fill-[#111827] text-[16px] font-semibold"
+                    >
+                      {zone.id}
+                    </text>
+                  ))
+                )}
+                </svg>
+              </div>
+            </div>
+
+            <aside className="rounded-3xl p-4">
+              <p className="text-2xl font-medium text-[#34465b] md:text-4xl">{t.approxGraftsLabel}</p>
+              <p className="mt-2 text-5xl font-semibold leading-none text-[#111827] md:text-7xl">{totalGrafts} Grafts</p>
+              <p className="mt-4 text-2xl font-medium text-[#34465b] md:text-4xl">{t.approxHairsLabel}</p>
+              <p className="mt-2 text-5xl font-medium leading-none text-[#5f6f81] md:text-7xl">{totalHairs} Hairs</p>
+              <p className="mt-6 max-w-[440px] text-sm leading-relaxed text-[#4f6277]">{t.estimateDisclaimer}</p>
+              <button onClick={handleConsultationClick} className="mt-8 rounded-3xl bg-gradient-to-r from-[#77d0e8] to-[#61a8ea] px-10 py-5 text-xl font-medium text-[#0f1b2b] md:text-3xl">
+                {t.consultationButton}
+              </button>
+              <form onSubmit={handleLeadSubmit} className="mt-6 rounded-2xl border border-[#c8d9ec] bg-white p-4 shadow-sm">
+                <p className="mb-3 text-base font-semibold text-[#1c3353] md:text-lg">{t.leadTitle}</p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <input
+                    type="email"
+                    required
+                    value={leadEmail}
+                    onChange={(event) => setLeadEmail(event.target.value)}
+                    placeholder={t.leadPlaceholder}
+                    className="w-full rounded-xl border border-[#bfd0e5] px-4 py-3 text-sm text-[#1b2c43] outline-none transition focus:border-[#60a5fa]"
+                  />
+                  <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3]">
+                    {t.leadButton}
+                  </button>
+                </div>
+                {leadSent && <p className="mt-3 text-sm font-medium text-[#1c6eb3]">{t.leadSuccess}</p>}
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+        <h2 className="mx-auto mb-10 max-w-[820px] text-center text-4xl font-bold leading-tight text-[#101f35] md:text-6xl">{t.journeyTitle}</h2>
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          {t.journeyDays.map((day) => (
+            <div key={day.day} className="border-l border-[#d8e5ee] pl-4 md:pl-5">
+              <p className="mb-4 text-center text-4xl font-semibold text-[#4d6274]">{day.day}</p>
+              <div className="space-y-3">
+                {day.items.map((item) => {
+                  const IconComponent = journeyIcons[item.icon] ?? CircleHelp;
+                  return (
+                    <article key={`${day.day}-${item.title}`} className="rounded-[28px] bg-[#d8edf5] p-5 text-[#152431]">
+                      <div className="mb-2 flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-3">
+                          <IconComponent className="mt-0.5 h-6 w-6 shrink-0 text-[#111827]" />
+                          <h3 className="text-2xl font-semibold leading-tight">{item.title}</h3>
+                        </div>
+                        {item.badge && <span className="shrink-0 rounded-full bg-[#62c4f1] px-3 py-1 text-sm font-semibold text-[#16415a]">{item.badge}</span>}
+                      </div>
+                      {item.description && <p className="text-lg leading-snug text-[#4f5f6c]">{item.description}</p>}
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+        <div className="mb-8 text-center">
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">{t.whyTag}</span>
+          <h2 className="mt-4 text-4xl font-bold text-[#0f2f5d]">{t.whyTitle}</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {t.whyItems.map(([title, description]) => (
+            <article key={title} className="rounded-2xl border bg-white p-6">
+              <h3 className="mb-2 text-lg font-bold text-[#173b69]">{title}</h3>
+              <p className="text-sm leading-relaxed text-[#4d6789]">{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-14">
+        <div className="rounded-[2.4rem] bg-gradient-to-r from-[#bcefdc] to-[#79c4f5] px-6 py-12 text-[#15202f] md:px-12 md:py-14">
+          <h2 className="text-center text-3xl font-bold leading-tight md:text-[64px]">{t.timelineTitle}</h2>
+          <p className="mx-auto mt-4 max-w-[920px] text-center text-lg text-[#203040] md:text-2xl md:leading-snug">{t.timelineSubtitle}</p>
+
+          <div className="mt-12 space-y-12 md:hidden">
+            {t.timelineItems.map(([title, duration, icon]) => {
+              const IconComponent = timelineIcons[icon] ?? CircleHelp;
+              return (
+                <article key={`${title}-${duration}`} className="rounded-2xl border border-[#0f172a24] bg-[#ffffff2e] p-4">
+                  <div className="flex items-start gap-3">
+                    <IconComponent className="mt-0.5 h-5 w-5 shrink-0 text-[#111827]" />
+                    <div>
+                      <h3 className="text-2xl font-semibold leading-tight">{title}</h3>
+                      <p className="mt-1 text-xl text-[#324255]">{duration}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="relative mt-14 hidden min-h-[610px] md:block">
+            <div className="absolute left-[5%] top-[106px] h-[34px] w-[23%] border-l-2 border-b-2 border-dotted border-[#111827]" />
+            <div className="absolute left-[28%] top-[138px] w-[14%] border-b-2 border-dotted border-[#111827]" />
+            <div className="absolute left-[44%] top-[106px] h-[34px] w-[42%] border-l-2 border-b-2 border-dotted border-[#111827]" />
+            <div className="absolute right-[3.5%] top-[138px] h-[214px] w-[24%] rounded-r-[90px] border-r-2 border-y-2 border-dotted border-[#111827]" />
+            <div className="absolute left-[6%] top-[352px] h-[120px] w-[47%] rounded-l-[75px] border-l-2 border-y-2 border-dotted border-[#111827]" />
+            <div className="absolute left-[39%] top-[472px] w-[40%] border-b-[10px] border-[#111827]" />
+            <div className="absolute left-[80%] top-[472px] w-[14%] border-b-[10px] border-[#74afe0]" />
+
+            <div className="absolute left-[8%] top-[74px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[0][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[0][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[30%] top-[252px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[1][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[1][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[1][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[46%] top-[74px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[2][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[2][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[2][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[47%] top-[252px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[4][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[4][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[4][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[64%] top-[432px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[3][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[3][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[3][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[80%] top-[252px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[0][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineShareTitle}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineShareDay}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[18%] top-[432px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[5][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[5][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[5][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[58%] top-[432px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[6][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[6][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[6][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+
+            <div className="absolute left-[86%] top-[432px]">
+              {(() => {
+                const IconComponent = timelineIcons[t.timelineItems[7][2]] ?? CircleHelp;
+                return (
+                  <article className="max-w-[170px] lg:max-w-[240px] xl:max-w-[280px]">
+                    <div className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-[#111827]" />
+                      <h3 className="text-base lg:text-xl xl:text-2xl font-semibold leading-tight">{t.timelineItems[7][0]}</h3>
+                    </div>
+                    <p className="ml-8 mt-1 text-sm lg:text-base xl:text-lg text-[#324255]">{t.timelineItems[7][1]}</p>
+                  </article>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1280px] px-4 pb-10">
+        <div className="rounded-[1.6rem] bg-[#f4772e] px-8 py-10 text-white md:flex md:items-center md:justify-between">
+          <h2 className="text-3xl font-bold md:text-5xl">{t.ctaTitle}</h2>
+          <div className="mt-6 space-y-2 md:mt-0">
+            <p className="flex items-center gap-2 text-lg font-semibold">
+              <Phone className="h-5 w-5" /> {t.ctaPhone}
+            </p>
+            <p className="flex items-center gap-2 text-lg font-semibold">
+              <Mail className="h-5 w-5" /> info@newlifehealth.com
+            </p>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-[1280px] gap-8 px-4 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
