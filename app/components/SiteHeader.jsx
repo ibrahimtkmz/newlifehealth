@@ -43,6 +43,16 @@ const COPY = {
 export default function SiteHeader({ onCtaClick }) {
   const { lang, setLang } = useLanguage();
   const t = COPY[lang] || COPY.tr;
+  const serviceMenu = [
+    { label: "Hair Transplant", href: "/treatments/hair-transplant" },
+    { label: "Face & Neck Lift", href: "/treatments/face-neck-lift" },
+    { label: "Liposuction", href: "/treatments/liposuction" },
+    { label: "BBL", href: "/treatments/bbl" },
+    { label: "Hollywood Smile", href: "/treatments/hollywood-smile" },
+    { label: "Dental Implant", href: "/treatments/dental-implant" },
+    { label: "Eye Laser & Smart Lens", href: "/treatments/eye-laser-smart-lens" },
+    { label: "Blepharoplasty", href: "/treatments/blepharoplasty" }
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/30 bg-white/90 backdrop-blur-xl">
@@ -60,9 +70,24 @@ export default function SiteHeader({ onCtaClick }) {
 
         <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
           {t.navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-[#D4AF37]">
-              {item.label}
-            </Link>
+            item.href === "/treatments" ? (
+              <div key={item.href} className="group relative">
+                <Link href={item.href} className="transition hover:text-[#D4AF37]">
+                  {item.label}
+                </Link>
+                <div className="invisible absolute left-0 top-full z-50 mt-3 w-64 rounded-2xl border border-[#1A1A1A]/10 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
+                  {serviceMenu.map((menuItem) => (
+                    <Link key={menuItem.href} href={menuItem.href} className="block rounded-xl px-3 py-2 text-xs text-[#1A1A1A]/85 transition hover:bg-[#F2F4F7] hover:text-[#0C2E63]">
+                      {menuItem.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link key={item.href} href={item.href} className="transition hover:text-[#D4AF37]">
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
 
