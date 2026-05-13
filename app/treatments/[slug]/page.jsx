@@ -124,6 +124,76 @@ const PAGE_DATA = {
         items: ["1. ay: adaptasyon ve ilk kayıp", "3. ay: metabolik denge", "6-12. ay: sürdürülebilir sonuç"]
       }
     ]
+  },
+  "face-neck-lift": {
+    title: "Face & Neck Lift",
+    breadcrumb: "Face & Neck Lift",
+    summary: "Premium face and neck rejuvenation plans with surgeon selection, 5-star recovery logistics, and discreet end-to-end coordination in Istanbul.",
+    sections: [
+      { title: "Personalized Surgical Planning", body: "Your consultation includes facial proportion analysis, scar planning, and clear expectations for natural outcomes.", items: ["Deep-plane and mini-lift options", "Combined neck contour planning", "Risk and recovery briefing before travel"] },
+      { title: "Hospital & Safety Standards", body: "Operations are organized in accredited hospitals with full anesthesia, overnight monitoring, and multilingual support.", items: ["Pre-op lab and anesthesia evaluation", "24-hour nurse observation", "Medication and wound-care protocol"] },
+      { title: "Recovery Program", body: "Our agency team manages your post-op route so you focus fully on healing.", items: ["Hotel + private transfer schedule", "In-person dressing checks", "Daily coordinator follow-up"] }
+    ]
+  },
+  liposuction: {
+    title: "Liposuction",
+    breadcrumb: "Liposuction",
+    summary: "High-definition body contouring packages designed for international patients who want safe surgery and smooth travel management in one plan.",
+    sections: [
+      { title: "Area-Based Body Sculpting", body: "Treatment is tailored by zone and skin quality to protect natural body lines.", items: ["Abdomen, waist, back, arms and thighs", "Vaser and classic technique selection", "3D body contour consultation"] },
+      { title: "Comfort-Focused Medical Tourism Flow", body: "From airport pickup to discharge day, your timeline is pre-arranged by our care coordinators.", items: ["Priority clinic admission", "Compression garment planning", "Assistant support for mobility needs"] },
+      { title: "Aftercare & Return Home", body: "You receive a structured recovery roadmap for your first 8 weeks.", items: ["Edema management guidance", "Follow-up video controls", "Lifestyle and nutrition recommendations"] }
+    ]
+  },
+  bbl: {
+    title: "BBL",
+    breadcrumb: "BBL",
+    summary: "Comprehensive BBL journeys with advanced safety criteria, proportional design, and carefully supervised post-op recovery support.",
+    sections: [
+      { title: "Proportion-First Design", body: "Our surgeons evaluate waist-to-hip balance and tissue quality for realistic, elegant enhancement.", items: ["Body mapping and simulation review", "Fat harvesting + transfer strategy", "Natural silhouette objective"] },
+      { title: "Safety Protocols", body: "We prioritize updated international safety recommendations throughout the BBL process.", items: ["Ultrasound-guided standards (when indicated)", "Operating room monitoring protocols", "Strict candidate assessment"] },
+      { title: "Recovery Coordination", body: "Your agency coordinator plans sitting protocol support, transfers, and check-up appointments.", items: ["Special BBL pillow guidance", "Daily nursing touchpoints", "Return-flight readiness check"] }
+    ]
+  },
+  "hollywood-smile": {
+    title: "Hollywood Smile",
+    breadcrumb: "Hollywood Smile",
+    summary: "Smile makeover programs that combine digital dentistry, elite lab quality, and concierge-level treatment travel organization.",
+    sections: [
+      { title: "Digital Smile Design", body: "We design your smile around facial symmetry, lip line, and personality—before treatment starts.", items: ["Intraoral scan and photo protocol", "Preview design approval", "Tooth shade and shape customization"] },
+      { title: "Materials & Craftsmanship", body: "Premium ceramics and precision lab production ensure strong, aesthetic, long-lasting outcomes.", items: ["E-max and zirconium options", "Natural translucency planning", "Rapid revisions on-site"] },
+      { title: "Fast-Track Medical Stay", body: "For international guests, we streamline appointment blocks and transfers to reduce total stay.", items: ["Concentrated treatment calendar", "Hotel-clinic route management", "Final bite and comfort checks"] }
+    ]
+  },
+  "dental-implant": {
+    title: "Dental Implant",
+    breadcrumb: "Dental Implant",
+    summary: "Implant treatments in Turkey with full radiological planning, trusted implant systems, and full-service patient coordination.",
+    sections: [
+      { title: "Implant Evaluation", body: "Your plan is built from CBCT imaging and bone analysis to secure long-term function and aesthetics.", items: ["Single, multiple, and full-arch scenarios", "Bone graft need assessment", "Transparent staged timeline"] },
+      { title: "Procedure & Prosthetic Steps", body: "From surgical placement to final crowns, each step is coordinated for precision and comfort.", items: ["Guided implant surgery", "Temporary tooth options", "Custom final prosthetics"] },
+      { title: "International Patient Follow-Up", body: "Our agency remains your contact point after departure for progress tracking and review scheduling.", items: ["Remote healing controls", "Medication and hygiene plan", "Second-visit planning if needed"] }
+    ]
+  },
+  "eye-laser-smart-lens": {
+    title: "Eye Laser & Smart Lens",
+    breadcrumb: "Eye Laser & Smart Lens",
+    summary: "Vision correction packages with advanced diagnostics, surgeon-led planning, and precise travel coordination for short medical stays.",
+    sections: [
+      { title: "Comprehensive Eye Assessment", body: "Eligibility is confirmed by corneal mapping, refraction stability, and ocular surface analysis.", items: ["LASIK / PRK candidacy check", "Smart lens suitability review", "Procedure risk counseling"] },
+      { title: "Procedure Day Management", body: "We organize fast clinic flow for maximum comfort and minimum waiting.", items: ["Pre-op briefing and consent", "Short in-clinic intervention", "Immediate post-op control"] },
+      { title: "Post-Treatment Vision Care", body: "Your recovery plan protects eye comfort and supports stable visual outcomes.", items: ["Drop schedule and screen-time guidance", "First-week remote supervision", "Local check-up recommendations"] }
+    ]
+  },
+  blepharoplasty: {
+    title: "Blepharoplasty",
+    breadcrumb: "Blepharoplasty",
+    summary: "Upper and lower eyelid rejuvenation with refined surgical detail, minimal-scar strategy, and premium medical travel service.",
+    sections: [
+      { title: "Aesthetic Eye Planning", body: "We assess eyelid skin, muscle tone, and fat pads to create a younger yet natural eye expression.", items: ["Upper lid correction", "Lower lid fat repositioning", "Combined eyelid strategies"] },
+      { title: "Surgery & Monitoring", body: "Operations are performed in sterile hospital settings with close post-op observation.", items: ["Local or sedation-based approach", "Cold-compress protocol", "Early edema management"] },
+      { title: "Discreet Recovery Support", body: "Our coordinators plan your accommodation and social recovery comfort in detail.", items: ["Private transfer chain", "Medication and scar-care set", "Photo-based progress tracking"] }
+    ]
   }
 };
 
