@@ -35,7 +35,14 @@ const content = {
   tr: {
     languageLabel: "Türkçe",
     topEmail: "info@newlifehealth.com",
-    nav: ["Ana Sayfa", "Kurumsal", "Hizmetler", "Tedavi Süreci", "NEWLIFE Blog", "İletişim"],
+    nav: [
+      { label: "Ana Sayfa", href: "/" },
+      { label: "Kurumsal", href: "/kurumsal" },
+      { label: "Hizmetler", href: "/hizmetler" },
+      { label: "Tedavi Süreci", href: "/tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "/newlife-blog" },
+      { label: "İletişim", href: "/iletisim" }
+    ],
     heroTag: "5K+ Uluslararası Hasta • 4.8 Puan",
     heroTitle1: "Sağlığınızı Ertelemeyin:",
     heroTitle2: "Uzman Geri Araması İçin",
@@ -185,7 +192,14 @@ const content = {
   en: {
     languageLabel: "English",
     topEmail: "info@newlifehealth.com",
-    nav: ["Home", "Corporate", "Services", "Treatment Process", "NEWLIFE Blog", "Contact"],
+    nav: [
+      { label: "Home", href: "/" },
+      { label: "Corporate", href: "/kurumsal" },
+      { label: "Services", href: "/hizmetler" },
+      { label: "Treatment Process", href: "/tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "/newlife-blog" },
+      { label: "Contact", href: "/iletisim" }
+    ],
     heroTag: "5K+ International Patients • 4.8 Ratings",
     heroTitle1: "Don't Delay Your Health:",
     heroTitle2: "Leave Your Details",
@@ -326,7 +340,14 @@ const content = {
   ru: {
     languageLabel: "Русский",
     topEmail: "info@newlifehealth.com",
-    nav: ["Главная", "О нас", "Услуги", "Процесс лечения", "Блог", "Контакты"],
+    nav: [
+      { label: "Главная", href: "/" },
+      { label: "О нас", href: "/kurumsal" },
+      { label: "Услуги", href: "/hizmetler" },
+      { label: "Процесс лечения", href: "/tedavi-sureci" },
+      { label: "Блог", href: "/newlife-blog" },
+      { label: "Контакты", href: "/iletisim" }
+    ],
     heroTag: "5K+ международных пациентов • 4.8 рейтинг",
     heroTitle1: "Не откладывайте здоровье:",
     heroTitle2: "Оставьте ваши данные",
@@ -625,10 +646,10 @@ export default function HomePage() {
 
           <nav className="hidden items-center gap-6 text-[15px] font-semibold text-[#203a64] xl:flex">
             {t.nav.map((item, idx) => (
-              <a key={item} href="#" className="inline-flex items-center gap-1 hover:text-[#1f77d2]">
-                {item}
+              <Link key={item.href} href={item.href} className="inline-flex items-center gap-1 hover:text-[#1f77d2]">
+                {item.label}
                 {(idx === 1 || idx === 2 || idx === 3) && <ChevronDown className="h-4 w-4" />}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -642,9 +663,9 @@ export default function HomePage() {
         {menuOpen && (
           <div className="border-t border-slate-200 px-4 pb-4 lg:hidden">
             {t.nav.map((item) => (
-              <a key={item} href="#" className="block py-2 font-medium text-[#203a64]">
-                {item}
-              </a>
+              <Link key={item.href} href={item.href} className="block py-2 font-medium text-[#203a64]">
+                {item.label}
+              </Link>
             ))}
           </div>
         )}
