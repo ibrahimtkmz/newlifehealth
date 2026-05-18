@@ -223,3 +223,18 @@ body {
     transform: scale(1.04);
   }
 }
+
+.rapid-pulse {
+  animation: rapid-pulse 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes rapid-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}

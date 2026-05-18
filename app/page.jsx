@@ -762,7 +762,7 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-[1280px] px-4 pb-12 pt-12">
         <div className="mb-8 flex flex-col items-center">
-          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">{t.testimonialTag}</span>
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white rapid-pulse">{t.testimonialTag}</span>
           <h2 className="mt-5 max-w-[1040px] text-center text-3xl font-bold leading-tight text-[#0f2f5d] md:text-5xl">{t.testimonialTitle}</h2>
         </div>
 
@@ -952,12 +952,12 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
         <div className="mb-8 text-center">
-          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">{t.whyTag}</span>
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white rapid-pulse">{t.whyTag}</span>
           <h2 className="mt-4 text-4xl font-bold text-[#0f2f5d]">{t.whyTitle}</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {t.whyItems.map(([title, description]) => (
-            <article key={title} className="rounded-2xl border bg-white p-6">
+            <article key={title} className="rounded-2xl border bg-white p-6 rapid-pulse">
               <h3 className="mb-2 text-lg font-bold text-[#173b69]">{title}</h3>
               <p className="text-sm leading-relaxed text-[#4d6789]">{description}</p>
             </article>
@@ -965,22 +965,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-10">
-        <div className="rounded-[1.6rem] bg-[#f4772e] px-8 py-10 text-white md:flex md:items-center md:justify-between">
-          <h2 className="text-3xl font-bold md:text-5xl">{t.ctaTitle}</h2>
-          <div className="mt-6 space-y-2 md:mt-0">
-            <p className="flex items-center gap-2 text-lg font-semibold">
-              <Phone className="h-5 w-5" /> {t.ctaPhone}
-            </p>
-            <p className="flex items-center gap-2 text-lg font-semibold">
-              <Mail className="h-5 w-5" /> Newlifehealth.tr@gmail.com
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="iletisim" className="mx-auto w-full max-w-[980px] scroll-mt-28 px-4 pb-16">
-        <div className="rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-8">
+        <div className="rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-8 rapid-pulse">
           <h2 className="text-center text-3xl font-bold text-[#10223d] md:text-4xl">{t.contactSectionTitle}</h2>
           <p className="mx-auto mt-3 max-w-[760px] text-center text-base text-[#49627f] md:text-lg">{t.contactSectionSubtitle}</p>
           <form onSubmit={handleContactSubmit} className="mt-7 grid gap-3 md:grid-cols-2">
@@ -988,7 +974,7 @@ export default function HomePage() {
             <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa]" placeholder={t.formPhone} value={contactData.phone} onChange={(e) => setContactData((prev) => ({ ...prev, phone: e.target.value }))} required />
             <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.formTreatment} value={contactData.treatment} onChange={(e) => setContactData((prev) => ({ ...prev, treatment: e.target.value }))} />
             <textarea className="min-h-[120px] rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.contactMessage} value={contactData.message} onChange={(e) => setContactData((prev) => ({ ...prev, message: e.target.value }))} />
-            <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3] md:col-span-2">{t.contactFormCta}</button>
+            <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3] md:col-span-2 rapid-pulse">{t.contactFormCta}</button>
           </form>
         </div>
       </section>
@@ -1019,11 +1005,12 @@ export default function HomePage() {
           setChatOpen(true);
           setChatHasNotification(false);
         }}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl rapid-pulse"
       >
         {chatHasNotification && (
           <span className="rounded-full bg-[#ef4444] px-2 py-0.5 text-[11px] font-bold text-white shadow">1 yeni bildirim</span>
         )}
+        <Image src="/10.jpeg" alt="Lina temsilci" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
         <div className="hidden md:block">
           <p className="text-xl font-semibold text-[#1b3e6b]">{t.consultant}</p>
           <p className="text-sm text-[#4f6588]">{t.consultantSub}</p>
@@ -1031,11 +1018,14 @@ export default function HomePage() {
       </button>
 
       {chatOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[320px] rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl">
+        <div className="fixed bottom-24 right-6 z-50 w-[320px] rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl rapid-pulse">
           <div className="mb-3 flex items-center justify-between">
-            <div>
+            <div className="flex items-center gap-2">
+              <Image src="/10.jpeg" alt="Lina temsilci" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+              <div>
               <p className="text-base font-bold text-[#173b69]">{t.chatTitle}</p>
               <p className="text-xs text-[#4f6588]">{t.consultantSub}</p>
+              </div>
             </div>
             <button
               onClick={() => setChatOpen(false)}
@@ -1053,7 +1043,7 @@ export default function HomePage() {
           <button
             onClick={handleWhatsAppSend}
             disabled={!chatMessage.trim()}
-            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1cbf5d] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17a34e] disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1cbf5d] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17a34e] disabled:cursor-not-allowed disabled:opacity-60 rapid-pulse"
           >
             <MessageCircle className="h-4 w-4" />
             {t.chatSend}
