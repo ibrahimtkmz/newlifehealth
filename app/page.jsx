@@ -37,7 +37,6 @@ const content = {
     nav: [
       { label: "Ana Sayfa", href: "#anasayfa" },
       { label: "Hizmetler", href: "#hizmetler" },
-      { label: "Hakkımızda", href: "#about-us" },
       { label: "Tedavi Süreci", href: "#tedavi-sureci" },
       { label: "İletişim", href: "#iletisim" }
     ],
@@ -192,7 +191,6 @@ const content = {
     nav: [
       { label: "Home", href: "#anasayfa" },
       { label: "Services", href: "#hizmetler" },
-      { label: "About Us", href: "#about-us" },
       { label: "Treatment Process", href: "#tedavi-sureci" },
       { label: "Contact", href: "#iletisim" }
     ],
@@ -338,7 +336,6 @@ const content = {
     nav: [
       { label: "Главная", href: "#anasayfa" },
       { label: "Услуги", href: "#hizmetler" },
-      { label: "О нас", href: "#about-us" },
       { label: "Процесс лечения", href: "#tedavi-sureci" },
       { label: "Контакты", href: "#iletisim" }
     ],
@@ -735,13 +732,6 @@ export default function HomePage() {
               </button>
             );
           })}
-        </div>
-      </section>
-
-      <section id="about-us" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-10">
-        <div className="rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-8">
-          <h2 className="text-3xl font-bold text-[#10223d] md:text-4xl">{t.aboutUsTitle}</h2>
-          <p className="mt-4 max-w-[980px] text-base leading-relaxed text-[#49627f] md:text-lg">{t.aboutUsText}</p>
         </div>
       </section>
 
