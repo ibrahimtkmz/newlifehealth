@@ -204,3 +204,22 @@ body {
     background-position: 0% 0%;
   }
 }
+
+.hero-slide-pulse {
+  background: radial-gradient(circle at 22% 35%, rgba(75, 155, 255, 0.35), transparent 46%),
+    radial-gradient(circle at 78% 70%, rgba(16, 147, 232, 0.26), transparent 50%),
+    radial-gradient(circle at 55% 52%, rgba(255, 255, 255, 0.2), transparent 58%);
+  animation: heroSlidePulse 3.8s ease-in-out infinite;
+}
+
+@keyframes heroSlidePulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}

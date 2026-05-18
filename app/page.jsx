@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Mail,
   ChevronDown,
   MessageCircle,
-  Send,
   Quote,
   Globe,
   Phone,
@@ -473,6 +472,7 @@ export default function HomePage() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
+  const [chatHasNotification, setChatHasNotification] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
   const [leadEmail, setLeadEmail] = useState("");
@@ -585,6 +585,15 @@ export default function HomePage() {
     setTimeout(() => setLeadSent(false), 3000);
   };
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setChatHasNotification(true);
+      setChatOpen(true);
+    }, 1400);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f5f8fd] text-[#1d3257]">
       <header className="border-b border-slate-200 bg-white">
@@ -642,7 +651,8 @@ export default function HomePage() {
       </header>
 
       <section id="anasayfa" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-6 pt-6">
-        <div className="grid items-center gap-8 rounded-[2rem] bg-[#deeeff] px-5 py-8 md:px-8 lg:grid-cols-[1.25fr_1fr]">
+        <div className="relative grid items-center gap-8 overflow-hidden rounded-[2rem] bg-[#deeeff] px-5 py-8 md:px-8 lg:grid-cols-[1.25fr_1fr]">
+          <div className="hero-slide-pulse pointer-events-none absolute inset-0" />
           <div className="space-y-6">
             <span className="inline-block rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#24518a] shadow">{t.heroTag}</span>
             <h1 className="text-4xl font-bold leading-tight text-[#0f2f5d] md:text-6xl">
@@ -670,8 +680,8 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">15K+ Consultations</div>
             <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">1K Reviews</div>
-            <div className="mx-auto max-w-[430px] overflow-hidden">
-              <Image src="/header-slide.webp" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full object-cover object-center" />
+            <div className="mx-auto max-w-[430px] overflow-hidden rounded-[2.2rem] border border-white/70 shadow-xl">
+              <Image src="/header-slide.webp" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[2.2rem] object-cover object-center" />
             </div>
           </div>
         </div>
@@ -971,10 +981,16 @@ export default function HomePage() {
       </footer>
 
       <button
-        onClick={() => setChatOpen(true)}
+        onClick={() => {
+          setChatOpen(true);
+          setChatHasNotification(false);
+        }}
         className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl"
       >
-                <div className="hidden md:block">
+        {chatHasNotification && (
+          <span className="rounded-full bg-[#ef4444] px-2 py-0.5 text-[11px] font-bold text-white shadow">1 yeni bildirim</span>
+        )}
+        <div className="hidden md:block">
           <p className="text-xl font-semibold text-[#1b3e6b]">{t.consultant}</p>
           <p className="text-sm text-[#4f6588]">{t.consultantSub}</p>
         </div>
@@ -1011,17 +1027,6 @@ export default function HomePage() {
         </div>
       )}
 
-      <div className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex">
-        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#2f7ae5] text-white shadow-lg" aria-label="Telegram">
-          <Send className="h-6 w-6" />
-        </button>
-        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#6c53df] text-white shadow-lg" aria-label="Viber">
-          <MessageCircle className="h-6 w-6" />
-        </button>
-        <button className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#1cbf5d] text-white shadow-lg" aria-label="WhatsApp">
-          <MessageCircle className="h-6 w-6" />
-        </button>
-      </div>
     </main>
   );
 }
