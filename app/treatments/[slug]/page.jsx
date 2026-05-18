@@ -210,27 +210,6 @@ const HAIR_TRANSPLANT_JOURNEY = [
       }
     ]
   },
-  {
-    day: "Day 4",
-    steps: [
-      {
-        icon: "washing",
-        title: "Hair washing",
-        duration: "1 hour"
-      },
-      {
-        icon: "aftercare",
-        title: "Advice on aftercare",
-        duration: "1 hour",
-        description: "Your grafts are checked and a detailed aftercare routine is explained."
-      },
-      {
-        icon: "transfer",
-        title: "Transfer to the airport",
-        duration: "max 1 hour"
-      }
-    ]
-  }
 ];
 
 const RECOVERY_TIMELINE = [
@@ -273,7 +252,7 @@ export default function TreatmentDetailPage() {
             <>
               <section className="space-y-6 rounded-3xl bg-[#f4f8fb] p-5 sm:p-8">
                 <div className="space-y-3 text-center">
-                  <h3 className="text-3xl font-bold text-[#121821] sm:text-4xl">Take a look at your 4-day hair transplant journey</h3>
+                  <h3 className="text-3xl font-bold text-[#121821] sm:text-4xl">Take a look at your 3-day hair transplant journey</h3>
                   <p className="mx-auto max-w-2xl text-sm text-[#405060] sm:text-base">
                     Below is the exact on-site flow from arrival to aftercare briefing, designed to keep your treatment smooth and predictable.
                   </p>
