@@ -320,7 +320,7 @@ const content = {
     ctaPhone: "+90 555 050 18 02",
     callNow: "Call Now",
     aboutUsTitle: "About Us",
-    aboutUsText: "As NEWLIFE HEALTH, we coordinate treatment planning, accommodation, and transfers in Turkey through trusted healthcare partners for international patients.",
+    aboutUsText: "NEWLIFE HEALTH olarak uluslararası hastaların Türkiye'deki tedavi yolculuğunu sadece randevu planlama süreci olarak değil, baştan sona güven veren bir sağlık deneyimi olarak tasarlıyoruz. İlk iletişimden itibaren danışman ekibimiz hastanın sağlık geçmişini, beklentilerini, seyahat takvimini ve kişisel önceliklerini analiz ederek tamamen kişiye özel bir yol haritası oluşturur. Anlaşmalı hastane ve kliniklerimiz resmi sağlık turizmi yetki belgelerine sahip, alanında uzman hekimlerle çalışan ve kalite standartlarını sürdürülebilir biçimde uygulayan kurumlardan seçilir. Uçuş planlaması, havaalanı karşılama, konaklama, şehir içi transfer, çok dilli tercüman desteği, operasyon koordinasyonu ve tedavi sonrası takip gibi tüm adımlar tek merkezden yönetilir. Böylece hastalarımız farklı birimlerle ayrı ayrı uğraşmadan süreç boyunca net bilgi alır, zaman kazanır ve kendini güvende hisseder. Bizim için başarı yalnızca iyi bir medikal sonuç değil; hastanın her aşamada değer gördüğünü, anlaşıldığını ve desteklendiğini hissetmesidir.",
     consultant: "Chat with Lina",
     consultantSub: "Digital Health Consultant",
     chatTitle: "Chat with Lina",
