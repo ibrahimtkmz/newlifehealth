@@ -37,10 +37,8 @@ const content = {
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Ana Sayfa", href: "#anasayfa" },
-      { label: "Kurumsal", href: "#kurumsal" },
       { label: "Hizmetler", href: "#hizmetler" },
       { label: "Tedavi Süreci", href: "#tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "#hasta-yorumlari" },
       { label: "İletişim", href: "#iletisim" }
     ],
     heroTag: "5K+ Uluslararası Hasta • 4.8 Puan",
@@ -108,7 +106,7 @@ const content = {
     ],
     whyTag: "Neden Newlife Health",
     whyTitle: "Güvenilir Bakım, Global Standartlar",
-    journeyTitle: "4 günlük saç ekimi yolculuğunuza bir göz atın",
+    journeyTitle: "3 günlük saç ekimi yolculuğunuza bir göz atın",
     otherTreatmentsTitle: "Diğer Tedavilerde Süreç ve Detaylar",
     otherTreatmentsSubtitle: "Saç ekimi dışındaki popüler tedavilerde de planlama, konaklama ve uzman desteğini aynı kaliteyle sunuyoruz.",
     otherTreatments: [
@@ -140,14 +138,6 @@ const content = {
           { icon: "procedure", title: "İşlem", description: "Lokal anestezi altında ortalama 5 - 7 saat sürer. İşlemden sonra dinlenmeniz için otele transfer edilirsiniz.", badge: "5 - 7 saat" }
         ]
       },
-      {
-        day: "4. Gün",
-        items: [
-          { icon: "wash", title: "Saç yıkama", badge: "1 saat" },
-          { icon: "aftercare", title: "Bakım sonrası danışmanlık", description: "Greftler kontrol edilir ve iyileşme süreci için öneriler paylaşılır.", badge: "1 saat" },
-          { icon: "car", title: "Havalimanına transfer", badge: "maks 1 saat" }
-        ]
-      }
     ],
     graftTitle: "Greft Hesaplayıcı",
     graftSubtitle: "Tedavi etmek istediğiniz saç dökülme bölgelerini seçin",
@@ -194,10 +184,8 @@ const content = {
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Home", href: "#anasayfa" },
-      { label: "Corporate", href: "#kurumsal" },
       { label: "Services", href: "#hizmetler" },
       { label: "Treatment Process", href: "#tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "#hasta-yorumlari" },
       { label: "Contact", href: "#iletisim" }
     ],
     heroTag: "5K+ International Patients • 4.8 Ratings",
@@ -256,7 +244,7 @@ const content = {
     ],
     whyTag: "Why Newlife Health",
     whyTitle: "Trusted Care, Global Standards",
-    journeyTitle: "Take a look at your 4-day hair transplant journey",
+    journeyTitle: "Take a look at your 3-day hair transplant journey",
     otherTreatmentsTitle: "Process & Details for Other Treatments",
     otherTreatmentsSubtitle: "Beyond hair transplant, we deliver the same planning quality for dental, aesthetic, and bariatric treatments.",
     otherTreatments: [
@@ -288,14 +276,6 @@ const content = {
           { icon: "procedure", title: "The procedure", description: "Performed under local anaesthesia and usually takes around 5 to 7 hours depending on graft count.", badge: "5 - 7 hours" }
         ]
       },
-      {
-        day: "Day 4",
-        items: [
-          { icon: "wash", title: "Hair washing", badge: "1 hour" },
-          { icon: "aftercare", title: "Advice on aftercare", description: "We check your grafts and share recommendations for smooth recovery.", badge: "1 hour" },
-          { icon: "car", title: "Transfer to the airport", badge: "max 1 hour" }
-        ]
-      }
     ],
     graftTitle: "Graft Calculator",
     graftSubtitle: "Select the hair loss areas you would like to treat",
@@ -342,10 +322,8 @@ const content = {
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Главная", href: "#anasayfa" },
-      { label: "О нас", href: "#kurumsal" },
       { label: "Услуги", href: "#hizmetler" },
       { label: "Процесс лечения", href: "#tedavi-sureci" },
-      { label: "Блог", href: "#hasta-yorumlari" },
       { label: "Контакты", href: "#iletisim" }
     ],
     heroTag: "5K+ международных пациентов • 4.8 рейтинг",
@@ -404,7 +382,7 @@ const content = {
     ],
     whyTag: "Почему Newlife Health",
     whyTitle: "Надежное лечение, глобальные стандарты",
-    journeyTitle: "Ознакомьтесь с вашим 4-дневным маршрутом пересадки волос",
+    journeyTitle: "Ознакомьтесь с вашим 3-дневным маршрутом пересадки волос",
     otherTreatmentsTitle: "Процесс и детали других направлений",
     otherTreatmentsSubtitle: "Помимо пересадки волос, мы так же качественно организуем стоматологическое, эстетическое и бариатрическое лечение.",
     otherTreatments: [
@@ -436,14 +414,6 @@ const content = {
           { icon: "procedure", title: "Процедура", description: "Проводится под местной анестезией и обычно длится 5–7 часов в зависимости от количества графтов.", badge: "5 - 7 часов" }
         ]
       },
-      {
-        day: "День 4",
-        items: [
-          { icon: "wash", title: "Мытье волос", badge: "1 час" },
-          { icon: "aftercare", title: "Рекомендации по уходу", description: "Проверяем графты и делимся рекомендациями для комфортного восстановления.", badge: "1 час" },
-          { icon: "car", title: "Трансфер в аэропорт", badge: "до 1 часа" }
-        ]
-      }
     ],
     graftTitle: "Калькулятор графтов",
     graftSubtitle: "Выберите зоны выпадения волос, которые хотите лечить",

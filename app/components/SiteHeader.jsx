@@ -8,10 +8,8 @@ const COPY = {
   tr: {
     navItems: [
       { label: "Ana Sayfa", href: "/" },
-      { label: "Kurumsal", href: "/kurumsal" },
       { label: "Hizmetler", href: "/hizmetler" },
       { label: "Tedavi Süreci", href: "/tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "/newlife-blog" },
       { label: "İletişim", href: "/iletisim" }
     ],
     freeQuote: "ÜCRETSİZ TEKLİF AL"
@@ -19,10 +17,8 @@ const COPY = {
   en: {
     navItems: [
       { label: "Home", href: "/" },
-      { label: "Corporate", href: "/kurumsal" },
       { label: "Services", href: "/hizmetler" },
       { label: "Treatment Process", href: "/tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "/newlife-blog" },
       { label: "Contact", href: "/iletisim" }
     ],
     freeQuote: "GET FREE QUOTE"
@@ -30,10 +26,8 @@ const COPY = {
   ru: {
     navItems: [
       { label: "Главная", href: "/" },
-      { label: "Корпоратив", href: "/kurumsal" },
       { label: "Услуги", href: "/hizmetler" },
       { label: "Процесс лечения", href: "/tedavi-sureci" },
-      { label: "NEWLIFE Блог", href: "/newlife-blog" },
       { label: "Контакты", href: "/iletisim" }
     ],
     freeQuote: "БЕСПЛАТНЫЙ РАСЧЁТ"
