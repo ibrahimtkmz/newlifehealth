@@ -176,7 +176,11 @@ const content = {
     chatTitle: "Lina ile Sohbet",
     chatPlaceholder: "Mesajınızı yazın...",
     chatSend: "WhatsApp'a Gönder",
-    chatClose: "Kapat"
+    chatClose: "Kapat",
+    contactSectionTitle: "Bize Ulaşın",
+    contactSectionSubtitle: "Formu doldurun, bilgilerinizi doğrudan WhatsApp sohbetine ekleyip size hızlıca dönüş yapalım.",
+    contactMessage: "Mesajınız",
+    contactFormCta: "WhatsApp ile Gönder"
   },
   en: {
     languageLabel: "English",
@@ -314,7 +318,11 @@ const content = {
     chatTitle: "Chat with Lina",
     chatPlaceholder: "Type your message...",
     chatSend: "Send to WhatsApp",
-    chatClose: "Close"
+    chatClose: "Close",
+    contactSectionTitle: "Contact Us",
+    contactSectionSubtitle: "Fill out the form and send your details directly to our WhatsApp chat for a quick response.",
+    contactMessage: "Message",
+    contactFormCta: "Send via WhatsApp"
   },
   ru: {
     languageLabel: "Русский",
@@ -452,7 +460,11 @@ const content = {
     chatTitle: "Чат с Линой",
     chatPlaceholder: "Введите сообщение...",
     chatSend: "Отправить в WhatsApp",
-    chatClose: "Закрыть"
+    chatClose: "Закрыть",
+    contactSectionTitle: "Свяжитесь с нами",
+    contactSectionSubtitle: "Заполните форму, и ваши данные сразу отправятся в наш WhatsApp-чат для быстрого ответа.",
+    contactMessage: "Сообщение",
+    contactFormCta: "Отправить в WhatsApp"
   }
 };
 
@@ -475,6 +487,7 @@ export default function HomePage() {
   const [chatHasNotification, setChatHasNotification] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
+  const [contactData, setContactData] = useState({ name: "", phone: "", treatment: "", message: "" });
   const [leadEmail, setLeadEmail] = useState("");
   const [leadSent, setLeadSent] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -583,6 +596,13 @@ export default function HomePage() {
     setLeadSent(true);
     setLeadEmail("");
     setTimeout(() => setLeadSent(false), 3000);
+  };
+  const handleContactSubmit = (event) => {
+    event.preventDefault();
+    if (!contactData.name.trim() || !contactData.phone.trim()) return;
+    const whatsappNumber = "905550501802";
+    const message = `Yeni İletişim Talebi%0AAd Soyad: ${encodeURIComponent(contactData.name.trim())}%0ATelefon: ${encodeURIComponent(contactData.phone.trim())}%0ATedavi: ${encodeURIComponent(contactData.treatment.trim() || "-")}%0AMesaj: ${encodeURIComponent(contactData.message.trim() || "-")}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
   };
 
   useEffect(() => {
@@ -724,7 +744,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="iletisim" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-10">
+      <section className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-10">
         <div className="rounded-2xl border border-[#b7d9f4] bg-[#ecf7ff] p-5 text-center shadow-sm md:p-8">
           <p className="text-lg font-bold leading-snug text-[#1c6eb3] md:text-[26px]">{t.infoBanner}</p>
         </div>
@@ -904,7 +924,7 @@ export default function HomePage() {
 
       <section id="hasta-yorumlari" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-14">
         <h2 className="mx-auto mb-10 max-w-[820px] text-center text-4xl font-bold leading-tight text-[#101f35] md:text-6xl">{t.journeyTitle}</h2>
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid max-w-[1100px] gap-8 md:grid-cols-2 xl:grid-cols-3">
           {t.journeyDays.map((day) => (
             <div key={day.day} className="border-l border-[#d8e5ee] pl-4 md:pl-5">
               <p className="mb-4 text-center text-4xl font-semibold text-[#4d6274]">{day.day}</p>
@@ -956,6 +976,20 @@ export default function HomePage() {
               <Mail className="h-5 w-5" /> Newlifehealth.tr@gmail.com
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="iletisim" className="mx-auto w-full max-w-[980px] scroll-mt-28 px-4 pb-16">
+        <div className="rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-8">
+          <h2 className="text-center text-3xl font-bold text-[#10223d] md:text-4xl">{t.contactSectionTitle}</h2>
+          <p className="mx-auto mt-3 max-w-[760px] text-center text-base text-[#49627f] md:text-lg">{t.contactSectionSubtitle}</p>
+          <form onSubmit={handleContactSubmit} className="mt-7 grid gap-3 md:grid-cols-2">
+            <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa]" placeholder={t.formName} value={contactData.name} onChange={(e) => setContactData((prev) => ({ ...prev, name: e.target.value }))} required />
+            <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa]" placeholder={t.formPhone} value={contactData.phone} onChange={(e) => setContactData((prev) => ({ ...prev, phone: e.target.value }))} required />
+            <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.formTreatment} value={contactData.treatment} onChange={(e) => setContactData((prev) => ({ ...prev, treatment: e.target.value }))} />
+            <textarea className="min-h-[120px] rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.contactMessage} value={contactData.message} onChange={(e) => setContactData((prev) => ({ ...prev, message: e.target.value }))} />
+            <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3] md:col-span-2">{t.contactFormCta}</button>
+          </form>
         </div>
       </section>
 
