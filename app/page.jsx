@@ -174,7 +174,7 @@ const content = {
     ctaPhone: "+90 555 050 18 02",
     callNow: "Hemen Ara",
     aboutUsTitle: "Hakkımızda",
-    aboutUsText: "NEWLIFE HEALTH olarak uluslararası hastalara Türkiye'de güvenilir sağlık kurumlarıyla planlı tedavi, konaklama ve transfer koordinasyonu sunuyoruz.",
+    aboutUsText: "NEWLIFE HEALTH olarak, uluslararası sağlık turizmini yalnızca bir seyahat planı değil; güven, şeffaflık, etik yaklaşım ve sürdürülebilir hasta memnuniyeti üzerine kurulu bütüncül bir deneyim olarak ele alıyoruz. Türkiye'ye tedavi amacıyla gelen her hastanın farklı bir hikâyesi, farklı bir beklentisi ve farklı bir sağlık geçmişi olduğunun bilinciyle hareket ediyor; bu nedenle tüm süreçlerimizi standart paket anlayışından uzak, kişiye özel planlama modeliyle yürütüyoruz. İlk temastan itibaren uzman danışman ekibimiz; hastanın medikal ihtiyaçlarını, hedeflediği sonucu, seyahat takvimini ve dil tercihlerini dikkatle değerlendirerek en doğru yol haritasını oluşturur. Anlaşmalı sağlık kurumlarımızın sağlık turizmi yetki belgesine sahip olması, alanında deneyimli hekimlerle çalışması ve uluslararası kalite standartlarına uyum göstermesi bizim için temel önceliktir. Tedavi öncesi doktor değerlendirmeleri, operasyon planı, konaklama alternatifleri, havalimanı-karşılama organizasyonu, şehir içi transferler, tercüman desteği ve operasyon sonrası takip gibi kritik adımlar tek merkezden koordine edilir; böylece hastalarımız farklı kurumlarla ayrı ayrı iletişim kurmak zorunda kalmadan, tüm süreci düzenli ve güvenli biçimde yönetebilir. NEWLIFE HEALTH ekibi olarak yalnızca operasyon gününe odaklanmıyor; hastalarımızın Türkiye'ye gelişinden ülkelerine güvenle dönüşüne kadar geçen tüm yolculuğu sahipleniyoruz. İyileşme döneminde doğru bilgilendirme, zamanında yönlendirme ve erişilebilir danışmanlık sunarak hastalarımızın kendini yalnız hissetmeden süreci tamamlamasını sağlıyoruz. Çok dilli iletişim altyapımız sayesinde Avrupa başta olmak üzere farklı coğrafyalardan gelen misafirlerimizle güçlü bir iletişim kuruyor, kültürel beklentileri dikkate alan bir hizmet yaklaşımı benimsiyoruz. Bugüne kadar binlerce uluslararası danışmanlık deneyiminden edindiğimiz bilgi birikimiyle, estetik cerrahiden diş tedavilerine, saç ekiminden göz ve metabolik cerrahi süreçlerine kadar geniş bir alanda yüksek koordinasyon kalitesi sunuyoruz. Bizim için gerçek başarı, yalnızca tedavi sonucunun iyi olması değil; hastanın kendini her aşamada değerli, anlaşılmış ve güvende hissetmesidir. NEWLIFE HEALTH, Türkiye'nin sağlık turizmindeki güçlü potansiyelini insana dokunan bir hizmet anlayışıyla birleştirerek, her hastasına profesyonel, saygılı ve uzun vadeli bir sağlık yolculuğu vaat eder.",
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı",
     chatTitle: "Lina ile Sohbet",
@@ -500,6 +500,7 @@ export default function HomePage() {
   const [chatMessage, setChatMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
   const [contactData, setContactData] = useState({ name: "", phone: "", treatment: "", message: "" });
+  const [treatmentPopupOpen, setTreatmentPopupOpen] = useState(false);
   const [leadEmail, setLeadEmail] = useState("");
   const [leadSent, setLeadSent] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -615,6 +616,10 @@ export default function HomePage() {
     const whatsappNumber = "905550501802";
     const message = `Yeni İletişim Talebi%0AAd Soyad: ${encodeURIComponent(contactData.name.trim())}%0ATelefon: ${encodeURIComponent(contactData.phone.trim())}%0ATedavi: ${encodeURIComponent(contactData.treatment.trim() || "-")}%0AMesaj: ${encodeURIComponent(contactData.message.trim() || "-")}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+  };
+  const handleTreatmentClick = (treatmentName) => {
+    setContactData((prev) => ({ ...prev, treatment: treatmentName }));
+    setTreatmentPopupOpen(true);
   };
 
   useEffect(() => {
@@ -747,10 +752,10 @@ export default function HomePage() {
         </div>
         <div ref={treatmentRef} className="flex snap-x gap-4 overflow-x-auto scroll-smooth pb-4">
           {t.treatments.map((item, idx) => (
-            <article key={item} className="w-[160px] shrink-0 snap-start">
+            <button key={item} type="button" onClick={() => handleTreatmentClick(item)} className="w-[160px] shrink-0 snap-start text-left">
               <Image src={treatmentImages[idx]} alt={item} width={160} height={190} className="h-[170px] w-full rounded-2xl object-cover" />
               <p className="mt-2 text-center text-sm font-semibold text-[#1b3d69]">{item}</p>
-            </article>
+            </button>
           ))}
         </div>
         <div className="mt-2 flex justify-center gap-2">
@@ -997,6 +1002,32 @@ export default function HomePage() {
           </form>
         </div>
       </section>
+      {treatmentPopupOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 px-4">
+          <div className="w-full max-w-[760px] rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-2xl md:p-8">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <h3 className="text-2xl font-bold text-[#10223d]">{t.contactSectionTitle}</h3>
+              <button type="button" onClick={() => setTreatmentPopupOpen(false)} className="rounded-lg border border-slate-200 p-2">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <p className="mb-4 text-sm text-[#49627f]">{t.contactSectionSubtitle}</p>
+            <form
+              onSubmit={(event) => {
+                handleContactSubmit(event);
+                setTreatmentPopupOpen(false);
+              }}
+              className="grid gap-3 md:grid-cols-2"
+            >
+              <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa]" placeholder={t.formName} value={contactData.name} onChange={(e) => setContactData((prev) => ({ ...prev, name: e.target.value }))} required />
+              <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa]" placeholder={t.formPhone} value={contactData.phone} onChange={(e) => setContactData((prev) => ({ ...prev, phone: e.target.value }))} required />
+              <input className="rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.formTreatment} value={contactData.treatment} onChange={(e) => setContactData((prev) => ({ ...prev, treatment: e.target.value }))} />
+              <textarea className="min-h-[120px] rounded-xl border border-[#bfd0e5] px-4 py-3 outline-none focus:border-[#60a5fa] md:col-span-2" placeholder={t.contactMessage} value={contactData.message} onChange={(e) => setContactData((prev) => ({ ...prev, message: e.target.value }))} />
+              <button type="submit" className="rounded-xl bg-[#1f77d2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1864b3] md:col-span-2">{t.contactFormCta}</button>
+            </form>
+          </div>
+        </div>
+      )}
 
       <footer className="border-t bg-[#eaf2fc]">
         <div className="mx-auto grid w-full max-w-[1280px] gap-8 px-4 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
@@ -1012,7 +1043,7 @@ export default function HomePage() {
           </div>
           <div>
             <h4 className="mb-2 font-bold text-[#173b69]">Connect With Us</h4>
-            <p className="text-sm text-[#3d5f89]">Ataköy 7-8-9-10 Kısım Mah. Çobançeşme E5 Yan Yol Cad.</p>
+            <p className="text-sm text-[#3d5f89]">Torun Center, Fulya Mah. Büyükdere Cad. No:74A, Şişli / İstanbul</p>
             <p className="mt-2 text-sm font-semibold text-[#173b69]">Newlifehealth.tr@gmail.com</p>
             <p className="mt-1 text-sm font-semibold text-[#173b69]">{t.ctaPhone}</p>
           </div>
