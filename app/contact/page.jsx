@@ -5,7 +5,7 @@ import InnerPageLayout from "../components/InnerPageLayout";
 import { useLanguage } from "../components/LanguageProvider";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, Building2, Globe } from "lucide-react";
 
-const whatsappNumber = "905301112233";
+const whatsappNumber = "905550501802";
 
 const CONTENT = {
   tr: {
@@ -24,9 +24,9 @@ const CONTENT = {
     office: "Istanbul Ofisi",
     schedule: "Calisma Saatleri",
     address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
-    phoneNumber: "+90 212 706 42 42",
-    whatsappNumber: "+90 530 111 22 33",
-    emailAddress: "info@newlifehealthtourism.com",
+    phoneNumber: "+90 555 050 18 02",
+    whatsappNumber: "+90 555 050 18 02",
+    emailAddress: "Newlifehealth.tr@gmail.com",
     hours: [
       "Pazartesi - Cuma: 09:00 - 19:00",
       "Cumartesi: 10:00 - 16:00",
@@ -76,9 +76,9 @@ const CONTENT = {
     office: "Istanbul Office",
     schedule: "Working Hours",
     address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
-    phoneNumber: "+90 212 706 42 42",
-    whatsappNumber: "+90 530 111 22 33",
-    emailAddress: "info@newlifehealthtourism.com",
+    phoneNumber: "+90 555 050 18 02",
+    whatsappNumber: "+90 555 050 18 02",
+    emailAddress: "Newlifehealth.tr@gmail.com",
     hours: [
       "Monday - Friday: 09:00 - 19:00",
       "Saturday: 10:00 - 16:00",
@@ -128,9 +128,9 @@ const CONTENT = {
     office: "Офис в Стамбуле",
     schedule: "Часы работы",
     address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
-    phoneNumber: "+90 212 706 42 42",
-    whatsappNumber: "+90 530 111 22 33",
-    emailAddress: "info@newlifehealthtourism.com",
+    phoneNumber: "+90 555 050 18 02",
+    whatsappNumber: "+90 555 050 18 02",
+    emailAddress: "Newlifehealth.tr@gmail.com",
     hours: [
       "Понедельник - Пятница: 09:00 - 19:00",
       "Суббота: 10:00 - 16:00",
