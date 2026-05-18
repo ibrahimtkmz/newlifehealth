@@ -36,12 +36,12 @@ const content = {
     languageLabel: "Türkçe",
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
-      { label: "Ana Sayfa", href: "/" },
-      { label: "Kurumsal", href: "/kurumsal" },
-      { label: "Hizmetler", href: "/hizmetler" },
-      { label: "Tedavi Süreci", href: "/tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "/newlife-blog" },
-      { label: "İletişim", href: "/iletisim" }
+      { label: "Ana Sayfa", href: "#anasayfa" },
+      { label: "Kurumsal", href: "#kurumsal" },
+      { label: "Hizmetler", href: "#hizmetler" },
+      { label: "Tedavi Süreci", href: "#tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "#hasta-yorumlari" },
+      { label: "İletişim", href: "#iletisim" }
     ],
     heroTag: "5K+ Uluslararası Hasta • 4.8 Puan",
     heroTitle1: "Sağlığınızı Ertelemeyin:",
@@ -193,12 +193,12 @@ const content = {
     languageLabel: "English",
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
-      { label: "Home", href: "/" },
-      { label: "Corporate", href: "/kurumsal" },
-      { label: "Services", href: "/hizmetler" },
-      { label: "Treatment Process", href: "/tedavi-sureci" },
-      { label: "NEWLIFE Blog", href: "/newlife-blog" },
-      { label: "Contact", href: "/iletisim" }
+      { label: "Home", href: "#anasayfa" },
+      { label: "Corporate", href: "#kurumsal" },
+      { label: "Services", href: "#hizmetler" },
+      { label: "Treatment Process", href: "#tedavi-sureci" },
+      { label: "NEWLIFE Blog", href: "#hasta-yorumlari" },
+      { label: "Contact", href: "#iletisim" }
     ],
     heroTag: "5K+ International Patients • 4.8 Ratings",
     heroTitle1: "Don't Delay Your Health:",
@@ -341,12 +341,12 @@ const content = {
     languageLabel: "Русский",
     topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
-      { label: "Главная", href: "/" },
-      { label: "О нас", href: "/kurumsal" },
-      { label: "Услуги", href: "/hizmetler" },
-      { label: "Процесс лечения", href: "/tedavi-sureci" },
-      { label: "Блог", href: "/newlife-blog" },
-      { label: "Контакты", href: "/iletisim" }
+      { label: "Главная", href: "#anasayfa" },
+      { label: "О нас", href: "#kurumsal" },
+      { label: "Услуги", href: "#hizmetler" },
+      { label: "Процесс лечения", href: "#tedavi-sureci" },
+      { label: "Блог", href: "#hasta-yorumlari" },
+      { label: "Контакты", href: "#iletisim" }
     ],
     heroTag: "5K+ международных пациентов • 4.8 рейтинг",
     heroTitle1: "Не откладывайте здоровье:",
@@ -671,7 +671,7 @@ export default function HomePage() {
         )}
       </header>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-6 pt-6">
+      <section id="anasayfa" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-6 pt-6">
         <div className="grid items-center gap-8 rounded-[2rem] bg-[#deeeff] px-5 py-8 md:px-8 lg:grid-cols-[1.25fr_1fr]">
           <div className="space-y-6">
             <span className="inline-block rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#24518a] shadow">{t.heroTag}</span>
@@ -721,7 +721,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-8 pt-6">
+      <section id="hizmetler" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-8 pt-6">
         <div className="mb-5 text-center">
           <span className="rounded-full bg-[#118bd6] px-3 py-1 text-xs font-semibold text-white">{t.treatmentTag}</span>
           <h2 className="mt-3 text-3xl font-bold text-[#0f2f5d] md:text-5xl">{t.treatmentTitle}</h2>
@@ -744,7 +744,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 pb-10">
+      <section id="iletisim" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 pb-10">
         <div className="rounded-2xl border border-[#b7d9f4] bg-[#ecf7ff] p-5 text-center shadow-sm md:p-8">
           <p className="text-lg font-bold leading-snug text-[#1c6eb3] md:text-[26px]">{t.infoBanner}</p>
         </div>
@@ -810,7 +810,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+      <section id="kurumsal" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-14">
         <div className="relative z-10">
           <h2 className="text-center text-4xl font-bold text-[#101f35] md:text-6xl">{t.graftTitle}</h2>
           <p className="mx-auto mt-4 max-w-[700px] text-center text-lg text-[#4f6277]">{t.graftSubtitle}</p>
@@ -903,7 +903,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 py-6">
+      <section id="tedavi-sureci" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-6">
         <div className="rounded-3xl border border-[#d7e3f0] bg-[#f7fbff] p-6 md:p-8">
           <h2 className="text-3xl font-bold text-[#10223d] md:text-4xl">{t.otherTreatmentsTitle}</h2>
           <p className="mt-3 max-w-[900px] text-base text-[#49627f] md:text-lg">{t.otherTreatmentsSubtitle}</p>
@@ -922,7 +922,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1280px] px-4 py-14">
+      <section id="hasta-yorumlari" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-14">
         <h2 className="mx-auto mb-10 max-w-[820px] text-center text-4xl font-bold leading-tight text-[#101f35] md:text-6xl">{t.journeyTitle}</h2>
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {t.journeyDays.map((day) => (
