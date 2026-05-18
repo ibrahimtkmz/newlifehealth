@@ -34,7 +34,7 @@ import { useLanguage } from "./components/LanguageProvider";
 const content = {
   tr: {
     languageLabel: "Türkçe",
-    topEmail: "info@newlifehealth.com",
+    topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Ana Sayfa", href: "/" },
       { label: "Kurumsal", href: "/kurumsal" },
@@ -181,7 +181,7 @@ const content = {
       ["Nihai sonuç", "10 - 16 Ay", "flag"]
     ],
     ctaTitle: "Her Tedavide Mükemmellik.",
-    ctaPhone: "+90 546 524 8334",
+    ctaPhone: "+90 555 050 18 02",
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı",
     chatTitle: "Lina ile Sohbet",
@@ -191,7 +191,7 @@ const content = {
   },
   en: {
     languageLabel: "English",
-    topEmail: "info@newlifehealth.com",
+    topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Home", href: "/" },
       { label: "Corporate", href: "/kurumsal" },
@@ -329,7 +329,7 @@ const content = {
       ["Final Results", "10 - 16 Months", "flag"]
     ],
     ctaTitle: "Excellence in Every Treatment.",
-    ctaPhone: "+90 546 524 8334",
+    ctaPhone: "+90 555 050 18 02",
     consultant: "Chat with Lina",
     consultantSub: "Digital Health Consultant",
     chatTitle: "Chat with Lina",
@@ -339,7 +339,7 @@ const content = {
   },
   ru: {
     languageLabel: "Русский",
-    topEmail: "info@newlifehealth.com",
+    topEmail: "Newlifehealth.tr@gmail.com",
     nav: [
       { label: "Главная", href: "/" },
       { label: "О нас", href: "/kurumsal" },
@@ -477,7 +477,7 @@ const content = {
       ["Финальный результат", "10 - 16 месяцев", "flag"]
     ],
     ctaTitle: "Совершенство в каждом лечении.",
-    ctaPhone: "+90 546 524 8334",
+    ctaPhone: "+90 555 050 18 02",
     consultant: "Чат с Линой",
     consultantSub: "Цифровой консультант",
     chatTitle: "Чат с Линой",
@@ -595,7 +595,7 @@ export default function HomePage() {
 
   const handleWhatsAppSend = () => {
     if (!chatMessage.trim()) return;
-    const whatsappNumber = "905467372284";
+    const whatsappNumber = "905550501802";
     const encodedMessage = encodeURIComponent(chatMessage.trim());
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
     setChatOpen(false);
@@ -775,12 +775,9 @@ export default function HomePage() {
               </div>
               <h3 className="mb-3 text-2xl font-semibold leading-tight text-[#173b69]">{card.title}</h3>
               <p className="mb-6 text-base leading-relaxed text-[#496281]">{card.text}</p>
-              <div className="flex items-center gap-3">
-                <Image src={card.image} alt={card.name} width={54} height={54} className="h-[54px] w-[54px] rounded-full object-cover" />
-                <div>
-                  <p className="text-lg font-semibold leading-tight text-[#153761]">{card.name}</p>
-                  <p className="text-sm text-[#4f6788]">{card.country}</p>
-                </div>
+              <div>
+                <p className="text-lg font-semibold leading-tight text-[#153761]">{card.name}</p>
+                <p className="text-sm text-[#4f6788]">{card.country}</p>
               </div>
             </article>
           ))}
@@ -976,7 +973,7 @@ export default function HomePage() {
               <Phone className="h-5 w-5" /> {t.ctaPhone}
             </p>
             <p className="flex items-center gap-2 text-lg font-semibold">
-              <Mail className="h-5 w-5" /> info@newlifehealth.com
+              <Mail className="h-5 w-5" /> Newlifehealth.tr@gmail.com
             </p>
           </div>
         </div>
@@ -997,7 +994,7 @@ export default function HomePage() {
           <div>
             <h4 className="mb-2 font-bold text-[#173b69]">Connect With Us</h4>
             <p className="text-sm text-[#3d5f89]">Ataköy 7-8-9-10 Kısım Mah. Çobançeşme E5 Yan Yol Cad.</p>
-            <p className="mt-2 text-sm font-semibold text-[#173b69]">info@newlifehealth.com</p>
+            <p className="mt-2 text-sm font-semibold text-[#173b69]">Newlifehealth.tr@gmail.com</p>
           </div>
         </div>
         <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 NEWLIFE HEALTH Sağlık Turizmi A.Ş</div>
@@ -1007,8 +1004,7 @@ export default function HomePage() {
         onClick={() => setChatOpen(true)}
         className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl"
       >
-        <Image src="/10.jpeg" alt="Consultant" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
-        <div className="hidden md:block">
+                <div className="hidden md:block">
           <p className="text-xl font-semibold text-[#1b3e6b]">{t.consultant}</p>
           <p className="text-sm text-[#4f6588]">{t.consultantSub}</p>
         </div>
