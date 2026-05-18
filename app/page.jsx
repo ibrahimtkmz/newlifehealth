@@ -670,8 +670,8 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">15K+ Consultations</div>
             <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">1K Reviews</div>
-            <div className="mx-auto max-w-[430px] overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#b1dcff] to-[#73c6ff] p-2">
-              <Image src="/slide.jpg" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[1.5rem] bg-white object-contain object-center" />
+            <div className="mx-auto max-w-[430px] overflow-hidden">
+              <Image src="/header-slide.webp" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full object-cover object-center" />
             </div>
           </div>
         </div>
