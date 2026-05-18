@@ -37,6 +37,7 @@ const content = {
     nav: [
       { label: "Ana Sayfa", href: "#anasayfa" },
       { label: "Hizmetler", href: "#hizmetler" },
+      { label: "Hakkımızda", href: "#about-us" },
       { label: "Tedavi Süreci", href: "#tedavi-sureci" },
       { label: "İletişim", href: "#iletisim" }
     ],
@@ -171,6 +172,9 @@ const content = {
     ],
     ctaTitle: "Her Tedavide Mükemmellik.",
     ctaPhone: "+90 555 050 18 02",
+    callNow: "Hemen Ara",
+    aboutUsTitle: "Hakkımızda",
+    aboutUsText: "NEWLIFE HEALTH olarak uluslararası hastalara Türkiye'de güvenilir sağlık kurumlarıyla planlı tedavi, konaklama ve transfer koordinasyonu sunuyoruz.",
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı",
     chatTitle: "Lina ile Sohbet",
@@ -188,6 +192,7 @@ const content = {
     nav: [
       { label: "Home", href: "#anasayfa" },
       { label: "Services", href: "#hizmetler" },
+      { label: "About Us", href: "#about-us" },
       { label: "Treatment Process", href: "#tedavi-sureci" },
       { label: "Contact", href: "#iletisim" }
     ],
@@ -313,6 +318,9 @@ const content = {
     ],
     ctaTitle: "Excellence in Every Treatment.",
     ctaPhone: "+90 555 050 18 02",
+    callNow: "Call Now",
+    aboutUsTitle: "About Us",
+    aboutUsText: "As NEWLIFE HEALTH, we coordinate treatment planning, accommodation, and transfers in Turkey through trusted healthcare partners for international patients.",
     consultant: "Chat with Lina",
     consultantSub: "Digital Health Consultant",
     chatTitle: "Chat with Lina",
@@ -330,6 +338,7 @@ const content = {
     nav: [
       { label: "Главная", href: "#anasayfa" },
       { label: "Услуги", href: "#hizmetler" },
+      { label: "О нас", href: "#about-us" },
       { label: "Процесс лечения", href: "#tedavi-sureci" },
       { label: "Контакты", href: "#iletisim" }
     ],
@@ -455,6 +464,9 @@ const content = {
     ],
     ctaTitle: "Совершенство в каждом лечении.",
     ctaPhone: "+90 555 050 18 02",
+    callNow: "Позвонить",
+    aboutUsTitle: "О нас",
+    aboutUsText: "В NEWLIFE HEALTH мы организуем для международных пациентов лечение, проживание и трансфер в Турции через надежные медицинские учреждения.",
     consultant: "Чат с Линой",
     consultantSub: "Цифровой консультант",
     chatTitle: "Чат с Линой",
@@ -718,6 +730,13 @@ export default function HomePage() {
               </button>
             );
           })}
+        </div>
+      </section>
+
+      <section id="about-us" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-10">
+        <div className="rounded-3xl border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-8">
+          <h2 className="text-3xl font-bold text-[#10223d] md:text-4xl">{t.aboutUsTitle}</h2>
+          <p className="mt-4 max-w-[980px] text-base leading-relaxed text-[#49627f] md:text-lg">{t.aboutUsText}</p>
         </div>
       </section>
 
@@ -995,10 +1014,19 @@ export default function HomePage() {
             <h4 className="mb-2 font-bold text-[#173b69]">Connect With Us</h4>
             <p className="text-sm text-[#3d5f89]">Ataköy 7-8-9-10 Kısım Mah. Çobançeşme E5 Yan Yol Cad.</p>
             <p className="mt-2 text-sm font-semibold text-[#173b69]">Newlifehealth.tr@gmail.com</p>
+            <p className="mt-1 text-sm font-semibold text-[#173b69]">{t.ctaPhone}</p>
           </div>
         </div>
         <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 NEWLIFE HEALTH Sağlık Turizmi A.Ş</div>
       </footer>
+
+      <Link
+        href={`tel:${t.ctaPhone.replace(/\s/g, "")}`}
+        className="fixed bottom-28 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-[#0f2f5d] px-4 py-2.5 text-sm font-semibold text-white shadow-xl transition hover:bg-[#123f77]"
+      >
+        <Phone className="h-4 w-4" />
+        {t.callNow}
+      </Link>
 
       <button
         onClick={() => {
