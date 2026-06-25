@@ -10,27 +10,33 @@ const COPY = {
       { label: "Ana Sayfa", href: "/" },
       { label: "Hizmetler", href: "/hizmetler" },
       { label: "Tedavi Süreci", href: "/tedavi-sureci" },
-      { label: "İletişim", href: "/iletisim" }
+      { label: "İletişim", href: "/iletisim" },
+      { label: "Hakkımızda", href: "/#hakkimizda" }
     ],
-    freeQuote: "ÜCRETSİZ TEKLİF AL"
+    freeQuote: "ÜCRETSİZ TEKLİF AL",
+    phone: "+90 555 050 18 02"
   },
   en: {
     navItems: [
       { label: "Home", href: "/" },
       { label: "Services", href: "/hizmetler" },
       { label: "Treatment Process", href: "/tedavi-sureci" },
-      { label: "Contact", href: "/iletisim" }
+      { label: "Contact", href: "/iletisim" },
+      { label: "About", href: "/#hakkimizda" }
     ],
-    freeQuote: "GET FREE QUOTE"
+    freeQuote: "GET FREE QUOTE",
+    phone: "+90 555 050 18 02"
   },
   ru: {
     navItems: [
       { label: "Главная", href: "/" },
       { label: "Услуги", href: "/hizmetler" },
       { label: "Процесс лечения", href: "/tedavi-sureci" },
-      { label: "Контакты", href: "/iletisim" }
+      { label: "Контакты", href: "/iletisim" },
+      { label: "О нас", href: "/#hakkimizda" }
     ],
-    freeQuote: "БЕСПЛАТНЫЙ РАСЧЁТ"
+    freeQuote: "БЕСПЛАТНЫЙ РАСЧЁТ",
+    phone: "+90 555 050 18 02"
   }
 };
 
@@ -61,6 +67,9 @@ export default function SiteHeader({ onCtaClick }) {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-4">
+          <a href={`tel:${t.phone.replace(/\s/g, "")}`} className="hidden text-sm font-bold text-[#0C2E63] transition hover:text-[#D4AF37] xl:inline-flex">
+            {t.phone}
+          </a>
           {onCtaClick ? (
             <button
               onClick={onCtaClick}
