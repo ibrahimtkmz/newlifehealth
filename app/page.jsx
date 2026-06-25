@@ -29,6 +29,7 @@ import {
   MessageCircleHeart
 } from "lucide-react";
 import { useLanguage } from "./components/LanguageProvider";
+import { quickActionPages } from "./data/quickActionContent";
 
 const content = {
   tr: {
@@ -38,7 +39,8 @@ const content = {
       { label: "Ana Sayfa", href: "#anasayfa" },
       { label: "Hizmetler", href: "#hizmetler" },
       { label: "Tedavi Süreci", href: "#tedavi-sureci" },
-      { label: "İletişim", href: "#iletisim" }
+      { label: "İletişim", href: "#iletisim" },
+      { label: "Hakkımızda", href: "#hakkimizda" }
     ],
     heroTag: "5K+ Uluslararası Hasta • 4.8 Puan",
     heroTitle1: "Sağlığınızı Ertelemeyin:",
@@ -52,7 +54,7 @@ const content = {
     formLanguage: "Dil",
     send: "Gönder",
     sent: "Gönderildi",
-    quickActions: ["Ücretsiz Teklif Al", "Doktorlarla Görüş", "Ağımız", "Sağlık Hizmeti", "Sonrası Destek", "Check-Up"],
+    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Türk Sağlık Turizminde Popüler Tedaviler",
     treatments: [
@@ -173,7 +175,7 @@ const content = {
     ctaPhone: "+90 555 050 18 02",
     callNow: "Hemen Ara",
     aboutUsTitle: "Hakkımızda",
-    aboutUsText: "NEWLIFE HEALTH olarak, uluslararası sağlık turizmini yalnızca bir seyahat planı değil; güven, şeffaflık, etik yaklaşım ve sürdürülebilir hasta memnuniyeti üzerine kurulu bütüncül bir deneyim olarak ele alıyoruz. Türkiye'ye tedavi amacıyla gelen her hastanın farklı bir hikâyesi, farklı bir beklentisi ve farklı bir sağlık geçmişi olduğunun bilinciyle hareket ediyor; bu nedenle tüm süreçlerimizi standart paket anlayışından uzak, kişiye özel planlama modeliyle yürütüyoruz. İlk temastan itibaren uzman danışman ekibimiz; hastanın medikal ihtiyaçlarını, hedeflediği sonucu, seyahat takvimini ve dil tercihlerini dikkatle değerlendirerek en doğru yol haritasını oluşturur. Anlaşmalı sağlık kurumlarımızın sağlık turizmi yetki belgesine sahip olması, alanında deneyimli hekimlerle çalışması ve uluslararası kalite standartlarına uyum göstermesi bizim için temel önceliktir. Tedavi öncesi doktor değerlendirmeleri, operasyon planı, konaklama alternatifleri, havalimanı-karşılama organizasyonu, şehir içi transferler, tercüman desteği ve operasyon sonrası takip gibi kritik adımlar tek merkezden koordine edilir; böylece hastalarımız farklı kurumlarla ayrı ayrı iletişim kurmak zorunda kalmadan, tüm süreci düzenli ve güvenli biçimde yönetebilir. NEWLIFE HEALTH ekibi olarak yalnızca operasyon gününe odaklanmıyor; hastalarımızın Türkiye'ye gelişinden ülkelerine güvenle dönüşüne kadar geçen tüm yolculuğu sahipleniyoruz. İyileşme döneminde doğru bilgilendirme, zamanında yönlendirme ve erişilebilir danışmanlık sunarak hastalarımızın kendini yalnız hissetmeden süreci tamamlamasını sağlıyoruz. Çok dilli iletişim altyapımız sayesinde Avrupa başta olmak üzere farklı coğrafyalardan gelen misafirlerimizle güçlü bir iletişim kuruyor, kültürel beklentileri dikkate alan bir hizmet yaklaşımı benimsiyoruz. Bugüne kadar binlerce uluslararası danışmanlık deneyiminden edindiğimiz bilgi birikimiyle, estetik cerrahiden diş tedavilerine, saç ekiminden göz ve metabolik cerrahi süreçlerine kadar geniş bir alanda yüksek koordinasyon kalitesi sunuyoruz. Bizim için gerçek başarı, yalnızca tedavi sonucunun iyi olması değil; hastanın kendini her aşamada değerli, anlaşılmış ve güvende hissetmesidir. NEWLIFE HEALTH, Türkiye'nin sağlık turizmindeki güçlü potansiyelini insana dokunan bir hizmet anlayışıyla birleştirerek, her hastasına profesyonel, saygılı ve uzun vadeli bir sağlık yolculuğu vaat eder.",
+    aboutUsText: "NEWLIFE HEALTH olarak uluslararası sağlık turizmini yalnızca bir seyahat veya randevu organizasyonu değil, insan hayatına doğrudan temas eden güven temelli bir sağlık yolculuğu olarak görüyoruz. Türkiye'ye tedavi amacıyla gelen her hastanın farklı bir hikâyesi, farklı bir sağlık geçmişi, farklı bir beklentisi ve farklı bir kültürel ihtiyacı olduğunun bilinciyle hareket ediyoruz. Bu nedenle tüm süreçlerimizi hazır paket anlayışından uzak, kişiye özel planlama modeliyle yürütüyoruz. İlk iletişim anından itibaren danışman ekibimiz hastanın medikal ihtiyacını, hedeflediği sonucu, seyahat takvimini, dil tercihini, konaklama beklentisini ve iyileşme sürecindeki destek ihtiyacını dikkatle analiz eder. Amacımız, hastanın Türkiye'ye gelmeden önce neyle karşılaşacağını bilmesini, kararını bilinçli şekilde vermesini ve yolculuğun her aşamasında kendini güvende hissetmesini sağlamaktır.\n\nÇalıştığımız sağlık kurumlarının sağlık turizmi yetki belgesine sahip olması, alanında deneyimli hekimlerle hizmet vermesi, hijyen ve hasta güvenliği standartlarına önem göstermesi bizim için temel kriterdir. Saç ekimi, diş tedavileri, estetik cerrahi, göz sağlığı, obezite cerrahisi, check-up ve farklı uzmanlık alanlarında hastanın ihtiyacına uygun kurum ve hekim seçeneklerini değerlendiririz. Tedavi öncesi doktor görüşmeleri, operasyon planı, tetkikler, konaklama alternatifleri, havalimanı karşılama, şehir içi transfer, tercüman desteği, kontrol randevuları ve operasyon sonrası takip tek merkezden koordine edilir. Böylece hastalarımız farklı kurumlarla ayrı ayrı iletişim kurmak zorunda kalmadan düzenli, anlaşılır ve şeffaf bir süreç yaşar.\n\nNEWLIFE HEALTH ekibi olarak yalnızca operasyon gününe odaklanmayız. Hastanın Türkiye'ye gelişinden ülkesine güvenle dönüşüne ve sonrasındaki iyileşme dönemine kadar tüm yolculuğu sahipleniriz. İyileşme sürecinde doğru bilgilendirme, zamanında yönlendirme, kontrol hatırlatmaları ve ulaşılabilir danışmanlık sunarak hastalarımızın kendini yalnız hissetmeden süreci tamamlamasına destek oluruz. Çok dilli iletişim altyapımız sayesinde Avrupa, Orta Doğu, Rusya ve farklı coğrafyalardan gelen misafirlerimizle güçlü bir iletişim kurar; kültürel beklentileri, mahremiyet hassasiyetlerini ve kişisel öncelikleri dikkate alan bir hizmet yaklaşımı benimseriz.\n\nBizim için gerçek başarı yalnızca tedavi sonucunun iyi olması değildir. Hastanın her aşamada değerli, anlaşılmış, doğru bilgilendirilmiş ve saygıyla karşılanmış hissetmesi de aynı derecede önemlidir. Şeffaf fiyatlandırma, etik yönlendirme, gereksiz işlem önermeme, gerçekçi beklenti yönetimi ve uzun vadeli memnuniyet ilkelerimiz çalışma kültürümüzün merkezindedir. NEWLIFE HEALTH, Türkiye'nin sağlık turizmindeki güçlü potansiyelini profesyonel koordinasyon, güvenilir kurum ağı ve insana dokunan hizmet anlayışıyla birleştirerek her hastasına güvenli, saygılı ve sürdürülebilir bir sağlık deneyimi sunmayı hedefler.",
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı",
     chatTitle: "Lina ile Sohbet",
@@ -206,7 +208,7 @@ const content = {
     formLanguage: "Language",
     send: "Send",
     sent: "Sent",
-    quickActions: ["Get a Free Quote", "Talk to Doctors", "Our Network", "Healthcare", "Aftercare Help", "Health Check-Up"],
+    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Popular Treatments in Turkish Health Tourism",
     treatments: ["Face & Neck Lift", "Liposuction", "Brazilian Butt Lift", "Hollywood Smile", "Dental Implants", "Eye Laser & Smart Lens", "Blepharoplasty", "Hair Transplant"],
@@ -351,7 +353,7 @@ const content = {
     formLanguage: "Язык",
     send: "Отправить",
     sent: "Отправлено",
-    quickActions: ["Получить расчет", "Связь с врачом", "Наша сеть", "Медуслуги", "Поддержка", "Check-Up"],
+    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Популярные направления лечения в Турции",
     treatments: ["Подтяжка лица и шеи", "Липосакция", "BBL", "Голливудская улыбка", "Дентальные импланты", "Лазер и умные линзы", "Блефаропластика", "Пересадка волос"],
@@ -598,7 +600,7 @@ export default function HomePage() {
     setSelectedZones((prev) => (prev.includes(zoneId) ? prev.filter((id) => id !== zoneId) : [...prev, zoneId].sort((a, b) => a - b)));
   };
   const handleConsultationClick = () => {
-    window.open("https://wa.me/905465248334?text=Hello%2C%20I%20would%20like%20a%20free%20consultation%20about%20my%20graft%20estimate.", "_blank", "noopener,noreferrer");
+    window.open("https://wa.me/905550501802?text=Hello%2C%20I%20would%20like%20a%20free%20consultation%20about%20my%20graft%20estimate.", "_blank", "noopener,noreferrer");
   };
   const handleLeadSubmit = (event) => {
     event.preventDefault();
@@ -721,15 +723,24 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      <section id="hakkimizda" className="mx-auto w-full max-w-[1280px] scroll-mt-28 px-4 py-10">
+        <div className="rounded-[2rem] border border-[#d7e3f0] bg-white p-6 shadow-sm md:p-10">
+          <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">NEWLIFE HEALTH</span>
+          <h2 className="mt-5 text-3xl font-bold text-[#0f2f5d] md:text-5xl">{t.aboutUsTitle}</h2>
+          <p className="mt-5 whitespace-pre-line text-base leading-8 text-[#49627f] md:text-lg md:leading-9">{t.aboutUsText}</p>
+        </div>
+      </section>
+
       <section className="mx-auto w-full max-w-[1280px] px-4 pb-4">
         <div className="grid gap-3 rounded-2xl bg-white p-4 shadow sm:grid-cols-3 lg:grid-cols-6">
           {t.quickActions.map((item, index) => {
             const Icon = quickIcons[index] || CircleHelp;
             return (
-              <button key={item} className="rounded-xl px-3 py-4 text-center transition hover:bg-[#edf6ff]">
+              <Link key={item.href} href={item.href} className="rounded-xl px-3 py-4 text-center transition hover:bg-[#edf6ff]">
                 <Icon className="mx-auto mb-2 h-6 w-6 text-[#1576c2]" />
-                <span className="text-sm font-semibold text-[#163a68]">{item}</span>
-              </button>
+                <span className="text-sm font-semibold text-[#163a68]">{item.label}</span>
+              </Link>
             );
           })}
         </div>

@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import InnerPageLayout from "../../components/InnerPageLayout";
 
-const WHATSAPP_NUMBER = "905000000000";
+const WHATSAPP_NUMBER = "905550501802";
 
 const PAGE_DATA = {
   "hair-transplant": {

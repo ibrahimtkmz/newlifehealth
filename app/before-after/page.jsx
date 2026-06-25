@@ -189,7 +189,7 @@ const CONTENT = {
   }
 };
 
-const whatsappNumber = "905000000000";
+const whatsappNumber = "905550501802";
 
 export default function BeforeAfterPage() {
   const { lang } = useLanguage();
