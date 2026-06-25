@@ -120,23 +120,24 @@ const content = {
       {
         day: "1. Gün",
         items: [
-          { icon: "plane", title: "Havalimanına varış", description: "Sürücümüz sizi karşılayarak kan tahlili için kliniğe, ardından otelinize götürür." },
-          { icon: "car", title: "Kliniğe transfer", badge: "maks 1 saat" },
-          { icon: "test", title: "Kan örneği", badge: "maks 45 dk" }
+          { icon: "plane", title: "Havalimanına varış", description: "Sürücümüz sizi karşılar; otele veya kliniğe konforlu transferiniz yapılır.", badge: "VIP transfer" },
+          { icon: "consult", title: "Doktor konsültasyonu", description: "Saç analizi, donör bölge kontrolü ve doğal saç çizgisi tasarımı tamamlanır.", badge: "1 - 2 saat" },
+          { icon: "test", title: "Kan tahlili ve hazırlık", description: "Operasyon güvenliği için gerekli testler alınır, işlem öncesi talimatlar paylaşılır.", badge: "maks 45 dk" }
         ]
       },
       {
         day: "2. Gün",
         items: [
-          { icon: "consult", title: "1. Konsültasyon", description: "Doktorunuzla görüşür, saç ekimi seçenekleri ve saç çizgisi tasarımı planlanır.", badge: "1 - 2 saat" },
-          { icon: "free", title: "İstanbul’da serbest zaman", description: "Bir sonraki gün öncesi dinlenmek ve şehri keşfetmek için geniş zamanınız olur." }
+          { icon: "procedure", title: "Saç ekimi işlemi", description: "Lokal anestezi altında greft alımı, kanal açımı ve ekim adımları planlandığı şekilde uygulanır.", badge: "5 - 7 saat" },
+          { icon: "car", title: "Otele dönüş ve dinlenme", description: "İşlem sonrası bakım anlatılır; ekibimiz sizi dinlenmeniz için otele götürür.", badge: "kontrollü takip" }
         ]
       },
       {
         day: "3. Gün",
         items: [
-          { icon: "consult2", title: "2. Konsültasyon", description: "Doğal görünüm için son değerlendirmeler yapılır ve işlem planı netleştirilir.", badge: "1 saat" },
-          { icon: "procedure", title: "İşlem", description: "Lokal anestezi altında ortalama 5 - 7 saat sürer. İşlemden sonra dinlenmeniz için otele transfer edilirsiniz.", badge: "5 - 7 saat" }
+          { icon: "droplets", title: "İlk yıkama ve kontrol", description: "Klinikte ilk yıkama yapılır, kabuklanma ve bakım süreci uygulamalı şekilde gösterilir.", badge: "30 - 45 dk" },
+          { icon: "message", title: "Son talimatlar", description: "İlaç, uyku pozisyonu, şapka kullanımı ve fotoğraf takibi için kişisel rehberiniz paylaşılır." },
+          { icon: "plane", title: "Dönüş planı", description: "Uçuş saatinize göre havalimanı transferiniz organize edilir; uzaktan takip başlar.", badge: "sonrası destek" }
         ]
       },
     ],
@@ -176,6 +177,11 @@ const content = {
     callNow: "Hemen Ara",
     aboutUsTitle: "Hakkımızda",
     aboutUsText: "NEWLIFE HEALTH olarak uluslararası sağlık turizmini yalnızca bir seyahat veya randevu organizasyonu değil, insan hayatına doğrudan temas eden güven temelli bir sağlık yolculuğu olarak görüyoruz. Türkiye'ye tedavi amacıyla gelen her hastanın farklı bir hikâyesi, farklı bir sağlık geçmişi, farklı bir beklentisi ve farklı bir kültürel ihtiyacı olduğunun bilinciyle hareket ediyoruz. Bu nedenle tüm süreçlerimizi hazır paket anlayışından uzak, kişiye özel planlama modeliyle yürütüyoruz. İlk iletişim anından itibaren danışman ekibimiz hastanın medikal ihtiyacını, hedeflediği sonucu, seyahat takvimini, dil tercihini, konaklama beklentisini ve iyileşme sürecindeki destek ihtiyacını dikkatle analiz eder. Amacımız, hastanın Türkiye'ye gelmeden önce neyle karşılaşacağını bilmesini, kararını bilinçli şekilde vermesini ve yolculuğun her aşamasında kendini güvende hissetmesini sağlamaktır.\n\nÇalıştığımız sağlık kurumlarının sağlık turizmi yetki belgesine sahip olması, alanında deneyimli hekimlerle hizmet vermesi, hijyen ve hasta güvenliği standartlarına önem göstermesi bizim için temel kriterdir. Saç ekimi, diş tedavileri, estetik cerrahi, göz sağlığı, obezite cerrahisi, check-up ve farklı uzmanlık alanlarında hastanın ihtiyacına uygun kurum ve hekim seçeneklerini değerlendiririz. Tedavi öncesi doktor görüşmeleri, operasyon planı, tetkikler, konaklama alternatifleri, havalimanı karşılama, şehir içi transfer, tercüman desteği, kontrol randevuları ve operasyon sonrası takip tek merkezden koordine edilir. Böylece hastalarımız farklı kurumlarla ayrı ayrı iletişim kurmak zorunda kalmadan düzenli, anlaşılır ve şeffaf bir süreç yaşar.\n\nNEWLIFE HEALTH ekibi olarak yalnızca operasyon gününe odaklanmayız. Hastanın Türkiye'ye gelişinden ülkesine güvenle dönüşüne ve sonrasındaki iyileşme dönemine kadar tüm yolculuğu sahipleniriz. İyileşme sürecinde doğru bilgilendirme, zamanında yönlendirme, kontrol hatırlatmaları ve ulaşılabilir danışmanlık sunarak hastalarımızın kendini yalnız hissetmeden süreci tamamlamasına destek oluruz. Çok dilli iletişim altyapımız sayesinde Avrupa, Orta Doğu, Rusya ve farklı coğrafyalardan gelen misafirlerimizle güçlü bir iletişim kurar; kültürel beklentileri, mahremiyet hassasiyetlerini ve kişisel öncelikleri dikkate alan bir hizmet yaklaşımı benimseriz.\n\nBizim için gerçek başarı yalnızca tedavi sonucunun iyi olması değildir. Hastanın her aşamada değerli, anlaşılmış, doğru bilgilendirilmiş ve saygıyla karşılanmış hissetmesi de aynı derecede önemlidir. Şeffaf fiyatlandırma, etik yönlendirme, gereksiz işlem önermeme, gerçekçi beklenti yönetimi ve uzun vadeli memnuniyet ilkelerimiz çalışma kültürümüzün merkezindedir. NEWLIFE HEALTH, Türkiye'nin sağlık turizmindeki güçlü potansiyelini profesyonel koordinasyon, güvenilir kurum ağı ve insana dokunan hizmet anlayışıyla birleştirerek her hastasına güvenli, saygılı ve sürdürülebilir bir sağlık deneyimi sunmayı hedefler.",
+    aboutUsHighlights: [
+      { title: "Kişiye Özel Planlama", text: "Medikal ihtiyaç, seyahat takvimi ve konfor beklentisi tek dosyada değerlendirilir.", icon: "consult", image: "/WhatsApp Image 2026-04-14 at 12.35.22.jpeg" },
+      { title: "Yetkili Kurum Ağı", text: "Hastane, klinik, hekim, tercüman ve transfer ekipleri tek merkezden koordine edilir.", icon: "building", image: "/WhatsApp Image 2026-04-10 at 13.16.14.jpeg" },
+      { title: "Sonrası Takip", text: "Kontrol hatırlatmaları, bakım önerileri ve uzaktan destekle yolculuk tedavi sonrasında da sürer.", icon: "support", image: "/WhatsApp Image 2026-04-14 at 12.35.25.jpeg" }
+    ],
     consultant: "Lina ile Sohbet",
     consultantSub: "Dijital Sağlık Danışmanı",
     chatTitle: "Lina ile Sohbet",
@@ -482,6 +488,12 @@ const content = {
 export default function HomePage() {
   const { lang, setLang } = useLanguage();
   const t = content[lang] || content.en;
+  const aboutIcons = {
+    consult: UserRoundSearch,
+    building: Building2,
+    support: MessageCircleHeart
+  };
+
   const journeyIcons = {
     plane: PlaneTakeoff,
     car: Car,
@@ -491,6 +503,8 @@ export default function HomePage() {
     free: Coffee,
     procedure: Stethoscope,
     wash: Droplets,
+    droplets: Droplets,
+    message: MessageCircleHeart,
     aftercare: MessageCircleHeart
   };
   const [menuOpen, setMenuOpen] = useState(false);
@@ -729,6 +743,28 @@ export default function HomePage() {
           <span className="rounded-full bg-[#198fd0] px-5 py-1.5 text-sm font-semibold text-white">NEWLIFE HEALTH</span>
           <h2 className="mt-5 text-3xl font-bold text-[#0f2f5d] md:text-5xl">{t.aboutUsTitle}</h2>
           <p className="mt-5 whitespace-pre-line text-base leading-8 text-[#49627f] md:text-lg md:leading-9">{t.aboutUsText}</p>
+          {t.aboutUsHighlights && (
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {t.aboutUsHighlights.map((item) => {
+                const Icon = aboutIcons[item.icon] || HeartPulse;
+                return (
+                  <article key={item.title} className="overflow-hidden rounded-3xl border border-[#d7e3f0] bg-[#f7fbff] shadow-sm">
+                    <div className="relative h-44">
+                      <Image src={item.image} alt={item.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f2f5d]/70 to-transparent" />
+                      <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#198fd0] shadow">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-lg font-bold text-[#0f2f5d]">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-[#49627f]">{item.text}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
