@@ -592,7 +592,18 @@ export default function HomePage() {
 
   const handleSend = (event) => {
     event.preventDefault();
-    if (!formData.name || !formData.phone) return;
+    if (!formData.name.trim() || !formData.phone.trim()) return;
+
+    const whatsappNumber = "905550501802";
+    const message = [
+      "Yeni Uzman Geri Arama Talebi",
+      `Ad Soyad: ${formData.name.trim()}`,
+      `Telefon: ${formData.phone.trim()}`,
+      `Tedavi Türü: ${formData.treatment.trim() || "-"}`,
+      `Dil: ${lang.toUpperCase()}`
+    ].join("\n");
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setFormSent(true);
     setTimeout(() => setFormSent(false), 2000);
   };
@@ -722,7 +733,7 @@ export default function HomePage() {
                   <HeartPulse className="h-4 w-4 text-slate-400" />
                   <input className="w-full outline-none" placeholder={t.formTreatment} value={formData.treatment} onChange={(e) => setFormData((v) => ({ ...v, treatment: e.target.value }))} />
                 </label>
-                <button className="rounded-full bg-[#f06b2f] px-6 py-2.5 font-semibold text-white hover:bg-[#d95921]">{formSent ? t.sent : t.send}</button>
+                <button type="submit" className="rounded-full bg-[#f06b2f] px-6 py-2.5 font-semibold text-white hover:bg-[#d95921]">{formSent ? t.sent : t.send}</button>
               </div>
             </form>
             <p className="text-sm font-semibold text-[#1a4d82]">{t.heroSubText}</p>
