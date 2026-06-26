@@ -9,32 +9,32 @@ import { quickActionPageBySlug, quickActionPages } from "../../data/quickActionC
 const visualContent = {
   "ucretsiz-teklif-al": {
     icon: ClipboardCheck,
-    image: "/WhatsApp Image 2026-04-14 at 12.35.27 (1).jpeg",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
     cards: ["Fotoğraf ve rapor analizi", "Şeffaf kapsam ve fiyat bilgisi", "Kişisel seyahat takvimi"]
   },
   "doktorlarla-gorus": {
     icon: UserRoundSearch,
-    image: "/WhatsApp Image 2026-04-10 at 13.16.13 (2).jpeg",
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80",
     cards: ["Uzman hekim ön değerlendirmesi", "Çok dilli görüşme koordinasyonu", "Gerçekçi beklenti yönetimi"]
   },
   agimiz: {
     icon: Building2,
-    image: "/WhatsApp Image 2026-04-14 at 12.35.24.jpeg",
+    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80",
     cards: ["Yetkili kurum eşleştirme", "Transfer ve otel çözüm ortakları", "Tek merkezli operasyon akışı"]
   },
   "saglik-hizmeti": {
     icon: Stethoscope,
-    image: "/WhatsApp Image 2026-04-10 at 13.16.14 (1).jpeg",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80",
     cards: ["Tedavi planı", "Tercüman ve randevu desteği", "Kontrol ve takip organizasyonu"]
   },
   "sonrasi-destek": {
     icon: MessageCircleHeart,
-    image: "/WhatsApp Image 2026-04-14 at 12.35.25 (2).jpeg",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=900&q=80",
     cards: ["Uzaktan fotoğraf takibi", "Bakım ve kontrol hatırlatmaları", "Hekimle iletişim köprüsü"]
   },
   "check-up": {
     icon: HeartPulse,
-    image: "/WhatsApp Image 2026-04-10 at 13.16.12.jpeg",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80",
     cards: ["Risk profiline göre testler", "Zaman verimli randevu planı", "Anlaşılır rapor değerlendirmesi"]
   }
 };
