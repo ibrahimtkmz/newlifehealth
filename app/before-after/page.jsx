@@ -131,6 +131,62 @@ const CONTENT = {
       "Transparent and ethical approach"
     ]
   },
+  ar: {
+    title: "قبل وبعد",
+    subtitle: "نُقيّم جودة النتائج بشفافية بالتزام تام بحماية خصوصية المريض والأخلاقيات الطبية.",
+    intro: "تحليل قبل وبعد ليس مجرد مقارنة صور، بل يشمل تقييم الكثافة والتناسق والتعافي والتحسُّن الوظيفي ورضا المريض.",
+    privacyTitle: "سياسة الخصوصية",
+    privacyText: "وفقاً لأخلاقيات الطب نشارك صور قبل وبعد التفصيلية فقط مع المرضى في استشارة نشطة عبر واتساب. بهذا نحمي خصوصية المريض مع عرض النتائج الحقيقية بشفافية.",
+    categories: [
+      {
+        key: "hair",
+        icon: Scissors,
+        title: "زراعة الشعر",
+        description: "تصميم خط الشعر الطبيعي وزيادة الكثافة ونتائج توزيع الطعوم",
+        cases: "2,500+ حالة"
+      },
+      {
+        key: "dental",
+        icon: Smile,
+        title: "تجميل الأسنان",
+        description: "ابتسامة هوليوود وتلبيس الزركون ونتائج الزراعة",
+        cases: "1,800+ حالة"
+      },
+      {
+        key: "plastic",
+        icon: Sparkles,
+        title: "الجراحة التجميلية",
+        description: "تجميل الأنف وشد الوجه وتشكيل الجسم",
+        cases: "1,200+ حالة"
+      },
+      {
+        key: "bariatric",
+        icon: Activity,
+        title: "جراحة السمنة",
+        description: "رحلة فقدان الوزن وتحول الجسم وتحسن الصحة",
+        cases: "800+ حالة"
+      }
+    ],
+    galleryTitle: "نتائج حقيقية قبل / بعد",
+    evaluationTitle: "معايير تقييمنا",
+    criteria: [
+      { title: "التناسق الجمالي", description: "تناسب ملامح الوجه والمظهر الطبيعي" },
+      { title: "النجاح التقني", description: "تميز التقنية الجراحية" },
+      { title: "عملية التعافي", description: "شفاء الأنسجة وتقليل الندوب" },
+      { title: "رضا المريض", description: "توافق التوقعات والنتائج" }
+    ],
+    ctaTitle: "هل تريد رؤية النتائج؟",
+    ctaText: "تواصل معنا عبر واتساب واطلع على صور حقيقية قبل وبعد لمجال العلاج الذي يهمك.",
+    previewHint: "تواصل معنا لعرض النتائج كاملة",
+    ctaButton: "تواصل عبر واتساب",
+    trustTitle: "لماذا تثق بنا؟",
+    trustItems: [
+      "15,000+ تجربة علاج ناجحة",
+      "فريق طبي معتمد دولياً",
+      "98% نسبة رضا المرضى",
+      "نهج شفاف وأخلاقي"
+    ]
+  },
   ru: {
     title: "До/После",
     subtitle: "Мы оцениваем качество результатов по прозрачным медицинским критериям при строгом соблюдении конфиденциальности пациентов.",
@@ -205,9 +261,13 @@ export default function BeforeAfterPage() {
       ? "Merhaba, oncesi-sonrasi fotograflari gormek istiyorum."
       : lang === 'ru'
       ? "Здравствуйте, хочу посмотреть фотографии до/после."
+      : lang === 'ar'
+      ? "مرحبا، أريد رؤية صور قبل وبعد."
       : "Hello, I would like to see before-after photos.";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
+  const beforeLabel = lang === 'tr' ? 'Oncesi' : lang === 'ru' ? 'До' : lang === 'ar' ? 'قبل' : 'Before';
+  const afterLabel = lang === 'tr' ? 'Sonrasi' : lang === 'ru' ? 'После' : lang === 'ar' ? 'بعد' : 'After';
 
   return (
     <InnerPageLayout title={t.title} subtitle={t.subtitle}>
@@ -271,7 +331,7 @@ export default function BeforeAfterPage() {
                       loading="lazy"
                     />
                     <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
-                      Before
+                      {beforeLabel}
                     </p>
                   </div>
 
@@ -283,7 +343,7 @@ export default function BeforeAfterPage() {
                       loading="lazy"
                     />
                     <p className="border-t border-[#1A1A1A]/10 bg-[#FBFBFB] px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-[#1A1A1A]/70">
-                      After
+                      {afterLabel}
                     </p>
                   </div>
                 </div>
@@ -295,6 +355,8 @@ export default function BeforeAfterPage() {
                   ? "Bu tedavi kategorisi icin su an yayinlanmis bir before/after gorseli bulunmuyor."
                   : lang === "ru"
                   ? "Для этой категории лечения сейчас нет опубликованных фото до/после."
+                  : lang === "ar"
+                  ? "لا توجد حالياً صور قبل وبعد منشورة لهذا التخصص العلاجي."
                   : "There are currently no published before/after images for this treatment category."}
               </div>
             )}

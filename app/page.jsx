@@ -482,12 +482,167 @@ const content = {
     contactSectionSubtitle: "Заполните форму, и ваши данные сразу отправятся в наш WhatsApp-чат для быстрого ответа.",
     contactMessage: "Сообщение",
     contactFormCta: "Отправить в WhatsApp"
+  },
+  ar: {
+    languageLabel: "العربية",
+    topEmail: "Newlifehealth.tr@gmail.com",
+    nav: [
+      { label: "الرئيسية", href: "#anasayfa" },
+      { label: "الخدمات", href: "#hizmetler" },
+      { label: "مسار العلاج", href: "#tedavi-sureci" },
+      { label: "اتصل بنا", href: "#iletisim" }
+    ],
+    heroTag: "5K+ مريض دولي • تقييم 4.8",
+    heroTitle1: "لا تؤجّل صحتك:",
+    heroTitle2: "اترك بياناتك",
+    heroTitle3: "للحصول على مكالمة من خبير",
+    heroSubText: "15K+ استشارة • 1K تقييم إيجابي",
+    partnership: "الشراكة",
+    formName: "الاسم الكامل",
+    formPhone: "رقم الهاتف",
+    formTreatment: "نوع العلاج",
+    formLanguage: "اللغة",
+    send: "إرسال",
+    sent: "تم الإرسال",
+    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
+    treatmentTag: "NEWLIFE HEALTH",
+    treatmentTitle: "العلاجات الأكثر طلباً في السياحة الصحية التركية",
+    treatments: ["شد الوجه والرقبة", "شفط الدهون", "BBL", "ابتسامة هوليوود", "زراعة الأسنان", "ليزر العيون والعدسة الذكية", "جراحة الجفن", "زراعة الشعر"],
+    infoBanner:
+      "🇪🇺 ↔ 🇹🇷 تُقدَّم خدمات العلاج لدينا في مؤسسات صحية معتمدة تحمل شهادة السياحة الصحية وفق أعلى معايير الجودة.",
+    serviceTabs: ["المستشفيات والعيادات", "الخدمات الصحية", "استشارة طبية", "الرعاية المنزلية", "العلاجات المتخصصة", "الفحوصات المخبرية", "الأدوية والمستلزمات"],
+    testimonialTag: "آراء المرضى",
+    testimonialTitle: "ماذا يقول المرضى الدوليون عن رحلتهم العلاجية في تركيا؟",
+    stats: [
+      ["20+", "تخصص طبي"],
+      ["100+", "طبيب متخصص"],
+      ["40+", "دولة نخدمها"],
+      ["98%", "رضا المرضى"],
+      ["15+", "سنة خبرة"]
+    ],
+    testimonials: [
+      {
+        rating: 5,
+        title: "استقبال دافئ وموثوق",
+        text: "كان الفريق الطبي متعاوناً للغاية. شعرت بالأمان والراحة في كل مرحلة من مراحل رحلتي.",
+        name: "Daria Boselli",
+        country: "إيطاليا",
+        image: "/10.jpeg"
+      },
+      {
+        rating: 4,
+        title: "تجربة رائعة",
+        text: "بعد عملية العدسة الذكية، تحسّنت رؤيتي بشكل ملحوظ. أرشد الفريق كل خطوة بوضوح تام.",
+        name: "Artem Kravchenko",
+        country: "أوكرانيا",
+        image: "/9.jpeg"
+      },
+      {
+        rating: 5,
+        title: "تنظيم مثالي",
+        text: "كانت الرحلة والعلاج منظمَين بشكل لا تشوبه شائبة، والدعم كان حاضراً في كل خطوة.",
+        name: "Katya Chernov",
+        country: "روسيا",
+        image: "/10-1.jpeg"
+      }
+    ],
+    whyTag: "لماذا Newlife Health",
+    whyTitle: "رعاية موثوقة بمعايير عالمية",
+    journeyTitle: "اطّلع على رحلة زراعة الشعر لمدة 3 أيام",
+    otherTreatmentsTitle: "العملية والتفاصيل للعلاجات الأخرى",
+    otherTreatmentsSubtitle: "بالإضافة إلى زراعة الشعر، نقدم نفس جودة التخطيط للعلاجات السنية والتجميلية وجراحة السمنة.",
+    otherTreatments: [
+      { title: "تجميل الأسنان", detail: "ابتسامة هوليوود، تلبيس الزركون وحلول الزراعة", duration: "4-6 أيام", href: "/treatments/dental-aesthetics" },
+      { title: "الجراحة التجميلية", detail: "تجميل الأنف، شد الوجه، وتشكيل الجسم", duration: "7-10 أيام", href: "/treatments/plastic-surgery" },
+      { title: "جراحة السمنة", detail: "تكميم المعدة، التحويل المعدي وبرامج المتابعة", duration: "5-7 أيام", href: "/treatments/bariatric-surgery" }
+    ],
+    otherTreatmentsButton: "عرض تفاصيل العلاج",
+    journeyDays: [
+      {
+        day: "اليوم 1",
+        items: [
+          { icon: "plane", title: "الوصول إلى المطار", description: "سائقنا سيستقبلك ويأخذك إلى العيادة لإجراء فحوصات الدم ثم إلى الفندق.", badge: "نقل VIP" },
+          { icon: "consult", title: "استشارة الطبيب", description: "تحليل الشعر وفحص منطقة المانح وتصميم خط الشعر الطبيعي.", badge: "1 - 2 ساعة" },
+          { icon: "test", title: "فحوصات الدم والتحضير", description: "إجراء الفحوصات اللازمة لسلامة العملية ومشاركة التعليمات قبل الإجراء.", badge: "45 دقيقة كحد أقصى" }
+        ]
+      },
+      {
+        day: "اليوم 2",
+        items: [
+          { icon: "procedure", title: "عملية زراعة الشعر", description: "يتم استخراج الطعوم وفتح القنوات وزراعتها تحت تخدير موضعي وفق الخطة المحددة.", badge: "5 - 7 ساعات" },
+          { icon: "car", title: "العودة للفندق والراحة", description: "يُشرح لك العناية بعد العملية ويأخذك فريقنا إلى الفندق للراحة.", badge: "متابعة مراقبة" }
+        ]
+      },
+      {
+        day: "اليوم 3",
+        items: [
+          { icon: "droplets", title: "أول غسيل وفحص", description: "يتم الغسيل الأول في العيادة ويُشرح لك عملية التقشر والعناية بشكل عملي.", badge: "30 - 45 دقيقة" },
+          { icon: "message", title: "التعليمات النهائية", description: "يُشارك معك دليلك الشخصي للأدوية ووضعية النوم واستخدام القبعة ومتابعة الصور." },
+          { icon: "plane", title: "خطة العودة", description: "يتم تنظيم نقلك إلى المطار وفق موعد رحلتك وتبدأ المتابعة عن بُعد.", badge: "دعم ما بعد العملية" }
+        ]
+      }
+    ],
+    graftTitle: "حاسبة الطعوم",
+    graftSubtitle: "اختر مناطق تساقط الشعر التي تريد علاجها",
+    selectedZonesTitle: "المناطق المختارة",
+    zonePrefix: "منطقة",
+    approxGraftsLabel: "العدد التقريبي للطعوم",
+    approxHairsLabel: "العدد التقريبي لشعرات الشعر",
+    consultationButton: "احصل على استشارة مجانية",
+    estimateDisclaimer: "هذه الحسابات تقريبية فقط. يلزم فحص متخصص للتخطيط الدقيق.",
+    leadTitle: "احصل على نتيجتك عبر البريد الإلكتروني",
+    leadPlaceholder: "بريدك الإلكتروني",
+    leadButton: "إرسال النتيجة",
+    leadSuccess: "تم تجهيز ملخص التقدير للإرسال. سيتواصل معك فريقنا قريباً.",
+    whyItems: [
+      ["شبكة مؤسسات معتمدة", "نربطك فقط بمؤسسات معتمدة تحمل ترخيص السياحة الصحية الرسمي."],
+      ["مسار واضح ومنظم", "من أول استشارة حتى خطة علاجك في تركيا، كل خطوة تُدار بوضوح."],
+      ["تنسيق من نقطة واحدة", "العلاج والنقل والإقامة والمتابعة بعد العملية تُدار من فريق واحد."]
+    ],
+    timelineTitle: "الجدول الزمني لزراعة الشعر: من اليوم الأول حتى النتيجة",
+    timelineSubtitle: "قد يستغرق الحصول على الكثافة المطلوبة بعد زراعة الشعر حوالي عام.",
+    timelineShareTitle: "شارك صورك معنا",
+    timelineShareDay: "اليوم 11",
+    timelineItems: [
+      ["بعد زراعة الشعر مباشرة", "اليوم 1", "leaf"],
+      ["إزالة الضمادة والغسيل", "اليوم 2", "sparkles"],
+      ["الشفاء الأولي", "3 - 10 أيام", "bandage"],
+      ["تساقط الشعر المزروع", "2 - 4 أسابيع", "scissors"],
+      ["مرحلة السكون", "1 - 3 أشهر", "moon"],
+      ["النمو المبكر", "3 - 6 أشهر", "sprout"],
+      ["تحسن ملحوظ", "6 - 10 أشهر", "trend"],
+      ["النتيجة النهائية", "10 - 16 شهراً", "flag"]
+    ],
+    ctaTitle: "التميز في كل علاج.",
+    ctaPhone: "+90 555 050 18 02",
+    callNow: "اتصل الآن",
+    aboutUsTitle: "من نحن",
+    aboutUsText: "في NEWLIFE HEALTH نصمم رحلة العلاج للمرضى الدوليين في تركيا كتجربة صحية متكاملة تبدأ من أول تواصل وحتى العودة إلى الوطن. يحلل فريق مستشارينا منذ البداية السجل الصحي للمريض وتوقعاته وجدول سفره وأولوياته الشخصية لبناء خارطة طريق مخصصة تماماً. تُختار مستشفياتنا وعياداتنا المتعاقدة من بين المؤسسات الحاملة لشهادات السياحة الصحية الرسمية والعاملة مع أطباء متخصصين يطبقون معايير الجودة باستمرار. تُدار جميع الخطوات من نقطة واحدة: تخطيط الرحلة، الاستقبال في المطار، الإقامة، النقل داخل المدينة، دعم الترجمة، تنسيق العمليات، والمتابعة بعد العلاج. هدفنا الحقيقي ليس فقط نتيجة طبية جيدة، بل أن يشعر المريض في كل مرحلة بالتقدير والفهم والدعم الكامل.",
+    aboutUsHighlights: [
+      { title: "تخطيط مخصص", text: "يتم تقييم الاحتياج الطبي وجدول السفر وتوقعات الراحة في ملف واحد.", icon: "consult", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" },
+      { title: "شبكة مؤسسات معتمدة", text: "يتم تنسيق المستشفى والعيادة والطبيب والمترجم وفريق النقل من مركز واحد.", icon: "building", image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" },
+      { title: "متابعة ما بعد العلاج", text: "تذكيرات المراجعة ونصائح العناية والدعم عن بُعد تجعل الرحلة مستمرة بعد العلاج.", icon: "support", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80" }
+    ],
+    consultant: "تحدث مع لينا",
+    consultantSub: "مستشارة صحية رقمية",
+    chatTitle: "تحدث مع لينا",
+    chatPlaceholder: "اكتب رسالتك...",
+    chatSend: "إرسال عبر واتساب",
+    chatClose: "إغلاق",
+    contactSectionTitle: "تواصل معنا",
+    contactSectionSubtitle: "أكمل النموذج وأرسل بياناتك مباشرة إلى محادثة واتساب للحصول على رد سريع.",
+    contactMessage: "رسالتك",
+    contactFormCta: "إرسال عبر واتساب",
+    footerDesc: "NEWLIFE HEALTH علامة تجارية معتمدة لتنسيق السياحة الطبية تعمل مع مؤسسات صحية معتمدة في تركيا.",
+    footerLicenseTitle: "أرقام التراخيص",
+    footerConnectTitle: "تواصل معنا",
+    newNotification: "إشعار جديد"
   }
 };
 
 export default function HomePage() {
   const { lang, setLang } = useLanguage();
-  const t = content[lang] || content.en;
+  const t = content[lang] || content.tr;
   const aboutIcons = {
     consult: UserRoundSearch,
     building: Building2,
@@ -595,12 +750,16 @@ export default function HomePage() {
     if (!formData.name.trim() || !formData.phone.trim()) return;
 
     const whatsappNumber = "905550501802";
+    const msgHeader = lang === "tr" ? "Yeni Uzman Geri Arama Talebi" : lang === "ru" ? "Новый запрос обратного звонка" : lang === "ar" ? "طلب مكالمة خبير جديد" : "New Expert Callback Request";
+    const msgName = lang === "tr" ? "Ad Soyad" : lang === "ru" ? "Имя" : lang === "ar" ? "الاسم" : "Name";
+    const msgPhone = lang === "tr" ? "Telefon" : lang === "ru" ? "Телефон" : lang === "ar" ? "الهاتف" : "Phone";
+    const msgTreatment = lang === "tr" ? "Tedavi Türü" : lang === "ru" ? "Тип лечения" : lang === "ar" ? "نوع العلاج" : "Treatment Type";
     const message = [
-      "Yeni Uzman Geri Arama Talebi",
-      `Ad Soyad: ${formData.name.trim()}`,
-      `Telefon: ${formData.phone.trim()}`,
-      `Tedavi Türü: ${formData.treatment.trim() || "-"}`,
-      `Dil: ${lang.toUpperCase()}`
+      msgHeader,
+      `${msgName}: ${formData.name.trim()}`,
+      `${msgPhone}: ${formData.phone.trim()}`,
+      `${msgTreatment}: ${formData.treatment.trim() || "-"}`,
+      `Lang: ${lang.toUpperCase()}`
     ].join("\n");
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
@@ -638,7 +797,12 @@ export default function HomePage() {
     event.preventDefault();
     if (!contactData.name.trim() || !contactData.phone.trim()) return;
     const whatsappNumber = "905550501802";
-    const message = `Yeni İletişim Talebi%0AAd Soyad: ${encodeURIComponent(contactData.name.trim())}%0ATelefon: ${encodeURIComponent(contactData.phone.trim())}%0ATedavi: ${encodeURIComponent(contactData.treatment.trim() || "-")}%0AMesaj: ${encodeURIComponent(contactData.message.trim() || "-")}`;
+    const contactHeader = lang === "tr" ? "Yeni İletişim Talebi" : lang === "ru" ? "Новый запрос" : lang === "ar" ? "طلب تواصل جديد" : "New Contact Request";
+    const contactNameLabel = lang === "tr" ? "Ad Soyad" : lang === "ru" ? "Имя" : lang === "ar" ? "الاسم" : "Name";
+    const contactPhoneLabel = lang === "tr" ? "Telefon" : lang === "ru" ? "Телефон" : lang === "ar" ? "الهاتف" : "Phone";
+    const contactTreatLabel = lang === "tr" ? "Tedavi" : lang === "ru" ? "Лечение" : lang === "ar" ? "العلاج" : "Treatment";
+    const contactMsgLabel = lang === "tr" ? "Mesaj" : lang === "ru" ? "Сообщение" : lang === "ar" ? "الرسالة" : "Message";
+    const message = `${contactHeader}%0A${contactNameLabel}: ${encodeURIComponent(contactData.name.trim())}%0A${contactPhoneLabel}: ${encodeURIComponent(contactData.phone.trim())}%0A${contactTreatLabel}: ${encodeURIComponent(contactData.treatment.trim() || "-")}%0A${contactMsgLabel}: ${encodeURIComponent(contactData.message.trim() || "-")}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
   };
   const handleTreatmentClick = (treatmentName) => {
@@ -669,6 +833,7 @@ export default function HomePage() {
               <option value="tr">Türkçe</option>
               <option value="en">English</option>
               <option value="ru">Русский</option>
+              <option value="ar">العربية</option>
             </select>
           </div>
         </div>
@@ -739,8 +904,8 @@ export default function HomePage() {
             <p className="text-sm font-semibold text-[#1a4d82]">{t.heroSubText}</p>
           </div>
           <div className="relative">
-            <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">15K+ Consultations</div>
-            <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">1K Reviews</div>
+            <div className="absolute -left-6 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">{t.heroSubText?.split("•")[0]?.trim()}</div>
+            <div className="absolute -right-2 top-6 z-10 rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold shadow">{t.heroSubText?.split("•")[1]?.trim()}</div>
             <div className="mx-auto max-w-[430px] overflow-hidden rounded-[2.2rem] border border-white/70 shadow-xl">
               <Image src="/header-slide.webp" alt="Doctor consultation visual" width={520} height={640} className="h-[420px] w-full rounded-[2.2rem] object-cover object-center" />
             </div>
@@ -1082,21 +1247,21 @@ export default function HomePage() {
           <div>
             <Image src="/logo.png" alt="NEWLIFE HEALTH Logo" width={160} height={48} className="mb-3 h-12 w-auto object-contain" />
             <p className="max-w-[420px] text-sm leading-relaxed text-[#3d5f89]">
-              NEWLIFE HEALTH is a registered medical travel and treatment coordination brand operating with authorized healthcare institutions in Turkey.
+              {lang === "tr" ? "NEWLIFE HEALTH, Türkiye'deki yetkili sağlık kurumlarıyla çalışan kayıtlı bir tıbbi seyahat ve tedavi koordinasyon markasıdır." : lang === "ru" ? "NEWLIFE HEALTH — зарегистрированный бренд медицинского туризма, работающий с авторизованными медучреждениями Турции." : lang === "ar" ? "NEWLIFE HEALTH علامة تجارية معتمدة لتنسيق السياحة الطبية تعمل مع مؤسسات صحية معتمدة في تركيا." : "NEWLIFE HEALTH is a registered medical travel and treatment coordination brand operating with authorized healthcare institutions in Turkey."}
             </p>
           </div>
           <div>
-            <h4 className="mb-2 font-bold text-[#173b69]">License Numbers</h4>
+            <h4 className="mb-2 font-bold text-[#173b69]">{lang === "tr" ? "Lisans Numaraları" : lang === "ru" ? "Номера лицензий" : lang === "ar" ? "أرقام التراخيص" : "License Numbers"}</h4>
             <p className="text-sm text-[#3d5f89]">AK-1346 • 13098</p>
           </div>
           <div>
-            <h4 className="mb-2 font-bold text-[#173b69]">Connect With Us</h4>
+            <h4 className="mb-2 font-bold text-[#173b69]">{lang === "tr" ? "Bize Ulaşın" : lang === "ru" ? "Свяжитесь с нами" : lang === "ar" ? "تواصل معنا" : "Connect With Us"}</h4>
             <p className="text-sm text-[#3d5f89]">Torun Center, Fulya Mah. Büyükdere Cad. No:74A, Şişli / İstanbul</p>
             <p className="mt-2 text-sm font-semibold text-[#173b69]">Newlifehealth.tr@gmail.com</p>
             <p className="mt-1 text-sm font-semibold text-[#173b69]">{t.ctaPhone}</p>
           </div>
         </div>
-        <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 NEWLIFE HEALTH Sağlık Turizmi A.Ş</div>
+        <div className="border-t px-4 py-4 text-center text-sm text-[#4b678c]">Copyright © 2026 NEWLIFE HEALTH {lang === "tr" ? "Sağlık Turizmi A.Ş" : lang === "ru" ? "Туризм здоровья" : lang === "ar" ? "للسياحة الصحية" : "Health Tourism"}</div>
       </footer>
 
       <Link
@@ -1115,7 +1280,7 @@ export default function HomePage() {
         className="fixed bottom-6 right-6 z-40 flex items-center gap-3 rounded-full border border-[#dce4f2] bg-white px-4 py-2.5 text-left shadow-xl transition hover:shadow-2xl"
       >
         {chatHasNotification && (
-          <span className="rounded-full bg-[#ef4444] px-2 py-0.5 text-[11px] font-bold text-white shadow">1 yeni bildirim</span>
+          <span className="rounded-full bg-[#ef4444] px-2 py-0.5 text-[11px] font-bold text-white shadow">{lang === "tr" ? "1 yeni bildirim" : lang === "ru" ? "1 уведомление" : lang === "ar" ? "إشعار جديد" : "1 new notification"}</span>
         )}
         <Image src="/temsilci.png" alt="Lina temsilci" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
         <div className="hidden md:block">

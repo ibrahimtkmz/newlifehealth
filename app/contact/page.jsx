@@ -112,6 +112,58 @@ const CONTENT = {
       "Other"
     ]
   },
+  ar: {
+    title: "اتصل بنا",
+    subtitle: "تواصل مع مستشاري NEWLIFE HEALTH TOURISM لتخطيط علاجك وتحديد التواريخ وتفاصيل الخطوات.",
+    formTitle: "نموذج التواصل السريع",
+    formSubtitle: "اترك بياناتك وسيتواصل معك فريقنا خلال 24 ساعة.",
+    name: "الاسم الكامل",
+    phone: "الهاتف",
+    email: "البريد الإلكتروني",
+    treatment: "العلاج المطلوب",
+    message: "رسالتك",
+    send: "إرسال",
+    orWhatsapp: "أو تواصل عبر واتساب",
+    whatsappButton: "تواصل عبر واتساب",
+    office: "مكتب إسطنبول",
+    schedule: "ساعات العمل",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    phoneNumber: "+90 555 050 18 02",
+    whatsappNumber: "+90 555 050 18 02",
+    emailAddress: "Newlifehealth.tr@gmail.com",
+    hours: [
+      "الاثنين - الجمعة: 09:00 - 19:00",
+      "السبت: 10:00 - 16:00",
+      "الأحد: استشارة عبر الإنترنت وتخطيط المواعيد"
+    ],
+    faqTitle: "الأسئلة الشائعة",
+    faqs: [
+      {
+        q: "هل الاستشارة الأولى مجانية؟",
+        a: "نعم، الاستشارة الأولى عبر الإنترنت مجانية تماماً. نقدم خطة علاج مخصصة وعرض سعر."
+      },
+      {
+        q: "ما اللغات التي تدعمونها؟",
+        a: "نقدم دعماً على مدار 24/7 باللغات التركية والإنجليزية والروسية والألمانية والعربية."
+      },
+      {
+        q: "كم يجب الحجز مسبقاً؟",
+        a: "نوصي بالتخطيط قبل 2-4 أسابيع، لكن يمكننا التنظيم في وقت أقصر للحالات العاجلة."
+      },
+      {
+        q: "هل يشمل النقل والإقامة؟",
+        a: "نعم، جميع باقاتنا تشمل نقل المطار والإقامة في الفندق. تواصل معنا للتفاصيل."
+      }
+    ],
+    reachTitle: "تواصل معنا",
+    treatments: [
+      "زراعة الشعر",
+      "تجميل الأسنان",
+      "الجراحة التجميلية",
+      "جراحة السمنة",
+      "أخرى"
+    ]
+  },
   ru: {
     title: "Контакты",
     subtitle: "Свяжитесь с координаторами NEWLIFE HEALTH TOURISM для подбора лечения, согласования дат и этапов поездки.",
@@ -182,6 +234,8 @@ export default function ContactPage() {
       ? "Merhaba, tedavi hakkinda bilgi almak istiyorum."
       : lang === 'ru'
       ? "Здравствуйте, хочу узнать о лечении."
+      : lang === 'ar'
+      ? "مرحبا، أريد الاستفسار عن العلاج."
       : "Hello, I would like to inquire about treatment.";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(greeting)}`, "_blank");
   };
@@ -312,6 +366,8 @@ export default function ContactPage() {
                   ? "Dunyanin her yerinden 85+ ulkeden hastalarımıza hizmet veriyoruz."
                   : lang === 'ru'
                   ? "Мы обслуживаем пациентов из 85+ стран мира."
+                  : lang === 'ar'
+                  ? "نخدم مرضى من أكثر من 85 دولة حول العالم."
                   : "We serve patients from 85+ countries around the world."
                 }
               </p>

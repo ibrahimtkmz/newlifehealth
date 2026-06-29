@@ -37,6 +37,17 @@ const COPY = {
     ],
     freeQuote: "БЕСПЛАТНЫЙ РАСЧЁТ",
     phone: "+90 555 050 18 02"
+  },
+  ar: {
+    navItems: [
+      { label: "الرئيسية", href: "/" },
+      { label: "الخدمات", href: "/hizmetler" },
+      { label: "مسار العلاج", href: "/tedavi-sureci" },
+      { label: "اتصل بنا", href: "/iletisim" },
+      { label: "من نحن", href: "/#hakkimizda" }
+    ],
+    freeQuote: "احصل على عرض مجاني",
+    phone: "+90 555 050 18 02"
   }
 };
 
@@ -94,6 +105,7 @@ export default function SiteHeader({ onCtaClick }) {
             <option value="tr">TR</option>
             <option value="en">EN</option>
             <option value="ru">RU</option>
+            <option value="ar">AR</option>
           </select>
         </div>
       </div>
