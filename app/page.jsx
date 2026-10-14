@@ -54,7 +54,7 @@ const content = {
     formLanguage: "Dil",
     send: "Gönder",
     sent: "Gönderildi",
-    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
+    quickActions: quickActionPages.tr.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Türk Sağlık Turizminde Popüler Tedaviler",
     treatments: [
@@ -214,7 +214,7 @@ const content = {
     formLanguage: "Language",
     send: "Send",
     sent: "Sent",
-    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
+    quickActions: quickActionPages.en.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Popular Treatments in Turkish Health Tourism",
     treatments: ["Face & Neck Lift", "Liposuction", "Brazilian Butt Lift", "Hollywood Smile", "Dental Implants", "Eye Laser & Smart Lens", "Blepharoplasty", "Hair Transplant"],
@@ -359,7 +359,7 @@ const content = {
     formLanguage: "Язык",
     send: "Отправить",
     sent: "Отправлено",
-    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
+    quickActions: quickActionPages.ru.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "Популярные направления лечения в Турции",
     treatments: ["Подтяжка лица и шеи", "Липосакция", "BBL", "Голливудская улыбка", "Дентальные импланты", "Лазер и умные линзы", "Блефаропластика", "Пересадка волос"],
@@ -504,7 +504,7 @@ const content = {
     formLanguage: "اللغة",
     send: "إرسال",
     sent: "تم الإرسال",
-    quickActions: quickActionPages.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
+    quickActions: quickActionPages.ar.map(({ title, slug }) => ({ label: title, href: `/bilgi/${slug}` })),
     treatmentTag: "NEWLIFE HEALTH",
     treatmentTitle: "العلاجات الأكثر طلباً في السياحة الصحية التركية",
     treatments: ["شد الوجه والرقبة", "شفط الدهون", "BBL", "ابتسامة هوليوود", "زراعة الأسنان", "ليزر العيون والعدسة الذكية", "جراحة الجفن", "زراعة الشعر"],
@@ -809,6 +809,10 @@ export default function HomePage() {
     setContactData((prev) => ({ ...prev, treatment: treatmentName }));
     setTreatmentPopupOpen(true);
   };
+
+  useEffect(() => {
+    setFormData((current) => ({ ...current, language: lang.toUpperCase() }));
+  }, [lang]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
