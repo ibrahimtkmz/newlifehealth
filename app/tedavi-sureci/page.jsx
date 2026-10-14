@@ -15,7 +15,7 @@ const CONTENT = {
     ],
     timelineTitle: "Ortalama Zaman Planı",
     days: [
-      ["Gün 1", "Otele transfer + mezoterapi"],
+      ["Gün 1", "Otele transfer"],
       ["Gün 2", "Ameliyat + taburculuk"],
       ["Gün 3", "Kontrol ve yıkama + havalimanı transferi"]
     ]
@@ -31,7 +31,7 @@ const CONTENT = {
     ],
     timelineTitle: "Average Timeline",
     days: [
-      ["Day 1", "Transfer to the hotel + mesotherapy"],
+      ["Day 1", "Transfer to the hotel"],
       ["Day 2", "Surgery + discharge"],
       ["Day 3", "Check-up and washing + airport transfer"]
     ]
@@ -47,7 +47,7 @@ const CONTENT = {
     ],
     timelineTitle: "Примерный план",
     days: [
-      ["День 1", "Трансфер в отель + мезотерапия"],
+      ["День 1", "Трансфер в отель"],
       ["День 2", "Операция + выписка"],
       ["День 3", "Контроль и мытьё + трансфер в аэропорт"]
     ]
@@ -63,7 +63,7 @@ const CONTENT = {
     ],
     timelineTitle: "الجدول الزمني المتوسط",
     days: [
-      ["اليوم 1", "النقل إلى الفندق + الميزوثيرابي"],
+      ["اليوم 1", "النقل إلى الفندق"],
       ["اليوم 2", "العملية + الخروج"],
       ["اليوم 3", "الفحص والغسيل + النقل إلى المطار"]
     ]

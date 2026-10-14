@@ -115,13 +115,11 @@ const content = {
       { title: "Estetik Cerrahi", detail: "Rinoplasti, yüz germe, vücut şekillendirme operasyonları", duration: "7-10 gün", href: "/treatments/plastic-surgery" },
       { title: "Obezite Cerrahisi", detail: "Tüp mide, bypass ve metabolik takip programları", duration: "5-7 gün", href: "/treatments/bariatric-surgery" }
     ],
-    otherTreatmentsButton: "Tedavi Detayını Gör",
     journeyDays: [
       {
         day: "1. Gün",
         items: [
           { icon: "car", title: "Otele transfer", description: "Havalimanında karşılanır ve konforlu bir şekilde otelinize transfer edilirsiniz.", badge: "VIP transfer" },
-          { icon: "consult", title: "Mezoterapi", description: "Tedavi planınıza uygun olarak mezoterapi uygulamanız gerçekleştirilir." }
         ]
       },
       {
@@ -264,13 +262,11 @@ const content = {
       { title: "Plastic Surgery", detail: "Rhinoplasty, facelift, and body contouring operations", duration: "7-10 days", href: "/treatments/plastic-surgery" },
       { title: "Bariatric Surgery", detail: "Sleeve, bypass, and metabolic follow-up programs", duration: "5-7 days", href: "/treatments/bariatric-surgery" }
     ],
-    otherTreatmentsButton: "View Treatment Details",
     journeyDays: [
       {
         day: "Day 1",
         items: [
           { icon: "car", title: "Transfer to the hotel", description: "You are welcomed at the airport and transferred comfortably to your hotel.", badge: "VIP transfer" },
-          { icon: "consult", title: "Mesotherapy", description: "Your mesotherapy treatment is performed according to your personalized plan." }
         ]
       },
       {
@@ -413,13 +409,11 @@ const content = {
       { title: "Пластическая хирургия", detail: "Ринопластика, подтяжка лица, моделирование тела", duration: "7-10 дней", href: "/treatments/plastic-surgery" },
       { title: "Бариатрическая хирургия", detail: "Sleeve, bypass и программы метаболического контроля", duration: "5-7 дней", href: "/treatments/bariatric-surgery" }
     ],
-    otherTreatmentsButton: "Подробнее о лечении",
     journeyDays: [
       {
         day: "День 1",
         items: [
           { icon: "car", title: "Трансфер в отель", description: "Вас встретят в аэропорту и с комфортом доставят в отель.", badge: "VIP-трансфер" },
-          { icon: "consult", title: "Мезотерапия", description: "Мезотерапия проводится в соответствии с вашим индивидуальным планом лечения." }
         ]
       },
       {
@@ -562,13 +556,11 @@ const content = {
       { title: "الجراحة التجميلية", detail: "تجميل الأنف، شد الوجه، وتشكيل الجسم", duration: "7-10 أيام", href: "/treatments/plastic-surgery" },
       { title: "جراحة السمنة", detail: "تكميم المعدة، التحويل المعدي وبرامج المتابعة", duration: "5-7 أيام", href: "/treatments/bariatric-surgery" }
     ],
-    otherTreatmentsButton: "عرض تفاصيل العلاج",
     journeyDays: [
       {
         day: "اليوم 1",
         items: [
           { icon: "car", title: "النقل إلى الفندق", description: "سيتم استقبالكم في المطار ونقلكم بشكل مريح إلى الفندق.", badge: "نقل VIP" },
-          { icon: "consult", title: "الميزوثيرابي", description: "يتم إجراء جلسة الميزوثيرابي وفقاً لخطة العلاج الشخصية الخاصة بكم." }
         ]
       },
       {
@@ -1158,9 +1150,6 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold text-[#153a65]">{item.title}</h3>
                 <p className="mt-2 min-h-[48px] text-sm text-[#4d6789]">{item.detail}</p>
                 <p className="mt-3 text-sm font-semibold text-[#1e4f83]">{item.duration}</p>
-                <Link href={item.href} className="mt-4 inline-flex rounded-full bg-[#0f2f5d] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123f77]">
-                  {t.otherTreatmentsButton}
-                </Link>
               </article>
             ))}
           </div>
