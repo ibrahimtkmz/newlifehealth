@@ -859,7 +859,13 @@ export default function HomePage() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button className="hidden rounded-full bg-[#2ca3e3] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1a8dd0] lg:block">{t.partnership}</button>
+            <button
+              type="button"
+              onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth", block: "center" })}
+              className="hidden rounded-full bg-[#2ca3e3] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1a8dd0] lg:block"
+            >
+              {t.partnership}
+            </button>
             <button className="rounded-lg border border-slate-200 p-2 lg:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle mobile menu">
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -884,7 +890,7 @@ export default function HomePage() {
             <h1 className="text-4xl font-bold leading-tight text-[#0f2f5d] md:text-6xl">
               {t.heroTitle1} <span className="text-[#1093e8]">{t.heroTitle2}</span> {t.heroTitle3}
             </h1>
-            <form onSubmit={handleSend} className="rounded-full border-2 border-[#f39562] bg-white p-2 shadow-sm">
+            <form id="lead-form" onSubmit={handleSend} className="rounded-full border-2 border-[#f39562] bg-white p-2 shadow-sm">
               <div className="flex flex-wrap items-center gap-2">
                 <label className="flex min-w-[160px] flex-1 items-center gap-2 rounded-full border px-3 py-2 text-sm">
                   <User className="h-4 w-4 text-slate-400" />
