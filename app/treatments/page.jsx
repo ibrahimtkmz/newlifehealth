@@ -35,19 +35,19 @@ const CATEGORY_CARDS = [
 const CONTENT = {
   tr: {
     title: "Tedaviler",
-    subtitle: "Uluslararası Standartlarda Uzman Tedavi Cozumleri. Her alanda deneyimli doktor kadromuz ve modern altyapimizla hizmetinizdeyiz.",
-    intro: "Tum medikal hizmetlerimizi tek bakista inceleyin, size en uygun tedavi alanina guvenle yonelin.",
+    subtitle: "Uluslararası Standartlarda Uzman Tedavi Çözümleri. Her alanda deneyimli doktor kadromuz ve modern altyapimizla hizmetinizdeyiz.",
+    intro: "Tüm medikal hizmetlerimizi tek bakışta inceleyin, size en uygun tedavi alanına güvenle yönelin.",
     labels: {
-      hair: "Sac Ekimi",
-      dental: "Dis Estetigi",
+      hair: "Saç Ekimi",
+      dental: "Diş Estetiği",
       plastic: "Estetik Cerrahi",
       bariatric: "Obezite Cerrahisi"
     },
     descriptions: {
-      hair: "Safir FUE ve DHI teknikleri ile dogal gorunumlu, kalici sonuclar. Agrısız islem ve hizli iyilesme.",
-      dental: "Zirkonyum kaplamalar, implantlar ve Hollywood gulusu tasarimi. Dijital planlama ile mukemmel sonuclar.",
-      plastic: "Burun estetigi, yuz germe, meme estetigi ve vucut sekillendirme. Uzman cerrahlar ile guvenli islemler.",
-      bariatric: "Mide botoksu, tup mide ve bypass ameliyatlari. Kalici kilo kontrolu ve saglikli yasam."
+      hair: "Safir FUE ve DHI teknikleri ile dogal gorunumlu, kalici sonuclar. Ağrısız işlem ve hızlı iyileşme.",
+      dental: "Zirkonyum kaplamalar, implantlar ve Hollywood gulusu tasarimi. Dijital planlama ile mükemmel sonuçlar.",
+      plastic: "Burun estetiği, yüz germe, meme estetigi ve vucut sekillendirme. Uzman cerrahlar ile guvenli islemler.",
+      bariatric: "Mide botoksu, tüp mide ve bypass ameliyatlari. Kalici kilo kontrolu ve saglikli yasam."
     },
     stats: {
       hair: { duration: "6-8 saat", recovery: "3-7 gun", success: "%97" },
@@ -55,27 +55,27 @@ const CONTENT = {
       plastic: { duration: "2-6 saat", recovery: "7-14 gun", success: "%95" },
       bariatric: { duration: "30 dk - 2 saat", recovery: "5-10 gun", success: "%93" }
     },
-    duration: "Tedavi Suresi",
-    recovery: "Iyilesme",
-    success: "Basari Orani",
-    detail: "Detayi Incele",
+    duration: "Tedavi Süresi",
+    recovery: "İyileşme",
+    success: "Başarı Oranı",
+    detail: "Detayı İncele",
     compareTitle: "Hizli Karsilastirma",
-    compareHeaders: ["Tedavi", "Genel Avantaj", "Turkiye'de Kalis"],
+    compareHeaders: ["Tedavi", "Genel Avantaj", "Türkiye'de Kalış"],
     compareRows: [
-      ["Sac Ekimi", "Dogal yogunluk + minimal iz", "3 gun"],
-      ["Dis Estetigi", "Hizli estetik donusum", "4-6 gun"],
-      ["Estetik Cerrahi", "Kisiye ozel plan + hastane guvenligi", "7-10 gun"],
+      ["Saç Ekimi", "Doğal yoğunluk + minimal iz", "3 gun"],
+      ["Diş Estetiği", "Hızlı estetik dönüşüm", "4-6 gun"],
+      ["Estetik Cerrahi", "Kişiye özel plan + hastane guvenligi", "7-10 gun"],
       ["Obezite Cerrahisi", "Metabolik saglikta kalici iyilesme", "5-7 gun"]
     ],
     certTitle: "Sertifika ve Yetki Belgeleri",
-    certs: ["JCI Akreditasyonu", "ISO 9001 Saglik Kalite", "TURSAB Saglik Turizmi Yetki", "Saglik Bakanligi Uluslararasi Hasta Yetki Belgesi"],
-    whyUsTitle: "Neden Bizi Secmelisiniz?",
+    certs: ["JCI Akreditasyonu", "ISO 9001 Sağlık Kalite", "TURSAB Sağlık Turizmi Yetki", "Sağlık Bakanligi Uluslararasi Hasta Yetki Belgesi"],
+    whyUsTitle: "Neden Bizi Seçmelisiniz?",
     whyUsItems: [
       "Uzman doktor kadrosu ve uluslararasi sertifikalar",
       "Modern hastane altyapisi ve son teknoloji cihazlar",
-      "Kisisellestirilmis tedavi planlari",
+      "Kişiselleştirilmiş tedavi planları",
       "7/24 hasta destek hatti",
-      "Tedavi sonrasi takip ve danismanlik"
+      "Tedavi sonrasi takip ve danışmanlık"
     ]
   },
   en: {

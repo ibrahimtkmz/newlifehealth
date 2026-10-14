@@ -9,9 +9,9 @@ const whatsappNumber = "905550501802";
 
 const CONTENT = {
   tr: {
-    title: "Iletisim",
-    subtitle: "NEWLIFE HEALTH TOURISM hasta danismanlariyla iletisime gecerek tedavi planinizi, tarih uygunlugunu ve surec detaylarini netlestirin.",
-    formTitle: "Hizli Iletisim Formu",
+    title: "İletişim",
+    subtitle: "NEWLIFE HEALTH TOURISM hasta danışmanlarıyla iletişime geçerek tedavi planınızı, tarih uygunluğunu ve süreç detaylarını netleştirin.",
+    formTitle: "Hizli İletişim Formu",
     formSubtitle: "Bilgilerinizi birakin, ekibimiz size 24 saat icinde donus yapsin.",
     name: "Ad Soyad",
     phone: "Telefon",
@@ -20,17 +20,17 @@ const CONTENT = {
     message: "Mesajiniz",
     send: "Gonder",
     orWhatsapp: "veya WhatsApp ile ulasın",
-    whatsappButton: "WhatsApp ile Iletisime Gec",
+    whatsappButton: "WhatsApp ile İletişime Gec",
     office: "Istanbul Ofisi",
     schedule: "Calisma Saatleri",
-    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Şişli / İstanbul, Türkiye",
     phoneNumber: "+90 555 050 18 02",
     whatsappNumber: "+90 555 050 18 02",
     emailAddress: "Newlifehealth.tr@gmail.com",
     hours: [
       "Pazartesi - Cuma: 09:00 - 19:00",
       "Cumartesi: 10:00 - 16:00",
-      "Pazar: Online danismanlık ve randevu planlamasi"
+      "Pazar: Online danışmanlık ve randevu planlaması"
     ],
     faqTitle: "Sikca Sorulan Sorular",
     faqs: [
@@ -53,8 +53,8 @@ const CONTENT = {
     ],
     reachTitle: "Bize Ulasin",
     treatments: [
-      "Sac Ekimi",
-      "Dis Estetigi",
+      "Saç Ekimi",
+      "Diş Estetiği",
       "Plastik Cerrahi",
       "Obezite Cerrahisi",
       "Diger"
@@ -75,7 +75,7 @@ const CONTENT = {
     whatsappButton: "Contact via WhatsApp",
     office: "Istanbul Office",
     schedule: "Working Hours",
-    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Şişli / İstanbul, Türkiye",
     phoneNumber: "+90 555 050 18 02",
     whatsappNumber: "+90 555 050 18 02",
     emailAddress: "Newlifehealth.tr@gmail.com",
@@ -127,7 +127,7 @@ const CONTENT = {
     whatsappButton: "تواصل عبر واتساب",
     office: "مكتب إسطنبول",
     schedule: "ساعات العمل",
-    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Şişli / İstanbul, Türkiye",
     phoneNumber: "+90 555 050 18 02",
     whatsappNumber: "+90 555 050 18 02",
     emailAddress: "Newlifehealth.tr@gmail.com",
@@ -179,7 +179,7 @@ const CONTENT = {
     whatsappButton: "Связаться через WhatsApp",
     office: "Офис в Стамбуле",
     schedule: "Часы работы",
-    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Sisli / Istanbul, Turkiye",
+    address: "Halaskargazi Mah. Rumeli Cad. No: 34, Şişli / İstanbul, Türkiye",
     phoneNumber: "+90 555 050 18 02",
     whatsappNumber: "+90 555 050 18 02",
     emailAddress: "Newlifehealth.tr@gmail.com",

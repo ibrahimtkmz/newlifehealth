@@ -7,58 +7,58 @@ import { Calendar, Clock, ArrowRight, BookOpen, Scissors, Smile, Sparkles, Activ
 const CONTENT = {
   tr: {
     title: "Blog",
-    subtitle: "Tedavi planlamasi, seyahat hazirligi ve operasyon sonrasi surecler icin guvenilir ve pratik icerikler.",
-    featuredLabel: "One Cikan",
-    allPostsLabel: "Tum Yazilar",
-    readMore: "Devamini Oku",
+    subtitle: "Tedavi planlaması, seyahat hazırlığı ve operasyon sonrası süreçler için güvenilir ve pratik içerikler.",
+    featuredLabel: "Öne Çıkan",
+    allPostsLabel: "Tüm Yazılar",
+    readMore: "Devamını Oku",
     minRead: "dk okuma",
     categories: {
-      preparation: "Hazirlik",
-      hairTransplant: "Sac Ekimi",
-      dental: "Dis Estetigi",
+      preparation: "Hazırlık",
+      hairTransplant: "Saç Ekimi",
+      dental: "Diş Estetiği",
       plastic: "Plastik Cerrahi",
       bariatric: "Obezite",
       travel: "Seyahat"
     },
     featured: {
-      title: "Saglik Turizmine Hazirlik Rehberi",
-      excerpt: "Turkiye'ye gelmeden once rapor hazirligi, ucus plani, ilac duzeni ve surec takibi icin kapsamli bir kontrol listesi. Adim adim hazirlik sureci.",
+      title: "Sağlık Turizmine Hazırlık Rehberi",
+      excerpt: "Türkiye'ye gelmeden önce rapor hazırlığı, uçuş planı, ilaç düzeni ve süreç takibi için kapsamlı bir kontrol listesi. Adım adım hazırlık süreci.",
       category: "preparation",
       date: "15 Mart 2024",
       readTime: "8"
     },
     posts: [
       {
-        title: "Sac Ekimi Sonrasi Ilk 7 Gun",
+        title: "Saç Ekimi Sonrası İlk 7 Gün",
         excerpt: "Odem yonetimi, yikama protokolu ve gunluk yasam donusunu dogru yonetmek icin kritik bakim adimlari.",
         category: "hairTransplant",
         date: "10 Mart 2024",
         readTime: "6"
       },
       {
-        title: "Dijital Gulus Tasarimi Nedir?",
+        title: "Dijital Gülüş Tasarımı Nedir?",
         excerpt: "Tedavi baslamadan once beklenen estetik sonucu simule eden dijital planlama yaklasiminin avantajlari.",
         category: "dental",
         date: "5 Mart 2024",
         readTime: "5"
       },
       {
-        title: "Burun Estetigi: Beklentiler ve Gercekler",
-        excerpt: "Rinoplasti operasyonu oncesi bilmeniz gerekenler, iyilesme sureci ve dogal sonuclar icin ipuclari.",
+        title: "Burun Estetiği: Beklentiler ve Gerçekler",
+        excerpt: "Rinoplasti operasyonu öncesi bilmeniz gerekenler, iyileşme süreci ve doğal sonuçlar için ipuçları.",
         category: "plastic",
         date: "28 Subat 2024",
         readTime: "7"
       },
       {
-        title: "Tup Mide Ameliyati Sonrasi Beslenme",
+        title: "Tüp Mide Ameliyatı Sonrası Beslenme",
         excerpt: "Operasyon sonrasi beslenme programi, vitamin takviyeleri ve saglikli yasam aliskanliklari.",
         category: "bariatric",
         date: "20 Subat 2024",
         readTime: "6"
       },
       {
-        title: "Istanbul'da Tedavi Tatili",
-        excerpt: "Saglik turizmi ve kulturel kesfin birlesimi: tedavi surecinde Istanbul'un keyifini cikarin.",
+        title: "İstanbul'da Tedavi Tatili",
+        excerpt: "Sağlık turizmi ve kültürel keşfin birleşimi: tedavi sürecinde İstanbul'un keyfini çıkarın.",
         category: "travel",
         date: "15 Subat 2024",
         readTime: "4"
@@ -71,12 +71,12 @@ const CONTENT = {
         readTime: "5"
       }
     ],
-    tipsTitle: "Hizli Ipuclari",
+    tipsTitle: "Hızlı İpuçları",
     tips: [
       "Tedaviden 2 hafta once kan sulandirici ilaclarinizi kesin",
       "Pasaportunuzun gecerlilik suresini kontrol edin",
       "Rahat kiyafetler ve slip-on ayakkabilar tercih edin",
-      "Tibbi belgelerinizi dijital ortamda yedekleyin"
+      "Tıbbi belgelerinizi dijital ortamda yedekleyin"
     ]
   },
   en: {

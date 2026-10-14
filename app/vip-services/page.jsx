@@ -7,7 +7,7 @@ import { Plane, Hotel, Car, Languages, Stethoscope, HeartPulse, Phone, Crown, Ch
 const CONTENT = {
   tr: {
     title: "VIP Hizmetler",
-    subtitle: "Turkiye yolculugunuzun her adiminda konfor, hiz ve kisisel koordinasyonu bir araya getiren premium hasta deneyimi.",
+    subtitle: "Türkiye yolculuğunuzun her adiminda konfor, hiz ve kişisel koordinasyonu bir araya getiren premium hasta deneyimi.",
     processTitle: "VIP Surecimiz",
     steps: [
       {
@@ -23,7 +23,7 @@ const CONTENT = {
       {
         icon: Stethoscope,
         title: "Operasyon Gunu",
-        description: "Tercuman, danisman ve klinik koordinatoru ile kesintisiz surec. Tam zamanlı hasta refakati."
+        description: "Tercüman, danışman ve klinik koordinatörü ile kesintisiz süreç. Tam zamanlı hasta refakati."
       },
       {
         icon: Hotel,
@@ -33,7 +33,7 @@ const CONTENT = {
       {
         icon: HeartPulse,
         title: "Uzun Donem Takip",
-        description: "Ulkenize dondukten sonra foto/video bazli uzaktan kontrol ve danismanlik. Omur boyu destek."
+        description: "Ülkenize döndükten sonra foto/video bazlı uzaktan kontrol ve danışmanlık. Ömür boyu destek."
       }
     ],
     servicesTitle: "Dahil Olan Hizmetler",

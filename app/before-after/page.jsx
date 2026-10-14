@@ -20,23 +20,23 @@ const BEFORE_AFTER_CASES = [
 
 const CONTENT = {
   tr: {
-    title: "Oncesi & Sonrasi",
-    subtitle: "Hasta mahremiyeti ve tibbi etik prensipleri korunarak sonuc kalitesini seffaf bicimde degerlendiren bir yaklasim uyguluyoruz.",
-    intro: "Oncesi-sonrasi analizlerimiz yalnizca fotograf karsilastirmasi degildir; sac yogunlugu, simetri, doku iyilesmesi, fonksiyonel kazanim ve hasta memnuniyeti gibi kriterlerle birlikte degerlendirilir.",
+    title: "Öncesi ve Sonrası",
+    subtitle: "Hasta mahremiyeti ve tıbbi etik prensipleri korunarak sonuç kalitesini şeffaf biçimde değerlendiren bir yaklaşım uyguluyoruz.",
+    intro: "Öncesi-sonrası analizlerimiz yalnızca fotoğraf karşılaştırması değildir; saç yoğunluğu, simetri, doku iyileşmesi, fonksiyonel kazanım ve hasta memnuniyeti gibi kriterlerle birlikte değerlendirilir.",
     privacyTitle: "Gizlilik Politikamiz",
-    privacyText: "Tibbi etik geregi, detayli oncesi-sonrasi fotograflarini yalnizca WhatsApp uzerinden aktif danismanlık surecindeki hastalarımızla paylasiyoruz. Bu sayede hasta gizliligini korurken, gercek sonuclari seffaf bicimde sunuyoruz.",
+    privacyText: "Tıbbi etik gereği, detaylı öncesi-sonrası fotoğraflarını yalnızca WhatsApp üzerinden aktif danışmanlık sürecindeki hastalarımızla paylaşıyoruz. Bu sayede hasta gizliliğini korurken, gerçek sonuçları şeffaf biçimde sunuyoruz.",
     categories: [
       {
         key: "hair",
         icon: Scissors,
-        title: "Sac Ekimi",
+        title: "Saç Ekimi",
         description: "Dogal sac cizgisi tasarimi, yogunluk artisi ve greft dagilimi sonucları",
         cases: "2,500+ vaka"
       },
       {
         key: "dental",
         icon: Smile,
-        title: "Dis Estetigi",
+        title: "Diş Estetiği",
         description: "Hollywood gulusu, zirkonyum kaplama ve implant sonuclari",
         cases: "1,800+ vaka"
       },
@@ -51,22 +51,22 @@ const CONTENT = {
         key: "bariatric",
         icon: Activity,
         title: "Obezite Cerrahisi",
-        description: "Kilo kaybi sureci, vucut donusumu ve saglik iyilesmesi sonuclari",
+        description: "Kilo kaybı süreci, vücut dönüşümü ve sağlık iyileşmesi sonuçları",
         cases: "800+ vaka"
       }
     ],
-    galleryTitle: "Gercek Oncesi / Sonrasi Sonuclari",
+    galleryTitle: "Gerçek Öncesi / Sonrası Sonuçları",
     evaluationTitle: "Degerlendirme Kriterlerimiz",
     criteria: [
       { title: "Estetik Uyum", description: "Yuz orantilari ve dogal gorunum" },
-      { title: "Teknik Basari", description: "Cerrahi teknigin mukemmelligi" },
+      { title: "Teknik Başarı", description: "Cerrahi tekniğin mükemmelliği" },
       { title: "Iyilesme Sureci", description: "Doku iyilesmesi ve iz minimizasyonu" },
       { title: "Hasta Memnuniyeti", description: "Beklenti ve sonuc uyumu" }
     ],
     ctaTitle: "Sonuclari Gormek Ister Misiniz?",
-    ctaText: "WhatsApp uzerinden bizimle iletisime gecin ve ilgilendiginiz tedavi alanina ait gercek oncesi-sonrasi fotograflarini inceleyin.",
+    ctaText: "WhatsApp üzerinden bizimle iletişime geçin ve ilgilendiğiniz tedavi alanına ait gerçek öncesi-sonrası fotoğraflarını inceleyin.",
     previewHint: "Net sonuclar icin bizimle iletisime gecin",
-    ctaButton: "WhatsApp ile Iletisime Gec",
+    ctaButton: "WhatsApp ile İletişime Geç",
     trustTitle: "Neden Bize Guvenebilirsiniz?",
     trustItems: [
       "15,000+ basarili tedavi deneyimi",
@@ -227,7 +227,7 @@ const CONTENT = {
     evaluationTitle: "Наши критерии оценки",
     criteria: [
       { title: "Эстетическая гармония", description: "Пропорции лица и естественный вид" },
-      { title: "Техническй успех", description: "Мастерство хирургической техники" },
+      { title: "Технический успех", description: "Мастерство хирургической техники" },
       { title: "Процесс восстановления", description: "Заживление тканей и минимизация рубцов" },
       { title: "Удовлетворенность пациента", description: "Соответствие ожиданий и результатов" }
     ],
@@ -266,8 +266,8 @@ export default function BeforeAfterPage() {
       : "Hello, I would like to see before-after photos.";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
-  const beforeLabel = lang === 'tr' ? 'Oncesi' : lang === 'ru' ? 'До' : lang === 'ar' ? 'قبل' : 'Before';
-  const afterLabel = lang === 'tr' ? 'Sonrasi' : lang === 'ru' ? 'После' : lang === 'ar' ? 'بعد' : 'After';
+  const beforeLabel = lang === 'tr' ? 'Öncesi' : lang === 'ru' ? 'До' : lang === 'ar' ? 'قبل' : 'Before';
+  const afterLabel = lang === 'tr' ? 'Sonrası' : lang === 'ru' ? 'После' : lang === 'ar' ? 'بعد' : 'After';
 
   return (
     <InnerPageLayout title={t.title} subtitle={t.subtitle}>
