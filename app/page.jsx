@@ -120,26 +120,24 @@ const content = {
       {
         day: "1. Gün",
         items: [
-          { icon: "plane", title: "Havalimanına varış", description: "Sürücümüz sizi karşılar; otele veya kliniğe konforlu transferiniz yapılır.", badge: "VIP transfer" },
-          { icon: "consult", title: "Doktor konsültasyonu", description: "Saç analizi, donör bölge kontrolü ve doğal saç çizgisi tasarımı tamamlanır.", badge: "1 - 2 saat" },
-          { icon: "test", title: "Kan tahlili ve hazırlık", description: "Operasyon güvenliği için gerekli testler alınır, işlem öncesi talimatlar paylaşılır.", badge: "maks 45 dk" }
+          { icon: "car", title: "Otele transfer", description: "Havalimanında karşılanır ve konforlu bir şekilde otelinize transfer edilirsiniz.", badge: "VIP transfer" },
+          { icon: "consult", title: "Mezoterapi", description: "Tedavi planınıza uygun olarak mezoterapi uygulamanız gerçekleştirilir." }
         ]
       },
       {
         day: "2. Gün",
         items: [
-          { icon: "procedure", title: "Saç ekimi işlemi", description: "Lokal anestezi altında greft alımı, kanal açımı ve ekim adımları planlandığı şekilde uygulanır.", badge: "5 - 7 saat" },
-          { icon: "car", title: "Otele dönüş ve dinlenme", description: "İşlem sonrası bakım anlatılır; ekibimiz sizi dinlenmeniz için otele götürür.", badge: "kontrollü takip" }
+          { icon: "procedure", title: "Ameliyat", description: "Planlanan cerrahi işlem uzman sağlık ekibi tarafından gerçekleştirilir.", badge: "işlem günü" },
+          { icon: "car", title: "Taburculuk", description: "İşlem sonrası gerekli kontroller tamamlanır ve otelinize dönüşünüz organize edilir." }
         ]
       },
       {
         day: "3. Gün",
         items: [
-          { icon: "droplets", title: "İlk yıkama ve kontrol", description: "Klinikte ilk yıkama yapılır, kabuklanma ve bakım süreci uygulamalı şekilde gösterilir.", badge: "30 - 45 dk" },
-          { icon: "message", title: "Son talimatlar", description: "İlaç, uyku pozisyonu, şapka kullanımı ve fotoğraf takibi için kişisel rehberiniz paylaşılır." },
-          { icon: "plane", title: "Dönüş planı", description: "Uçuş saatinize göre havalimanı transferiniz organize edilir; uzaktan takip başlar.", badge: "sonrası destek" }
+          { icon: "droplets", title: "Kontrol ve yıkama", description: "Kontrolünüz yapılır ve gerekli yıkama/bakım uygulaması klinikte gerçekleştirilir.", badge: "kontrol günü" },
+          { icon: "plane", title: "Otelden havalimanına transfer", description: "Uçuş saatinize göre otelinizden havalimanına transferiniz organize edilir." }
         ]
-      },
+      }
     ],
     graftTitle: "Greft Hesaplayıcı",
     graftSubtitle: "Tedavi etmek istediğiniz saç dökülme bölgelerini seçin",
@@ -271,25 +269,24 @@ const content = {
       {
         day: "Day 1",
         items: [
-          { icon: "plane", title: "Arrival at the airport", description: "One of our drivers meets you and takes you to the clinic for blood tests, then to your hotel." },
-          { icon: "car", title: "Transfer to the clinic", badge: "max 1 hour" },
-          { icon: "test", title: "Blood sampling", badge: "max 45 mins" }
+          { icon: "car", title: "Transfer to the hotel", description: "You are welcomed at the airport and transferred comfortably to your hotel.", badge: "VIP transfer" },
+          { icon: "consult", title: "Mesotherapy", description: "Your mesotherapy treatment is performed according to your personalized plan." }
         ]
       },
       {
         day: "Day 2",
         items: [
-          { icon: "consult", title: "1st consultation", description: "Meet your doctor and discuss your hair transplant options plus hairline design.", badge: "1 - 2 hours" },
-          { icon: "free", title: "Free time in Istanbul", description: "You will have plenty of time to relax and enjoy Istanbul before the following day." }
+          { icon: "procedure", title: "Surgery", description: "The planned surgical procedure is performed by the specialist medical team.", badge: "procedure day" },
+          { icon: "car", title: "Discharge", description: "After the necessary checks, your return to the hotel is arranged." }
         ]
       },
       {
         day: "Day 3",
         items: [
-          { icon: "consult2", title: "2nd consultation", description: "Receive final expert advice to achieve a natural result and confirm your treatment plan.", badge: "1 hour" },
-          { icon: "procedure", title: "The procedure", description: "Performed under local anaesthesia and usually takes around 5 to 7 hours depending on graft count.", badge: "5 - 7 hours" }
+          { icon: "droplets", title: "Check-up and washing", description: "Your check-up is completed and the required washing and care are performed at the clinic.", badge: "check-up day" },
+          { icon: "plane", title: "Transfer from the hotel to the airport", description: "Your transfer from the hotel to the airport is arranged according to your flight time." }
         ]
-      },
+      }
     ],
     graftTitle: "Graft Calculator",
     graftSubtitle: "Select the hair loss areas you would like to treat",
@@ -421,25 +418,24 @@ const content = {
       {
         day: "День 1",
         items: [
-          { icon: "plane", title: "Прибытие в аэропорт", description: "Наш водитель встретит вас и отвезет в клинику на анализ крови, затем в отель." },
-          { icon: "car", title: "Трансфер в клинику", badge: "до 1 часа" },
-          { icon: "test", title: "Забор крови", badge: "до 45 мин" }
+          { icon: "car", title: "Трансфер в отель", description: "Вас встретят в аэропорту и с комфортом доставят в отель.", badge: "VIP-трансфер" },
+          { icon: "consult", title: "Мезотерапия", description: "Мезотерапия проводится в соответствии с вашим индивидуальным планом лечения." }
         ]
       },
       {
         day: "День 2",
         items: [
-          { icon: "consult", title: "1-я консультация", description: "Встреча с врачом, обсуждение вариантов пересадки и дизайна линии роста волос.", badge: "1 - 2 часа" },
-          { icon: "free", title: "Свободное время в Стамбуле", description: "У вас будет достаточно времени отдохнуть и насладиться Стамбулом до следующего дня." }
+          { icon: "procedure", title: "Операция", description: "Запланированная хирургическая процедура выполняется командой специалистов.", badge: "день процедуры" },
+          { icon: "car", title: "Выписка", description: "После необходимых проверок организуется ваше возвращение в отель." }
         ]
       },
       {
         day: "День 3",
         items: [
-          { icon: "consult2", title: "2-я консультация", description: "Финальные рекомендации для естественного результата и утверждение плана.", badge: "1 час" },
-          { icon: "procedure", title: "Процедура", description: "Проводится под местной анестезией и обычно длится 5–7 часов в зависимости от количества графтов.", badge: "5 - 7 часов" }
+          { icon: "droplets", title: "Контроль и мытьё", description: "Проводится контрольный осмотр, а необходимое мытьё и уход выполняются в клинике.", badge: "день контроля" },
+          { icon: "plane", title: "Трансфер из отеля в аэропорт", description: "Трансфер из отеля в аэропорт организуется в соответствии с временем вашего рейса." }
         ]
-      },
+      }
     ],
     graftTitle: "Калькулятор графтов",
     graftSubtitle: "Выберите зоны выпадения волос, которые хотите лечить",
@@ -571,24 +567,22 @@ const content = {
       {
         day: "اليوم 1",
         items: [
-          { icon: "plane", title: "الوصول إلى المطار", description: "سائقنا سيستقبلك ويأخذك إلى العيادة لإجراء فحوصات الدم ثم إلى الفندق.", badge: "نقل VIP" },
-          { icon: "consult", title: "استشارة الطبيب", description: "تحليل الشعر وفحص منطقة المانح وتصميم خط الشعر الطبيعي.", badge: "1 - 2 ساعة" },
-          { icon: "test", title: "فحوصات الدم والتحضير", description: "إجراء الفحوصات اللازمة لسلامة العملية ومشاركة التعليمات قبل الإجراء.", badge: "45 دقيقة كحد أقصى" }
+          { icon: "car", title: "النقل إلى الفندق", description: "سيتم استقبالكم في المطار ونقلكم بشكل مريح إلى الفندق.", badge: "نقل VIP" },
+          { icon: "consult", title: "الميزوثيرابي", description: "يتم إجراء جلسة الميزوثيرابي وفقاً لخطة العلاج الشخصية الخاصة بكم." }
         ]
       },
       {
         day: "اليوم 2",
         items: [
-          { icon: "procedure", title: "عملية زراعة الشعر", description: "يتم استخراج الطعوم وفتح القنوات وزراعتها تحت تخدير موضعي وفق الخطة المحددة.", badge: "5 - 7 ساعات" },
-          { icon: "car", title: "العودة للفندق والراحة", description: "يُشرح لك العناية بعد العملية ويأخذك فريقنا إلى الفندق للراحة.", badge: "متابعة مراقبة" }
+          { icon: "procedure", title: "العملية", description: "يجري الفريق الطبي المتخصص العملية الجراحية المخطط لها.", badge: "يوم العملية" },
+          { icon: "car", title: "الخروج من المستشفى", description: "بعد إتمام الفحوصات اللازمة، يتم تنظيم عودتكم إلى الفندق." }
         ]
       },
       {
         day: "اليوم 3",
         items: [
-          { icon: "droplets", title: "أول غسيل وفحص", description: "يتم الغسيل الأول في العيادة ويُشرح لك عملية التقشر والعناية بشكل عملي.", badge: "30 - 45 دقيقة" },
-          { icon: "message", title: "التعليمات النهائية", description: "يُشارك معك دليلك الشخصي للأدوية ووضعية النوم واستخدام القبعة ومتابعة الصور." },
-          { icon: "plane", title: "خطة العودة", description: "يتم تنظيم نقلك إلى المطار وفق موعد رحلتك وتبدأ المتابعة عن بُعد.", badge: "دعم ما بعد العملية" }
+          { icon: "droplets", title: "الفحص والغسيل", description: "يتم إجراء الفحص والغسيل والعناية اللازمة في العيادة.", badge: "يوم الفحص" },
+          { icon: "plane", title: "النقل من الفندق إلى المطار", description: "يتم تنظيم نقلكم من الفندق إلى المطار وفقاً لموعد رحلتكم." }
         ]
       }
     ],

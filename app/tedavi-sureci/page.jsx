@@ -15,10 +15,9 @@ const CONTENT = {
     ],
     timelineTitle: "Ortalama Zaman Planı",
     days: [
-      ["Gün 1", "Varış + testler"],
-      ["Gün 2", "Doktor konsültasyonu"],
-      ["Gün 3", "Operasyon"],
-      ["Gün 4", "Kontrol + dönüş"]
+      ["Gün 1", "Otele transfer + mezoterapi"],
+      ["Gün 2", "Ameliyat + taburculuk"],
+      ["Gün 3", "Kontrol ve yıkama + havalimanı transferi"]
     ]
   },
   en: {
@@ -32,10 +31,9 @@ const CONTENT = {
     ],
     timelineTitle: "Average Timeline",
     days: [
-      ["Day 1", "Arrival + tests"],
-      ["Day 2", "Doctor consultation"],
-      ["Day 3", "Operation"],
-      ["Day 4", "Check-up + departure"]
+      ["Day 1", "Transfer to the hotel + mesotherapy"],
+      ["Day 2", "Surgery + discharge"],
+      ["Day 3", "Check-up and washing + airport transfer"]
     ]
   },
   ru: {
@@ -49,10 +47,9 @@ const CONTENT = {
     ],
     timelineTitle: "Примерный план",
     days: [
-      ["День 1", "Прибытие + анализы"],
-      ["День 2", "Консультация врача"],
-      ["День 3", "Операция"],
-      ["День 4", "Контроль + отъезд"]
+      ["День 1", "Трансфер в отель + мезотерапия"],
+      ["День 2", "Операция + выписка"],
+      ["День 3", "Контроль и мытьё + трансфер в аэропорт"]
     ]
   },
   ar: {
@@ -66,10 +63,9 @@ const CONTENT = {
     ],
     timelineTitle: "الجدول الزمني المتوسط",
     days: [
-      ["اليوم 1", "الوصول + الفحوصات"],
-      ["اليوم 2", "استشارة الطبيب"],
-      ["اليوم 3", "العملية"],
-      ["اليوم 4", "المراجعة + المغادرة"]
+      ["اليوم 1", "النقل إلى الفندق + الميزوثيرابي"],
+      ["اليوم 2", "العملية + الخروج"],
+      ["اليوم 3", "الفحص والغسيل + النقل إلى المطار"]
     ]
   }
 };
